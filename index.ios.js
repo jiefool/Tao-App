@@ -10,7 +10,9 @@ import {
   Navigator,
   TabBarIOS,
   NavigatorIOS,
-  StyleSheet
+  StyleSheet,
+  View,
+  Text
 } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
@@ -62,83 +64,67 @@ export default class taokalahi extends Component {
 
   render() {
     return (
-      <TabBarIOS tintColor={"steelblue"}>
-        <Icon.TabBarItem
-          title="Explore"
-          iconName="ios-compass"
-          selectedIconName="ios-compass"
-          selected={this.state.selectedTab === "Explore"}
-          onPress={() => {
-            this.setState({
-              selectedTab: "Explore",
-            });
-          }}>
-          {this._renderContent('Explore')}
-        </Icon.TabBarItem>
-        <Icon.TabBarItem
-          title="News"
-          iconName="ios-chatbubbles"
-          selectedIconName="ios-chatbubbles"
-          selected={this.state.selectedTab === "News"}
-          onPress={() => {
-            this.setState({
-              selectedTab: "News",
-            });
-          }}>
-          {this._renderContent('News')}
-        </Icon.TabBarItem>
-        <Icon.TabBarItem
-          title="360° Turn"
-          iconName="ios-refresh-circle"
-          selectedIconName="ios-refresh-circle"
-          selected={this.state.selectedTab === "Turn"}
-          onPress={() => {
-            this.setState({
-              selectedTab: "Turn",
-            });
-          }}>
-          {this._renderContent('Turn')}
-        </Icon.TabBarItem>
-        <Icon.TabBarItem
-          title="My Iterinary"
-          iconName="ios-map"
-          selectedIconName="ios-map"
-          selected={this.state.selectedTab === "Iterinary"}
-          onPress={() => {
-            this.setState({
-              selectedTab: "Iterinary",
-            });
-          }}>
-          {this._renderContent('Iterinary')}
-        </Icon.TabBarItem>
-        <Icon.TabBarItem
-          title="More"
-          iconName="ios-more"
-          selectedIconName="ios-more"
-          selected={this.state.selectedTab === "More"}
-          onPress={() => {
-            this.setState({
-              selectedTab: "More",
-            });
-          }}>
-          {this._renderContent('More')}
-        </Icon.TabBarItem>
-      </TabBarIOS>
+      <View style={styles.container}>
+        <View style={styles.containerPadding}>
+        </View>
+
+        <View style={styles.containerRow}>
+          <View style={styles.containerFirstColumn}>
+          </View>
+
+          <View style={styles.containerSecondColumn}>
+          </View>
+        </View>
+
+        <View style={styles.containerRow}>
+          <View style={styles.containerSecondColumn}>
+          </View>
+
+          <View style={styles.containerFirstColumn}>
+          </View>
+        </View>
+
+        <View style={styles.containerRow}>
+          <View style={styles.containerFirstColumn}>
+          </View>
+          
+          <View style={styles.containerSecondColumn}>
+          </View>
+        </View>
+
+         <View style={styles.containerPadding}>
+        </View>
+        
+      </View>
     );
   }
 }
 
 var styles = StyleSheet.create({
-  tabContent: {
+  container: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "blue"
   },
-  tabText: {
-    color: "white",
-    margin: 50,
+  containerRow: {
+    flex: 1,
+    flexDirection: "row",
+    alignSelf: 'stretch',
+    backgroundColor: "red"
   },
-  wrapper: {
-    flex: 1
+  containerPadding: {
+    flex: 0.5,
+    alignSelf: 'stretch',
+    backgroundColor: "yellow"
+  },
+  containerFirstColumn: {
+    backgroundColor: "black",
+    flex: 1,
+  },
+  containerSecondColumn: {
+    backgroundColor: "white",
+    flex: 1,
   }
 });
 
