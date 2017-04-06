@@ -10,6 +10,11 @@ var Styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "blue"
   },
+  containerColumn: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: "white"
+  },
   containerRow: {
     flex: 1,
     flexDirection: "row",
@@ -74,11 +79,18 @@ var Styles = StyleSheet.create({
     fontSize: 10,
   },
   headerText: {
-    fontSize: 15,
-    fontWeight: 'bold'
+    fontSize: 20,
+    fontWeight: 'bold',
+    paddingTop: 20,
+    paddingLeft: 0,
+    paddingBottom: 20
   },
   textWrapper: {
-    padding: 5
+    padding: 20
+  },
+  descriptionText: {
+    fontSize: 20,
+    textAlign: 'justify'
   }
 });
 
