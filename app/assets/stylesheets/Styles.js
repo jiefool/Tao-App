@@ -19,7 +19,7 @@ var Styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignSelf: 'stretch',
-    backgroundColor: "red"
+    backgroundColor: "white"
   },
   containerPadding: {
     flex: 0.5,
