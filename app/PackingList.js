@@ -12,45 +12,57 @@ import {
   View,
   Text,
   Image,
+  ListView,
   TouchableHighlight
 } from 'react-native';
 
+
+import ListItem from './components/ListItem'
+import Api from './utilities/Api';
+import Styles from './assets/stylesheets/Styles';
+
 class PackingList extends Component {
- 
+
+  constructor(props) {
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows([''])
+    };
+  }
+
+  componentWillMount(){
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    Api.getCheckList().then((res) =>{
+      this.setState({
+        dataSource: ds.cloneWithRows(res)
+      });
+    });
+  }
+
+  _renderItem(item){
+    return(
+     <ListItem item={item.title} description={item.description} onPress={()=>{}} />
+    );
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.containerPadding}>
+      <View style={Styles.container}>
+        <View style={Styles.containerPaddingSmall}>
+          <Text style={Styles.bigText}>Packing List</Text>
         </View>
 
-        <View style={styles.containerRow}>
-          <View style={styles.containerFirstColumn}>
-            <TouchableHighlight
-              style={styles.menuButton}
-              onPress={() => this.navigate('packingList') }>
-              <Text>
-                Packing List
-              </Text>
-            </TouchableHighlight>
-          </View>
-          <View style={styles.containerFirstColumn}>
-            <TouchableHighlight
-              style={styles.menuButton}
-              onPress={() => this.props.navigator.pop() }>
-              <Image source={require('./assets/images/tao_ytp2.png')}
-                      resizeMode='contain'
-                      style={styles.iconStyle}
-                    />
-            </TouchableHighlight>
-          </View>
+        <View style={Styles.containerRow}>
+         <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} />
         </View>
 
 
-        <View style={styles.containerPadding}>
+        <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight
-                style={styles.menuButton}
+                style={Styles.menuButton}
                 onPress={() => this.props.navigator.pop() }>
-                <Text style={styles.regText}>
+                <Text style={Styles.regText}>
                   Back
                 </Text>
               </TouchableHighlight>
@@ -60,48 +72,5 @@ class PackingList extends Component {
     );
   }
 }
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "blue"
-  },
-  containerRow: {
-    flex: 1,
-    flexDirection: "row",
-    alignSelf: 'stretch',
-    backgroundColor: "red"
-  },
-  containerPadding: {
-    flex: 0.2,
-    alignSelf: 'stretch',
-    backgroundColor: "yellow",
-    justifyContent: "center",
-    alignItems: 'center',
-  },
-  containerFirstColumn: {
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: 'center',
-    flex: 1,
-  },
-  containerSecondColumn: {
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: 'center',
-    flex: 1,
-  },
-  iconStyle: {
-    resizeMode:'contain',
-    height: 170,
-    width: 170
-  },
-  regText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  }
-});
 
 export default PackingList

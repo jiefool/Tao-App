@@ -8,12 +8,14 @@
 import React, { Component } from 'react';
 import {
   Navigator,
-  StyleSheet,
+  Stylesheet,
   View,
   Text,
   Image,
   TouchableHighlight
 } from 'react-native';
+
+import Styles from './assets/stylesheets/Styles';
 
 class MainMenu extends Component {
   constructor(){
@@ -29,99 +31,62 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.containerPadding}>
+      <View style={Styles.container}>
+        <View style={Styles.containerPadding}>
         </View>
 
-        <View style={styles.containerRow}>
-          <View style={styles.containerFirstColumn}>
+        <View style={Styles.containerRow}>
+          <View style={Styles.containerFirstColumn}>
              <TouchableHighlight
-            style={styles.menuButton}
+            style={Styles.menuButton}
             onPress={() => this.navigate('yourTaoTrip') }>
             <Image source={require('./assets/images/tao_icon.png')}
                     resizeMode='contain'
-                    style={styles.iconStyle}
+                    style={Styles.iconStyle}
                   />
           </TouchableHighlight>
              
           </View>
 
-          <View style={styles.containerSecondColumn}>
+          <View style={Styles.containerSecondColumn}>
             <Image source={require('./assets/images/tao_icon2.png')}
                     resizeMode='contain'
-                    style={styles.iconStyle}
+                    style={Styles.iconStyle}
                   />
           </View>
         </View>
 
-        <View style={styles.containerRow}>
-          <View style={styles.containerSecondColumn}>
+        <View style={Styles.containerRow}>
+          <View style={Styles.containerSecondColumn}>
              <Image source={require('./assets/images/tao_icon3.png')}
                     resizeMode='contain'
-                    style={styles.iconStyle}
+                    style={Styles.iconStyle}
                   />
           </View>
 
-          <View style={styles.containerFirstColumn}>
+          <View style={Styles.containerFirstColumn}>
              <Image source={require('./assets/images/tao_icon4.png')}
                     resizeMode='contain'
-                    style={styles.iconStyle}
+                    style={Styles.iconStyle}
                   />
           </View>
         </View>
 
-        <View style={styles.containerRow}>
-          <View style={styles.containerFirstColumn}>
+        <View style={Styles.containerRow}>
+          <View style={Styles.containerFirstColumn}>
              <Image source={require('./assets/images/tao_icon5.png')}
                     resizeMode='contain'
-                    style={styles.iconStyle}
+                    style={Styles.iconStyle}
                   />
           </View>
         </View>
 
-         <View style={styles.containerPadding}>
+         <View style={Styles.containerPadding}>
         </View>
         
       </View>
     );
   }
 }
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "blue"
-  },
-  containerRow: {
-    flex: 1,
-    flexDirection: "row",
-    alignSelf: 'stretch',
-    backgroundColor: "red"
-  },
-  containerPadding: {
-    flex: 0.5,
-    alignSelf: 'stretch',
-    backgroundColor: "yellow"
-  },
-  containerFirstColumn: {
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: 'center',
-    flex: 1,
-  },
-  containerSecondColumn: {
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: 'center',
-    flex: 1,
-  },
-  iconStyle: {
-    resizeMode:'contain',
-    height: 170,
-    width: 170
-  }
-});
 
 export default MainMenu

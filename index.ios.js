@@ -25,6 +25,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import MainMenu from './app/MainMenu';
 import YourTaoTrip from './app/YourTaoTrip';
 import PackingList from './app/PackingList';
+import TaoInfo from './app/TaoInfo';
+
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -48,6 +50,8 @@ export default class taokalahi extends Component {
       return <YourTaoTrip navigator={navigator}/>
     }else if (route.name === 'packingList'){
       return <PackingList navigator={navigator}/>
+    }else if (route.name === 'taoInfo'){
+      return <TaoInfo navigator={navigator}/>
     }
 
   }
@@ -62,41 +66,6 @@ export default class taokalahi extends Component {
   }
 }
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "blue"
-  },
-  containerRow: {
-    flex: 1,
-    flexDirection: "row",
-    alignSelf: 'stretch',
-    backgroundColor: "red"
-  },
-  containerPadding: {
-    flex: 0.5,
-    alignSelf: 'stretch',
-    backgroundColor: "yellow"
-  },
-  containerFirstColumn: {
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: 'center',
-    flex: 1,
-  },
-  containerSecondColumn: {
-    backgroundColor: "white",
-    justifyContent: "center",
-    alignItems: 'center',
-    flex: 1,
-  },
-  iconStyle: {
-    resizeMode:'contain',
-    height: 170,
-    width: 170
-  }
-});
+
 
 AppRegistry.registerComponent('taokalahi', () => taokalahi);
