@@ -1,8 +1,10 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Tao Kalahi App
+ * Developed by: Bagol Labs Robotics & IT Solutions
+ * bagollabs.com
  * @flow
  */
+
 
 import React, { Component } from 'react';
 import {
@@ -12,13 +14,20 @@ import {
   NavigatorIOS,
   StyleSheet,
   View,
-  Text
+  Text,
+  Image,
+  TouchableHighlight
 } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-var Explore = require('./app/explore');
+import MainMenu from './app/MainMenu';
+import YourTaoTrip from './app/YourTaoTrip';
+import PackingList from './app/PackingList';
+import TaoInfo from './app/TaoInfo';
+
+
 var News = require('./app/news');
 var Turn = require('./app/turn');
 var Iterinary = require('./app/iterinary');
@@ -27,105 +36,36 @@ var More = require('./app/more');
 export default class taokalahi extends Component {
   constructor(){
     super();
-    this.state = {selectedTab: "Explore"}
+    this.renderScene = this.renderScene.bind(this)
   }
 
   componentDidMount(){
     SplashScreen.hide();
   }
 
-  _renderContent(component: string) {
-    return (
-      <Navigator initialRoute = {{
-        component: component
-      }}
-      renderScene={
-        this.navigatorRenderScene
-      }
-      />
-    );
-  }
-
-  navigatorRenderScene(route, navigator){
-    _navigator = navigator;
-    switch(route.component){
-      case 'Explore':
-        return(<Explore navigator={navigator} title="Explore"/>);
-      case 'News':
-        return(<News navigator={navigator} title="News"/>);
-      case 'Turn':
-        return(<Turn navigator={navigator} title="Turn"/>);
-      case 'Iterinary':
-        return(<Iterinary navigator={navigator} title="Iterinary"/>);
-      case 'More':
-        return(<More navigator={navigator} title="More"/>);
+  renderScene(route, navigator){
+    if(route.name === 'mainMenu'){
+      return <MainMenu navigator={navigator}/>
+    }else if(route.name === 'yourTaoTrip'){
+      return <YourTaoTrip navigator={navigator}/>
+    }else if (route.name === 'packingList'){
+      return <PackingList navigator={navigator}/>
+    }else if (route.name === 'taoInfo'){
+      return <TaoInfo navigator={navigator}/>
     }
+
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.containerPadding}>
-        </View>
-
-        <View style={styles.containerRow}>
-          <View style={styles.containerFirstColumn}>
-          </View>
-
-          <View style={styles.containerSecondColumn}>
-          </View>
-        </View>
-
-        <View style={styles.containerRow}>
-          <View style={styles.containerSecondColumn}>
-          </View>
-
-          <View style={styles.containerFirstColumn}>
-          </View>
-        </View>
-
-        <View style={styles.containerRow}>
-          <View style={styles.containerFirstColumn}>
-          </View>
-          
-          <View style={styles.containerSecondColumn}>
-          </View>
-        </View>
-
-         <View style={styles.containerPadding}>
-        </View>
-        
-      </View>
+      <Navigator
+        initialRoute={{name: 'mainMenu'}}
+        renderScene={this.renderScene}
+      />
     );
   }
 }
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "blue"
-  },
-  containerRow: {
-    flex: 1,
-    flexDirection: "row",
-    alignSelf: 'stretch',
-    backgroundColor: "red"
-  },
-  containerPadding: {
-    flex: 0.5,
-    alignSelf: 'stretch',
-    backgroundColor: "yellow"
-  },
-  containerFirstColumn: {
-    backgroundColor: "black",
-    flex: 1,
-  },
-  containerSecondColumn: {
-    backgroundColor: "white",
-    flex: 1,
-  }
-});
+
 
 AppRegistry.registerComponent('taokalahi', () => taokalahi);
