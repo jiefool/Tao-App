@@ -91,6 +91,27 @@ var Styles = StyleSheet.create({
   descriptionText: {
     fontSize: 20,
     textAlign: 'justify'
+  },
+  projectItem: {
+    flex: 1,
+    flexDirection: "row",
+    height: 100,
+    backgroundColor: 'skyblue',
+    margin: 3
+  },
+  projectIcon: {
+    resizeMode: 'contain',
+    flex: 1
+  },
+  imageHolder: {
+    flex: .4,
+    backgroundColor: 'brown',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textHolder: {
+    flex: .6,
+    padding: 10
   }
 });
 
