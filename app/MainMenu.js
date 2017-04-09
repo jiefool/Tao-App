@@ -82,10 +82,14 @@ class MainMenu extends Component {
 
         <View style={Styles.containerRow}>
           <View style={Styles.containerFirstColumn}>
+          <TouchableHighlight
+              style={Styles.menuButton}
+              onPress={() => this.navigate('taoAfterTrip') }>
              <Image source={require('./assets/images/tao_icon5.png')}
                     resizeMode='contain'
                     style={Styles.iconStyle}
                   />
+            </TouchableHighlight>
           </View>
         </View>
 
