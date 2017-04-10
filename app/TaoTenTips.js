@@ -165,7 +165,7 @@ class TaoTenTips extends Component {
                 PAALAM - Goodbye / TAGAY - Cheers' Drink up, shot / MAGANDA - Beautiful / ANO YAN? - What is that? / TUBIG - water /
                 BUHAY - life, alive / ANONG PANGALAN MO? - What is your name / GUSTO KO - I like / AYAW KO - I dont like /
                 ISDA - Fish / KAPE - Coffee / SALABAT - Ginger tea / KANIN - rice / PIRATA - boatmen / SUNOG - burnt / LASING - drunk/tipsy
-                / MASYA - happy / PANGIT - not nice, ugly / MAHAL - it means - My love! or Expensive depending on the tone 
+                / MASAYA - happy / PANGIT - not nice, ugly / MAHAL - it means - My love! or Expensive depending on the tone 
                 SIGE - (magic word for anything  positive!) yes please!, see ya!, more please, your welcome, lets go, oh yeah?
                 MABUHAY! - (say it in a loud excited tone with open arms!) means, Long life, Alive. A welcome introduction to an audience
                 declaring your presence. Mostly used in revolutionary slogans and beauty pageants!{'\n'}
