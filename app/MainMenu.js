@@ -37,7 +37,7 @@ class MainMenu extends Component {
 
         <View style={Styles.containerRow}>
           <View style={Styles.containerFirstColumn}>
-             <TouchableHighlight
+            <TouchableHighlight
             style={Styles.menuButton}
             onPress={() => this.navigate('yourTaoTrip') }>
             <Image source={require('./assets/images/tao_icon.png')}
@@ -49,10 +49,14 @@ class MainMenu extends Component {
           </View>
 
           <View style={Styles.containerSecondColumn}>
-            <Image source={require('./assets/images/tao_icon2.png')}
-                    resizeMode='contain'
-                    style={Styles.iconStyle}
-                  />
+            <TouchableHighlight
+              style={Styles.menuButton}
+              onPress={() => this.navigate('taoProjects') }>
+              <Image source={require('./assets/images/tao_icon2.png')}
+                      resizeMode='contain'
+                      style={Styles.iconStyle}
+                    />
+            </TouchableHighlight>
           </View>
         </View>
 
