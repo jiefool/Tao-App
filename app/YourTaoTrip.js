@@ -73,7 +73,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
                 style={Styles.menuButton}
-                onPress={() => this.navigate('packingList') }>
+                onPress={() => this.navigate('taoTenTips') }>
                 <Image source={require('./assets/images/tao_ytp4.png')}
                         resizeMode='contain'
                         style={Styles.iconStyle}
