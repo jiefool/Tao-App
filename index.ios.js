@@ -30,6 +30,7 @@ import TaoTenTips from './app/TaoTenTips';
 import TaoFurtherInfo from './app/TaoFurtherInfo';
 import TaoTopRecommendations from './app/TaoTopRecommendations';
 import TaoProjects from './app/TaoProjects';
+import TaoAroundPh from './app/TaoAroundPh';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -63,8 +64,9 @@ export default class taokalahi extends Component {
       return <TaoTopRecommendations navigator={navigator}/>
     }else if (route.name === 'taoProjects'){
       return <TaoProjects navigator={navigator}/>
+    }else if (route.name === 'taoAroundPh'){
+      return <TaoAroundPh navigator={navigator}/>
     }
-
   }
 
   render() {
