@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import ProjectItem from './components/ProjectItem'
+import GuideItem from './components/GuideItem'
 
 
 class TaoAroundPh extends Component {
@@ -36,7 +36,7 @@ class TaoAroundPh extends Component {
 
   _renderItem(item){
     return(
-     <ProjectItem item={item.title} description={item.description} onPress={()=>{}} />
+     <GuideItem item={item.title} description={item.description} onPress={()=>{}} />
     );
   }
 
@@ -45,7 +45,7 @@ class TaoAroundPh extends Component {
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
-            Tao Projects
+            Around PH Guide
           </Text>
         </View>
         <View style={Styles.containerRow}>
