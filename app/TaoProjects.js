@@ -26,7 +26,7 @@ class TaoProjects extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['Birthday Amrod', 'Happy Birthday Amrod'])
+      dataSource: ds.cloneWithRows([{'title': 'Bamboo Architecture', 'description':'Bamboo Architecture Description'}, {'title': 'Coral Rehabilitation', 'description':'Coral Rehabilitation Description'}])
     };
   }
 
@@ -36,7 +36,7 @@ class TaoProjects extends Component {
 
   _renderItem(item){
     return(
-     <ProjectItem item={item} description={item} onPress={()=>{}} />
+     <ProjectItem item={item.title} description={item.description} onPress={()=>{}} />
     );
   }
 

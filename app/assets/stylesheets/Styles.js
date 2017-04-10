@@ -19,7 +19,7 @@ var Styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignSelf: 'stretch',
-    backgroundColor: "red"
+    backgroundColor: "white"
   },
   containerPadding: {
     flex: 0.5,
@@ -96,9 +96,22 @@ var Styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     height: 100,
+    backgroundColor: 'skyblue',
+    margin: 3
   },
   projectIcon: {
-    height: 50
+    resizeMode: 'contain',
+    flex: 1
+  },
+  imageHolder: {
+    flex: .4,
+    backgroundColor: 'brown',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textHolder: {
+    flex: .6,
+    padding: 10
   }
 });
 
