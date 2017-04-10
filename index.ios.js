@@ -26,6 +26,7 @@ import MainMenu from './app/MainMenu';
 import YourTaoTrip from './app/YourTaoTrip';
 import PackingList from './app/PackingList';
 import TaoInfo from './app/TaoInfo';
+import TaoProjects from './app/TaoProjects';
 
 
 var News = require('./app/news');
@@ -52,6 +53,8 @@ export default class taokalahi extends Component {
       return <PackingList navigator={navigator}/>
     }else if (route.name === 'taoInfo'){
       return <TaoInfo navigator={navigator}/>
+    }else if (route.name === 'taoProjects'){
+      return <TaoProjects navigator={navigator}/>
     }
 
   }

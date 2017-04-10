@@ -91,6 +91,14 @@ var Styles = StyleSheet.create({
   descriptionText: {
     fontSize: 20,
     textAlign: 'justify'
+  },
+  projectItem: {
+    flex: 1,
+    flexDirection: "row",
+    height: 100,
+  },
+  projectIcon: {
+    height: 50
   }
 });
 
