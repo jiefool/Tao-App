@@ -18,7 +18,7 @@ import {
 import Styles from './assets/stylesheets/Styles';
 
 class YourTaoTrip extends Component {
-   constructor(){
+  constructor(){
     super()
     this.navigate = this.navigate.bind(this)
   }

@@ -18,7 +18,8 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import ProjectItem from './components/ProjectItem'
+import ProjectItem from './components/ProjectItem';
+import Api from './utilities/Api';
 
 
 class TaoProjects extends Component {
@@ -26,17 +27,28 @@ class TaoProjects extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([{'title': 'Bamboo Architecture', 'description':'Bamboo Architecture Description'}, {'title': 'Coral Rehabilitation', 'description':'Coral Rehabilitation Description'}])
+      dataSource: ds.cloneWithRows([''])
     };
+    this.navigate = this.navigate.bind(this)
+  }
+
+  navigate(name){
+    this.props.navigator.push({name})
   }
 
   componentWillMount(){
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    Api.getTaoProjects().then((res) =>{
+      this.setState({
+        dataSource: ds.cloneWithRows(res)
+      });
+    });
   }
 
-  _renderItem(item){
+  _renderItem(data){
     return(
-     <ProjectItem item={item.title} description={item.description} onPress={()=>{}} />
+     <ProjectItem projectData = {data} 
+        onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
     );
   }
 
@@ -49,7 +61,7 @@ class TaoProjects extends Component {
           </Text>
         </View>
         <View style={Styles.containerRow}>
-         <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} />
+          <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
         </View>
         <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight

@@ -4,19 +4,22 @@ import Styles from '../assets/stylesheets/Styles';
 
 
 class ProjectItem extends Component {
+
+  _renderContent(){
+
+  }
   render(){
     return(
        <TouchableHighlight onPress={ this.props.onPress }>
         <View style={Styles.projectItem}>
           <View style={Styles.imageHolder}>
-            <Image source={require('../assets/images/tao_icon2.png')}
-                        resizeMode='contain'
+            <Image source={{uri: 'https://taotechph.com' + this.props.projectData.feature_image_thumb }}
                         style={Styles.projectIcon}
                       />
           </View>
           <View style={Styles.textHolder}>
-            <Text style={Styles.liItem}> {this.props.item}</Text>
-            <Text style={Styles.liItemInfo}> {this.props.description}</Text>
+            <Text style={Styles.liItem}> {this.props.projectData.title}</Text>
+            <Text style={Styles.liItemInfo}> {this.props.projectData.short_description}</Text>
           </View>
         </View>
       </TouchableHighlight>

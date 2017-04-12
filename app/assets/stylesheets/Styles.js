@@ -61,6 +61,11 @@ var Styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingTop: 15
   },
+  smallText: {
+    fontSize: 15,
+    paddingTop: 15,
+    textAlign: 'justify'
+  },
 
   //components list item
   li: {
@@ -100,8 +105,16 @@ var Styles = StyleSheet.create({
     margin: 3
   },
   projectIcon: {
-    resizeMode: 'contain',
-    flex: 1
+    flex: 1,
+    height: 100,
+    width: 140,
+    resizeMode: 'cover'
+  },
+  showProjectIcon: {
+    flex: 1,
+    height: 300,
+    width: 480,
+    resizeMode: 'cover'
   },
   imageHolder: {
     flex: .4,
