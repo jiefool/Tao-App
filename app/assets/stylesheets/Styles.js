@@ -125,7 +125,28 @@ var Styles = StyleSheet.create({
   textHolder: {
     flex: .6,
     padding: 10
+  },
+  //Searching
+  searchInput: {
+    height: 40,
+    width: 300,
+    fontSize: 18,
+    color: 'black',
+  },
+  buttonText: {
+    fontSize:18,
+    color:'white',
+    alignSelf: 'center'
+  },
+  button: {
+    height:40,
+    backgroundColor: 'blue',
+    borderColor: 'black',
+    width: 80,
+    justifyContent: 'center',
+    alignSelf: 'center'
   }
+
 });
 
 export default Styles
