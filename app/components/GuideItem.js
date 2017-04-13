@@ -9,14 +9,15 @@ class GuideItem extends Component {
        <TouchableHighlight onPress={ this.props.onPress }>
         <View style={Styles.projectItem}>
           <View style={Styles.imageHolder}>
-            <Image source={require('../assets/images/tao_icon4.png')}
+            <Image source={{uri: 'https://taotechph.com' + this.props.data.feature_image_thumb }}
                         resizeMode='contain'
                         style={Styles.projectIcon}
                       />
           </View>
           <View style={Styles.textHolder}>
-            <Text style={Styles.liItem}> {this.props.item}</Text>
-            <Text style={Styles.liItemInfo}> {this.props.description}</Text>
+            <Text style={Styles.liItem}> {this.props.data.business_name}</Text>
+            <Text style={Styles.liItemInfo}> {this.props.data.short_description}</Text>
+             <Text style={Styles.regText}> {this.props.data.price_rate} php</Text>
           </View>
         </View>
       </TouchableHighlight>

@@ -82,6 +82,7 @@ var Styles = StyleSheet.create({
   },
   liItemInfo: {
     fontSize: 10,
+    textAlign: 'left'
   },
   headerText: {
     fontSize: 20,
@@ -118,7 +119,7 @@ var Styles = StyleSheet.create({
   },
   imageHolder: {
     flex: .4,
-    backgroundColor: 'brown',
+    backgroundColor: 'skyblue',
     justifyContent: 'center',
     alignItems: 'center'
   },
