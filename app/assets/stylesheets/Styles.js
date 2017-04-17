@@ -19,7 +19,7 @@ var Styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignSelf: 'stretch',
-    backgroundColor: "red"
+    backgroundColor: "white"
   },
   containerPadding: {
     flex: 0.5,
@@ -58,8 +58,16 @@ var Styles = StyleSheet.create({
   },
   bigText: {
     fontSize: 30,
-    fontWeight: 'bold',
-    paddingTop: 15
+    fontWeight: 'bold'
+  },
+  smallText: {
+    fontSize: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
+    textAlign: 'justify'
+  },
+  bText: {
+    fontWeight: 'bold'
   },
 
   //components list item
@@ -77,6 +85,7 @@ var Styles = StyleSheet.create({
   },
   liItemInfo: {
     fontSize: 10,
+    textAlign: 'left'
   },
   headerText: {
     fontSize: 20,
@@ -101,8 +110,76 @@ var Styles = StyleSheet.create({
     color: 'black',
     paddingHorizontal: 10,
     textAlign: 'center',
+  },
+  projectItem: {
+    flex: 1,
+    flexDirection: "row",
+    height: 100,
+    backgroundColor: 'skyblue',
+    margin: 3
+  },
+  projectIcon: {
+    flex: 1,
+    height: 100,
+    width: 140,
+    resizeMode: 'cover'
+  },
+  showProjectIcon: {
+    flex: 1,
+    height: 300,
+    width: 480,
+    resizeMode: 'cover'
+  },
+  imageHolder: {
+    flex: .4,
+    backgroundColor: 'skyblue',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textHolder: {
+    flex: .6,
+    padding: 10
+  },
+  //Searching
+  searchInput: {
+    height: 40,
+    width: 300,
+    fontSize: 18,
+    color: 'black',
+  },
+  buttonText: {
+    fontSize:18,
+    color:'white',
+    alignSelf: 'center'
+  },
+  button: {
+    height:40,
+    backgroundColor: 'blue',
+    borderColor: 'black',
+    width: 80,
+    justifyContent: 'center',
+    alignSelf: 'center'
+  },
+  btnWrapper: {
+    alignItems: 'center'
+  },
+  btnBlock: {
+    backgroundColor: 'blue',
+    width: 200,
+    alignItems: 'center'
+  },
+
+  textInputWrapper: {
+    padding: 15
+  },
+
+  regTextInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingLeft: 10,
+    margin: 3
   }
-  
 });
 
 export default Styles

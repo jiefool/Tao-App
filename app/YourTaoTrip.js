@@ -18,7 +18,7 @@ import {
 import Styles from './assets/stylesheets/Styles';
 
 class YourTaoTrip extends Component {
-   constructor(){
+  constructor(){
     super()
     this.navigate = this.navigate.bind(this)
   }
@@ -73,7 +73,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
                 style={Styles.menuButton}
-                onPress={() => this.navigate('packingList') }>
+                onPress={() => this.navigate('taoTenTips') }>
                 <Image source={require('./assets/images/tao_ytp4.png')}
                         resizeMode='contain'
                         style={Styles.iconStyle}
@@ -85,7 +85,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
                 style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
+                onPress={() => this.navigate('taoFurtherInfo') }>
                 <Image source={require('./assets/images/tao_ytp5.png')}
                         resizeMode='contain'
                         style={Styles.iconStyle}
@@ -95,7 +95,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
                 style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
+                onPress={() => this.navigate('taoTopRecommendations') }>
                 <Image source={require('./assets/images/tao_ytp6.png')}
                         resizeMode='contain'
                         style={Styles.iconStyle}
