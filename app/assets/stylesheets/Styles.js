@@ -8,7 +8,7 @@ var Styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "blue"
+    backgroundColor: "white"
   },
   containerColumn: {
     flex: 1,
@@ -90,8 +90,19 @@ var Styles = StyleSheet.create({
   },
   descriptionText: {
     fontSize: 20,
-    textAlign: 'justify'
+    textAlign: 'justify',
+  },
+  checkInput: {
+    height: 40,
+    width: 250,
+    backgroundColor: 'white',
+    marginBottom: 20,
+    marginTop: 10,
+    color: 'black',
+    paddingHorizontal: 10,
+    textAlign: 'center',
   }
+  
 });
 
 export default Styles
