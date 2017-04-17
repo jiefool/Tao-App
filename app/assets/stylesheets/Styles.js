@@ -58,13 +58,16 @@ var Styles = StyleSheet.create({
   },
   bigText: {
     fontSize: 30,
-    fontWeight: 'bold',
-    paddingTop: 15
+    fontWeight: 'bold'
   },
   smallText: {
     fontSize: 15,
     paddingTop: 15,
+    paddingBottom: 15,
     textAlign: 'justify'
+  },
+  bText: {
+    fontWeight: 'bold'
   },
 
   //components list item
@@ -146,6 +149,26 @@ var Styles = StyleSheet.create({
     width: 80,
     justifyContent: 'center',
     alignSelf: 'center'
+  },
+  btnWrapper: {
+    alignItems: 'center'
+  },
+  btnBlock: {
+    backgroundColor: 'blue',
+    width: 200,
+    alignItems: 'center'
+  },
+
+  textInputWrapper: {
+    padding: 15
+  },
+
+  regTextInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingLeft: 10,
+    margin: 3
   }
 
 });

@@ -33,6 +33,10 @@ import TaoProjects from './app/TaoProjects';
 import TaoAroundPh from './app/TaoAroundPh';
 import ShowTaoProject from './app/ShowTaoProject';
 import ShowTaoAroundPh from './app/ShowTaoAroundPh';
+import CampNgeyngey from './app/CampNgeyngey';
+import ApplyNgeyngey from './app/ApplyNgeyngey';
+import TaoAfterTrip from './app/TaoAfterTrip';
+
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -72,6 +76,12 @@ export default class taokalahi extends Component {
       return <ShowTaoProject navigator={navigator} projectData = {route.name.data}/>
     }else if (route.name.name === 'showTaoAroundPh'){
       return <ShowTaoAroundPh navigator={navigator} projectData = {route.name.data}/>
+    }else if (route.name === 'campNgeyngey'){
+      return <CampNgeyngey navigator={navigator} />
+    }else if (route.name === 'applyNgeyngey'){
+      return <ApplyNgeyngey navigator={navigator} />
+    }else if (route.name === 'taoAfterTrip'){
+      return <TaoAfterTrip navigator={navigator}/>
     }
   }
 

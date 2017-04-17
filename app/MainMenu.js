@@ -62,10 +62,14 @@ class MainMenu extends Component {
 
         <View style={Styles.containerRow}>
           <View style={Styles.containerSecondColumn}>
-             <Image source={require('./assets/images/tao_icon3.png')}
+            <TouchableHighlight
+              style={Styles.menuButton}
+              onPress={() => this.navigate('campNgeyngey') }>
+              <Image source={require('./assets/images/tao_icon3.png')}
                     resizeMode='contain'
                     style={Styles.iconStyle}
                   />
+            </TouchableHighlight>
           </View>
 
           <View style={Styles.containerFirstColumn}>
