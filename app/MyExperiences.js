@@ -17,7 +17,7 @@ import {
 
 import Styles from './assets/stylesheets/Styles';
 
-class YourTaoTrip extends Component {
+class MyExperiences extends Component {
   constructor(){
     super()
     this.navigate = this.navigate.bind(this)
@@ -33,7 +33,7 @@ class YourTaoTrip extends Component {
       <View style={Styles.container}>
         <View style={Styles.containerPadding}>
           <Text style={Styles.bigText}>
-            Your Tao Trip
+            My Experiences
           </Text>
         </View>
 
@@ -76,7 +76,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
                 style={Styles.menuButton}
-                onPress={() => this.navigate('myExperiences') }>
+                onPress={() => this.navigate('taoFurtherInfo') }>
                 <Image source={require('./assets/images/tao_icon7.png')}
                         resizeMode='contain'
                         style={Styles.iconStyle}
@@ -112,4 +112,4 @@ class YourTaoTrip extends Component {
   }
 }
 
-export default YourTaoTrip
+export default MyExperiences
