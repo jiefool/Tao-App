@@ -26,6 +26,7 @@ import MainMenu from './app/MainMenu';
 import YourTaoTrip from './app/YourTaoTrip';
 import PackingList from './app/PackingList';
 import TaoInfo from './app/TaoInfo';
+import Checkin from './app/Checkin';
 import TaoTenTips from './app/TaoTenTips';
 import TaoFurtherInfo from './app/TaoFurtherInfo';
 import TaoTopRecommendations from './app/TaoTopRecommendations';
@@ -57,6 +58,8 @@ export default class taokalahi extends Component {
       return <PackingList navigator={navigator}/>
     }else if (route.name === 'taoInfo'){
       return <TaoInfo navigator={navigator}/>
+    }else if (route.name === 'checkin'){
+      return <Checkin navigator={navigator}/>
     }else if (route.name === 'taoTenTips'){
       return <TaoTenTips navigator={navigator}/>
     }else if (route.name === 'taoFurtherInfo'){
