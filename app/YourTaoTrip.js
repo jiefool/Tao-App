@@ -48,16 +48,7 @@ class YourTaoTrip extends Component {
                       />
               </TouchableHighlight>
             </View>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                 onPress={() => this.navigate('checkin') }>
-                <Image source={require('./assets/images/tao_ytp2.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>
+            
           </View>
           <View style={Styles.containerRow}>
             <View style={Styles.containerFirstColumn}>

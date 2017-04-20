@@ -24,7 +24,12 @@ import Styles from './assets/stylesheets/Styles';
 class Checkin extends Component {
   constructor(props) {
     super(props);
+    this.navigate = this.navigate.bind(this)
     this.state = { text: '' };
+  }
+
+  navigate(name){
+    this.props.navigator.push({name})
   }
 
   render() {
@@ -36,7 +41,11 @@ class Checkin extends Component {
           </Text>
           </View>
             <TextInput
-            placeholder='First Name'
+              placeholder='Book Ref:'
+                style={Styles.checkInput}
+                />
+            <TextInput
+              placeholder='First Name'
                 style={Styles.checkInput}
                 />
             <TextInput
@@ -51,9 +60,14 @@ class Checkin extends Component {
                 placeholder='Birthdate'
                 style={Styles.checkInput}
                 />
+            <TextInput
+                placeholder='Email:'
+                style={Styles.checkInput}
+                />
+
                 <TouchableHighlight
                 style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
+                onPress={() => this.navigate('yourTaoTrip') }>
                 <Image source={require('./assets/images/button.png')}
                         resizeMode='contain'
                         style={Styles.iconStyle}
