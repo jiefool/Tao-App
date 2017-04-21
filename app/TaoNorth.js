@@ -33,7 +33,7 @@ class TaoNorth extends Component {
               <Button style={Styles.bText}
                 onPress={()=> this.navigate('applyNgeyngey') }
                 title="Apply Now"
-                color="white"
+                color="blue"
                 accessibilityLabel="Learn more about this purple button"
               />
             </View>

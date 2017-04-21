@@ -61,7 +61,7 @@ class ApplyNgeyngey extends Component {
                     <Button style={Styles.bText}
                       onPress={()=> this.sendApplication() }
                       title="Apply"
-                      color="white"
+                      color="blue"
                       accessibilityLabel="Learn more about this purple button"
                     />
                   </View>

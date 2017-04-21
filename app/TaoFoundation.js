@@ -31,8 +31,8 @@ class TaoFoundation extends Component {
             <View style={Styles.btnBlock}>
               <Button style={Styles.bText}
                 onPress={()=> this.navigate('taoProjects') }
-                title="Apply Now"
-                color="white"
+                title="Go to Tao Projects"
+                color="blue"
                 accessibilityLabel="Learn more about this purple button"
               />
             </View>
