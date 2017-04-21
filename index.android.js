@@ -34,6 +34,14 @@ import TaoProjects from './app/TaoProjects';
 import TaoAroundPh from './app/TaoAroundPh';
 import TaoAfterTrip from './app/TaoAfterTrip';
 import MyExperiences from './app/MyExperiences';
+import TaoOffers from './app/TaoOffers';
+import GuideToPh from './app/GuideToPh';
+import CampNgeyngey from './app/CampNgeyngey';
+import ApplyNgeyngey from './app/ApplyNgeyngey';
+import ShowTaoProject from './app/ShowTaoProject';
+import TaoNorth from './app/TaoNorth';
+import Tao5dayExpedition from './app/Tao5dayExpedition';
+import TaoFoundation from './app/TaoFoundation';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -75,6 +83,22 @@ export default class taokalahi extends Component {
       return <TaoAfterTrip navigator={navigator}/>
     }else if (route.name === 'myExperiences'){
       return <MyExperiences navigator={navigator}/>
+    }else if (route.name === 'taoOffers'){
+      return <TaoOffers navigator={navigator}/>
+    }else if (route.name === 'guideToPh'){
+      return <GuideToPh navigator={navigator}/>
+    }else if (route.name === 'campNgeyngey'){
+      return <CampNgeyngey navigator={navigator}/>
+    }else if (route.name === 'applyNgeyngey'){
+      return <ApplyNgeyngey navigator={navigator}/>
+    }else if (route.name.name === 'showTaoProject'){
+      return <ShowTaoProject navigator={navigator} projectData = {route.name.data}/>
+    }else if (route.name === 'taoNorth'){
+      return <TaoNorth navigator={navigator}/>
+    }else if (route.name === 'tao5dayExpedition'){
+      return <Tao5dayExpedition navigator={navigator}/>
+    }else if (route.name === 'taoFoundation'){
+      return <TaoFoundation navigator={navigator}/>
     }
   }
 

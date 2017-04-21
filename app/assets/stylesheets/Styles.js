@@ -127,8 +127,14 @@ var Styles = StyleSheet.create({
   showProjectIcon: {
     flex: 1,
     height: 300,
-    width: 480,
+    width: 470,
     resizeMode: 'cover'
+  },
+  showProjectHeader: {
+    flex: 1,
+    height: 220,
+    width: 418,
+    resizeMode: 'contain'
   },
   imageHolder: {
     flex: .4,

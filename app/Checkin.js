@@ -37,7 +37,7 @@ class Checkin extends Component {
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
-            Your Tao Trip Checkin:
+           Map Experience Events
           </Text>
           </View>
             <TextInput
