@@ -17,7 +17,7 @@ class TaoFoundation extends Component {
     return(
         <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>Camp Ngeyngey</Text>
+          <Text style={Styles.bigText}>Tao Foundation</Text>
         </View>
 
         <ScrollView style={Styles.containerColumn}>

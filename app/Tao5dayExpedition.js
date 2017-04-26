@@ -17,7 +17,7 @@ class Tao5dayExpedition extends Component {
     return(
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>Camp Ngeyngey</Text>
+          <Text style={Styles.bigText}>Tao 5 Day Expedition</Text>
         </View>
 
         <ScrollView style={Styles.containerColumn}>
