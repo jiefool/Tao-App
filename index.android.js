@@ -48,6 +48,7 @@ import TripBaseCamps from './app/TripBaseCamps';
 import TripExplorers from './app/TripExplorers';
 import TripStories from './app/TripStories';
 import TripRecipes from './app/TripRecipes';
+import ExperiencesEvents from './app/ExperiencesEvents';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -117,6 +118,8 @@ export default class taokalahi extends Component {
       return <TripStories navigator={navigator}/>
     }else if (route.name === 'tripRecipes'){
       return <TripRecipes navigator={navigator}/>
+    }else if (route.name === 'experiencesEvents'){
+      return <ExperiencesEvents navigator={navigator}/>
     }
   }
 

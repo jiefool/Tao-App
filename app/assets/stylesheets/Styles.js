@@ -170,7 +170,7 @@ var Styles = StyleSheet.create({
     alignItems: 'center'
   },
   btnBlock: {
-    backgroundColor: 'blue',
+    backgroundColor: 'yellow',
     width: 200,
     alignItems: 'center'
   },

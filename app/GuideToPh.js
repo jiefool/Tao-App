@@ -16,6 +16,7 @@ import {
   ScrollView,
   TouchableHighlight,
   TextInput,
+  Button,
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
@@ -40,6 +41,16 @@ class GuideToPh extends Component {
            Map Experience Events
           </Text>
           </View>
+          <View style={Styles.btnWrapper}>    
+            <View style={Styles.btnBlock}>
+              <Button style={Styles.bText}
+                onPress={()=> this.navigate('experiencesEvents') }
+                title="Apply Now"
+                color="yellow"
+                accessibilityLabel="Learn more about this purple button"
+              />
+            </View>
+          </View> 
             
 
                 
