@@ -99,7 +99,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('taoInfo') }>
+                  onPress={() => this.navigate('tripBoat') }>
                   <Image source={require('./assets/images/tao_boat_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -109,7 +109,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('packingList') }>
+                  onPress={() => this.navigate('tripCrewList') }>
                   <Image source={require('./assets/images/tao_crew_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -121,7 +121,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('taoTenTips') }>
+                  onPress={() => this.navigate('tripExplorers') }>
                   <Image source={require('./assets/images/tao_explorer_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -131,7 +131,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('taoFurtherInfo') }>
+                  onPress={() => this.navigate('tripBaseCamps') }>
                   <Image source={require('./assets/images/tao_basecamps_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -143,7 +143,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('taoTopRecommendations') }>
+                  onPress={() => this.navigate('tripStories') }>
                   <Image source={require('./assets/images/tao_stories_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -153,7 +153,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('taoTopRecommendations') }>
+                  onPress={() => this.navigate('tripRecipes') }>
                   <Image source={require('./assets/images/tao_recipes_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
