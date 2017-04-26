@@ -33,7 +33,6 @@ import TaoTopRecommendations from './app/TaoTopRecommendations';
 import TaoProjects from './app/TaoProjects';
 import TaoAroundPh from './app/TaoAroundPh';
 import TaoAfterTrip from './app/TaoAfterTrip';
-import MyExperiences from './app/MyExperiences';
 import TaoOffers from './app/TaoOffers';
 import GuideToPh from './app/GuideToPh';
 import CampNgeyngey from './app/CampNgeyngey';
@@ -82,8 +81,6 @@ export default class taokalahi extends Component {
       return <TaoAroundPh navigator={navigator}/>
     }else if (route.name === 'taoAfterTrip'){
       return <TaoAfterTrip navigator={navigator}/>
-    }else if (route.name === 'myExperiences'){
-      return <MyExperiences navigator={navigator}/>
     }else if (route.name === 'taoOffers'){
       return <TaoOffers navigator={navigator}/>
     }else if (route.name === 'guideToPh'){
