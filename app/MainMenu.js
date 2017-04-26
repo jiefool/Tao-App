@@ -39,7 +39,7 @@ class MainMenu extends Component {
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
             style={Styles.menuButton}
-            onPress={() => this.navigate('checkin') }>
+            onPress={() => this.navigate('newExplorerForm') }>
             <Image source={require('./assets/images/tao_icon.png')}
                     resizeMode='contain'
                     style={Styles.iconStyle}

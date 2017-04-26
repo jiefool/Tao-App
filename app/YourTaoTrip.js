@@ -12,6 +12,7 @@ import {
   View,
   Text,
   Image,
+  ScrollView,
   TouchableHighlight
 } from 'react-native';
 
@@ -37,6 +38,7 @@ class YourTaoTrip extends Component {
           </Text>
         </View>
 
+        <ScrollView>
           <View style={Styles.containerRow}>
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
@@ -50,6 +52,7 @@ class YourTaoTrip extends Component {
             </View>
             
           </View>
+          
           <View style={Styles.containerRow}>
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
@@ -94,7 +97,73 @@ class YourTaoTrip extends Component {
               </TouchableHighlight>
             </View>
           </View>
-
+             <View style={Styles.containerRow}>
+          <View style={Styles.containerFirstColumn}>
+              <TouchableHighlight
+                style={Styles.menuButton}
+                onPress={() => this.navigate('taoInfo') }>
+                <Image source={require('./assets/images/tao_boat_icon.png')}
+                        resizeMode='contain'
+                        style={Styles.iconStyle}
+                      />
+              </TouchableHighlight>
+            </View>
+            <View style={Styles.containerFirstColumn}>
+              <TouchableHighlight
+                style={Styles.menuButton}
+                onPress={() => this.navigate('packingList') }>
+                <Image source={require('./assets/images/tao_crew_icon.png')}
+                        resizeMode='contain'
+                        style={Styles.iconStyle}
+                      />
+              </TouchableHighlight>
+            </View>
+          </View>
+          <View style={Styles.containerRow}>
+            <View style={Styles.containerFirstColumn}>
+              <TouchableHighlight
+                style={Styles.menuButton}
+                onPress={() => this.navigate('taoTenTips') }>
+                <Image source={require('./assets/images/tao_explorer_icon.png')}
+                        resizeMode='contain'
+                        style={Styles.iconStyle}
+                      />
+              </TouchableHighlight>
+            </View>    
+            <View style={Styles.containerFirstColumn}>
+              <TouchableHighlight
+                style={Styles.menuButton}
+                onPress={() => this.navigate('taoFurtherInfo') }>
+                <Image source={require('./assets/images/tao_basecamps_icon.png')}
+                        resizeMode='contain'
+                        style={Styles.iconStyle}
+                      />
+              </TouchableHighlight>
+            </View>
+          </View>
+          <View style={Styles.containerRow}>
+            <View style={Styles.containerFirstColumn}>
+              <TouchableHighlight
+                style={Styles.menuButton}
+                onPress={() => this.navigate('taoTopRecommendations') }>
+                <Image source={require('./assets/images/tao_stories_icon.png')}
+                        resizeMode='contain'
+                        style={Styles.iconStyle}
+                      />
+              </TouchableHighlight>
+            </View>
+            <View style={Styles.containerFirstColumn}>
+              <TouchableHighlight
+                style={Styles.menuButton}
+                onPress={() => this.navigate('taoTopRecommendations') }>
+                <Image source={require('./assets/images/tao_recipes_icon.png')}
+                        resizeMode='contain'
+                        style={Styles.iconStyle}
+                      />
+              </TouchableHighlight>
+            </View>
+          </View>
+        </ScrollView>
 
 
         <View style={Styles.containerPadding}>
@@ -107,7 +176,7 @@ class YourTaoTrip extends Component {
               </TouchableHighlight>
 
         </View>
-      </View>
+    </View>
     );
   }
 }

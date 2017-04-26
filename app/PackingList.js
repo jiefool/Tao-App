@@ -20,6 +20,7 @@ import {
 import ListItem from './components/ListItem'
 import Api from './utilities/Api';
 import Styles from './assets/stylesheets/Styles';
+var checkListData = require('./assets/data/check_lists.json');
 
 class PackingList extends Component {
 
@@ -27,18 +28,18 @@ class PackingList extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([''])
+      dataSource: ds.cloneWithRows(checkListData)
     };
   }
 
-  componentWillMount(){
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    Api.getCheckList().then((res) =>{
-      this.setState({
-        dataSource: ds.cloneWithRows(res)
-      });
-    });
-  }
+  // componentWillMount(){
+  //   const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+  //   Api.getCheckList().then((res) =>{
+  //     this.setState({
+  //       dataSource: ds.cloneWithRows(res)
+  //     });
+  //   });
+  // }
 
   _renderItem(item){
     return(
