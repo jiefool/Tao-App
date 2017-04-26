@@ -32,141 +32,140 @@ class YourTaoTrip extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPadding}>
+        <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
             Your Tao Trip
           </Text>
         </View>
-
-        <ScrollView>
-          <View style={Styles.containerRow}>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoInfo') }>
-                <Image source={require('./assets/images/tao_ytp.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
+          <ScrollView style={Styles.containerColumn}>
+            <View style={Styles.containerRow}>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoInfo') }>
+                  <Image source={require('./assets/images/tao_ytp.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
+              
             </View>
-            
-          </View>
-          
-          <View style={Styles.containerRow}>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('packingList') }>
-                <Image source={require('./assets/images/tao_ytp3.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
+            <View style={Styles.containerRow}>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('packingList') }>
+                  <Image source={require('./assets/images/tao_ytp3.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoTenTips') }>
+                  <Image source={require('./assets/images/tao_ytp4.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
             </View>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoTenTips') }>
-                <Image source={require('./assets/images/tao_ytp4.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
+            <View style={Styles.containerRow}>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('myExperiences') }>
+                  <Image source={require('./assets/images/tao_icon7.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoTopRecommendations') }>
+                  <Image source={require('./assets/images/tao_ytp6.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
             </View>
-          </View>
-          <View style={Styles.containerRow}>
+               <View style={Styles.containerRow}>
             <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('myExperiences') }>
-                <Image source={require('./assets/images/tao_icon7.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoInfo') }>
+                  <Image source={require('./assets/images/tao_boat_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('packingList') }>
+                  <Image source={require('./assets/images/tao_crew_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
             </View>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoTopRecommendations') }>
-                <Image source={require('./assets/images/tao_ytp6.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
+            <View style={Styles.containerRow}>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoTenTips') }>
+                  <Image source={require('./assets/images/tao_explorer_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>    
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoFurtherInfo') }>
+                  <Image source={require('./assets/images/tao_basecamps_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
             </View>
-          </View>
-             <View style={Styles.containerRow}>
-          <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoInfo') }>
-                <Image source={require('./assets/images/tao_boat_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
+            <View style={Styles.containerRow}>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoTopRecommendations') }>
+                  <Image source={require('./assets/images/tao_stories_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoTopRecommendations') }>
+                  <Image source={require('./assets/images/tao_recipes_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
             </View>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('packingList') }>
-                <Image source={require('./assets/images/tao_crew_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>
-          </View>
-          <View style={Styles.containerRow}>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoTenTips') }>
-                <Image source={require('./assets/images/tao_explorer_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>    
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoFurtherInfo') }>
-                <Image source={require('./assets/images/tao_basecamps_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>
-          </View>
-          <View style={Styles.containerRow}>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoTopRecommendations') }>
-                <Image source={require('./assets/images/tao_stories_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoTopRecommendations') }>
-                <Image source={require('./assets/images/tao_recipes_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>
-          </View>
-        </ScrollView>
+          </ScrollView>
 
 
-        <View style={Styles.containerPadding}>
+
+        <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight
                 style={Styles.menuButton}
                 onPress={() => this.props.navigator.pop() }>
@@ -176,7 +175,8 @@ class YourTaoTrip extends Component {
               </TouchableHighlight>
 
         </View>
-    </View>
+      </View>
+
     );
   }
 }
