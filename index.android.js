@@ -42,6 +42,13 @@ import TaoNorth from './app/TaoNorth';
 import Tao5dayExpedition from './app/Tao5dayExpedition';
 import TaoFoundation from './app/TaoFoundation';
 import NewExplorerForm from './app/NewExplorerForm';
+import TripBoat from './app/TripBoat';
+import TripCrewList from './app/TripCrewList';
+import TripBaseCamps from './app/TripBaseCamps';
+import TripExplorers from './app/TripExplorers';
+import TripStories from './app/TripStories';
+import TripRecipes from './app/TripRecipes';
+import ExperiencesEvents from './app/ExperiencesEvents';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -99,6 +106,20 @@ export default class taokalahi extends Component {
       return <TaoFoundation navigator={navigator}/>
     }else if (route.name === 'newExplorerForm'){
       return <NewExplorerForm navigator={navigator}/>
+    }else if (route.name === 'tripBoat'){
+      return <TripBoat navigator={navigator}/>
+    }else if (route.name === 'tripCrewList'){
+      return <TripCrewList navigator={navigator}/>
+    }else if (route.name === 'tripBaseCamps'){
+      return <TripBaseCamps navigator={navigator}/>
+    }else if (route.name === 'tripExplorers'){
+      return <TripExplorers navigator={navigator}/>
+    }else if (route.name === 'tripStories'){
+      return <TripStories navigator={navigator}/>
+    }else if (route.name === 'tripRecipes'){
+      return <TripRecipes navigator={navigator}/>
+    }else if (route.name === 'experiencesEvents'){
+      return <ExperiencesEvents navigator={navigator}/>
     }
   }
 

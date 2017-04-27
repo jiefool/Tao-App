@@ -14,60 +14,55 @@ import {
   Image,
   ListView,
   ScrollView,
-  TouchableHighlight,
-  TextInput,
-  Button,
+  TouchableHighlight
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import MapView from 'react-native-maps';
+import ProjectItem from './components/ProjectItem';
+import Api from './utilities/Api';
 
 
-class GuideToPh extends Component {
+class TripCrewList extends Component {
   constructor(props) {
     super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows([''])
+    };
     this.navigate = this.navigate.bind(this)
-    this.state = { text: '' };
   }
 
   navigate(name){
     this.props.navigator.push({name})
   }
 
+  componentWillMount(){
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    Api.getTaoProjects().then((res) =>{
+      this.setState({
+        dataSource: ds.cloneWithRows(res)
+      });
+    });
+  }
+
+  _renderItem(data){
+    return(
+     <ProjectItem projectData = {data} 
+        onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
+    );
+  }
+
   render() {
     return (
       <View style={Styles.container}>
-
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
-           Map Experience Events
+            Crew List
           </Text>
         </View>
-
-        <View style={Styles.containerColumn}>
-          <MapView
-            initialRegion={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
-            }}
-          />
+        <View style={Styles.containerRow}>
+          <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
         </View>
-          </View>
-          <View style={Styles.btnWrapper}>    
-            <View style={Styles.btnBlock}>
-              <Button style={Styles.bText}
-                onPress={()=> this.navigate('experiencesEvents') }
-                title="Apply Now"
-                color="yellow"
-                accessibilityLabel="Learn more about this purple button"
-              />
-            </View>
-          </View> 
-            
-
-                
         <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight
                 style={Styles.menuButton}
@@ -77,10 +72,9 @@ class GuideToPh extends Component {
             </Text>
           </TouchableHighlight>
         </View>
-
       </View>
     );
   }
 }
 
-export default GuideToPh
+export default TripCrewList
