@@ -19,6 +19,7 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
+import MapView from 'react-native-maps';
 
 
 class GuideToPh extends Component {
@@ -35,12 +36,23 @@ class GuideToPh extends Component {
   render() {
     return (
       <View style={Styles.container}>
+
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
            Map Experience Events
           </Text>
-          </View>
-            
+        </View>
+
+        <View style={Styles.containerColumn}>
+          <MapView
+            initialRegion={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+          />
+        </View>
 
                 
         <View style={Styles.containerPaddingSmall}>
@@ -52,6 +64,7 @@ class GuideToPh extends Component {
             </Text>
           </TouchableHighlight>
         </View>
+
       </View>
     );
   }

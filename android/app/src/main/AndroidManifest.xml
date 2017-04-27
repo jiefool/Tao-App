@@ -8,14 +8,20 @@
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="23" />
 
     <application
+
       android:name=".MainApplication"
       android:allowBackup="true"
       android:label="@string/app_name"
       android:icon="@mipmap/ic_launcher"
       android:theme="@style/AppTheme">
+
+      <meta-data
+      android:name="com.google.android.geo.API_KEY"
+      android:value="AIzaSyBU0-ObRdOr8Ga_vQ0DaLwBrUBS2wtRH0w"/>
+      
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
