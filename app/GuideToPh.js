@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 import {
   Navigator,
-  Stylesheet,
+  StyleSheet,
   View,
   Text,
   Image,
@@ -35,64 +35,34 @@ class GuideToPh extends Component {
 
   render() {
     return (
-      <View style={Styles.container}>
-
-        <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>
-           Map Experience Events
-          </Text>
-        </View>
-
-        <View style={Styles.container}>
-          <MapView
-            initialRegion={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
-            }}
-          />
-        </View>
-          
-          <View style={Styles.btnWrapper}>    
-            <View style={Styles.btnBlock}>
-              <Button style={Styles.bText}
-                onPress={()=> this.navigate('experiencesEvents') }
-                title="Apply Now"
-                color="yellow"
-                accessibilityLabel="Learn more about this purple button"
-              />
-            </View>
-          </View> 
-            
-
-                
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-            <Text style={Styles.regText}>
-              Back
-            </Text>
-          </TouchableHighlight>
-        </View>
-
+      <View style ={styles.mapcontainer}>
+        <MapView
+          style={styles.map}
+          region={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.0121,
+          }}
+        >
+        </MapView>
+        <Text>Jiefool</Text>
       </View>
     );
   }
 }
 
-// const stylees = StyleSheet.create({
-//   mapcontainer: {
-//     ...StyleSheet.absoluteFillObject,
-//     height: 400,
-//     width: 400,
-//     justifyContent: 'flex-end',
-//     alignItems: 'center',
-//   },
-//   map: {
-//     ...StyleSheet.absoluteFillObject,
-//   },
-// });
+const styles = StyleSheet.create({
+  mapcontainer: {
+    ...StyleSheet.absoluteFillObject,
+    height: 400,
+    width: 400,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  map: {
+    ...StyleSheet.absoluteFillObject,
+  },
+});
 
 export default GuideToPh
