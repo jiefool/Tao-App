@@ -62,7 +62,7 @@ export default class taokalahi extends Component {
   }
 
   componentDidMount(){
-    SplashScreen.hide();
+  //  SplashScreen.hide();
   }
 
   renderScene(route, navigator){
