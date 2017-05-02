@@ -5,6 +5,7 @@ import {
   Text,
   Dimensions,
   TouchableOpacity,
+  TouchableHighlight
 } from 'react-native';
 
 import MapView, { MAP_TYPES } from 'react-native-maps';
@@ -100,6 +101,15 @@ class GuideToPh extends React.Component {
           >
           <Text>Center</Text>
           </TouchableOpacity>
+        </View>
+        <View style={styles.containerPaddingSmall}>
+          <TouchableHighlight
+                style={styles.button}
+                onPress={() => this.props.navigator.pop() }>
+                <Text style={{fontSize: 25}}>
+                  Back
+                </Text>
+              </TouchableHighlight>
         </View>
       </View>
     );
