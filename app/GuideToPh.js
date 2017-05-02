@@ -1,68 +1,133 @@
-/**
- * Tao Kalahi App
- * Developed by: Bagol Labs Robotics & IT Solutions
- * bagollabs.com
- * @flow
- */
-
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  Navigator,
   StyleSheet,
   View,
   Text,
-  Image,
-  ListView,
-  ScrollView,
-  TouchableHighlight,
-  TextInput,
-  Button,
+  Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 
-import Styles from './assets/stylesheets/Styles';
-import MapView from 'react-native-maps';
+import MapView, { MAP_TYPES } from 'react-native-maps';
 
-class GuideToPh extends Component {
+const { width, height } = Dimensions.get('window');
+
+const ASPECT_RATIO = width / height;
+const LATITUDE = 12.40971;
+const LONGITUDE = 121.8691;
+const LATITUDE_DELTA = 15.96311;
+const LONGITUDE_DELTA = 10.22928;
+
+class GuideToPh extends React.Component {
   constructor(props) {
     super(props);
-    this.navigate = this.navigate.bind(this)
-    this.state = { text: '' };
+
+    this.state = {
+      region: {
+        latitude: LATITUDE,
+        longitude: LONGITUDE,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA,
+      },
+    };
   }
 
-  navigate(name){
-    this.props.navigator.push({name})
+  onRegionChange(region) {
+    this.setState({ region });
+  }
+
+  jumpRandom() {
+    this.setState({ region: this.randomRegion() });
+  }
+
+  animateRandom() {
+    this.map.animateToRegion(this.randomRegion());
+  }
+
+  randomRegion() {
+    const { region } = this.state;
+    return {
+      ...this.state.region,
+      latitude: region.latitude + ((Math.random() - 0.5) * (region.latitudeDelta / 2)),
+      longitude: region.longitude + ((Math.random() - 0.5) * (region.longitudeDelta / 2)),
+    };
   }
 
   render() {
     return (
-      <View style ={styles.mapcontainer}>
+      <View style={styles.container}>
         <MapView
+          scrollEnabled={false}
+          zoomEnabled={false}
+          pitchEnabled={false}
+          rotateEnabled={false}
+          provider={this.props.provider}
+          ref={ref => { this.map = ref; }}
+          mapType={MAP_TYPES.TERRAIN}
           style={styles.map}
-          region={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.015,
-            longitudeDelta: 0.0121,
-          }}
-        >
-        </MapView>
-        <Text>Jiefool</Text>
+          initialRegion={this.state.region}
+          onRegionChange={region => this.onRegionChange(region)}
+        />
+        <View style={[styles.bubble, styles.latlng]}>
+          <Text style={{ textAlign: 'center' }}>
+            ({this.state.region.latitude.toPrecision(7)},
+            {this.state.region.longitude.toPrecision(7)}){"\n"}
+            ({this.state.region.latitudeDelta.toPrecision(7)},
+            {this.state.region.longitudeDelta.toPrecision(7)})
+          </Text>
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            onPress={() => this.jumpRandom()}
+            style={[styles.bubble, styles.button]}
+          >
+            <Text>Jump</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.animateRandom()}
+            style={[styles.bubble, styles.button]}
+          >
+            <Text>Animate</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
 }
 
+GuideToPh.propTypes = {
+  provider: MapView.ProviderPropType,
+};
+
 const styles = StyleSheet.create({
-  mapcontainer: {
+  container: {
     ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
   map: {
     ...StyleSheet.absoluteFillObject,
   },
+  bubble: {
+    backgroundColor: 'rgba(255,255,255,0.7)',
+    paddingHorizontal: 18,
+    paddingVertical: 12,
+    borderRadius: 20,
+  },
+  latlng: {
+    width: 200,
+    alignItems: 'stretch',
+  },
+  button: {
+    width: 80,
+    paddingHorizontal: 12,
+    alignItems: 'center',
+    marginHorizontal: 10,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    marginVertical: 20,
+    backgroundColor: 'transparent',
+  },
 });
 
-export default GuideToPh
+module.exports = GuideToPh;
