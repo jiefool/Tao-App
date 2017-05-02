@@ -30,25 +30,18 @@ class GuideToPh extends React.Component {
       },
     };
   }
-
-  onRegionChange(region) {
-    this.setState({ region });
+  resetRegion() {
+    this.setState({ region: this.defaultRegion() });
   }
 
-  jumpRandom() {
-    this.setState({ region: this.randomRegion() });
-  }
-
-  animateRandom() {
-    this.map.animateToRegion(this.randomRegion());
-  }
-
-  randomRegion() {
+  defaultRegion() {
     const { region } = this.state;
     return {
       ...this.state.region,
-      latitude: region.latitude + ((Math.random() - 0.5) * (region.latitudeDelta / 2)),
-      longitude: region.longitude + ((Math.random() - 0.5) * (region.longitudeDelta / 2)),
+      latitude: LATITUDE,
+      longitude: LONGITUDE,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
     };
   }
 
@@ -65,28 +58,47 @@ class GuideToPh extends React.Component {
           mapType={MAP_TYPES.TERRAIN}
           style={styles.map}
           initialRegion={this.state.region}
+          region = {this.state.region}
           onRegionChange={region => this.onRegionChange(region)}
-        />
-        <View style={[styles.bubble, styles.latlng]}>
-          <Text style={{ textAlign: 'center' }}>
-            ({this.state.region.latitude.toPrecision(7)},
-            {this.state.region.longitude.toPrecision(7)}){"\n"}
-            ({this.state.region.latitudeDelta.toPrecision(7)},
-            {this.state.region.longitudeDelta.toPrecision(7)})
-          </Text>
-        </View>
+        >
+        <MapView.Marker
+              title="North Luzon"
+              description="This is a description of North Luzon"
+              coordinate={{latitude: 17.475581, longitude: 121.659319, latitudeDelta: 0, longitudeDelta: 0}}
+            />
+        <MapView.Marker
+              title="Manila"
+              description="This is a description of Manila"
+              coordinate={{latitude: 14.596662, longitude: 120.984783, latitudeDelta: 0, longitudeDelta: 0}}
+            />
+        <MapView.Marker
+              title="Bicol and Eastern Visayas"
+              description="This is a description of North Luzon"
+              coordinate={{latitude: 13.514537, longitude: 123.476000, latitudeDelta: 0, longitudeDelta: 0}}
+            />
+        <MapView.Marker
+              title="Central Visayas"
+              description="This is a description of Central Visayas"
+              coordinate={{latitude: 10.675285, longitude: 124.855975, latitudeDelta: 0, longitudeDelta: 0}}
+            />
+        <MapView.Marker
+              title="Palawan"
+              description="This is a description of Palawan"
+              coordinate={{latitude: 9.555346, longitude: 118.473482, latitudeDelta: 0, longitudeDelta: 0}}
+            />
+        <MapView.Marker
+              title="Mindanao"
+              description="This is a description of Mindanao"
+              coordinate={{latitude: 8.439924, longitude: 125.844038, latitudeDelta: 0, longitudeDelta: 0}}
+            />
+        </MapView>
+
         <View style={styles.buttonContainer}>
           <TouchableOpacity
-            onPress={() => this.jumpRandom()}
+            onPress={() => this.resetRegion()}
             style={[styles.bubble, styles.button]}
           >
-            <Text>Jump</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.animateRandom()}
-            style={[styles.bubble, styles.button]}
-          >
-            <Text>Animate</Text>
+          <Text>Center</Text>
           </TouchableOpacity>
         </View>
       </View>
