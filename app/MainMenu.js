@@ -31,10 +31,9 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <View style={Styles.container}>
+      <Image source={require('./assets/images/Tao.img2.jpg')}  style={Styles.container}>
         <View style={Styles.containerPadding}>
         </View>
-
         <View style={Styles.containerRow}>
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
@@ -69,11 +68,10 @@ class MainMenu extends Component {
             </TouchableHighlight>
           </View>
         </View>
-
          <View style={Styles.containerPadding}>
         </View>
         
-      </View>
+      </Image>
     );
   }
 }
