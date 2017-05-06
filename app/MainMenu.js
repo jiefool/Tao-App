@@ -12,21 +12,42 @@ import {
   View,
   Text,
   Image,
+  AsyncStorage,
   TouchableHighlight
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
 
 class MainMenu extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.navigate = this.navigate.bind(this)
+    this.state = {explorer_book_ref: ''}
   }
 
 
   navigate(name){
     this.props.navigator.push({name})
   }
+
+  getExplorerData(){
+     AsyncStorage.getItem("explorer_book_ref").then((value) => {
+        if (value != null){
+          this.setState({"explorer_book_ref": value });
+        }
+    }).done();
+    
+  }
+
+  checkExplorerData(){
+    this.getExplorerData();
+    if(this.state.explorer_book_ref == ''){
+      this.navigate('newExplorerForm')
+    }else{
+      this.navigate('yourTaoTrip')
+    }
+  }
+  
 
 
   render() {
@@ -39,7 +60,7 @@ class MainMenu extends Component {
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
             style={Styles.menuButton}
-            onPress={() => this.navigate('newExplorerForm') }>
+            onPress={() => this.checkExplorerData() }>
             <Image source={require('./assets/images/tao_icon.png')}
                     resizeMode='contain'
                     style={Styles.iconStyle}

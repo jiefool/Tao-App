@@ -27,6 +27,24 @@ var Api = {
                     email: email
                   })
                 });
+  },
+
+  createLoginExplorer(data){
+    var url = 'https://taotechph.com/api/v1/explorers.json?access_token=cf71cbba9eeb324cdb95b95b5974235eecfeedd48339b46b270206420dfdc6b7';
+    return fetch(url, {
+                  method: 'POST',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    login: data.login ,
+                    book_ref: data.book_ref,
+                    first_name: data.first_name,
+                    last_name: data.last_name,
+                    email: data.email
+                  })
+                }).then((res) => res.json());
   }
 };
 

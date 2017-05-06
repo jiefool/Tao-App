@@ -25,6 +25,11 @@ class YourTaoTrip extends Component {
   }
 
 
+  componentDidMount(){
+    
+  }
+
+
   navigate(name){
     this.props.navigator.push({name})
   }
