@@ -27,7 +27,7 @@ class TripStories extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([''])
+      dataSource: ds.cloneWithRows(this.props.storiesData)
     };
     this.navigate = this.navigate.bind(this)
   }
@@ -36,19 +36,11 @@ class TripStories extends Component {
     this.props.navigator.push({name})
   }
 
-  componentWillMount(){
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    Api.getTaoProjects().then((res) =>{
-      this.setState({
-        dataSource: ds.cloneWithRows(res)
-      });
-    });
-  }
+  
 
   _renderItem(data){
     return(
-     <ProjectItem projectData = {data} 
-        onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
+     <Text>{data.title}</Text>
     );
   }
 

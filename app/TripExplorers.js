@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import ProjectItem from './components/ProjectItem';
+import GeneralListItem from './components/GeneralListItem';
 import Api from './utilities/Api';
 
 
@@ -27,7 +27,7 @@ class TripExplorers extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([''])
+      dataSource: ds.cloneWithRows(this.props.explorersData)
     };
     this.navigate = this.navigate.bind(this)
   }
@@ -36,19 +36,13 @@ class TripExplorers extends Component {
     this.props.navigator.push({name})
   }
 
-  componentWillMount(){
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    Api.getTaoProjects().then((res) =>{
-      this.setState({
-        dataSource: ds.cloneWithRows(res)
-      });
-    });
-  }
+ 
 
   _renderItem(data){
     return(
-     <ProjectItem projectData = {data} 
-        onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
+       <GeneralListItem thumb_image = {data.explorer_thumb} title = {data.first_name+data.last_name} line_text_a = {data.nationality} line_text_b = {data.address} 
+         onPress={()=> this.navigate({name: 'tripexplorers', data: data}) }/>
+   
     );
   }
 

@@ -105,7 +105,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('tripCrewList') }>
+                   onPress={() => this.navigate({name: 'tripCrewList', data: expeditionData.crews})}>
                   <Image source={require('./assets/images/tao_crew_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -115,7 +115,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('tripExplorers') }>
+                  onPress={() => this.navigate({name: 'tripExplorers', data: expeditionData.explorers})}>
                   <Image source={require('./assets/images/tao_explorer_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -127,7 +127,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('tripBaseCamps') }>
+                 onPress={() => this.navigate({name: 'tripBaseCamps', data: expeditionData.basecamps})}>
                   <Image source={require('./assets/images/tao_basecamps_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -137,7 +137,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('tripStories') }>
+               onPress={() => this.navigate({name: 'tripStories', data: expeditionData.stories})}>
                   <Image source={require('./assets/images/tao_stories_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}

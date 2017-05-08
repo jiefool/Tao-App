@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import ProjectItem from './components/ProjectItem';
+import GeneralListItem from './components/GeneralListItem';
 import Api from './utilities/Api';
 
 
@@ -27,7 +27,7 @@ class TripBaseCamps extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([''])
+      dataSource: ds.cloneWithRows(this.props.basecampsData)
     };
     this.navigate = this.navigate.bind(this)
   }
@@ -36,19 +36,20 @@ class TripBaseCamps extends Component {
     this.props.navigator.push({name})
   }
 
-  componentWillMount(){
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    Api.getTaoProjects().then((res) =>{
-      this.setState({
-        dataSource: ds.cloneWithRows(res)
-      });
-    });
-  }
+  // componentWillMount(){
+  //   const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+  //   Api.getTaoProjects().then((res) =>{
+  //     this.setState({
+  //       dataSource: ds.cloneWithRows(res)
+  //     });
+  //   });
+  // }
 
   _renderItem(data){
     return(
-     <ProjectItem projectData = {data} 
-        onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
+      <GeneralListItem thumb_image = {data.basecamps_thumb} title = {data.name} line_text_a = {data.description}
+         onPress={()=> this.navigate({name: 'tripCrewList', data: data}) }/>
+    
     );
   }
 
