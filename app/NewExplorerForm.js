@@ -104,6 +104,13 @@ class NewExplorerForm extends Component {
                 color="blue"
                 accessibilityLabel="Learn more about this purple button"
               />
+              <TouchableHighlight
+                style={Styles.menuButton}
+                onPress={() => this.navigate('yourTaoTrip') }>
+                  <Text style={Styles.regText}>
+                    Skip
+                  </Text>
+              </TouchableHighlight>
             </View>
           </View> 
         </View>)

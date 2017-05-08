@@ -17,6 +17,7 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
+var expeditionData = require('./assets/data/expedition.json');
 
 class YourTaoTrip extends Component {
   constructor(){
@@ -104,7 +105,7 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('tripBoat') }>
+                  onPress={() => this.navigate({name: 'tripBoat', data: expeditionData.boat})}>
                   <Image source={require('./assets/images/tao_boat_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
