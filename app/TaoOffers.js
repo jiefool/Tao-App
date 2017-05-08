@@ -30,7 +30,7 @@ class MyExperiences extends Component {
 
   render() {
     return (
-      <View style={Styles.container}>
+      <Image source={require('./assets/images/Tao.img6.jpg')} style={Styles.container}>
         <View style={Styles.containerPadding}>
           <Text style={Styles.bigText}>
             My Experiences
@@ -92,7 +92,7 @@ class MyExperiences extends Component {
               </TouchableHighlight>
 
         </View>
-      </View>
+      </Image>
     );
   }
 }

@@ -37,7 +37,7 @@ class YourTaoTrip extends Component {
 
   render() {
     return (
-      <View style={Styles.container}>
+      <Image source={require('./assets/images/Tao.img11.jpg')} style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
             Your Tao Trip
@@ -83,8 +83,8 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('myExperiences') }>
-                  <Image source={require('./assets/images/tao_icon7.png')}
+                  onPress={() => this.navigate('taoTopRecommendations') }>
+                  <Image source={require('./assets/images/tao_ytp6.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
                         />
@@ -93,8 +93,8 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('taoTopRecommendations') }>
-                  <Image source={require('./assets/images/tao_ytp6.png')}
+                  onPress={() => this.navigate({name: 'tripBoat', data: expeditionData.boat})}>
+                  <Image source={require('./assets/images/tao_boat_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
                         />
@@ -105,16 +105,6 @@ class YourTaoTrip extends Component {
             <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate({name: 'tripBoat', data: expeditionData.boat})}>
-                  <Image source={require('./assets/images/tao_boat_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.iconStyle}
-                        />
-                </TouchableHighlight>
-              </View>
-              <View style={Styles.containerFirstColumn}>
-                <TouchableHighlight
-                  style={Styles.menuButton}
                   onPress={() => this.navigate('tripCrewList') }>
                   <Image source={require('./assets/images/tao_crew_icon.png')}
                           resizeMode='contain'
@@ -122,8 +112,6 @@ class YourTaoTrip extends Component {
                         />
                 </TouchableHighlight>
               </View>
-            </View>
-            <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
@@ -133,7 +121,9 @@ class YourTaoTrip extends Component {
                           style={Styles.iconStyle}
                         />
                 </TouchableHighlight>
-              </View>    
+              </View>
+            </View>
+            <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
@@ -143,9 +133,7 @@ class YourTaoTrip extends Component {
                           style={Styles.iconStyle}
                         />
                 </TouchableHighlight>
-              </View>
-            </View>
-            <View style={Styles.containerRow}>
+              </View>    
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
@@ -156,6 +144,8 @@ class YourTaoTrip extends Component {
                         />
                 </TouchableHighlight>
               </View>
+            </View>
+            <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
@@ -166,6 +156,7 @@ class YourTaoTrip extends Component {
                         />
                 </TouchableHighlight>
               </View>
+              
             </View>
           </ScrollView>
 
@@ -181,7 +172,7 @@ class YourTaoTrip extends Component {
               </TouchableHighlight>
 
         </View>
-      </View>
+      </Image>
 
     );
   }

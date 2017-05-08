@@ -23,7 +23,7 @@ import Styles from './assets/stylesheets/Styles';
 class TaoInfo extends Component {
   render() {
     return (
-      <View style={Styles.container}>
+      <Image source={require('./assets/images/Tao.img8.jpg')} style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
             Useful Info
@@ -64,7 +64,7 @@ class TaoInfo extends Component {
             </Text>
           </TouchableHighlight>
         </View>
-      </View>
+      </Image>
     );
   }
 }

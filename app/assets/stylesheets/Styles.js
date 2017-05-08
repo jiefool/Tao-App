@@ -8,18 +8,21 @@ var Styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "white"
+    backgroundColor: "white",
+    width: null,
+    height: null,
+    resizeMode: 'cover'
   },
   containerColumn: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: "white"
+    backgroundColor: "rgba(0,0,0,0)"
   },
   containerRow: {
     flex: 1,
     flexDirection: "row",
     alignSelf: 'stretch',
-    backgroundColor: "white"
+    backgroundColor: "rgba(0,0,0,0)",
   },
   containerPadding: {
     flex: 0.5,
@@ -36,13 +39,13 @@ var Styles = StyleSheet.create({
     justifyContent: 'center'
   },
   containerFirstColumn: {
-    backgroundColor: "white",
+    backgroundColor: "rgba(0,0,0,0)",
     justifyContent: "center",
     alignItems: 'center',
     flex: 1,
   },
   containerSecondColumn: {
-    backgroundColor: "white",
+    backgroundColor: "rgba(0,0,0,0)",
     justifyContent: "center",
     alignItems: 'center',
     flex: 1,
@@ -185,6 +188,12 @@ var Styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 10,
     margin: 3
+  },
+
+  backgroundImage:{
+    flex: 1,
+    width:500,
+    height:880,
   }
 });
 
