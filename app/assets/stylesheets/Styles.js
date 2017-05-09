@@ -11,7 +11,7 @@ var Styles = StyleSheet.create({
     backgroundColor: "white",
     width: null,
     height: null,
-    resizeMode: 'cover'
+    //resizeMode: 'cover'
   },
   containerColumn: {
     flex: 1,
@@ -194,7 +194,15 @@ var Styles = StyleSheet.create({
     flex: 1,
     width:500,
     height:880,
-  }
+  },
+
+    labelText:{
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 179, 
+      height: 80, 
+      backgroundColor: 'yellow'
+  },
 });
 
 export default Styles

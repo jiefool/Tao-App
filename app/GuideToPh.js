@@ -70,56 +70,38 @@ class GuideToPh extends React.Component {
               title="North Luzon"
               description="This is a description of North Luzon"
               coordinate={{latitude: 17.475581, longitude: 121.659319, latitudeDelta: 0, longitudeDelta: 0}}
-            >
-            <MapView.Callout
-              onPress={() => this.navigate('tao5dayExpedition') }
-              />
-            </MapView.Marker>
+              onPress={() => this.navigate('mapNorthLuzon') }
+            />
         <MapView.Marker
               title="Manila"
               description="This is a description of Manila"
               coordinate={{latitude: 14.596662, longitude: 120.984783, latitudeDelta: 0, longitudeDelta: 0}}
-            >
-            <MapView.Callout
-              onPress={() => this.navigate('tao5dayExpedition') }
-              />
-            </MapView.Marker>
+              onPress={() => this.navigate('mapNorthLuzon') }
+            />
         <MapView.Marker
               title="Bicol and Eastern Visayas"
               description="This is a description of North Luzon"
               coordinate={{latitude: 13.514537, longitude: 123.476000, latitudeDelta: 0, longitudeDelta: 0}}
-            >
-            <MapView.Callout
-              onPress={() => this.navigate('tao5dayExpedition') }
-              />
-            </MapView.Marker>
+              onPress={() => this.navigate('mapNorthLuzon') }
+            />
         <MapView.Marker
               title="Central Visayas"
               description="This is a description of Central Visayas"
               coordinate={{latitude: 10.675285, longitude: 124.855975, latitudeDelta: 0, longitudeDelta: 0}}
-            >
-            <MapView.Callout
-              onPress={() => this.navigate('tao5dayExpedition') }
-              />
-            </MapView.Marker>
+              onPress={() => this.navigate('mapNorthLuzon') }
+            />
         <MapView.Marker
               title="Palawan"
               description="This is a description of Palawan"
               coordinate={{latitude: 9.555346, longitude: 118.473482, latitudeDelta: 0, longitudeDelta: 0}}
-            >
-            <MapView.Callout
-              onPress={() => this.navigate('tao5dayExpedition') }
-              />
-            </MapView.Marker>
+               onPress={() => this.navigate('mapNorthLuzon') }
+            />
         <MapView.Marker
               title="Mindanao"
               description="This is a description of Mindanao"
               coordinate={{latitude: 8.439924, longitude: 125.844038, latitudeDelta: 0, longitudeDelta: 0}}
-            >
-            <MapView.Callout
-              onPress={() => this.navigate('tao5dayExpedition') }
-              />
-            </MapView.Marker>
+              onPress={() => this.navigate('mapNorthLuzon') }
+            />
         </MapView>
 
         <View style={styles.buttonContainer}>
