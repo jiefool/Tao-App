@@ -48,6 +48,7 @@ import TripStories from './app/TripStories';
 import TripRecipes from './app/TripRecipes';
 import ExperiencesEvents from './app/ExperiencesEvents';
 import MapNorthLuzon from './app/MapNorthLuzon';
+import ExplorerCheckin from './app/ExplorerCheckin';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -131,6 +132,10 @@ export default class App extends Component {
       return <TripStories navigator={navigator} storiesData={route.name.data}/>
     }else if (route.name.name === 'tripExplorers'){
       return <TripExplorers navigator={navigator} explorersData={route.name.data}/>
+    }else if (route.name.name === 'tripRecipes'){
+      return <TripRecipes navigator={navigator} recipesData={route.name.data}/>
+    }else if (route.name === 'explorerCheckin'){
+      return <ExplorerCheckin navigator={navigator}/>
     }
     
   }

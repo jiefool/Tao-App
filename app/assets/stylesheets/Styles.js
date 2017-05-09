@@ -11,7 +11,6 @@ var Styles = StyleSheet.create({
     backgroundColor: "white",
     width: null,
     height: null,
-    //resizeMode: 'cover'
   },
   containerColumn: {
     flex: 1,
@@ -35,6 +34,18 @@ var Styles = StyleSheet.create({
     flex: 0.1,
     alignSelf: 'stretch',
     backgroundColor: "yellow",
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  containerPaddingSpacer: {
+    flex: 0.1,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  centerContent: {
+    flex: 0.1,
+    alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center'
   },
