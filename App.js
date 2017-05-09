@@ -47,6 +47,7 @@ import TripExplorers from './app/TripExplorers';
 import TripStories from './app/TripStories';
 import TripRecipes from './app/TripRecipes';
 import ExperiencesEvents from './app/ExperiencesEvents';
+import ExplorerCheckin from './app/ExplorerCheckin';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -130,6 +131,8 @@ export default class App extends Component {
       return <TripExplorers navigator={navigator} explorersData={route.name.data}/>
     }else if (route.name.name === 'tripRecipes'){
       return <TripRecipes navigator={navigator} recipesData={route.name.data}/>
+    }else if (route.name === 'explorerCheckin'){
+      return <ExplorerCheckin navigator={navigator}/>
     }
     
   }

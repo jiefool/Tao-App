@@ -40,31 +40,32 @@ class Checkin extends Component {
            Map Experience Events
           </Text>
           </View>
-            <TextInput
-              placeholder='Book Ref:'
-                style={Styles.checkInput}
-                />
-            <TextInput
-              placeholder='First Name'
-                style={Styles.checkInput}
-                />
-            <TextInput
-                placeholder='Last Name'
-                style={Styles.checkInput}
-                />
-            <TextInput
-                placeholder='Nationality'
-                style={Styles.checkInput}
-                />
-           <TextInput
-                placeholder='Birthdate'
-                style={Styles.checkInput}
-                />
-            <TextInput
-                placeholder='Email:'
-                style={Styles.checkInput}
-                />
-
+            <View style={Styles.centerContent}>
+              <TextInput
+                placeholder='Book Ref:'
+                  style={Styles.checkInput}
+                  />
+              <TextInput
+                placeholder='First Name'
+                  style={Styles.checkInput}
+                  />
+              <TextInput
+                  placeholder='Last Name'
+                  style={Styles.checkInput}
+                  />
+              <TextInput
+                  placeholder='Nationality'
+                  style={Styles.checkInput}
+                  />
+             <TextInput
+                  placeholder='Birthdate'
+                  style={Styles.checkInput}
+                  />
+              <TextInput
+                  placeholder='Email:'
+                  style={Styles.checkInput}
+                  />
+            </View>
                 <TouchableHighlight
                 style={Styles.menuButton}
                 onPress={() => this.navigate('yourTaoTrip') }>

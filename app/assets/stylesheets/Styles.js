@@ -11,7 +11,7 @@ var Styles = StyleSheet.create({
     backgroundColor: "white",
     width: null,
     height: null,
-    resizeMode: 'cover'
+    // resizeMode: 'cover'
   },
   containerColumn: {
     flex: 1,
