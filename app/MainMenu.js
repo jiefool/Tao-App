@@ -53,8 +53,18 @@ class MainMenu extends Component {
   render() {
     return (
       <Image source={require('./assets/images/Tao.img2.jpg')}  style={Styles.container}>
-        <View style={Styles.containerPadding}>
+        <View style={Styles.containerPaddingSpacer}>
         </View>
+
+        <View style={Styles.containerRow}>
+          <View style={Styles.centerContent}>
+            <Image source={require('./assets/images/tao_logo.png')}
+                      resizeMode='contain'
+                      style={Styles.iconStyle}
+                    />
+          </View>
+        </View>
+
         <View style={Styles.containerRow}>
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
@@ -64,7 +74,7 @@ class MainMenu extends Component {
                     resizeMode='contain'
                     style={Styles.iconStyle}
                   />
-          	</TouchableHighlight> 
+            </TouchableHighlight> 
           </View>
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
@@ -74,9 +84,10 @@ class MainMenu extends Component {
                    resizeMode='contain'
                    style={Styles.iconStyle}
                   />
-              </TouchableHighlight>
-            </View>
-          </View>        
+            </TouchableHighlight>
+          </View>
+        </View>
+
         <View style={Styles.containerRow}>
           <View style={Styles.containerFirstColumn}>
           	<TouchableHighlight
@@ -89,9 +100,6 @@ class MainMenu extends Component {
             </TouchableHighlight>
           </View>
         </View>
-         <View style={Styles.containerPadding}>
-        </View>
-        
       </Image>
     );
   }

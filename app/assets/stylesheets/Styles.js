@@ -38,6 +38,18 @@ var Styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
+  containerPaddingSpacer: {
+    flex: 0.1,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  centerContent: {
+    flex: 0.1,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   containerFirstColumn: {
     backgroundColor: "rgba(0,0,0,0)",
     justifyContent: "center",
