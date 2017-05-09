@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import ProjectItem from './components/ProjectItem';
+import GeneralListItem from './components/GeneralListItem';
 import Api from './utilities/Api';
 
 
@@ -40,7 +40,9 @@ class TripStories extends Component {
 
   _renderItem(data){
     return(
-     <Text>{data.title}</Text>
+      <GeneralListItem thumb_image = {data.story_thumb} title = {data.name} line_text_a = {data.description}
+         onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
+   
     );
   }
 

@@ -149,7 +149,7 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('tripRecipes') }>
+                   onPress={() => this.navigate({name: 'tripRecipes', data: expeditionData.recipes})}>
                   <Image source={require('./assets/images/tao_recipes_icon.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}

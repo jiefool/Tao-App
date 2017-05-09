@@ -22,12 +22,10 @@ import GeneralListItem from './components/GeneralListItem';
 import Api from './utilities/Api';
 
 
-
 class TripCrewList extends Component {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-   
     this.state = {
       dataSource: ds.cloneWithRows(this.props.crewData)
     };
@@ -38,20 +36,13 @@ class TripCrewList extends Component {
     this.props.navigator.push({name})
   }
 
-  // componentWillMount(){
-  //   const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-  //   Api.getTaoProjects().then((res) =>{
-  //     this.setState({
-  //       dataSource: ds.cloneWithRows(res)
-  //     });
-  //   });
-  // }
+ 
 
   _renderItem(data){
     return(
        <GeneralListItem thumb_image = {data.crew_thumb} title = {data.first_name+data.last_name} line_text_a = {data.birth_date} line_text_b = {data.address} 
-         onPress={()=> this.navigate({name: 'tripCrewList', data: data}) }/>
-     
+         onPress={()=> this.navigate({name: 'tripexplorers', data: data}) }/>
+   
     );
   }
 
@@ -60,7 +51,7 @@ class TripCrewList extends Component {
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
-            Crew List
+            Trip Explorers
           </Text>
         </View>
         <View style={Styles.containerRow}>

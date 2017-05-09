@@ -47,9 +47,9 @@ class TripRecipes extends Component {
 
   _renderItem(data){
     return(
-     <ProjectItem image_thumb = {data.recipe_thumb} title = {data.name} line_text_a = {data.description}
-        onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
-     
+      <GeneralListItem thumb_image = {data.recipe_thumb} title = {data.name} line_text_a = {data.description}
+         onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
+    
     );
   }
 
