@@ -15,8 +15,13 @@ var Styles = StyleSheet.create({
   },
   containerColumn: {
     flex: 1,
-    alignSelf: 'stretch',
+    alignSelf: 'center',
     backgroundColor: "rgba(0,0,0,0)"
+  },
+  containerColumnx: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: "rgba(0,0,0,0)",
   },
   containerRow: {
     flex: 1,
@@ -46,7 +51,7 @@ var Styles = StyleSheet.create({
   },
   centerContent: {
     flex: 0.1,
-    alignSelf: 'stretch',
+    //alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -118,7 +123,7 @@ var Styles = StyleSheet.create({
   },
   checkInput: {
     height: 40,
-    width: 250,
+    width: 400,
     backgroundColor: 'white',
     marginBottom: 20,
     marginTop: 10,

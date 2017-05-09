@@ -43,7 +43,7 @@ class YourTaoTrip extends Component {
             Your Tao Trip
           </Text>
         </View>
-          <ScrollView style={Styles.containerColumn}>
+          <ScrollView style={Styles.containerColumnx}>
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight

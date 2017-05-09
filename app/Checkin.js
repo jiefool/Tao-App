@@ -39,41 +39,43 @@ class Checkin extends Component {
           <Text style={Styles.bigText}>
            Map Experience Events
           </Text>
-          </View>
-            <View style={Styles.centerContent}>
-              <TextInput
-                placeholder='Book Ref:'
-                  style={Styles.checkInput}
-                  />
-              <TextInput
-                placeholder='First Name'
-                  style={Styles.checkInput}
-                  />
-              <TextInput
-                  placeholder='Last Name'
-                  style={Styles.checkInput}
-                  />
-              <TextInput
-                  placeholder='Nationality'
-                  style={Styles.checkInput}
-                  />
-             <TextInput
-                  placeholder='Birthdate'
-                  style={Styles.checkInput}
-                  />
-              <TextInput
-                  placeholder='Email:'
-                  style={Styles.checkInput}
-                  />
-            </View>
-                <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('yourTaoTrip') }>
-                <Image source={require('./assets/images/button.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>      
+        </View>
+        <View style={Styles.containerColumn}>
+        <View style={Styles.centerContent}>
+          <TextInput
+            placeholder='Book Ref:'
+              style={Styles.checkInput}
+              />
+          <TextInput
+            placeholder='First Name'
+              style={Styles.checkInput}
+              />
+          <TextInput
+              placeholder='Last Name'
+              style={Styles.checkInput}
+              />
+          <TextInput
+              placeholder='Nationality'
+              style={Styles.checkInput}
+              />
+         <TextInput
+              placeholder='Birthdate'
+              style={Styles.checkInput}
+              />
+          <TextInput
+              placeholder='Email:'
+              style={Styles.checkInput}
+              />
+        </View>
+        </View>
+        <TouchableHighlight
+          style={Styles.menuButton}
+          onPress={() => this.navigate('yourTaoTrip') }>
+          <Image source={require('./assets/images/button.png')}
+                  resizeMode='contain'
+                  style={Styles.iconStyle}
+                />
+        </TouchableHighlight>      
         <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight
                 style={Styles.menuButton}

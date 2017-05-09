@@ -35,12 +35,13 @@ class ExplorerCheckin extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <ScrollView style={Styles.containerColumn}>
+       
           <View style={Styles.containerPaddingSmall}>
            <Text style={Styles.bigText}>
             Map Experience Events
             </Text>
           </View>
+           <ScrollView style={Styles.containerColumnx}>
                 <View style={Styles.centerContent}>
                   <TextInput
                   placeholder='DATE OF EXPEDITION:'
@@ -111,7 +112,7 @@ class ExplorerCheckin extends Component {
                   style={Styles.checkInput}
                   />
                 </View>
-
+                <View style={Styles.centerContent}>
                   <TouchableHighlight
                   style={Styles.menuButton}
                   onPress={() => this.navigate('yourTaoTrip') }>
@@ -119,7 +120,8 @@ class ExplorerCheckin extends Component {
                           resizeMode='contain'
                           style={Styles.iconStyle}
                         />
-                </TouchableHighlight>      
+                </TouchableHighlight>
+                </View>      
           <View style={Styles.containerPaddingSmall}>
             <TouchableHighlight
                   style={Styles.menuButton}
