@@ -51,7 +51,7 @@ class TripCrewList extends Component {
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
-            Trip Explorers
+            Boat Crew
           </Text>
         </View>
         <View style={Styles.containerRow}>
