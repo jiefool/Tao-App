@@ -38,7 +38,7 @@ class ExplorerCheckin extends Component {
        
           <View style={Styles.containerPaddingSmall}>
            <Text style={Styles.bigText}>
-            Map Experience Events
+            Explorer Checkin
             </Text>
           </View>
            <ScrollView style={Styles.containerColumnx}>
@@ -111,8 +111,19 @@ class ExplorerCheckin extends Component {
                   placeholder='AFTER EXPEDITION TRAVEL PLAN OR ITINERARY:'
                   style={Styles.checkInput}
                   />
-                </View>
-                <View style={Styles.centerContent}>
+                
+                    <Text style={Styles.bigText}>
+                    AKNOWLEDGEMENT OF RISK, RESPOSIBILITY AND LIABILITY WAIVER
+                    </Text>
+                    <Text style={Styles.bigText}>Assumption of Risk:</Text>
+                    <Text>I understand that Tao Philippines / Tao LostBoys, Inc. is an adventure campany travelling in a very remote area of the Philippines. I understand that will be in an unfamilliar sorroundings and will be exposed to risks. I understand that i may suffer from physical injury, disease, sickness, damage or loss of my items as a result of my parcitipation in the expedition. I freely and voluntarily accept and assume all such risks, dangers and hazards</Text>
+                    <Text style={Styles.bigText}>Responsibility:</Text>
+                    <Text>I understand that participants are ultimately responsible for their personal safety and the consequences of their actions. I understand that the expedition leader will discuss points about safety during our briefing and I will pay attention to this points. I also confirm that I have relevant medical / travel insurance that will cover the cost of any medical / emergency action required on my behalf.</Text>
+                    <Text style={Styles.bigText}>Liability Waiver:</Text>
+                    <Text>I release Tao Philippines/ Tao LostBoys, Inc. and its employees all liability for any loss, damge, injury or expense that i may suffer as a result of my participation in this expidition. </Text>
+
+                </View>  
+                  <View style={Styles.centerContent}>
                   <TouchableHighlight
                   style={Styles.menuButton}
                   onPress={() => this.navigate('yourTaoTrip') }>
@@ -121,6 +132,7 @@ class ExplorerCheckin extends Component {
                           style={Styles.iconStyle}
                         />
                 </TouchableHighlight>
+                <Text>BY PRESSING SUBMIT YOU AGREE TO THESE TERMS.</Text>
                 </View>      
           <View style={Styles.containerPaddingSmall}>
             <TouchableHighlight
