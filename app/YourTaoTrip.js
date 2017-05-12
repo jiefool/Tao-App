@@ -35,7 +35,12 @@ class YourTaoTrip extends Component {
 
 
   componentWillMount(){
-    Api.getExpeditionTrip(this.props.explorerData).then((res)=> { expeditionData = res });
+    Api.getExpeditionTrip(this.props.explorerData).then((res)=> { 
+      expeditionData = res 
+      if (res.id === undefined){
+        this.setState({toView: 'no_trip'})
+      }
+    });
   }
   
   clearUserData(){
@@ -47,7 +52,7 @@ class YourTaoTrip extends Component {
     }
   }
 
-    renderView(view){
+  renderView(view){
     switch(view){
       case 'menu':
         return(<ScrollView style={Styles.containerColumnx}>
@@ -210,8 +215,27 @@ class YourTaoTrip extends Component {
               </View>
             </TouchableHighlight> 
           </View>)
-
         break;
+      case 'no_trip':
+        return(<View style={[Styles.containerColumnx,{backgroundColor: 'white', justifyContent: 'center'}]}>
+          <Text style={[Styles.bigText, {textAlign: 'center'}]}>No expedition trip yet associated with your booking number.</Text>
+          <Text style={[Styles.smallText, {textAlign: 'center'}]}>Please wait for 1 to 2 days for we may not have arranged your trip yet.</Text>
+           <TouchableHighlight
+            style={[Styles.menuButton, {alignItems: 'center'}]}
+            onPress={() => this.props.navigator.popToTop() }>
+              <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={[Styles.regText, {color: 'white'}]}>
+                  Back to Main
+                </Text>
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+              style={[Styles.menuButton, {alignItems: 'center'}]}
+              onPress={() => this.clearUserData()}>
+                <Text>Not you? Press here.</Text>
+            </TouchableHighlight>
+        
+          </View>)
     }
   }
 
