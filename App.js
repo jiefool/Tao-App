@@ -134,8 +134,8 @@ export default class App extends Component {
       return <TripExplorers navigator={navigator} explorersData={route.name.data}/>
     }else if (route.name.name === 'tripRecipes'){
       return <TripRecipes navigator={navigator} recipesData={route.name.data}/>
-    }else if (route.name.name === 'explorerCheckin'){
-      return <ExplorerCheckin navigator={navigator} explorerData = {route.name.data}/>
+    }else if (route.name === 'explorerCheckin'){
+      return <ExplorerCheckin navigator={navigator}/>
     }
     
   }

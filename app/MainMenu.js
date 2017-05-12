@@ -61,7 +61,7 @@ class MainMenu extends Component {
         </View>
 
         <View style={Styles.containerRow}>
-          <View style={Styles.centerContent}>
+          <View style={Styles.containerFirstColumn}>
             <Image source={require('./assets/images/tao_logo.png')}
                       resizeMode='contain'
                       style={Styles.iconStyle}

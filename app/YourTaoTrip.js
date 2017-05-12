@@ -14,7 +14,8 @@ import {
   Image,
   ScrollView,
   AsyncStorage,
-  TouchableHighlight
+  TouchableHighlight,
+  ActivityIndicator
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
@@ -24,7 +25,7 @@ class YourTaoTrip extends Component {
   constructor(props){
     super(props)
     this.navigate = this.navigate.bind(this)
-    this.state = { explorer_data: {}}
+    this.state = { toView: 'menu'}
   }
 
   navigate(name){
@@ -33,22 +34,18 @@ class YourTaoTrip extends Component {
 
   
   clearUserData(){
+    this.setState({toView: 'logout'})
     try {
-      AsyncStorage.removeItem('explorer_data').then(this.props.navigator.popToTop())
+      AsyncStorage.removeItem('explorer_data').then((res) => {this.setState({toView: 'after_logout'})})
     } catch (error) {
       console.log(error)
     }
   }
 
-  render() {
-    return (
-      <Image source={require('./assets/images/Tao.img11.jpg')} style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>
-            {this.props.explorerData.first_name}'s Tao Trip
-          </Text>
-        </View>
-          <ScrollView style={Styles.containerColumnx}>
+    renderView(view){
+    switch(view){
+      case 'menu':
+        return(<ScrollView style={Styles.containerColumnx}>
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
@@ -63,7 +60,7 @@ class YourTaoTrip extends Component {
                <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate({name: 'explorerCheckin', data: this.state.explorer_data }) }>
+                  onPress={() => this.navigate('explorerCheckin') }>
                   <Image source={require('./assets/images/tao_ytp2.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
@@ -181,9 +178,48 @@ class YourTaoTrip extends Component {
                 </TouchableHighlight>
               </View>
             </View>
-          </ScrollView>
+          </ScrollView>)
+        break;
+      case 'logout':
+        return(<View style={Styles.containerColumnx}>
+                <View style={Styles.centerContent}>
+                <ActivityIndicator
+                  animating={this.state.animating}
+                  size="large"
+                />
+                <Text>Logging out...</Text>
+                </View>
+                </View>)
+        break;
+      case 'after_logout':
+        return (<View style={[Styles.containerColumnx,{backgroundColor: 'white'}]}>
+          <Text style={[Styles.bigText, {textAlign: 'center'}]}>Your are now logout.</Text>
+          <Text style={[Styles.smallText, {textAlign: 'center'}]}>It may require you to close the app then open it again to flush previous user data.</Text>
+           <TouchableHighlight
+            style={[Styles.menuButton, {alignItems: 'center'}]}
+            onPress={() => this.props.navigator.popToTop() }>
+              <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={[Styles.regText, {color: 'white'}]}>
+                  Back to Main
+                </Text>
+              </View>
+            </TouchableHighlight> 
+          </View>)
 
+        break;
+    }
+  }
 
+  render() {
+    return (
+      <Image source={require('./assets/images/Tao.img11.jpg')} style={Styles.container}>
+        <View style={Styles.containerPaddingSmall}>
+          <Text style={Styles.bigText}>
+            {this.props.explorerData.first_name}'s Tao Trip
+          </Text>
+        </View>
+         
+        { this.renderView(this.state.toView) }
 
         <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight
