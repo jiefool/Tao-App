@@ -17,7 +17,8 @@ import {
   TouchableHighlight,
   TextInput,
   Button,
-  AsyncStorage
+  AsyncStorage,
+  ActivityIndicator
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
@@ -42,15 +43,14 @@ class NewExplorerForm extends Component {
     this.setState({toView: 'sending'})
     Api.createLoginExplorer(this.state).then((res)=> {
         this.setState({toView: 'thankyou', explorer_data: res })
-        this.saveExplorerData(res.book_ref);
-        console.log(this.state.explorer_data)
+        this.saveExplorerData(res);
     })
   }
 
 
-  saveExplorerData(bookRef){
+  saveExplorerData(explorerData){
     try {
-      AsyncStorage.setItem('explorer_book_ref', bookRef);
+      AsyncStorage.setItem('explorer_data', JSON.stringify(explorerData));
     } catch (error) {
       // Error saving data
     }
@@ -116,15 +116,25 @@ class NewExplorerForm extends Component {
         </View>)
         break;
       case 'sending':
-        return(<Text>Logging in...</Text>)
+        return(<View style={Styles.centerContent}>
+                <ActivityIndicator
+                  animating={this.state.animating}
+                  size="large"
+                />
+                <Text>Fetching information...</Text>
+                </View>)
         break;
       case 'thankyou':
-        return (<View style={Styles.containerColumn}>
-          <Text>Hello {this.state.explorer_data.first_name}, find out the details of your expedition by clicking the button below:</Text>
+        return (<View style={Styles.centerContent}>
+          <Text style={[Styles.bigText, {textAlign: 'center'}]}>Hello {this.state.explorer_data.first_name}, find out the details of your expedition by clicking the button below:</Text>
            <TouchableHighlight
-            style={Styles.menuButton}
-            onPress={() => this.navigate('yourTaoTrip') }>
-            <Text>Go to My Trip</Text>
+            style={[Styles.menuButton, {alignItems: 'center'}]}
+            onPress={() => this.navigate({name: 'yourTaoTrip', data: this.state.explorer_data }) }>
+              <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={[Styles.regText, {color: 'white'}]}>
+                  Go to My Trip
+                </Text>
+              </View>
             </TouchableHighlight> 
           </View>)
 
@@ -141,9 +151,9 @@ class NewExplorerForm extends Component {
           </Text>
         </View>
       
-       
+        <View style={Styles.containerColumn}>
           { this.renderView(this.state.toView) }
-    
+        </View>
 
         <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight

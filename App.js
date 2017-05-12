@@ -68,8 +68,8 @@ export default class App extends Component {
   renderScene(route, navigator){
     if(route.name === 'mainMenu'){
       return <MainMenu navigator={navigator}/>
-    }else if(route.name === 'yourTaoTrip'){
-      return <YourTaoTrip navigator={navigator}/>
+    }else if(route.name.name === 'yourTaoTrip'){
+      return <YourTaoTrip navigator={navigator} explorerData = {route.name.data}/>
     }else if (route.name === 'packingList'){
       return <PackingList navigator={navigator}/>
     }else if (route.name === 'taoInfo'){
@@ -134,8 +134,8 @@ export default class App extends Component {
       return <TripExplorers navigator={navigator} explorersData={route.name.data}/>
     }else if (route.name.name === 'tripRecipes'){
       return <TripRecipes navigator={navigator} recipesData={route.name.data}/>
-    }else if (route.name === 'explorerCheckin'){
-      return <ExplorerCheckin navigator={navigator}/>
+    }else if (route.name.name === 'explorerCheckin'){
+      return <ExplorerCheckin navigator={navigator} explorerData = {route.name.data}/>
     }
     
   }

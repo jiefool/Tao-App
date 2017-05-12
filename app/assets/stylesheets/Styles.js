@@ -51,7 +51,7 @@ var Styles = StyleSheet.create({
   centerContent: {
     flex: 0.1,
     //alignSelf: 'stretch',
-    alignItems: 'center',
+    //alignItems: 'center',
     justifyContent: 'center'
   },
   containerFirstColumn: {
@@ -178,6 +178,7 @@ var Styles = StyleSheet.create({
     alignSelf: 'center'
   },
   button: {
+    flex: 1,
     height:40,
     backgroundColor: 'blue',
     borderColor: 'black',

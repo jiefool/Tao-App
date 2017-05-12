@@ -47,7 +47,7 @@ class TripBaseCamps extends Component {
 
   _renderItem(data){
     return(
-      <GeneralListItem thumb_image = {data.basecamps_thumb} title = {data.name} line_text_a = {data.description}
+      <GeneralListItem thumb_image = {data.basecamp_thumb} title = {data.name} line_text_a = {data.description}
          onPress={()=> this.navigate({name: 'tripCrewList', data: data}) }/>
     
     );

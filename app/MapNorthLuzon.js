@@ -16,16 +16,22 @@ class MapNorthLuzon extends Component {
   render(){
     return(
       <View style={Styles.container}>
-      <View style={{flex: 1, flexDirection: 'row'}}>
-        <View style={Styles.labelText}>
-           <Text style={Styles.regText}>Experience</Text>
+      <View style={{flex: 1, flexDirection: 'row', padding: 10}}>
+        <View style={{flex: 1, flexDirection: 'column', padding: 10}}>
+          <Text style={Styles.regText}>Experience</Text>
+          <Text style={Styles.smallText}>Surf</Text>
+          <Text style={Styles.smallText}>Culture</Text>
+          <Text style={Styles.smallText}>Foody</Text>
+          <Text style={Styles.smallText}>Party</Text>
         </View>
-        <View style={{width: 1, height: 80, backgroundColor: 'black'}} />
-        <View style={Styles.labelText}>
+        <View style={{width: 1, height: 900, backgroundColor: 'black'}} />
+        <View style={{flex: 1, flexDirection: 'column', padding: 10}}>
            <Text style={Styles.regText}>Events</Text>
+           <Text style={Styles.smallText}>Sinulog</Text>
+           <Text style={Styles.smallText}>Malosimbo</Text>
         </View>
-
       </View>
+
       <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight
                 style={Styles.menuButton}

@@ -22,7 +22,7 @@ class MainMenu extends Component {
   constructor(props){
     super(props)
     this.navigate = this.navigate.bind(this)
-    this.state = {explorer_book_ref: ''}
+    this.state = {explorer_data: {}}
   }
 
 
@@ -31,21 +31,26 @@ class MainMenu extends Component {
   }
 
   getExplorerData(){
-     AsyncStorage.getItem("explorer_book_ref").then((value) => {
+     AsyncStorage.getItem("explorer_data").then((value) => {
         if (value != null){
-          this.setState({"explorer_book_ref": value });
+          this.setState({"explorer_data": JSON.parse(value) });
         }
     }).done();
     
   }
 
   checkExplorerData(){
-    this.getExplorerData();
-    if(this.state.explorer_book_ref == ''){
+    console.log(this.state.explorer_data.book_ref)
+    console.log(this.state.explorer_data)
+    if(this.state.explorer_data.book_ref === undefined ){
       this.navigate('newExplorerForm')
     }else{
-      this.navigate('yourTaoTrip')
+      this.navigate({name: 'yourTaoTrip', data: this.state.explorer_data})
     }
+  }
+
+  componentWillMount(){
+    this.getExplorerData();
   }
   
 

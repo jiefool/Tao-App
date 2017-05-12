@@ -13,6 +13,7 @@ import {
   Text,
   Image,
   ScrollView,
+  AsyncStorage,
   TouchableHighlight
 } from 'react-native';
 
@@ -20,19 +21,21 @@ import Styles from './assets/stylesheets/Styles';
 var expeditionData = require('./assets/data/expedition.json');
 
 class YourTaoTrip extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.navigate = this.navigate.bind(this)
   }
 
-
-  componentDidMount(){
-    
-  }
-
-
   navigate(name){
     this.props.navigator.push({name})
+  }
+
+  clearUserData(){
+    try {
+      AsyncStorage.removeItem('explorer_data').then(this.props.navigator.popToTop())
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {
@@ -40,7 +43,7 @@ class YourTaoTrip extends Component {
       <Image source={require('./assets/images/Tao.img11.jpg')} style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>
-            Your Tao Trip
+            {this.props.explorerData.first_name}'s Tao Trip
           </Text>
         </View>
           <ScrollView style={Styles.containerColumnx}>
@@ -58,8 +61,8 @@ class YourTaoTrip extends Component {
                <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate('explorerCheckin') }>
-                  <Image source={require('./assets/images/tao_ytp.png')}
+                  onPress={() => this.navigate({name: 'explorerCheckin', data: this.props.explorerData }) }>
+                  <Image source={require('./assets/images/tao_ytp2.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
                         />
@@ -165,7 +168,16 @@ class YourTaoTrip extends Component {
                         />
                 </TouchableHighlight>
               </View>
-              
+            </View>
+
+            <View style={Styles.containerRow}>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.clearUserData()}>
+                    <Text>Not you? Press here.</Text>
+                </TouchableHighlight>
+              </View>
             </View>
           </ScrollView>
 
