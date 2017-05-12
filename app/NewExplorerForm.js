@@ -63,32 +63,37 @@ class NewExplorerForm extends Component {
   renderView(view){
     switch(view){
       case 'form':
-        return(<View style={Styles.containerColumn}>
+        return(<ScrollView style={Styles.containerColumn}>
+          <Text>Login:</Text>
           <TextInput
             placeholder='Login'
             style={Styles.checkInput}
             onChangeText={(login) => this.setState({login})}
             value={this.state.login}
           />
+          <Text>Booking Reference #:</Text>
           <TextInput
             placeholder='Booking Reference #'
             style={Styles.checkInput}
             onChangeText={(book_ref) => this.setState({book_ref})}
             value={this.state.book_ref}
           />
+          <Text>First Name:</Text>
           <TextInput
             placeholder='First Name'
             style={Styles.checkInput}
             onChangeText={(first_name) => this.setState({first_name})}
             value={this.state.first_name}
           />
+          <Text>Last Name:</Text>
           <TextInput
             placeholder='Last Name'
             style={Styles.checkInput}
             onChangeText={(last_name) => this.setState({last_name})}
             value={this.state.last_name}
           />
-         <TextInput
+          <Text>Email:</Text>
+          <TextInput
             placeholder='Email'
             style={Styles.checkInput}
             onChangeText={(email) => this.setState({email})}
@@ -104,16 +109,9 @@ class NewExplorerForm extends Component {
                 color="blue"
                 accessibilityLabel="Learn more about this purple button"
               />
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('yourTaoTrip') }>
-                  <Text style={Styles.regText}>
-                    Skip
-                  </Text>
-              </TouchableHighlight>
             </View>
           </View> 
-        </View>)
+        </ScrollView>)
         break;
       case 'sending':
         return(<View style={Styles.centerContent}>

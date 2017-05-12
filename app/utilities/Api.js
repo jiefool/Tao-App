@@ -57,6 +57,11 @@ var Api = {
                   },
                   body: JSON.stringify(data)
                 }).then((res) => res.json());
+  },
+
+  getExpeditionTrip(data){
+    var url = 'https://taotechph.com/api/v1/expedition_trips/'+data.book_ref+'.json?access_token=cf71cbba9eeb324cdb95b95b5974235eecfeedd48339b46b270206420dfdc6b7';
+    return fetch(url).then((res) => res.json());
   }
 };
 

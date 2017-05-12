@@ -19,7 +19,8 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-var expeditionData = require('./assets/data/expedition.json');
+import Api from './utilities/Api';
+var expeditionData = {};
 
 class YourTaoTrip extends Component {
   constructor(props){
@@ -32,6 +33,10 @@ class YourTaoTrip extends Component {
     this.props.navigator.push({name})
   }
 
+
+  componentWillMount(){
+    Api.getExpeditionTrip(this.props.explorerData).then((res)=> { expeditionData = res });
+  }
   
   clearUserData(){
     this.setState({toView: 'logout'})
@@ -192,7 +197,7 @@ class YourTaoTrip extends Component {
                 </View>)
         break;
       case 'after_logout':
-        return (<View style={[Styles.containerColumnx,{backgroundColor: 'white'}]}>
+        return (<View style={[Styles.containerColumnx,{backgroundColor: 'white', justifyContent: 'center'}]}>
           <Text style={[Styles.bigText, {textAlign: 'center'}]}>Your are now logout.</Text>
           <Text style={[Styles.smallText, {textAlign: 'center'}]}>It may require you to close the app then open it again to flush previous user data.</Text>
            <TouchableHighlight
