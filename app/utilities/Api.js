@@ -45,6 +45,18 @@ var Api = {
                     email: data.email
                   })
                 }).then((res) => res.json());
+  },
+
+  updateExplorer(data){
+    var url = 'https://taotechph.com/api/v1/explorers/'+data.id+'.json?access_token=cf71cbba9eeb324cdb95b95b5974235eecfeedd48339b46b270206420dfdc6b7';
+    return fetch(url, {
+                  method: 'PATCH',
+                  headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(data)
+                }).then((res) => res.json());
   }
 };
 

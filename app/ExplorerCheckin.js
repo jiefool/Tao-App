@@ -16,10 +16,14 @@ import {
   ScrollView,
   TouchableHighlight,
   TextInput,
-  Picker
+  Picker,
+  ActivityIndicator,
+  AsyncStorage
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
+import DatePicker from 'react-native-datepicker'
+import Api from './utilities/Api';
 
 class ExplorerCheckin extends Component {
   constructor(props) {
@@ -29,22 +33,53 @@ class ExplorerCheckin extends Component {
       address: this.props.explorerData.address,
       after_expedition_plan: this.props.explorerData.after_expedition_plan,
       book_ref: this.props.explorerData.book_ref,
+      birth_date: this.props.explorerData.birth_date,
       email: this.props.explorerData.email,
-      emergecy_contact_person_number: this.props.explorerData.emergecy_contact_person_number,
+      emergency_contact_person_number: this.props.explorerData.emergecy_contact_person_number,
       emergency_contact_person: this.props.explorerData.emergency_contact_person,
       expedition_trip_id: this.props.explorerData.expedition_trip_id,
       first_name: this.props.explorerData.first_name,
       gender: this.props.explorerData.gender,
       id: this.props.explorerData.id,
-      is_checked_in: this.props.explorerData.is_checked_in,
+      is_checked_in: true,
       last_name: this.props.explorerData.last_name,
       login: this.props.explorerData.login,
       medical_dietary_restriction: this.props.explorerData.medical_dietary_restriction,
       middle_name: this.props.explorerData.middle_name,
       mobile_number: this.props.explorerData.mobile_number,
       nationality: this.props.explorerData.nationality,
-      passport_number: this.props.explorerData.passport_number
+      passport_number: this.props.explorerData.passport_number,
+      toView: 'form'
     }
+  }
+
+  componentWillMount(){
+    AsyncStorage.getItem("explorer_data").then((value) => {
+      if (value != null){
+        var explorerData = JSON.parse(value)
+        this.setState({ 
+          address: explorerData.address,
+          after_expedition_plan: explorerData.after_expedition_plan,
+          book_ref: explorerData.book_ref,
+          birth_date: explorerData.birth_date,
+          email: explorerData.email,
+          emergency_contact_person_number: explorerData.emergecy_contact_person_number,
+          emergency_contact_person: explorerData.emergency_contact_person,
+          expedition_trip_id: explorerData.expedition_trip_id,
+          first_name: explorerData.first_name,
+          gender: explorerData.gender,
+          id: explorerData.id,
+          is_checked_in: true,
+          last_name: explorerData.last_name,
+          login: explorerData.login,
+          medical_dietary_restriction: explorerData.medical_dietary_restriction,
+          middle_name: explorerData.middle_name,
+          mobile_number: explorerData.mobile_number,
+          nationality: explorerData.nationality,
+          passport_number: explorerData.passport_number 
+        });
+      }
+    }).done();
   }
 
 
@@ -53,55 +88,70 @@ class ExplorerCheckin extends Component {
   }
 
   sendExplorerCheckIn(){
-    this.setState({is_checked_in: 1})
-    console.log(this.state.explorer_data)
+    this.setState({toView: 'sending'})
+    Api.updateExplorer(this.state).then((res) => { 
+      AsyncStorage.setItem('explorer_data', JSON.stringify(res));
+      this.setState({toView: 'thankyou'})
+    });
+    //console.log(this.state)
   }
 
-  
 
-  render() {
-    return (
-      <View style={Styles.container}>
-       
-          <View style={Styles.containerPaddingSmall}>
-           <Text style={Styles.bigText}>
-            Explorer Checkin
-            </Text>
-          </View>
-           <ScrollView style={Styles.containerColumnx}>
+  renderView(view){
+    switch(view){
+      case 'form':
+        return(<ScrollView style={Styles.containerColumnx}>
                 <View style={Styles.centerContent}>
                   <Text style={{textAlign: 'left'}}>First Name:</Text>
                   <TextInput
                     placeholder='FIRST NAME:'
                     style={Styles.checkInput}
                     onChangeText={(first_name) => this.setState({first_name: first_name})}
-                    value={this.state.explorer_data.first_name}
+                    value={this.state.first_name}
                   />
                   <Text>Last Name:</Text>
                    <TextInput
                     placeholder='LAST NAME:'
                     style={Styles.checkInput}
                     onChangeText={(last_name) => this.setState( {last_name: last_name})}
-                    value={this.state.explorer_data.last_name}
+                    value={this.state.last_name}
                   />
                   <Text>Middle Name:</Text>
                   <TextInput
                     placeholder='MIDDLE NAME:'
                     style={Styles.checkInput}
                     onChangeText={(middle_name) => this.setState( {middle_name: middle_name})}
-                    value={this.state.explorer_data.middle_name}
+                    value={this.state.middle_name}
                   />
                   <Text>Date of Birth:</Text>
-                  <TextInput
-                    placeholder='DATE OF BIRTH (MM/DD/YYYY):'
-                    style={Styles.checkInput}
-                    onChangeText={(birth_date) => this.setState({birth_date})}
-                    value={this.state.explorer_data.birth_date}
+                  <DatePicker
+                    style={{width: 200}}
+                    date={this.state.birth_date}
+                    mode="date"
+                    placeholder="select date"
+                    format="YYYY-MM-DD"
+                    minDate="1920-01-01"
+                    maxDate="2016-06-01"
+                    confirmBtnText="Confirm"
+                    cancelBtnText="Cancel"
+                    customStyles={{
+                      dateIcon: {
+                        position: 'absolute',
+                        left: 0,
+                        top: 4,
+                        marginLeft: 0
+                      },
+                      dateInput: {
+                        marginLeft: 36
+                      }
+                      // ... You can check the source to find the other keys.
+                    }}
+                    onDateChange={(date) => {this.setState({birth_date: date})}}
                   />
                   <Text>Gender:</Text>
                   <Picker
                     style={{width: 100}}
-                    selectedValue={this.state.explorer_data.gender}
+                    selectedValue={this.state.gender}
                     onValueChange={(gender) => this.setState( {gender: gender})}>
                     <Picker.Item label="Male" value="male" />
                     <Picker.Item label="Female" value="female" />
@@ -111,63 +161,63 @@ class ExplorerCheckin extends Component {
                     placeholder='HOME ADDRESS:'
                     style={Styles.checkInput}
                     onChangeText={(address) => this.setState({address: address})}
-                    value={this.state.explorer_data.address}
+                    value={this.state.address}
                   />
                   <Text>Nationality:</Text>
                   <TextInput
                     placeholder='NATIONALITY:'
                     style={Styles.checkInput}
                     onChangeText={(nationality) => this.setState( {nationality: nationality})}
-                    value={this.state.explorer_data.nationality}
+                    value={this.state.nationality}
                   />
                   <Text>Email Address:</Text>
                   <TextInput
                     placeholder='EMAIL ADDRESS:'
                     style={Styles.checkInput}
                     onChangeText={(email) => this.setState({email: email})}
-                    value={this.state.explorer_data.email}
+                    value={this.state.email}
                   />
                   <Text>Mobile Number:</Text>
                   <TextInput
                     placeholder='MOBILE NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(mobile_number) => this.setState( {mobile_number: mobile_number})}
-                    value={this.state.explorer_data.mobile_number}
+                    value={this.state.mobile_number}
                   />
                   <Text>Passport Number:</Text>
                   <TextInput
                     placeholder='PASSPORT NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(passport_number) => this.setState({passport_number: passport_number})}
-                    value={this.state.explorer_data.passport_number}
+                    value={this.state.passport_number}
                   />
                   <Text>Emergey Contact Person:</Text>
                   <TextInput
                     placeholder='CONTACT PERSON IN CASE OF EMERGENCY:'
                     style={Styles.checkInput}
                     onChangeText={(name) => this.setState( {emergency_contact_person: name})}
-                    value={this.state.explorer_data.emergency_contact_person}
+                    value={this.state.emergency_contact_person}
                   />
                   <Text>Emergency Contact Person Number:</Text>
                   <TextInput
                     placeholder='CONTACT  NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(number) => this.setState({emergency_contact_person_number: number})}
-                    value={this.state.explorer_data.emergency_contact_person_number}
+                    value={this.state.emergency_contact_person_number}
                   />
                   <Text>Relevant medical condition or dietary restriction:</Text>
                   <TextInput
                     placeholder='RELEVANT MEDICAL CONDOTION OR DIETARY RESTRICTION:'
                     style={Styles.checkInput}
                     onChangeText={(text) => this.setState( {medical_dietary_restriction: text})}
-                    value={this.state.explorer_data.medical_dietary_restriction}
+                    value={this.state.medical_dietary_restriction}
                   />
                   <Text>After expedition travel plan or itinerary:</Text>
                   <TextInput
                     placeholder='AFTER EXPEDITION TRAVEL PLAN OR ITINERARY:'
                     style={Styles.checkInput}
                     onChangeText={(text) => this.setState({after_expedition_plan: text})}
-                    value={this.state.explorer_data.after_expedition_plan}
+                    value={this.state.after_expedition_plan}
                   />
                 
                     <Text style={Styles.bigText}>
@@ -191,7 +241,49 @@ class ExplorerCheckin extends Component {
                         />
                 </TouchableHighlight>
                 <Text>BY PRESSING SUBMIT YOU AGREE TO THESE TERMS.</Text>
-                </View>      
+                </View>  
+               </ScrollView>)
+        break;
+      case 'sending':
+        return(<View style={Styles.centerContent}>
+                <ActivityIndicator
+                  animating={this.state.animating}
+                  size="large"
+                />
+                <Text>Fetching information...</Text>
+                </View>)
+        break;
+      case 'thankyou':
+        return (<View style={Styles.centerContent}>
+          <Text style={[Styles.bigText, {textAlign: 'center'}]}>You are now checked-in.</Text>
+           <TouchableHighlight
+            style={[Styles.menuButton, {alignItems: 'center'}]}
+            onPress={() => this.props.navigator.pop() }>
+              <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={[Styles.regText, {color: 'white'}]}>
+                  Back to your trip
+                </Text>
+              </View>
+            </TouchableHighlight> 
+          </View>)
+
+        break;
+    }
+  }
+  
+
+  render() {
+    return (
+      <View style={Styles.container}>
+       
+          <View style={Styles.containerPaddingSmall}>
+           <Text style={Styles.bigText}>
+            Explorer Checkin
+            </Text>
+          </View>
+
+          { this.renderView(this.state.toView) }
+
           <View style={Styles.containerPaddingSmall}>
             <TouchableHighlight
                   style={Styles.menuButton}
@@ -201,7 +293,7 @@ class ExplorerCheckin extends Component {
               </Text>
             </TouchableHighlight>
           </View>
-        </ScrollView>
+       
       </View>
     );
   }

@@ -31,12 +31,11 @@ class MainMenu extends Component {
   }
 
   getExplorerData(){
-     AsyncStorage.getItem("explorer_data").then((value) => {
-        if (value != null){
-          this.setState({"explorer_data": JSON.parse(value) });
-        }
+    AsyncStorage.getItem("explorer_data").then((value) => {
+      if (value != null){
+        this.setState({"explorer_data": JSON.parse(value) });
+      }
     }).done();
-    
   }
 
   checkExplorerData(){

@@ -24,12 +24,14 @@ class YourTaoTrip extends Component {
   constructor(props){
     super(props)
     this.navigate = this.navigate.bind(this)
+    this.state = { explorer_data: {}}
   }
 
   navigate(name){
     this.props.navigator.push({name})
   }
 
+  
   clearUserData(){
     try {
       AsyncStorage.removeItem('explorer_data').then(this.props.navigator.popToTop())
@@ -61,7 +63,7 @@ class YourTaoTrip extends Component {
                <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.menuButton}
-                  onPress={() => this.navigate({name: 'explorerCheckin', data: this.props.explorerData }) }>
+                  onPress={() => this.navigate({name: 'explorerCheckin', data: this.state.explorer_data }) }>
                   <Image source={require('./assets/images/tao_ytp2.png')}
                           resizeMode='contain'
                           style={Styles.iconStyle}
