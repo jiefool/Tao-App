@@ -60,11 +60,11 @@ class GuideToPh extends React.Component {
           rotateEnabled={false}
           provider={this.props.provider}
           ref={ref => { this.map = ref; }}
-          mapType={MAP_TYPES.TERRAIN}
+          mapType={MAP_TYPES.STANDARD}
           style={styles.map}
           initialRegion={this.state.region}
           region = {this.state.region}
-          onRegionChange={region => this.onRegionChange(region)}
+          //onRegionChange={region => this.onRegionChange(region)}
         >
         <MapView.Marker
               title="North Luzon"
