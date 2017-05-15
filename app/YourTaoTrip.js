@@ -20,6 +20,7 @@ import {
 
 import Styles from './assets/stylesheets/Styles';
 import Api from './utilities/Api';
+import NavBar from './components/NavBar';
 var expeditionData = {};
 
 class YourTaoTrip extends Component {
@@ -243,25 +244,11 @@ class YourTaoTrip extends Component {
     return (
       <Image source={require('./assets/images/Tao.img11.jpg')} style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>
-            {this.props.explorerData.first_name}'s Tao Trip
-          </Text>
+          <NavBar title={this.props.explorerData.first_name +'\'s Tao Trip'} navigator={this.props.navigator} />
         </View>
          
         { this.renderView(this.state.toView) }
-
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
-
-        </View>
       </Image>
-
     );
   }
 }

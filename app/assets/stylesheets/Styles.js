@@ -1,5 +1,5 @@
 import {
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
 
 
@@ -213,13 +213,37 @@ var Styles = StyleSheet.create({
     height:880,
   },
 
-    labelText:{
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: 179, 
-      height: 80, 
-      backgroundColor: 'yellow'
+  labelText:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 179, 
+    height: 80, 
+    backgroundColor: 'yellow'
   },
+
+  bubble: {
+    backgroundColor: 'rgba(255,255,255,0.7)',
+    paddingHorizontal: 18,
+    paddingVertical: 12,
+    borderRadius: 20,
+  },
+
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: 'transparent',
+    marginBottom: 10
+  },
+
+ 
+
+  map: {
+     ...StyleSheet.absoluteFillObject,
+  },
+
+  
 });
 
 export default Styles

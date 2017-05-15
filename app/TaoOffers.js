@@ -12,10 +12,12 @@ import {
   View,
   Text,
   Image,
+  ScrollView,
   TouchableHighlight
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
+import NavBar from './components/NavBar';
 
 class MyExperiences extends Component {
   constructor(){
@@ -31,14 +33,12 @@ class MyExperiences extends Component {
   render() {
     return (
       <Image source={require('./assets/images/Tao.img6.jpg')} style={Styles.container}>
-        <View style={Styles.containerPadding}>
-          <Text style={Styles.bigText}>
-            My Experiences
-          </Text>
+        <View style={Styles.containerPaddingSmall}>
+          <NavBar title='Tao Experience' navigator={this.props.navigator}/>
         </View>
-
-        <View style={Styles.containerRow}>
-          <View style={Styles.containerFirstColumn}>
+        <ScrollView style={Styles.containerColumnx}>
+          <View style={Styles.containerRow}>
+            <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
                 style={Styles.menuButton}
                 onPress={() => this.navigate('tao5dayExpedition') }>
@@ -59,39 +59,30 @@ class MyExperiences extends Component {
               </TouchableHighlight>
             </View>
           </View>
-          <View style={Styles.containerRow}>
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('campNgeyngey') }>
-                <Image source={require('./assets/images/tao_island_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>    
-            <View style={Styles.containerFirstColumn}>
-              <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.navigate('taoFoundation') }>
-                <Image source={require('./assets/images/tao_foundation_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.iconStyle}
-                      />
-              </TouchableHighlight>
-            </View>
-          </View>
-          
-        <View style={Styles.containerPadding}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
 
-        </View>
+            <View style={Styles.containerRow}>
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('campNgeyngey') }>
+                  <Image source={require('./assets/images/tao_island_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>    
+              <View style={Styles.containerFirstColumn}>
+                <TouchableHighlight
+                  style={Styles.menuButton}
+                  onPress={() => this.navigate('taoFoundation') }>
+                  <Image source={require('./assets/images/tao_foundation_icon.png')}
+                          resizeMode='contain'
+                          style={Styles.iconStyle}
+                        />
+                </TouchableHighlight>
+              </View>
+            </View>
+          </ScrollView>
       </Image>
     );
   }

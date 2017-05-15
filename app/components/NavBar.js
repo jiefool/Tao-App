@@ -20,7 +20,7 @@ class NavBar extends Component {
           </View>
         </TouchableHighlight>
         <View style={{flex: 0.5, alignItems: 'center', justifyContent: 'center'}}>
-          <Text style={Styles.bigText}>{this.props.title}</Text>
+          <Text style={Styles.regText}>{this.props.title}</Text>
         </View>
         <View style={{flex: 0.25}}>
         </View>
