@@ -16,9 +16,18 @@ class MapNorthLuzon extends Component {
   render(){
     return(
       <View style={Styles.container}>
+
+
+<View style={{flex: 0.1, flexDirection: 'row',}}>
+        <View style={Styles.containerPaddingSmall}>
+         <Text style={Styles.regText}>Experience</Text>
+        </View>
+        <View style={Styles.containerPaddingSmall}>
+         <Text style={Styles.regText}>Events</Text>
+        </View>
+        </View>
       <View style={{flex: 1, flexDirection: 'row', padding: 10}}>
         <View style={{flex: 1, flexDirection: 'column', padding: 10}}>
-          <Text style={Styles.regText}>Experience</Text>
           <Text style={Styles.smallText}>Surf</Text>
           <Text style={Styles.smallText}>Culture</Text>
           <Text style={Styles.smallText}>Foody</Text>
@@ -26,7 +35,7 @@ class MapNorthLuzon extends Component {
         </View>
         <View style={{width: 1, height: 900, backgroundColor: 'black'}} />
         <View style={{flex: 1, flexDirection: 'column', padding: 10}}>
-           <Text style={Styles.regText}>Events</Text>
+
            <Text style={Styles.smallText}>Sinulog</Text>
            <Text style={Styles.smallText}>Malosimbo</Text>
         </View>
