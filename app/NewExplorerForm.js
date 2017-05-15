@@ -40,11 +40,15 @@ class NewExplorerForm extends Component {
   }
 
   createLoginExplorer(){
-    this.setState({toView: 'sending'})
-    Api.createLoginExplorer(this.state).then((res)=> {
-        this.setState({toView: 'thankyou', explorer_data: res })
-        this.saveExplorerData(res);
-    })
+    if(this.state.login == '' && this.state.book_ref=='' && this.state.email == ''){
+      this.setState({toView: 'fieldError'})
+    }else{
+      this.setState({toView: 'sending'})
+      Api.createLoginExplorer(this.state).then((res)=> {
+          this.setState({toView: 'thankyou', explorer_data: res })
+          this.saveExplorerData(res);
+      })
+    }
   }
 
 
@@ -135,7 +139,22 @@ class NewExplorerForm extends Component {
               </View>
             </TouchableHighlight> 
           </View>)
-
+        break;
+      case 'fieldError':
+        return(
+          <View style={Styles.centerContent}>
+          <Text style={[Styles.bigText, {textAlign: 'center'}]}>Some fields should not be blank. Please fill-up accordingly.</Text>
+           <TouchableHighlight
+            style={[Styles.menuButton, {alignItems: 'center'}]}
+            onPress={() => this.setState({toView: 'form'}) }>
+              <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                <Text style={[Styles.regText, {color: 'white'}]}>
+                  Try Again
+                </Text>
+              </View>
+            </TouchableHighlight> 
+          </View>
+        )
         break;
     }
   }
