@@ -38,7 +38,7 @@ var Styles = StyleSheet.create({
   containerPaddingSmall: {
     flex: 0.1,
     alignSelf: 'stretch',
-    backgroundColor: "yellow",
+    //backgroundColor: "yellow",
     alignItems: 'center',
     justifyContent: 'center'
   },

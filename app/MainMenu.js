@@ -58,6 +58,7 @@ class MainMenu extends Component {
     return (
       <Image source={require('./assets/images/Tao.img2.jpg')}  style={Styles.container}>
         <View style={Styles.containerPaddingSpacer}>
+
         </View>
 
         <View style={Styles.containerRow}>

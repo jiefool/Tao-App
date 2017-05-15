@@ -23,6 +23,9 @@ import {
 
 import Styles from './assets/stylesheets/Styles';
 import Api from './utilities/Api';
+import NavBar from './components/NavBar';
+import CusButton from './components/CustomButton';
+
 
 
 class NewExplorerForm extends Component {
@@ -105,16 +108,9 @@ class NewExplorerForm extends Component {
             keyboardType = 'email-address'
           />
 
-          <View style={Styles.btnWrapper}>    
-            <View style={Styles.btnBlock}>
-              <Button style={Styles.bText}
-                onPress={()=> this.createLoginExplorer() }
-                title="Submit"
-                color="blue"
-                accessibilityLabel="Learn more about this purple button"
-              />
-            </View>
-          </View> 
+
+          <Button title='Submit' onPress={()=> {this.createLoginExplorer()}}>
+          </Button>
         </ScrollView>)
         break;
       case 'sending':
@@ -142,17 +138,13 @@ class NewExplorerForm extends Component {
         break;
       case 'fieldError':
         return(
-          <View style={Styles.centerContent}>
-          <Text style={[Styles.bigText, {textAlign: 'center'}]}>Some fields should not be blank. Please fill-up accordingly.</Text>
-           <TouchableHighlight
-            style={[Styles.menuButton, {alignItems: 'center'}]}
-            onPress={() => this.setState({toView: 'form'}) }>
-              <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={[Styles.regText, {color: 'white'}]}>
-                  Try Again
-                </Text>
-              </View>
-            </TouchableHighlight> 
+          <View style={[Styles.centerContent, {alignItems: 'center'}]}>
+            <Text style={[Styles.bigText, {textAlign: 'center'}]}>Some fields should not be blank. Please fill-up accordingly.</Text>
+            <View style={{width: 200, marginTop: 10}}>
+              <Button title='Try Again'
+                onPress={() => this.setState({toView: 'form'}) }>
+              </Button>
+            </View>
           </View>
         )
         break;
@@ -163,23 +155,11 @@ class NewExplorerForm extends Component {
     return (
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>
-            Your TAO
-          </Text>
+          <NavBar title='Your TAO' navigator={this.props.navigator} />
         </View>
       
         <View style={Styles.containerColumn}>
           { this.renderView(this.state.toView) }
-        </View>
-
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-            style={Styles.menuButton}
-            onPress={() => this.props.navigator.pop() }>
-              <Text style={Styles.regText}>
-                Back
-              </Text>
-          </TouchableHighlight>
         </View>
       </View>
     );
