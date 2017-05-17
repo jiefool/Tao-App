@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableHighlight, Text, StyleSheet, Image, ScrollView, Button } from 'react-native';
 import Styles from './assets/stylesheets/Styles';
+import NavBar from './components/NavBar';
 
 
 class CampNgeyngey extends Component {
@@ -17,7 +18,7 @@ class CampNgeyngey extends Component {
     return(
         <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>Camp Ngeyngey</Text>
+          <NavBar title='Camp Ngeyngey' navigator={this.props.navigator}/>
         </View>
 
         <ScrollView style={Styles.containerColumn}>
@@ -71,17 +72,6 @@ class CampNgeyngey extends Component {
             </View>
           </View> 
         </ScrollView>
-
-
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
-        </View>
       </View>
     );
   }

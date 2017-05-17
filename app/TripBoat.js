@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { View, TouchableHighlight, Text, StyleSheet, Image, ScrollView, Button } from 'react-native';
 import Styles from './assets/stylesheets/Styles';
-
+import NavBar from './components/NavBar';
 
 class TripBoat extends Component {
   render(){
     return(
+
+
         <View style={Styles.container}>
+        <View style={Styles.containerPaddingSmall}>
+          <NavBar title='Trip Boat' navigator={this.props.navigator}/>
+        </View>
         <View style={Styles.containerPaddingSmall}>
           <Text style={Styles.bigText}>{this.props.boatData.title}</Text>
         </View>
@@ -21,17 +26,6 @@ class TripBoat extends Component {
             <Text style={Styles.regText}>{this.props.boatData.description}</Text> 
           </View>         
         </ScrollView>
-
-
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
-        </View>
       </View>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableHighlight, Text, StyleSheet, Image, ScrollView, Button } from 'react-native';
 import Styles from './assets/stylesheets/Styles';
-
+import NavBar from './components/NavBar';
 
 class TaoNorth extends Component {
   constructor(){
@@ -17,7 +17,7 @@ class TaoNorth extends Component {
     return(
         <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>Tao North</Text>
+          <NavBar title='Tao North' navigator={this.props.navigator}/>
         </View>
 
         <ScrollView style={Styles.containerColumn}>
@@ -29,15 +29,6 @@ class TaoNorth extends Component {
             <Text style={Styles.regText}>What does it takes to export the ideas of Tao to a different geography and culture? Tao North is underway. We are currently busy busy at creating the Tao trekking experience in Eddie's home village in the rice terraces of the Mountain Provence in the North Luzon. </Text>       
           </View>    
         </ScrollView>
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
-        </View>
       </View>
     );
   }

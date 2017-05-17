@@ -236,6 +236,14 @@ var Styles = StyleSheet.create({
     backgroundColor: 'transparent',
     marginBottom: 10
   },
+    mainIconStyle: {
+    resizeMode:'contain',
+    height: 120,
+    width: 120,
+    backgroundColor: "yellow",
+    borderRadius: 5,
+    borderWidth: .5,
+  },
 
  
 

@@ -24,6 +24,7 @@ import {
 import Styles from './assets/stylesheets/Styles';
 import DatePicker from 'react-native-datepicker'
 import Api from './utilities/Api';
+import NavBar from './components/NavBar';
 
 class ExplorerCheckin extends Component {
   constructor(props) {
@@ -277,23 +278,10 @@ class ExplorerCheckin extends Component {
       <View style={Styles.container}>
        
           <View style={Styles.containerPaddingSmall}>
-           <Text style={Styles.bigText}>
-            Explorer Checkin
-            </Text>
+            <NavBar title='Explorer Checkin' navigator={this.props.navigator}/>
           </View>
 
-          { this.renderView(this.state.toView) }
-
-          <View style={Styles.containerPaddingSmall}>
-            <TouchableHighlight
-                  style={Styles.menuButton}
-                  onPress={() => this.props.navigator.pop() }>
-              <Text style={Styles.regText}>
-                Back
-              </Text>
-            </TouchableHighlight>
-          </View>
-       
+          { this.renderView(this.state.toView) } 
       </View>
     );
   }

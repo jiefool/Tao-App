@@ -21,6 +21,7 @@ import ListItem from './components/ListItem'
 import Api from './utilities/Api';
 import Styles from './assets/stylesheets/Styles';
 var checkListData = require('./assets/data/check_lists.json');
+import NavBar from './components/NavBar';
 
 class PackingList extends Component {
 
@@ -51,23 +52,11 @@ class PackingList extends Component {
     return (
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>Packing List</Text>
+          <NavBar title='Packing List' navigator={this.props.navigator}/>
         </View>
 
         <View style={Styles.containerRow}>
          <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} />
-        </View>
-
-
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
-
         </View>
       </View>
     );

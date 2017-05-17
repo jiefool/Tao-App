@@ -18,16 +18,14 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-
+import NavBar from './components/NavBar';
 
 class TaoInfo extends Component {
   render() {
     return (
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>
-            Useful Info
-          </Text>
+          <NavBar title='Tao Info' navigator={this.props.navigator}/>
         </View>
         <ScrollView style={Styles.containerColumn}>
           <View style={Styles.textWrapper}>
@@ -55,15 +53,6 @@ class TaoInfo extends Component {
             </Text>
           </View>
         </ScrollView>
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-            <Text style={Styles.regText}>
-              Back
-            </Text>
-          </TouchableHighlight>
-        </View>
       </View>
     );
   }

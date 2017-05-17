@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableHighlight, Text, StyleSheet, Image, ScrollView, Button } from 'react-native';
 import Styles from './assets/stylesheets/Styles';
-
+import NavBar from './components/NavBar';
 
 class Tao5dayExpedition extends Component {
   constructor(){
@@ -17,7 +17,7 @@ class Tao5dayExpedition extends Component {
     return(
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>Tao 5 Day Expedition</Text>
+          <NavBar title='5 days expeditions' navigator={this.props.navigator}/>
         </View>
 
         <ScrollView style={Styles.containerColumn}>
@@ -29,15 +29,6 @@ class Tao5dayExpedition extends Component {
           </View>    
           
         </ScrollView>
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
-        </View>
       </View>
     );
   }

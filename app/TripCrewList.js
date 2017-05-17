@@ -20,6 +20,7 @@ import {
 import Styles from './assets/stylesheets/Styles';
 import GeneralListItem from './components/GeneralListItem';
 import Api from './utilities/Api';
+import NavBar from './components/NavBar';
 
 
 class TripCrewList extends Component {
@@ -50,21 +51,10 @@ class TripCrewList extends Component {
     return (
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>
-            Boat Crew
-          </Text>
+          <NavBar title='Boat Crew' navigator={this.props.navigator}/>
         </View>
         <View style={Styles.containerRow}>
           <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
-        </View>
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-            <Text style={Styles.regText}>
-              Back
-            </Text>
-          </TouchableHighlight>
         </View>
       </View>
     );
