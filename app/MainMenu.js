@@ -73,7 +73,7 @@ class MainMenu extends Component {
         <View style={Styles.containerRow}>
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
-            style={Styles.menuButton}
+            style={Styles.mainMenuButton}
             onPress={() => this.checkExplorerData() }>
             <Image source={require('./assets/images/tao_icon.png')}
                     resizeMode='contain'
@@ -83,7 +83,7 @@ class MainMenu extends Component {
           </View>
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
-              style={Styles.menuButton}
+              style={Styles.mainMenuButton}
               onPress={() => this.navigate('taoOffers') }>
                 <Image source={require('./assets/images/tao_icon6.png')}
                    resizeMode='contain'
@@ -96,7 +96,7 @@ class MainMenu extends Component {
         <View style={Styles.containerRow}>
           <View style={Styles.containerFirstColumn}>
           	<TouchableHighlight
-              style={Styles.menuButton}
+              style={Styles.mainMenuButton}
               onPress={() => this.navigate('guideToPh') }>
              	<Image source={require('./assets/images/tao_icon4.png')}
                     resizeMode='contain'

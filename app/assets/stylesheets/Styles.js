@@ -238,13 +238,20 @@ var Styles = StyleSheet.create({
   },
     mainIconStyle: {
     resizeMode:'contain',
-    height: 120,
-    width: 120,
-    backgroundColor: "yellow",
-    borderRadius: 5,
+    height: 90,
+    width: 90,
     borderWidth: .5,
   },
+    mainMenuButton: {
+    borderRadius: 60,
+    width: 120,
+    height: 120,
+    backgroundColor: 'rgba(255,250,0,.30)',
+    borderWidth: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
 
+  },
  
 
   map: {
