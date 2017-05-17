@@ -40,21 +40,21 @@ class MyExperiences extends Component {
           <View style={Styles.containerRow}>
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
-                style={Styles.menuButton}
+                style={Styles.mainMenuButton}
                 onPress={() => this.navigate('tao5dayExpedition') }>
                 <Image source={require('./assets/images/tao_5dexp_icon.png')}
                         resizeMode='contain'
-                        style={Styles.iconStyle}
+                        style={Styles.mainIconStyle}
                       />
               </TouchableHighlight>
             </View>
             <View style={Styles.containerFirstColumn}>
               <TouchableHighlight
-                style={Styles.menuButton}
+                style={Styles.mainMenuButton}
                 onPress={() => this.navigate('taoNorth') }>
                 <Image source={require('./assets/images/tao_north_icon.png')}
                         resizeMode='contain'
-                        style={Styles.iconStyle}
+                        style={Styles.mainIconStyle}
                       />
               </TouchableHighlight>
             </View>
@@ -63,21 +63,21 @@ class MyExperiences extends Component {
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
-                  style={Styles.menuButton}
+                  style={Styles.mainMenuButton}
                   onPress={() => this.navigate('campNgeyngey') }>
                   <Image source={require('./assets/images/tao_island_icon.png')}
                           resizeMode='contain'
-                          style={Styles.iconStyle}
+                          style={Styles.mainIconStyle}
                         />
                 </TouchableHighlight>
               </View>    
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
-                  style={Styles.menuButton}
+                  style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoFoundation') }>
                   <Image source={require('./assets/images/tao_foundation_icon.png')}
                           resizeMode='contain'
-                          style={Styles.iconStyle}
+                          style={Styles.mainIconStyle}
                         />
                 </TouchableHighlight>
               </View>
