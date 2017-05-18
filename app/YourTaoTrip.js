@@ -59,6 +59,7 @@ class YourTaoTrip extends Component {
         return(<ScrollView style={Styles.containerColumnx}>
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoInfo') }>
@@ -69,6 +70,7 @@ class YourTaoTrip extends Component {
                 </TouchableHighlight>
               </View>
                <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('explorerCheckin') }>
@@ -81,6 +83,7 @@ class YourTaoTrip extends Component {
             </View>
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('packingList') }>
@@ -91,6 +94,7 @@ class YourTaoTrip extends Component {
                 </TouchableHighlight>
               </View>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoTenTips') }>
@@ -103,6 +107,7 @@ class YourTaoTrip extends Component {
             </View>
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoTopRecommendations') }>
@@ -113,6 +118,7 @@ class YourTaoTrip extends Component {
                 </TouchableHighlight>
               </View>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate({name: 'tripBoat', data: expeditionData.boat})}>
@@ -125,6 +131,7 @@ class YourTaoTrip extends Component {
             </View>
                <View style={Styles.containerRow}>
             <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                    onPress={() => this.navigate({name: 'tripCrewList', data: expeditionData.crews})}>
@@ -135,6 +142,7 @@ class YourTaoTrip extends Component {
                 </TouchableHighlight>
               </View>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate({name: 'tripExplorers', data: expeditionData.explorers})}>
@@ -147,6 +155,7 @@ class YourTaoTrip extends Component {
             </View>
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                  onPress={() => this.navigate({name: 'tripBaseCamps', data: expeditionData.basecamps})}>
@@ -157,6 +166,7 @@ class YourTaoTrip extends Component {
                 </TouchableHighlight>
               </View>    
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                onPress={() => this.navigate({name: 'tripStories', data: expeditionData.stories})}>
@@ -169,6 +179,7 @@ class YourTaoTrip extends Component {
             </View>
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                    onPress={() => this.navigate({name: 'tripRecipes', data: expeditionData.recipes})}>
@@ -182,6 +193,7 @@ class YourTaoTrip extends Component {
 
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.menuButton}
                   onPress={() => this.clearUserData()}>

@@ -137,13 +137,13 @@ class ExplorerCheckin extends Component {
                     cancelBtnText="Cancel"
                     customStyles={{
                       dateIcon: {
-                        position: 'absolute',
+                        position: "absolute",
                         left: 0,
                         top: 4,
-                        marginLeft: 0
+                        marginLeft: 100
                       },
                       dateInput: {
-                        marginLeft: 36
+                        alignItems: 'center'
                       }
                       // ... You can check the source to find the other keys.
                     }}
@@ -157,7 +157,7 @@ class ExplorerCheckin extends Component {
                     <Picker.Item label="Male" value="male" />
                     <Picker.Item label="Female" value="female" />
                   </Picker>
-                  <Text>First Name:</Text>
+                  <Text>Address:</Text>
                   <TextInput
                     placeholder='HOME ADDRESS:'
                     style={Styles.checkInput}

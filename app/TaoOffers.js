@@ -39,6 +39,7 @@ class MyExperiences extends Component {
         <ScrollView style={Styles.containerColumnx}>
           <View style={Styles.containerRow}>
             <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
               <TouchableHighlight
                 style={Styles.mainMenuButton}
                 onPress={() => this.navigate('tao5dayExpedition') }>
@@ -49,6 +50,7 @@ class MyExperiences extends Component {
               </TouchableHighlight>
             </View>
             <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
               <TouchableHighlight
                 style={Styles.mainMenuButton}
                 onPress={() => this.navigate('taoNorth') }>
@@ -62,6 +64,7 @@ class MyExperiences extends Component {
 
             <View style={Styles.containerRow}>
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('campNgeyngey') }>
@@ -72,6 +75,7 @@ class MyExperiences extends Component {
                 </TouchableHighlight>
               </View>    
               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoFoundation') }>

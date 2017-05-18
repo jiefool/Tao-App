@@ -32,8 +32,8 @@ class TaoTenTips extends Component {
         <ScrollView style={Styles.containerColumn}>
           <View style={Styles.containerRow}>
             <View style={Styles.textWrapper}>
-              <Text style={Styles.headerText}>10 useful tips to get the most out of your Expedition</Text>
-                
+              <Text style={Styles.headerText}>10 USEFUL TIPS TO GET THE MOST OUT OF YOUR EXPEDITION</Text>
+ 
                 <Text style={Styles.descriptionText}> 
                 Be aware of cultural differences, know your part and leave first world 
                 baggage behind.{'\n'}
@@ -162,17 +162,17 @@ class TaoTenTips extends Component {
                 </Text>
                 <Text style={Styles.descriptionText}>
                 (all A pronounce Ah!, all I pronounce Ee! U pronounce in Uber! NG pronounced in soNG, O in Opera){'\n'}{'\n'}
-                TAO-people, human, person / KUMUSTA - How are you? / SALAMAT - Thank you! / KAIN NA - let's eat/
-                PAALAM - Goodbye / TAGAY - Cheers' Drink up, shot / MAGANDA - Beautiful / ANO YAN? - What is that? / TUBIG - water /
-                BUHAY - life, alive / ANONG PANGALAN MO? - What is your name / GUSTO KO - I like / AYAW KO - I dont like /
-                ISDA - Fish / KAPE - Coffee / SALABAT - Ginger tea / KANIN - rice / PIRATA - boatmen / SUNOG - burnt / LASING - drunk/tipsy
-                / MASAYA - happy / PANGIT - not nice, ugly / MAHAL - it means - My love! or Expensive depending on the tone 
-                SIGE - (magic word for anything  positive!) yes please!, see ya!, more please, your welcome, lets go, oh yeah?
-                MABUHAY! - (say it in a loud excited tone with open arms!) means, Long life, Alive. A welcome introduction to an audience
+                • TAO - people, human, person {'\n'}• KUMUSTA - How are you? {'\n'}• SALAMAT - Thank you! {'\n'}• KAIN NA - let's eat{'\n'}• 
+                PAALAM - Goodbye {'\n'}• TAGAY - Cheers' Drink up, shot {'\n'}• MAGANDA - Beautiful {'\n'}• ANO YAN? - What is that? {'\n'}• TUBIG - water {'\n'}• 
+                BUHAY - life, alive {'\n'}• ANONG PANGALAN MO? - What is{'\n'}{"\t"}{"\t"}your name{'\n'}• GUSTO KO - I like {'\n'}• AYAW KO - I dont like {'\n'}• 
+                ISDA - Fish {'\n'}• KAPE - Coffee {'\n'}• SALABAT - Ginger tea {'\n'}• KANIN - rice {'\n'}• PIRATA - boatmen {'\n'}• SUNOG - burnt {'\n'}• LASING - drunk/tipsy
+                {'\n'}• MASAYA - happy {'\n'}• PANGIT - not nice, ugly {'\n'}• MAHAL - it means - My love! or{'\n'}{"\t"}{"\t"}expensive depending on the tone {'\n'}• 
+                SIGE - (magic word for anything{'\n'}{"\t"}{"\t"}positive!){'\n'}{"\t"}{"\t"}{"\t"}{"\t"}- yes please!,{'\n'}{"\t"}{"\t"}{"\t"}{"\t"}- see ya!,{'\n'}{"\t"}{"\t"}{"\t"}{"\t"}- more please,{'\n'}{"\t"}{"\t"}{"\t"}{"\t"}- your welcome,{'\n'}{"\t"}{"\t"}{"\t"}{"\t"}- lets go,{'\n'}{"\t"}{"\t"}{"\t"}{"\t"}- oh yeah?{'\n'}• 
+                MABUHAY! - (say it in a loud{'\n'}{"\t"}{"\t"}excited tone with open arms!){'\n'}{"\t"}{"\t"}means, Long life,{'\n'}{"\t"}{"\t"}{"\t"}{"\t"}- Alive. A welcome introduction to an audience
                 declaring your presence. Mostly used in revolutionary slogans and beauty pageants!{'\n'}
                 </Text>
                 <Text style={Styles.headerText}>
-                ENJOY YOUR expedition!
+                ENJOY YOUR EXPEDITION!
                 </Text>
             </View>
           </View>

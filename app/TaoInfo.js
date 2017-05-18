@@ -40,7 +40,7 @@ class TaoInfo extends Component {
               We provide a couple of extra bottles of rum on board for some cocktails at sundown. If you would like any other soft drinks or Alcohol, please place our order and pay in the office before departure. Your drinks will be delivered directly to the boat and can be checked before departure. It is important to order enough drinks for the duration of the trip as there are few opportunities to buy extra in the islands.
               Avoid 'Alcohol Politics'[who drank what, my beer/ your beer] by ordering more than you think you will normally drink.{'\n'}             
             </Text>
-            <Text style={Styles.headerText}> DRINK LIST:</Text>
+            <Text style={Styles.headerText}> DRINK LIST</Text>
             <Text style={Styles.descriptionText}>
               We recommend 1x case of beer + 1x bottle of rum + 2x mixers per person, remember you dont have to drink it all!!{'\n'}
               San Miguel Pilsen [24 x 330ml bottles]{'\n'}

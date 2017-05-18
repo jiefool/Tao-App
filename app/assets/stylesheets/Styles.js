@@ -250,7 +250,16 @@ var Styles = StyleSheet.create({
     borderWidth: 5,
     alignItems: 'center',
     justifyContent: 'center',
-
+  },
+    iconSpacing: {
+      width: 50, 
+      height: 50,
+    },
+    alignLeftList: {
+      flex: 1,
+      flexDirection: "row",
+      justifyContent: 'flex-start',
+      backgroundColor: "rgba(0,0,0,0)",
   },
  
 
