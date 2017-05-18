@@ -51,7 +51,7 @@ class TaoTopRecommendations extends Component {
     return (
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Tao Top Recommendations' navigator={this.props.navigator}/>
+          <NavBar title='Top Recommendations' navigator={this.props.navigator}/>
         </View>
 
         <View style={Styles.containerRow}>
