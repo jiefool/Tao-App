@@ -55,7 +55,7 @@ class PackingList extends Component {
           <NavBar title='Packing List' navigator={this.props.navigator}/>
         </View>
 
-        <View style={Styles.alignLeftList}>
+        <View style={Styles.containerRow}>
          <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} />
         </View>
       </View>

@@ -126,7 +126,7 @@ class ExplorerCheckin extends Component {
                   />
                   <Text>Date of Birth:</Text>
                   <DatePicker
-                    style={{width: 200}}
+                    style={{width: 300}}
                     date={this.state.birth_date}
                     mode="date"
                     placeholder="select date"
@@ -140,16 +140,18 @@ class ExplorerCheckin extends Component {
                         position: "absolute",
                         left: 0,
                         top: 4,
-                        marginLeft: 100
+                        marginLeft: 80
                       },
                       dateInput: {
-                        alignItems: 'center'
+                        marginLeft: 120
+
                       }
                       // ... You can check the source to find the other keys.
                     }}
                     onDateChange={(date) => {this.setState({birth_date: date})}}
                   />
                   <Text>Gender:</Text>
+                  <View style= {{alignSelf: 'stretch',alignItems:'center',justifyContent: 'center'}}>
                   <Picker
                     style={{width: 100}}
                     selectedValue={this.state.gender}
@@ -157,6 +159,7 @@ class ExplorerCheckin extends Component {
                     <Picker.Item label="Male" value="male" />
                     <Picker.Item label="Female" value="female" />
                   </Picker>
+                  </View>
                   <Text>Address:</Text>
                   <TextInput
                     placeholder='HOME ADDRESS:'

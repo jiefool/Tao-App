@@ -92,11 +92,14 @@ var Styles = StyleSheet.create({
   //components list item
   li: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     backgroundColor: "white",
     height: 60,
-    margin: 2
+    margin: 2,
+    flexDirection: 'row',
+    justifyContent: 'flex-start' ,
+    paddingLeft: 10,
+    borderBottomWidth: 1,
+    alignItems: "center",
   },
   liItem: {
     fontSize: 20,
@@ -255,12 +258,6 @@ var Styles = StyleSheet.create({
       width: 50, 
       height: 50,
     },
-    alignLeftList: {
-      flex: 1,
-      flexDirection: "row",
-      justifyContent: 'flex-start',
-      backgroundColor: "rgba(0,0,0,0)",
-  },
  
 
   map: {
