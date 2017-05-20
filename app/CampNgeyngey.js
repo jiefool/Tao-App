@@ -61,16 +61,15 @@ class CampNgeyngey extends Component {
             <Text style={Styles.smallText}> Before applying to take part in this experience you must understand that what Tao offers is not a resort or a hotel. This island camp is our expression of paradise, we value a close connection to the natural world. This means that certain creature comforts that block this connection you will not find on our island. We have shared bathrooms, limited fresh water, limited electricity but we have the sea breeze, the sound of the waves and the starry skies on offer.{"\n"}{"\n"} We love it, but we understand that this is not everyone's idea of a holiday.{"\n"}{"\n"}The island camp experience allows for spaces to retreat and find peace and solitude, and when you are ready there are sociable places to connect and share time with other likeminded adventurers. Its up to you to find your own definition of paradise within the framework of Tao.{"\n"}{"\n"} ...DO YOU STILL WANT TO JOIN THIS EXPERIENCE
             </Text>
           </View>    
-          <View style={Styles.btnWrapper}>    
-            <View style={Styles.btnBlock}>
-              <Button style={Styles.bText}
-                onPress={()=> this.navigate('applyNgeyngey') }
-                title="Apply Now"
-                color="blue"
-                accessibilityLabel="Learn more about this purple button"
-              />
-            </View>
-          </View> 
+            <TouchableHighlight
+                style={{alignItems: 'center', marginBottom: 20}}
+                onPress={()=> this.navigate('applyNgeyngey') }>
+                  <View style={Styles.btnWrapper}>
+                    <Text style={[Styles.regText, {color: 'white'}]}>
+                      Apply
+                    </Text>
+                  </View>
+            </TouchableHighlight> 
         </ScrollView>
       </View>
     );

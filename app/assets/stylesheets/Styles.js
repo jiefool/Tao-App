@@ -190,6 +190,10 @@ var Styles = StyleSheet.create({
     alignSelf: 'center'
   },
   btnWrapper: {
+    height: 50, 
+    width: 300, 
+    backgroundColor: 'blue', 
+    justifyContent: 'center', 
     alignItems: 'center'
   },
   btnBlock: {
@@ -249,7 +253,7 @@ var Styles = StyleSheet.create({
     borderRadius: 60,
     width: 120,
     height: 120,
-    backgroundColor: 'rgba(255,250,0,.30)',
+    backgroundColor: 'rgba(0,191,255,0.30)',
     borderWidth: 5,
     alignItems: 'center',
     justifyContent: 'center',

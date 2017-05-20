@@ -20,6 +20,7 @@ import {
 import Styles from './assets/stylesheets/Styles';
 import ProjectItem from './components/ProjectItem';
 import Api from './utilities/Api';
+import NavBar from './components/NavBar';
 
 
 class TaoProjects extends Component {
@@ -56,21 +57,10 @@ class TaoProjects extends Component {
     return (
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>
-            Tao Projects
-          </Text>
+          <NavBar title='Tao Projects' navigator={this.props.navigator} />
         </View>
         <View style={Styles.containerRow}>
           <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
-        </View>
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-            <Text style={Styles.regText}>
-              Back
-            </Text>
-          </TouchableHighlight>
         </View>
       </View>
     );

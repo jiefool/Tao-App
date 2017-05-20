@@ -17,7 +17,7 @@ class Tao5dayExpedition extends Component {
     return(
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <NavBar title='5 days expeditions' navigator={this.props.navigator}/>
+          <NavBar title='5 Day Expeditions' navigator={this.props.navigator}/>
         </View>
 
         <ScrollView style={Styles.containerColumn}>

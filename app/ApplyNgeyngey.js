@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, TouchableHighlight, Text, StyleSheet, Image, ScrollView, TextInput, Button } from 'react-native';
 import Styles from './assets/stylesheets/Styles';
 import Api from './utilities/Api'
+import NavBar from './components/NavBar'
 
 
 class ApplyNgeyngey extends Component {
@@ -24,48 +25,49 @@ class ApplyNgeyngey extends Component {
   renderView(view){
     switch(view){
       case 'form':
-        return(<View style={Styles.textInputWrapper}>
+        return(<View>
                   <TextInput
-                    style={Styles.regTextInput}
+                    style={Styles.checkInput}
                     onChangeText={(first_name) => this.setState({first_name})}
                     value={this.state.first_name}
                     placeholder='First Name'
                   />
                   <TextInput
-                    style={Styles.regTextInput}
+                    style={Styles.checkInput}
                     onChangeText={(last_name) => this.setState({last_name})}
                     value={this.state.last_name}
                     placeholder='Last Name'
                   />
                   <TextInput
-                    style={Styles.regTextInput}
+                    style={Styles.checkInput}
                     onChangeText={(nationality) => this.setState({nationality})}
                     value={this.state.nationality}
                     placeholder='Nationality'
                   />
                   <TextInput
-                    style={Styles.regTextInput}
+                    style={Styles.checkInput}
                     onChangeText={(birth_date) => this.setState({birth_date})}
                     value={this.state.birth_date}
                     placeholder='Birth date'
                   />
                   <TextInput
-                    style={Styles.regTextInput}
+                    style={Styles.checkInput}
                     onChangeText={(email) => this.setState({email})}
                     value={this.state.email}
                     placeholder='Email'
                     keyboardType='email-address'
                   />
-                  <View style={Styles.btnWrapper}>    
-                  <View style={Styles.btnBlock}>
-                    <Button style={Styles.bText}
-                      onPress={()=> this.sendApplication() }
-                      title="Apply"
-                      color="blue"
-                      accessibilityLabel="Learn more about this purple button"
-                    />
-                  </View>
-                </View>
+                  
+                    <TouchableHighlight
+                      style={{alignItems: 'center'}}
+                      onPress={() => this.sendApplication() }>
+                        <View style={Styles.btnWrapper}>
+                          <Text style={[Styles.regText, {color: 'white'}]}>
+                            Apply Now
+                          </Text>
+                        </View>
+                      </TouchableHighlight> 
+                   
               </View>)
         break;
       case 'sending':
@@ -81,21 +83,11 @@ class ApplyNgeyngey extends Component {
     return(
       <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>Apply to Camp Ngeyngey</Text>
+          <NavBar title='Apply to Ngeyngey' navigator={this.props.navigator} />
         </View>
 
         <View style={Styles.containerColumn}>
           { this.renderView(this.state.toView) }
-        </View>
-
-        <View style={Styles.containerPaddingSmall}>
-          <TouchableHighlight
-                style={Styles.menuButton}
-                onPress={() => this.props.navigator.pop() }>
-                <Text style={Styles.regText}>
-                  Back
-                </Text>
-              </TouchableHighlight>
         </View>
       </View>
     );
