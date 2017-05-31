@@ -250,11 +250,10 @@ var Styles = StyleSheet.create({
     borderWidth: .5,
   },
     mainMenuButton: {
-    borderRadius: 60,
-    width: 120,
-    height: 120,
-    backgroundColor: 'rgba(0,191,255,0.30)',
-    borderWidth: 5,
+    borderRadius: 70,
+    width: 140,
+    height: 140,
+    backgroundColor: 'rgba(0,0,0,.5)',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -267,6 +266,10 @@ var Styles = StyleSheet.create({
   map: {
      ...StyleSheet.absoluteFillObject,
   },
+
+
+  menuButtonWrapper: {justifyContent: 'center', alignItems: 'center'},
+  menuButtonText: {color: "white", fontSize: 12, fontWeight: 'bold'}
 
   
 });

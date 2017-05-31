@@ -17,6 +17,13 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MIcon from 'react-native-vector-icons/MaterialIcons';
+import MenuButton from './components/MenuButton';
+const boatIcon = (<MIcon name="directions-boat" size={80} color="yellow" />)
+const humanIcon = (<MCIcon name="human-child" size={80} color="yellow" />)
+
+
 
 class MainMenu extends Component {
   constructor(props){
@@ -75,20 +82,18 @@ class MainMenu extends Component {
             <TouchableHighlight
             style={Styles.mainMenuButton}
             onPress={() => this.checkExplorerData() }>
-            <Image source={require('./assets/images/tao_icon.png')}
-                    resizeMode='contain'
-                    style={Styles.mainIconStyle}
-                  />
+              <View>
+                <MenuButton menuIcon={boatIcon} menuText="MY TAO TRIP" />
+              </View>
             </TouchableHighlight> 
           </View>
           <View style={Styles.containerFirstColumn}>
             <TouchableHighlight
               style={Styles.mainMenuButton}
               onPress={() => this.navigate('taoOffers') }>
-                <Image source={require('./assets/images/tao_icon6.png')}
-                   resizeMode='contain'
-                   style={Styles.mainIconStyle}
-                  />
+                <View>
+                  <MenuButton menuIcon={humanIcon} menuText="ABOUT TAO" />
+              </View>
             </TouchableHighlight>
           </View>
         </View>
