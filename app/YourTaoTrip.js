@@ -21,6 +21,30 @@ import {
 import Styles from './assets/stylesheets/Styles';
 import Api from './utilities/Api';
 import NavBar from './components/NavBar';
+import MenuButton from './components/MenuButton';
+
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MIcon from 'react-native-vector-icons/MaterialIcons';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+import ORIcons from 'react-native-vector-icons/Octicons';
+import FDIcons from 'react-native-vector-icons/Foundation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
+
+
+const infoIcon = (<FAIcon name="info" size={80} color="yellow" />)
+const checkListIcon = (<ORIcons name="checklist" size={80} color="yellow" />)
+const briefCaseCheck = (<MCIcon name="briefcase-check" size={80} color="yellow" />)
+const lightBulb = (<FDIcons name="lightbulb" size={80} color="yellow" />)
+const thumbsUp = (<FAIcon name="thumbs-up" size={80} color="yellow" />)
+const shipIcon = (<Ionicons name="ios-boat" size={80} color="yellow" />)
+const anchorIcon = (<FAIcon name="anchor" size={80} color="yellow" />)
+const footIcon = (<FDIcons name="foot" size={80} color="yellow" />)
+const baseCamp = (<Entypo name="basecamp" size={80} color="yellow" />)
+const bookIcon  = (<FAIcon name="book" size={80} color="yellow" />)
+const silverWare  = (<MCIcon name="silverware" size={80} color="yellow" />)
+
+
 var expeditionData = {};
 
 class YourTaoTrip extends Component {
@@ -63,10 +87,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoInfo') }>
-                  <Image source={require('./assets/images/tao_ytp.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={infoIcon} menuText="INFO" />
+                    </View>
                 </TouchableHighlight>
               </View>
                <View style={Styles.containerFirstColumn}>
@@ -74,10 +97,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('explorerCheckin') }>
-                  <Image source={require('./assets/images/tao_ytp2.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={checkListIcon} menuText="CHECK LIST" />
+                    </View>
                 </TouchableHighlight>
               </View>
             </View>
@@ -87,10 +109,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('packingList') }>
-                  <Image source={require('./assets/images/tao_ytp3.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={briefCaseCheck} menuText="PACKING LIST" />
+                    </View>
                 </TouchableHighlight>
               </View>
               <View style={Styles.containerFirstColumn}>
@@ -98,10 +119,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoTenTips') }>
-                  <Image source={require('./assets/images/tao_ytp4.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={lightBulb} menuText="TIPS" />
+                    </View>
                 </TouchableHighlight>
               </View>
             </View>
@@ -111,10 +131,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoTopRecommendations') }>
-                  <Image source={require('./assets/images/tao_ytp6.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={thumbsUp} menuText="SUGGESTIONS" />
+                    </View>
                 </TouchableHighlight>
               </View>
               <View style={Styles.containerFirstColumn}>
@@ -122,10 +141,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate({name: 'tripBoat', data: expeditionData.boat})}>
-                  <Image source={require('./assets/images/tao_boat_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={shipIcon} menuText="SHIP" />
+                    </View>
                 </TouchableHighlight>
               </View>
             </View>
@@ -135,10 +153,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                    onPress={() => this.navigate({name: 'tripCrewList', data: expeditionData.crews})}>
-                  <Image source={require('./assets/images/tao_crew_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={anchorIcon} menuText="CREWS" />
+                    </View>
                 </TouchableHighlight>
               </View>
               <View style={Styles.containerFirstColumn}>
@@ -146,10 +163,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate({name: 'tripExplorers', data: expeditionData.explorers})}>
-                  <Image source={require('./assets/images/tao_explorer_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={footIcon} menuText="EXPLORERS" />
+                    </View>
                 </TouchableHighlight>
               </View>
             </View>
@@ -159,21 +175,19 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                  onPress={() => this.navigate({name: 'tripBaseCamps', data: expeditionData.basecamps})}>
-                  <Image source={require('./assets/images/tao_basecamps_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                    <View>
+                      <MenuButton menuIcon={baseCamp} menuText="BASECAMPS" />
+                    </View>
                 </TouchableHighlight>
               </View>    
               <View style={Styles.containerFirstColumn}>
                 <View style={Styles.iconSpacing} />
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
-               onPress={() => this.navigate({name: 'tripStories', data: expeditionData.stories})}>
-                  <Image source={require('./assets/images/tao_stories_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                  onPress={() => this.navigate({name: 'tripStories', data: expeditionData.stories})}>
+                    <View>
+                      <MenuButton menuIcon={bookIcon} menuText="STORIES" />
+                    </View>
                 </TouchableHighlight>
               </View>
             </View>
@@ -183,10 +197,9 @@ class YourTaoTrip extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                    onPress={() => this.navigate({name: 'tripRecipes', data: expeditionData.recipes})}>
-                  <Image source={require('./assets/images/tao_recipes_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                      <View>
+                        <MenuButton menuIcon={silverWare} menuText="CREWS" />
+                      </View> 
                 </TouchableHighlight>
               </View>
             </View>

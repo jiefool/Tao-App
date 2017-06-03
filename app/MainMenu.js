@@ -17,12 +17,15 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
+import MenuButton from './components/MenuButton';
+
 import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MIcon from 'react-native-vector-icons/MaterialIcons';
-import MenuButton from './components/MenuButton';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+
 const boatIcon = (<MIcon name="directions-boat" size={80} color="yellow" />)
 const humanIcon = (<MCIcon name="human-child" size={80} color="yellow" />)
-
+const mapSignIcon = (<FAIcon name="map-signs" size={80} color="yellow" />)
 
 
 class MainMenu extends Component {
@@ -103,10 +106,9 @@ class MainMenu extends Component {
           	<TouchableHighlight
               style={Styles.mainMenuButton}
               onPress={() => this.navigate('guideToPh') }>
-             	<Image source={require('./assets/images/tao_icon4.png')}
-                    resizeMode='contain'
-                    style={Styles.mainIconStyle}
-                  />
+               	<View>
+                  <MenuButton menuIcon={mapSignIcon} menuText="PH GUIDE" />
+                </View>
             </TouchableHighlight>
           </View>
         </View>
