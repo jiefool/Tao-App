@@ -198,7 +198,7 @@ class YourTaoTrip extends Component {
                   style={Styles.mainMenuButton}
                    onPress={() => this.navigate({name: 'tripRecipes', data: expeditionData.recipes})}>
                       <View>
-                        <MenuButton menuIcon={silverWare} menuText="CREWS" />
+                        <MenuButton menuIcon={silverWare} menuText="RECIPES" />
                       </View> 
                 </TouchableHighlight>
               </View>
@@ -208,9 +208,9 @@ class YourTaoTrip extends Component {
               <View style={Styles.containerFirstColumn}>
                 <View style={Styles.iconSpacing} />
                 <TouchableHighlight
-                  style={Styles.menuButton}
+                  style={[Styles.menuButton, {marginBottom: 50}]}
                   onPress={() => this.clearUserData()}>
-                    <Text>Not you? Press here.</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 15}}>Not you? Press here.</Text>
                 </TouchableHighlight>
               </View>
             </View>
@@ -255,12 +255,6 @@ class YourTaoTrip extends Component {
                 </Text>
               </View>
             </TouchableHighlight>
-            <TouchableHighlight
-              style={[Styles.menuButton, {alignItems: 'center'}]}
-              onPress={() => this.clearUserData()}>
-                <Text>Not you? Press here.</Text>
-            </TouchableHighlight>
-        
           </View>)
     }
   }
