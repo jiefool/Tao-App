@@ -18,6 +18,26 @@ import {
 
 import Styles from './assets/stylesheets/Styles';
 import NavBar from './components/NavBar';
+import MenuButton from './components/MenuButton';
+
+
+
+
+import MIcon from 'react-native-vector-icons/MaterialIcons';
+import FDIcon from 'react-native-vector-icons/Foundation';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+
+
+const exploreIcon = (<MIcon name="explore" size={80} color="yellow" />)
+const mountainIcon = (<FDIcon name="mountains" size={80} color="yellow" />)
+const beachIcon = (<MCIcon name="beach" size={80} color="yellow" />)
+const handshakeIcon = (<FAIcon name="handshake-o" size={80} color="yellow" />)
+
+
+
+
+
 
 class MyExperiences extends Component {
   constructor(){
@@ -43,10 +63,9 @@ class MyExperiences extends Component {
               <TouchableHighlight
                 style={Styles.mainMenuButton}
                 onPress={() => this.navigate('tao5dayExpedition') }>
-                <Image source={require('./assets/images/tao_5dexp_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.mainIconStyle}
-                      />
+                <View>
+                  <MenuButton menuIcon={exploreIcon} menuText="5 DAY EXP" />
+                </View>
               </TouchableHighlight>
             </View>
             <View style={Styles.containerFirstColumn}>
@@ -54,10 +73,9 @@ class MyExperiences extends Component {
               <TouchableHighlight
                 style={Styles.mainMenuButton}
                 onPress={() => this.navigate('taoNorth') }>
-                <Image source={require('./assets/images/tao_north_icon.png')}
-                        resizeMode='contain'
-                        style={Styles.mainIconStyle}
-                      />
+                <View>
+                  <MenuButton menuIcon={mountainIcon} menuText="TAO NORTH" />
+                </View>
               </TouchableHighlight>
             </View>
           </View>
@@ -68,10 +86,9 @@ class MyExperiences extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('campNgeyngey') }>
-                  <Image source={require('./assets/images/tao_island_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                  <View>
+                    <MenuButton menuIcon={beachIcon} menuText="TAO ISLAND" />
+                </View>
                 </TouchableHighlight>
               </View>    
               <View style={Styles.containerFirstColumn}>
@@ -79,10 +96,9 @@ class MyExperiences extends Component {
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('taoFoundation') }>
-                  <Image source={require('./assets/images/tao_foundation_icon.png')}
-                          resizeMode='contain'
-                          style={Styles.mainIconStyle}
-                        />
+                  <View>
+                    <MenuButton menuIcon={handshakeIcon} menuText="TAO FOUNDATION" />
+                </View>
                 </TouchableHighlight>
               </View>
             </View>

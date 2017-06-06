@@ -17,14 +17,16 @@ class CampNgeyngey extends Component {
   render(){
     return(
         <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Camp Ngeyngey' navigator={this.props.navigator}/>
-        </View>
+          <View style={Styles.containerPaddingSmall}>
+            <NavBar title='Camp Ngeyngey' navigator={this.props.navigator}/>
+          </View>
 
         <ScrollView style={Styles.containerColumn}>
-          <Image source={require('./assets/images/campngeyngey.jpg')}
+          <View style={{alignItems: 'center', flex: 1}}>
+            <Image source={require('./assets/images/campngeyngey.jpg')}
                         style={Styles.showProjectIcon}
                       />
+          </View>
 
           <View style={Styles.textWrapper}>           
             <Text style={Styles.bigText}>Tao 5 Day Expedition</Text> 

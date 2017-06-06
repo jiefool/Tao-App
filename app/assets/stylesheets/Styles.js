@@ -117,7 +117,8 @@ var Styles = StyleSheet.create({
     paddingBottom: 20
   },
   textWrapper: {
-    padding: 20
+    padding: 20,
+    alignItems: 'center'
   },
   descriptionText: {
     fontSize: 20,
@@ -149,8 +150,8 @@ var Styles = StyleSheet.create({
   showProjectIcon: {
     flex: 1,
     height: 300,
-    width: 470,
-    resizeMode: 'cover'
+    width: 400,
+    resizeMode: 'stretch'
   },
   showProjectHeader: {
     flex: 1,
