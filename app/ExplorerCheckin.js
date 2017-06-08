@@ -249,16 +249,19 @@ class ExplorerCheckin extends Component {
                </ScrollView>)
         break;
       case 'sending':
-        return(<View style={Styles.centerContent}>
-                <ActivityIndicator
-                  animating={this.state.animating}
-                  size="large"
-                />
-                <Text>Fetching information...</Text>
-                </View>)
+        return(<View style={Styles.containerColumn}>
+                <View style={Styles.centerContent}>
+                        <ActivityIndicator
+                          animating={this.state.animating}
+                          size="large"
+                        />
+                        <Text>Fetching information...</Text>
+                </View>
+              </View>)
         break;
       case 'thankyou':
-        return (<View style={Styles.centerContent}>
+        return (<View style={Styles.containerColumn}>
+        <View style={Styles.centerContent}>
           <Text style={[Styles.bigText, {textAlign: 'center'}]}>You are now checked-in.</Text>
            <TouchableHighlight
             style={[Styles.menuButton, {alignItems: 'center'}]}
@@ -269,7 +272,8 @@ class ExplorerCheckin extends Component {
                 </Text>
               </View>
             </TouchableHighlight> 
-          </View>)
+          </View>
+        </View>)
 
         break;
     }

@@ -98,7 +98,7 @@ class YourTaoTrip extends Component {
                   style={Styles.mainMenuButton}
                   onPress={() => this.navigate('explorerCheckin') }>
                     <View>
-                      <MenuButton menuIcon={checkListIcon} menuText="CHECK LIST" />
+                      <MenuButton menuIcon={checkListIcon} menuText="CHECK-IN" />
                     </View>
                 </TouchableHighlight>
               </View>
