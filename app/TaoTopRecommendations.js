@@ -54,8 +54,8 @@ class TaoTopRecommendations extends Component {
           <NavBar title='Top Recommendations' navigator={this.props.navigator}/>
         </View>
 
-        <View style={Styles.containerRow}>
-         <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} />
+        <View style={{alignContent: 'center', justifyContent: 'center', flex: 1}}>
+          <Text style={Styles.regText}>We will populate this list soon.</Text>
         </View>
       </View>
     );
