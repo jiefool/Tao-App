@@ -44,8 +44,13 @@ import TripBoat from './app/TripBoat';
 import TripCrewList from './app/TripCrewList';
 import TripBaseCamps from './app/TripBaseCamps';
 import TripExplorers from './app/TripExplorers';
+
 import TripStories from './app/TripStories';
+import ShowTripStory from './app/ShowTripStory';
+
 import TripRecipes from './app/TripRecipes';
+import ShowTripRecipe from './app/ShowTripRecipe';
+
 import ExperiencesEvents from './app/ExperiencesEvents';
 import MapNorthLuzon from './app/MapNorthLuzon';
 import ExplorerCheckin from './app/ExplorerCheckin';
@@ -136,6 +141,10 @@ export default class App extends Component {
       return <TripRecipes navigator={navigator} recipesData={route.name.data}/>
     }else if (route.name === 'explorerCheckin'){
       return <ExplorerCheckin navigator={navigator}/>
+    }else if (route.name.name === 'showTripRecipe'){
+      return <ShowTripRecipe navigator={navigator} recipeData = {route.name.data}/>
+    }else if (route.name.name === 'showTripStory'){
+      return <ShowTripStory navigator={navigator} storyData = {route.name.data}/>
     }
     
   }

@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import GeneralListItem from './components/GeneralListItem';
+import GeneralListItem from './components/GeneralListItemB';
 import Api from './utilities/Api';
 import NavBar from './components/NavBar';
 

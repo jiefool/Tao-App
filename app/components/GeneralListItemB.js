@@ -9,7 +9,7 @@ class GeneralListItem extends Component {
 
   }
   render(){
-    return(<TouchableHighlight onPress={ this.props.onPress }>
+    return(
         <View style={Styles.projectItem}>
           <View style={Styles.imageHolder}>
             <Image source={{uri: 'https://taotechph.com' + this.props.thumb_image }}
@@ -23,7 +23,7 @@ class GeneralListItem extends Component {
            
           </View>
         </View>
-      </TouchableHighlight>
+     
     );
   }
 }

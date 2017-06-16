@@ -102,29 +102,29 @@ class ExplorerCheckin extends Component {
     switch(view){
       case 'form':
         return(<ScrollView style={Styles.containerColumnx}>
-                <View style={Styles.centerContent}>
-                  <Text style={{textAlign: 'left'}}>First Name:</Text>
+                <View style={{padding: 10}}>
+                  <Text style={Styles.regText}>First Name:</Text>
                   <TextInput
                     placeholder='FIRST NAME:'
                     style={Styles.checkInput}
                     onChangeText={(first_name) => this.setState({first_name: first_name})}
                     value={this.state.first_name}
                   />
-                  <Text>Last Name:</Text>
+                  <Text style={Styles.regText}>Last Name:</Text>
                    <TextInput
                     placeholder='LAST NAME:'
                     style={Styles.checkInput}
                     onChangeText={(last_name) => this.setState( {last_name: last_name})}
                     value={this.state.last_name}
                   />
-                  <Text>Middle Name:</Text>
+                  <Text style={Styles.regText}>Middle Name:</Text>
                   <TextInput
                     placeholder='MIDDLE NAME:'
                     style={Styles.checkInput}
                     onChangeText={(middle_name) => this.setState( {middle_name: middle_name})}
                     value={this.state.middle_name}
                   />
-                  <Text>Date of Birth:</Text>
+                  <Text style={Styles.regText}>Date of Birth:</Text>
                   <DatePicker
                     style={{width: 300}}
                     date={this.state.birth_date}
@@ -150,7 +150,7 @@ class ExplorerCheckin extends Component {
                     }}
                     onDateChange={(date) => {this.setState({birth_date: date})}}
                   />
-                  <Text>Gender:</Text>
+                  <Text style={Styles.regText}>Gender:</Text>
                   <View style= {{alignSelf: 'stretch',alignItems:'center',justifyContent: 'center'}}>
                   <Picker
                     style={{width: 100}}
@@ -160,63 +160,63 @@ class ExplorerCheckin extends Component {
                     <Picker.Item label="Female" value="female" />
                   </Picker>
                   </View>
-                  <Text>Address:</Text>
+                  <Text style={Styles.regText}>Address:</Text>
                   <TextInput
                     placeholder='HOME ADDRESS:'
                     style={Styles.checkInput}
                     onChangeText={(address) => this.setState({address: address})}
                     value={this.state.address}
                   />
-                  <Text>Nationality:</Text>
+                  <Text style={Styles.regText}>Nationality:</Text>
                   <TextInput
                     placeholder='NATIONALITY:'
                     style={Styles.checkInput}
                     onChangeText={(nationality) => this.setState( {nationality: nationality})}
                     value={this.state.nationality}
                   />
-                  <Text>Email Address:</Text>
+                  <Text style={Styles.regText}>Email Address:</Text>
                   <TextInput
                     placeholder='EMAIL ADDRESS:'
                     style={Styles.checkInput}
                     onChangeText={(email) => this.setState({email: email})}
                     value={this.state.email}
                   />
-                  <Text>Mobile Number:</Text>
+                  <Text style={Styles.regText}>Mobile Number:</Text>
                   <TextInput
                     placeholder='MOBILE NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(mobile_number) => this.setState( {mobile_number: mobile_number})}
                     value={this.state.mobile_number}
                   />
-                  <Text>Passport Number:</Text>
+                  <Text style={Styles.regText}>Passport Number:</Text>
                   <TextInput
                     placeholder='PASSPORT NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(passport_number) => this.setState({passport_number: passport_number})}
                     value={this.state.passport_number}
                   />
-                  <Text>Emergey Contact Person:</Text>
+                  <Text style={Styles.regText}>Emergey Contact Person:</Text>
                   <TextInput
                     placeholder='CONTACT PERSON IN CASE OF EMERGENCY:'
                     style={Styles.checkInput}
                     onChangeText={(name) => this.setState( {emergency_contact_person: name})}
                     value={this.state.emergency_contact_person}
                   />
-                  <Text>Emergency Contact Person Number:</Text>
+                  <Text style={Styles.regText}>Emergency Contact Person Number:</Text>
                   <TextInput
                     placeholder='CONTACT  NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(number) => this.setState({emergency_contact_person_number: number})}
                     value={this.state.emergency_contact_person_number}
                   />
-                  <Text>Relevant medical condition or dietary restriction:</Text>
+                  <Text style={Styles.regText}>Relevant medical condition or dietary restriction:</Text>
                   <TextInput
                     placeholder='RELEVANT MEDICAL CONDOTION OR DIETARY RESTRICTION:'
                     style={Styles.checkInput}
                     onChangeText={(text) => this.setState( {medical_dietary_restriction: text})}
                     value={this.state.medical_dietary_restriction}
                   />
-                  <Text>After expedition travel plan or itinerary:</Text>
+                  <Text style={Styles.regText}>After expedition travel plan or itinerary:</Text>
                   <TextInput
                     placeholder='AFTER EXPEDITION TRAVEL PLAN OR ITINERARY:'
                     style={Styles.checkInput}
@@ -224,29 +224,33 @@ class ExplorerCheckin extends Component {
                     value={this.state.after_expedition_plan}
                   />
                 
-                    <Text style={Styles.bigText}>
+                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>
                     AKNOWLEDGEMENT OF RISK, RESPOSIBILITY AND LIABILITY WAIVER
                     </Text>
-                    <Text style={Styles.bigText}>Assumption of Risk:</Text>
+                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>Assumption of Risk</Text>
                     <Text>I understand that Tao Philippines / Tao LostBoys, Inc. is an adventure campany travelling in a very remote area of the Philippines. I understand that will be in an unfamilliar sorroundings and will be exposed to risks. I understand that i may suffer from physical injury, disease, sickness, damage or loss of my items as a result of my parcitipation in the expedition. I freely and voluntarily accept and assume all such risks, dangers and hazards</Text>
-                    <Text style={Styles.bigText}>Responsibility:</Text>
+                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>Responsibility</Text>
                     <Text>I understand that participants are ultimately responsible for their personal safety and the consequences of their actions. I understand that the expedition leader will discuss points about safety during our briefing and I will pay attention to this points. I also confirm that I have relevant medical / travel insurance that will cover the cost of any medical / emergency action required on my behalf.</Text>
-                    <Text style={Styles.bigText}>Liability Waiver:</Text>
+                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>Liability Waiver</Text>
                     <Text>I release Tao Philippines/ Tao LostBoys, Inc. and its employees all liability for any loss, damge, injury or expense that i may suffer as a result of my participation in this expidition. </Text>
 
-                </View>  
-                  <View style={Styles.centerContent}>
-                  <TouchableHighlight
-                  style={Styles.menuButton}
-                  onPress={() => this.sendExplorerCheckIn() }>
-                  <Image source={require('./assets/images/button.png')}
-                          resizeMode='contain'
-                          style={Styles.iconStyle}
-                        />
-                </TouchableHighlight>
-                <Text>BY PRESSING SUBMIT YOU AGREE TO THESE TERMS.</Text>
-                </View>  
-               </ScrollView>)
+
+
+
+                     <TouchableHighlight
+                      style={[Styles.menuButton, {alignItems: 'center', marginBottom: 10, marginTop: 20}]}
+                      onPress={() => this.sendExplorerCheckIn() }>
+                        <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                          <Text style={[Styles.regText, {color: 'white'}]}>
+                            Submit
+                          </Text>
+                        </View>
+                    </TouchableHighlight> 
+
+                    <Text style={{textAlign: 'center'}}>BY PRESSING SUBMIT YOU AGREE TO THESE TERMS.</Text>
+
+                </View> 
+              </ScrollView>)
         break;
       case 'sending':
         return(<View style={Styles.containerColumn}>

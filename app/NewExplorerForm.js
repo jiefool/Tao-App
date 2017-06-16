@@ -21,6 +21,8 @@ import {
   ActivityIndicator
 } from 'react-native';
 
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 import Styles from './assets/stylesheets/Styles';
 import Api from './utilities/Api';
 import NavBar from './components/NavBar';
@@ -70,51 +72,63 @@ class NewExplorerForm extends Component {
   renderView(view){
     switch(view){
       case 'form':
-        return(<ScrollView style={Styles.containerColumn}>
-          <Text>Login:</Text>
-          <TextInput
-            placeholder='Login'
-            style={Styles.checkInput}
-            onChangeText={(login) => this.setState({login})}
-            value={this.state.login}
-          />
-          <Text>Booking Reference #:</Text>
-          <TextInput
-            placeholder='Booking Reference #'
-            style={Styles.checkInput}
-            onChangeText={(book_ref) => this.setState({book_ref})}
-            value={this.state.book_ref}
-          />
-          <Text>First Name:</Text>
-          <TextInput
-            placeholder='First Name'
-            style={Styles.checkInput}
-            onChangeText={(first_name) => this.setState({first_name})}
-            value={this.state.first_name}
-          />
-          <Text>Last Name:</Text>
-          <TextInput
-            placeholder='Last Name'
-            style={Styles.checkInput}
-            onChangeText={(last_name) => this.setState({last_name})}
-            value={this.state.last_name}
-          />
-          <Text>Email:</Text>
-          <TextInput
-            placeholder='Email'
-            style={Styles.checkInput}
-            onChangeText={(email) => this.setState({email})}
-            value={this.state.email}
-            keyboardType = 'email-address'
-          />
+        return(<KeyboardAwareScrollView style={{flex: 1, padding: 10}}>
+          
+            <Text style={Styles.regText}>Login:</Text>
+            <TextInput
+              placeholder='Login'
+              style={Styles.checkInput}
+              onChangeText={(login) => this.setState({login})}
+              value={this.state.login}
+            />
+            <Text style={Styles.regText}>Booking Reference #:</Text>
+            <TextInput
+              placeholder='Booking Reference #'
+              style={Styles.checkInput}
+              onChangeText={(book_ref) => this.setState({book_ref})}
+              value={this.state.book_ref}
+            />
+            <Text style={Styles.regText}>First Name:</Text>
+            <TextInput
+              placeholder='First Name'
+              style={Styles.checkInput}
+              onChangeText={(first_name) => this.setState({first_name})}
+              value={this.state.first_name}
+            />
+            <Text style={Styles.regText}>Last Name:</Text>
+            <TextInput
+              placeholder='Last Name'
+              style={Styles.checkInput}
+              onChangeText={(last_name) => this.setState({last_name})}
+              value={this.state.last_name}
+            />
+            <Text style={Styles.regText}>Email:</Text>
+            <TextInput
+              placeholder='Email'
+              style={Styles.checkInput}
+              onChangeText={(email) => this.setState({email})}
+              value={this.state.email}
+              keyboardType = 'email-address'
+            />
 
 
-          <Button title='Submit' onPress={()=> {this.createLoginExplorer()}}>
-          </Button>
-        </ScrollView>)
+            <TouchableHighlight
+              style={[Styles.menuButton, {alignItems: 'center'}]}
+              onPress={() => {this.createLoginExplorer()} }>
+                <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                  <Text style={[Styles.regText, {color: 'white'}]}>
+                    Submit
+                  </Text>
+                </View>
+            </TouchableHighlight> 
+
+
+           
+         
+        </KeyboardAwareScrollView>)
         break;
       case 'sending':
-        return(<View style={Styles.centerContent}>
+        return(<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                 <ActivityIndicator
                   animating={this.state.animating}
                   size="large"
@@ -125,14 +139,14 @@ class NewExplorerForm extends Component {
       case 'thankyou':
         return (<View style={Styles.centerContent}>
           <Text style={[Styles.bigText, {textAlign: 'center'}]}>Hello {this.state.explorer_data.first_name}, find out the details of your expedition by clicking the button below:</Text>
-           <TouchableHighlight
-            style={[Styles.menuButton, {alignItems: 'center'}]}
-            onPress={() => this.navigate({name: 'yourTaoTrip', data: this.state.explorer_data }) }>
-              <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
-                <Text style={[Styles.regText, {color: 'white'}]}>
-                  Go to My Trip
-                </Text>
-              </View>
+            <TouchableHighlight
+              style={[Styles.menuButton, {alignItems: 'center'}]}
+              onPress={() => this.navigate({name: 'yourTaoTrip', data: this.state.explorer_data }) }>
+                <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
+                  <Text style={[Styles.regText, {color: 'white'}]}>
+                    Go to My Trip
+                  </Text>
+                </View>
             </TouchableHighlight> 
           </View>)
         break;
@@ -158,7 +172,7 @@ class NewExplorerForm extends Component {
           <NavBar title='Your TAO' navigator={this.props.navigator} />
         </View>
       
-        <View style={Styles.containerColumn}>
+        <View style={Styles.containerColumnx}>
           { this.renderView(this.state.toView) }
         </View>
       </View>

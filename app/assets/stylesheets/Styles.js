@@ -125,8 +125,8 @@ var Styles = StyleSheet.create({
     textAlign: 'justify',
   },
   checkInput: {
+    flex: 1,
     height: 40,
-    width: 400,
     backgroundColor: 'white',
     marginBottom: 20,
     marginTop: 10,

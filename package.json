@@ -3,13 +3,16 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "test": "jest",
+    "build": "(cd android/ && ./gradlew assembleDebug)",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/"
   },
   "dependencies": {
     "react": "16.0.0-alpha.3",
     "react-native": "0.43.1",
     "react-native-datepicker": "^1.4.7",
+    "react-native-keyboard-aware-scroll-view": "^0.2.9",
     "react-native-maps": "^0.14.0",
     "react-native-splash-screen": "^1.0.9",
     "react-native-vector-icons": "^4.1.1"

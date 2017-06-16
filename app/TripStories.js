@@ -41,8 +41,8 @@ class TripStories extends Component {
 
   _renderItem(data){
     return(
-      <GeneralListItem thumb_image = {data.story_thumb} title = {data.name} line_text_a = {data.description}
-         onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
+      <GeneralListItem thumb_image = {data.story_thumb} title = {data.title} line_text_a = {data.description}
+         onPress={()=> this.navigate({name: 'showTripStory', data: data}) }/>
    
     );
   }
