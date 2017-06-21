@@ -23,13 +23,12 @@ class CampNgeyngey extends Component {
 
         <ScrollView style={Styles.containerColumn}>
           <View style={{alignItems: 'center', flex: 1}}>
-            <Image source={require('./assets/images/campngeyngey.jpg')}
-                        style={Styles.showProjectIcon}
+            <Image source={require('./assets/images/tao_island.png')}
+                        style={Styles.showProjectHeader}
                       />
           </View>
 
-          <View style={Styles.textWrapper}>           
-            <Text style={Styles.bigText}>Tao 5 Day Expedition</Text> 
+          <View style={Styles.textWrapper}> 
             <Text style={Styles.regText}>Welcome to Camp Ngey Ngey: a Neverland for escapees searching for a break from the noise of the modern world. </Text> 
             <Text style={Styles.smallText}>The NEW project from Tao Philippines.{"\n"}{"\n"}The Lostboys have taken over the abandoned resort of Manguengey in Busuanga. A remote island in Palawan.{"\n"}{"\n"}Camp Ngey! Ngey! is our crusoe-style deserted island camp, paradise for those who understand the luxury of simplicity and disconnection.{"\n"}{"\n"}The camp retains the remains of the old resort, reclaiming the typhoon-wrecked building parts and old furniture; a mix of playful architecture and sociable spaces.{"\n"}{"\n"}Adding Tao's signature individual bamboo Tuka huts for sleeping.{"\n"}{"\n"}The island camp experience allows for spaces to retreat and find peace and solitude, and when you are ready there are sociable places to connect and share time with other like-minded adventurers.{"\n"}{"\n"}Explore the island: The camp is on the main beach with jungle trails to access further 3 wild beaches, Encompassed by its crystal blue waters, preserved reefs teaming with life, windswept cliffs and hidden caves.{"\n"}{"\n"}No room service, no menus, no WiFi. You will arrive as strangers, you will eat together, swim together, laugh together, drink together, get to know each other offline, face to face, become part of the magic of Tao and see what happens!
             </Text>

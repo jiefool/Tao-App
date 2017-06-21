@@ -21,7 +21,7 @@ class TaoNorth extends Component {
         </View>
 
         <ScrollView style={Styles.containerColumn}>
-          <Image source={require('./assets/images/tao_north_header.png')}
+          <Image source={require('./assets/images/tao_north.png')}
                         style={Styles.showProjectHeader}
                       />
 

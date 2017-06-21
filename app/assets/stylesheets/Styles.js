@@ -157,7 +157,7 @@ var Styles = StyleSheet.create({
     flex: 1,
     height: 220,
     width: 418,
-    resizeMode: 'contain'
+    resizeMode: 'cover'
   },
   imageHolder: {
     flex: .4,

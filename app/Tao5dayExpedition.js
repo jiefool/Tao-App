@@ -21,7 +21,7 @@ class Tao5dayExpedition extends Component {
         </View>
 
         <ScrollView style={Styles.containerColumn}>
-          <Image source={require('./assets/images/tao_5dexp_header.png')}
+          <Image source={require('./assets/images/tao_expedition.png')}
                         style={Styles.showProjectHeader}
                       />
           <View style={Styles.textWrapper}>            
