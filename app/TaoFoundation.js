@@ -21,8 +21,10 @@ class TaoFoundation extends Component {
             <NavBar title='Tao Foundation' navigator={this.props.navigator}/>
           </View>
 
-          <ScrollView style={Styles.containerColumn}>
-              <Image source={require('./assets/images/tao_foundation.png')} style={Styles.showProjectHeader} />
+          <ScrollView style={{flex: 1}}>
+            <View style={{alignItems: 'center', paddingBottom: 20, flex: 1}}>
+            <Image source={require('./assets/images/tao_foundation.png')} originalWidth={400} originalHeight={300} style={{ borderWidth: 0, resizeMode: 'cover'}}/>
+            
               <View style={Styles.textWrapper}>            
                 <Text style={Styles.regText}>Everyone has a different idea of paradise, but what's our definition? Our recent stewardship of a provite tropical island is our chance to explore this. Tao island is a typhoon wrecked boutique resort now taken over by the Lost Boys. It will be a creative playground, designed + built with deep understanding of living on the island. </Text> 
               </View>    
@@ -36,6 +38,7 @@ class TaoFoundation extends Component {
                   </Text>
                 </View>
               </TouchableHighlight>
+            </View>
           </ScrollView>
         </View>
     );

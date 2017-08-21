@@ -12,10 +12,12 @@
     "react": "16.0.0-alpha.3",
     "react-native": "0.43.1",
     "react-native-datepicker": "^1.4.7",
+    "react-native-fit-image": "^1.4.8",
     "react-native-keyboard-aware-scroll-view": "^0.2.9",
     "react-native-maps": "^0.14.0",
     "react-native-splash-screen": "^1.0.9",
-    "react-native-vector-icons": "^4.1.1"
+    "react-native-vector-icons": "^4.1.1",
+    "rn-viewpager": "^1.2.3"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",

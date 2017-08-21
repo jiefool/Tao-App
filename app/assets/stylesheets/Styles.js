@@ -85,6 +85,11 @@ var Styles = StyleSheet.create({
     paddingBottom: 15,
     textAlign: 'justify'
   },
+
+  smallTextLogin: {
+    textAlign: 'justify'
+  },
+
   bText: {
     fontWeight: 'bold'
   },
@@ -125,14 +130,12 @@ var Styles = StyleSheet.create({
     textAlign: 'justify',
   },
   checkInput: {
-    flex: 1,
-    height: 40,
-    backgroundColor: 'white',
-    marginBottom: 20,
-    marginTop: 10,
-    color: 'black',
-    paddingHorizontal: 10,
+    backgroundColor: 'rgba(255, 255, 255, .5)',
+    color: 'blue',
+    paddingHorizontal: 5,
     textAlign: 'center',
+    marginTop: 10,
+    marginBottom: 10
   },
   projectItem: {
     flex: 1,
@@ -155,9 +158,9 @@ var Styles = StyleSheet.create({
   },
   showProjectHeader: {
     flex: 1,
-    height: 220,
-    width: 418,
-    resizeMode: 'cover'
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   imageHolder: {
     flex: .4,
@@ -251,9 +254,9 @@ var Styles = StyleSheet.create({
     borderWidth: .5,
   },
     mainMenuButton: {
-    borderRadius: 70,
-    width: 140,
-    height: 140,
+    borderRadius: 10,
+    width: 130,
+    height: 100,
     backgroundColor: 'rgba(0,0,0,.5)',
     alignItems: 'center',
     justifyContent: 'center',
@@ -268,9 +271,20 @@ var Styles = StyleSheet.create({
      ...StyleSheet.absoluteFillObject,
   },
 
+  pageStyle: {
+    alignItems: 'center',
+    padding: 20,
+  },
+
+  paragraph: {
+    paddingBottom: 10,
+    textAlign: 'justify',
+    fontSize: 15,
+  },
+
 
   menuButtonWrapper: {justifyContent: 'center', alignItems: 'center'},
-  menuButtonText: {color: "white", fontSize: 12, fontWeight: 'bold'}
+  menuButtonText: {color: "white", fontSize: 12, fontWeight: 'bold', textAlign: 'center'}
 
   
 });

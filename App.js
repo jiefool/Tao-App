@@ -44,16 +44,20 @@ import TripBoat from './app/TripBoat';
 import TripCrewList from './app/TripCrewList';
 import TripBaseCamps from './app/TripBaseCamps';
 import TripExplorers from './app/TripExplorers';
-
+import OurStory from './app/OurStory';
+import TaoOath from './app/TaoOath';
+import FounderLetter from './app/FounderLetter';
+import HealthSafety from './app/HealthSafety';
+import CaptainsDosAndDonts from './app/CaptainsDosAndDonts';
 import TripStories from './app/TripStories';
 import ShowTripStory from './app/ShowTripStory';
-
 import TripRecipes from './app/TripRecipes';
 import ShowTripRecipe from './app/ShowTripRecipe';
-
 import ExperiencesEvents from './app/ExperiencesEvents';
 import MapNorthLuzon from './app/MapNorthLuzon';
 import ExplorerCheckin from './app/ExplorerCheckin';
+import CulturalDifference from './app/CulturalDifference';
+import LearnTagalog from './app/LearnTagalog';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -127,6 +131,20 @@ export default class App extends Component {
       return <TripExplorers navigator={navigator}/>
     }else if (route.name === 'mapNorthLuzon'){
       return <MapNorthLuzon navigator={navigator}/>
+    }else if (route.name === 'ourStory'){
+      return <OurStory navigator={navigator}/>
+    }else if (route.name === 'founderLetter'){
+      return <FounderLetter navigator={navigator}/>
+    }else if (route.name === 'taoOath'){
+      return <TaoOath navigator={navigator}/>
+    }else if (route.name === 'healthSafety'){
+      return <HealthSafety navigator={navigator}/>
+    }else if (route.name === 'captainsDosAndDonts'){
+      return <CaptainsDosAndDonts navigator={navigator}/>
+    }else if (route.name === 'culturalDifference'){
+      return <CulturalDifference navigator={navigator}/>
+    }else if (route.name === 'learnTagalog'){
+      return <LearnTagalog navigator={navigator}/>
     }else if (route.name.name === 'tripBoat'){
       return <TripBoat navigator={navigator} boatData={route.name.data}/>
     }else if (route.name.name === 'tripCrewList'){
