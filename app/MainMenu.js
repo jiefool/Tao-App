@@ -90,6 +90,7 @@ class MainMenu extends Component {
     }else{
       this.setState({toView: 'sending'})
       Api.createLoginExplorer(this.state).then((res)=> {
+        console.log(res)
         if (res.id != undefined){
           this.setState({toView: 'tripdetails', explorer_data: res })
           this.saveExplorerDataToLocal(res);
@@ -270,7 +271,7 @@ class MainMenu extends Component {
                <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
-                   onPress={() => this.navigate({name: 'tripRecipes', data: this.state.expeditionData.recipes})}>
+                   onPress={() => this.navigate('guideToPh')}>
                       <View>
                         <MenuButton menuIcon={mapIcon} menuText="MAP" />
                       </View> 
