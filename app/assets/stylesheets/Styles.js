@@ -1,5 +1,6 @@
 import {
   StyleSheet,
+  Dimensions
 } from 'react-native';
 
 
@@ -284,8 +285,27 @@ var Styles = StyleSheet.create({
 
 
   menuButtonWrapper: {justifyContent: 'center', alignItems: 'center'},
-  menuButtonText: {color: "white", fontSize: 12, fontWeight: 'bold', textAlign: 'center'}
+  menuButtonText: {color: "white", fontSize: 12, fontWeight: 'bold', textAlign: 'center'},
 
+  taoProducts: {
+    width: Dimensions.get('window').width, 
+    height: Dimensions.get('window').height * 0.3,
+    alignItems: 'center', 
+    justifyContent: 'center'
+  },
+
+  productTitles: {
+    fontFamily: 'ffad_matro-webfont', 
+    fontSize: 25, 
+    color: 'white',
+    shadowColor: 'black',
+    shadowOffset: {
+      width: 10,
+      height: 10
+    },
+    shadowRadius: 5,
+    shadowOpacity: 1.0
+  }
   
 });
 

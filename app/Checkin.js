@@ -71,10 +71,7 @@ class Checkin extends Component {
         <TouchableHighlight
           style={Styles.menuButton}
           onPress={() => this.navigate('yourTaoTrip') }>
-          <Image source={require('./assets/images/button.png')}
-                  resizeMode='contain'
-                  style={Styles.iconStyle}
-                />
+          <Text>Button</Text>
         </TouchableHighlight>      
         <View style={Styles.containerPaddingSmall}>
           <TouchableHighlight

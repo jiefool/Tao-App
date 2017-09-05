@@ -16,7 +16,9 @@ import {
   Button,
   TouchableHighlight,
   TextInput,
-  ActivityIndicator
+  ActivityIndicator,
+  ScrollView,
+  Dimensions
 } from 'react-native';
 import {
   PagerTabIndicator, 
@@ -336,6 +338,23 @@ class MainMenu extends Component {
         <IndicatorViewPager
             style={{flex: 1}}
             indicator={this._renderDotIndicator()}>
+
+          <View>
+            <ScrollView style={{backgroundColor:'cornflowerblue'}}>
+              <Image source={require('./assets/images/tao_products.png')}  style={Styles.taoProducts}>
+                <Text style={Styles.productTitles}>Boat Expeditions</Text>
+              </Image>
+              <Image source={require('./assets/images/tao_products_3.png')}  style={Styles.taoProducts}>
+                <Text style={Styles.productTitles}>Tao Island</Text>
+              </Image>
+              <Image source={require('./assets/images/tao_products_2.png')}  style={Styles.taoProducts}>
+                <Text style={Styles.productTitles}>Mountain Retreat & Treks</Text>
+              </Image>
+              <Image source={require('./assets/images/tao_products_4.png')}  style={Styles.taoProducts}>
+                <Text style={Styles.productTitles}>Events & Gatherings</Text>
+              </Image>
+            </ScrollView>
+          </View>
           
           <View style={{backgroundColor:'cornflowerblue'}}>
             <Image source={require('./assets/images/Tao.img2.jpg')}  style={Styles.container}>
@@ -448,7 +467,7 @@ class MainMenu extends Component {
   }
 
   _renderDotIndicator() {
-    return <PagerDotIndicator pageCount={2} />;
+    return <PagerDotIndicator pageCount={3} />;
   }
 
 }
