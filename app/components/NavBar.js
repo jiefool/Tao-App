@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableHighlight, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import Styles from '../assets/stylesheets/Styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -9,7 +9,7 @@ class NavBar extends Component {
   render(){
     return(
       <View style={{flex: 1, height: 50, flexDirection: 'row', backgroundColor: 'yellow'}}>
-        <TouchableHighlight
+        <TouchableOpacity
           style={Styles.menuButton}
           onPress={() => this.props.navigator.pop() }>
           <View style={{flex: 0.25, flexDirection: 'row', alignItems: 'center', paddingLeft: 10}}>
@@ -18,7 +18,7 @@ class NavBar extends Component {
                 <Text style={Styles.regText}> Back </Text>
            
           </View>
-        </TouchableHighlight>
+        </TouchableOpacity>
         <View style={{flex: 0.5, alignItems: 'center', justifyContent: 'center'}}>
           <Text style={Styles.regText}>{this.props.title}</Text>
         </View>

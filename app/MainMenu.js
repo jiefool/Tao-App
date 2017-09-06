@@ -341,18 +341,36 @@ class MainMenu extends Component {
 
           <View>
             <ScrollView style={{backgroundColor:'cornflowerblue'}}>
-              <Image source={require('./assets/images/tao_products.png')}  style={Styles.taoProducts}>
-                <Text style={Styles.productTitles}>Boat Expeditions</Text>
-              </Image>
-              <Image source={require('./assets/images/tao_products_3.png')}  style={Styles.taoProducts}>
-                <Text style={Styles.productTitles}>Tao Island</Text>
-              </Image>
-              <Image source={require('./assets/images/tao_products_2.png')}  style={Styles.taoProducts}>
-                <Text style={Styles.productTitles}>Mountain Retreat & Treks</Text>
-              </Image>
-              <Image source={require('./assets/images/tao_products_4.png')}  style={Styles.taoProducts}>
-                <Text style={Styles.productTitles}>Events & Gatherings</Text>
-              </Image>
+              <TouchableHighlight onPress={() => this.navigate('TaoExpeditionPage') }>
+                <Image source={require('./assets/images/tao_expedition.png')}  style={Styles.taoProducts}>
+                  <Text style={Styles.productTitles}>Tao Expeditions</Text>
+                </Image>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+                <Image source={require('./assets/images/tao_sailing.png')}  style={Styles.taoProducts}>
+                  <Text style={Styles.productTitles}>Tao Sailing Experience</Text>
+                </Image>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+                <Image source={require('./assets/images/tao_island.png')}  style={Styles.taoProducts}>
+                  <Text style={Styles.productTitles}>Tao Island</Text>
+                </Image>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+                <Image source={require('./assets/images/tao_trek.png')}  style={Styles.taoProducts}>
+                  <Text style={Styles.productTitles}>Tao Treks</Text>
+                </Image>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+                <Image source={require('./assets/images/tao_gathering.png')}  style={Styles.taoProducts}>
+                  <Text style={Styles.productTitles}>Tao Gatherings</Text>
+                </Image>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+                <Image source={require('./assets/images/tao_foundation.png')}  style={Styles.taoProducts}>
+                  <Text style={Styles.productTitles}>Tao Kalahi Foundation</Text>
+                </Image>
+              </TouchableHighlight>
             </ScrollView>
           </View>
           

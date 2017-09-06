@@ -58,6 +58,7 @@ import MapNorthLuzon from './app/MapNorthLuzon';
 import ExplorerCheckin from './app/ExplorerCheckin';
 import CulturalDifference from './app/CulturalDifference';
 import LearnTagalog from './app/LearnTagalog';
+import TaoExpeditionPage from './app/TaoExpeditionPage';
 
 var News = require('./app/news');
 var Turn = require('./app/turn');
@@ -163,6 +164,8 @@ export default class App extends Component {
       return <ShowTripRecipe navigator={navigator} recipeData = {route.name.data}/>
     }else if (route.name.name === 'showTripStory'){
       return <ShowTripStory navigator={navigator} storyData = {route.name.data}/>
+    }else if (route.name === 'TaoExpeditionPage'){
+      return <TaoExpeditionPage navigator={navigator}/>
     }
     
   }

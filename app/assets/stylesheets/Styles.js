@@ -299,12 +299,14 @@ var Styles = StyleSheet.create({
     fontSize: 25, 
     color: 'white',
     shadowColor: 'black',
+    backgroundColor: 'rgba(0,0,0,.3)',
     shadowOffset: {
       width: 10,
       height: 10
     },
     shadowRadius: 5,
-    shadowOpacity: 1.0
+    shadowOpacity: 1.0,
+    padding: 5
   }
   
 });
