@@ -24,24 +24,10 @@ import Communications from 'react-native-communications';
 import Styles from './assets/stylesheets/Styles';
 
 class TaoExpeditionPage extends Component {
-  constructor(props){
-    super(props)
-    this.navigate = this.navigate.bind(this)
-  }          
-
   gotoExpedition(navigator){
     AsyncStorage.setItem('alreadybooked', 'true').done(function(){
-      Actions.main();
-      Actions.refresh();
+      Actions.reset('main');
     });
-  }
-
-  navigate(name){
-    this.props.navigator.push({name})
-  }
-
-  componentDidMount(){
-
   }
 
   render() {

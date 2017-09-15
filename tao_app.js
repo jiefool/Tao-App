@@ -17,7 +17,7 @@ const TaoApp = () => {
   return (
     <Router 
       navigationBarStyle={styles.navBar} 
-      titleStyle={styles.navBarTitle} 
+      headerTitleStyle={styles.navBarTitle} 
       barButtonTextStyle={styles.barButtonTextStyle} 
       barButtonIconStyle={styles.barButtonIconStyle}>
       <Scene key="root">
@@ -40,7 +40,8 @@ var styles = StyleSheet.create({
     backgroundColor:'#0D47A1',
   },
   navBarTitle:{
-    alignSelf: 'center',
+    textAlign: 'center',
+    alignSelf:'center',
     color:'#FFFFFF'
   },
   barButtonTextStyle:{
