@@ -14,21 +14,39 @@ import {
   Image,
   ListView,
   ScrollView,
+  AsyncStorage,
   TouchableOpacity,
   Dimensions
 } from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
 import Communications from 'react-native-communications';
 import Styles from './assets/stylesheets/Styles';
-import NavBar from './components/NavBar';
 
 class TaoExpeditionPage extends Component {
+  constructor(props){
+    super(props)
+    this.navigate = this.navigate.bind(this)
+  }          
+
+  gotoExpedition(navigator){
+    AsyncStorage.setItem('alreadybooked', 'true').done(function(){
+      Actions.main();
+      Actions.refresh();
+    });
+  }
+
+  navigate(name){
+    this.props.navigator.push({name})
+  }
+
+  componentDidMount(){
+
+  }
+
   render() {
     return (
       <Image source={require('./assets/images/tao_expedition_2.png')} style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Tao Expedition' navigator={this.props.navigator}/>
-        </View>
         <View style={{flex: 1, justifyContent: 'center'}}>
           <View style={{backgroundColor: 'rgba(0,0,0,.5)', padding: 20, alignItems: 'center'}}>
             <Text style={{textAlign: 'center', fontSize: 20, color: 'white',padding: 10}}>
@@ -37,9 +55,11 @@ class TaoExpeditionPage extends Component {
             <TouchableOpacity activeOpacity={0.5} onPress={() => Communications.web('http://booking.taophilippines.com/open-group-experience/#form') }>
               <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Apply Now!</Text>
             </TouchableOpacity>
-            <Text style={{color: 'yellow', marginTop: 10}}>
-              Already booked? Login
-            </Text>
+            <TouchableOpacity onPress={() => this.gotoExpedition() }>
+              <Text style={{color: 'yellow', marginTop: 10}}>
+                Already booked? Login
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Image>

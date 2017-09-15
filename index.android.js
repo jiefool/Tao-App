@@ -7,8 +7,8 @@
 
 
 import { AppRegistry } from 'react-native';
-import App from './App';
+import TaoApp from './tao_app';
 
-AppRegistry.registerComponent('taokalahi', () => App);
+AppRegistry.registerComponent('taokalahi', () => TaoApp);
 
 

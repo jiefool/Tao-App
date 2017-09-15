@@ -164,8 +164,8 @@ export default class App extends Component {
       return <ShowTripRecipe navigator={navigator} recipeData = {route.name.data}/>
     }else if (route.name.name === 'showTripStory'){
       return <ShowTripStory navigator={navigator} storyData = {route.name.data}/>
-    }else if (route.name === 'TaoExpeditionPage'){
-      return <TaoExpeditionPage navigator={navigator}/>
+    }else if (route.name.name === 'TaoExpeditionPage'){
+      return <TaoExpeditionPage navigator={navigator} stateData = {route.name.stateData}/>
     }
     
   }

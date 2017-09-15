@@ -31,6 +31,9 @@ import {
   KeyboardAwareScrollView 
 } from 'react-native-keyboard-aware-scroll-view'
 
+import { Actions } from 'react-native-router-flux';
+
+import SplashScreen from 'react-native-splash-screen';
 
 import Styles from './assets/stylesheets/Styles';
 import MenuButton from './components/MenuButton';
@@ -73,7 +76,6 @@ const mapIcon  = (<FNIcon name="map" size={60} color="yellow" />)
 class MainMenu extends Component {
   constructor(props){
     super(props)
-    this.navigate = this.navigate.bind(this)
     this.state = {
                   explorer_data: {},
                   expeditionData: {},
@@ -83,6 +85,7 @@ class MainMenu extends Component {
                   last_name: '',
                   email: '',
                   toView: 'form',
+                  pagerView: 0,
                 }
   }              
 
@@ -110,7 +113,7 @@ class MainMenu extends Component {
 
   saveExplorerDataToLocal(explorerData){
     try {
-      AsyncStorage.setItem('explorer_data', JSON.stringify(explorerData));
+      AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData));
     } catch (error) {
       // Error saving data
     }
@@ -118,28 +121,24 @@ class MainMenu extends Component {
 
   saveExpeditionDataToLocal(expeditionData){
     try {
-      AsyncStorage.setItem('expeditionData', JSON.stringify(expeditionData));
+      AsyncStorage.setItem('expeditiondata', JSON.stringify(expeditionData));
     } catch (error) {
       // Error saving data
     }
   }
 
-  navigate(name){
-    this.props.navigator.push({name})
-  }
-
   getLocalExplorerData(){
-    AsyncStorage.getItem("explorer_data").then((value) => {
+    AsyncStorage.getItem("explorerdata").then((value) => {
       if (value != null){
-        this.setState({"explorer_data": JSON.parse(value) });
+        this.setState({"explorerdata": JSON.parse(value) });
       }
     }).done();
   }
 
    getLocalExpeditionData(){
-    AsyncStorage.getItem("expeditionData").then((value) => {
+    AsyncStorage.getItem("expeditiondata").then((value) => {
       if (value != null){
-        this.setState({"expeditionData": JSON.parse(value) });
+        this.setState({"expeditiondata": JSON.parse(value) });
       }
     }).done();
   }
@@ -154,6 +153,18 @@ class MainMenu extends Component {
     }else{
       this.setState({toView: 'form'})
     }
+  }
+
+  componentDidMount(){
+    SplashScreen.hide();
+    viewPager = this.viewPager
+    AsyncStorage.getItem("alreadybooked").then((value) => {
+      if (value == 'true'){
+        AsyncStorage.setItem("alreadybooked", 'false').then(function(){
+          viewPager.setPage(2)
+        })
+      }
+    })
   }
 
   renderView(view){
@@ -243,7 +254,7 @@ class MainMenu extends Component {
               <View style={Styles.containerFirstColumn}>
                 <TouchableHighlight
                   style={Styles.mainMenuButton}
-                   onPress={() => this.navigate({name: 'tripCrewList', data: this.state.expeditionData.crews})}>
+                   onPress={() => Actions.taoexpage() }>
                     <View>
                       <MenuButton menuIcon={anchorIcon} menuText="CREWS" />
                     </View>
@@ -337,11 +348,12 @@ class MainMenu extends Component {
 
         <IndicatorViewPager
             style={{flex: 1}}
+            ref={viewPager => { this.viewPager = viewPager; }}
             indicator={this._renderDotIndicator()}>
 
           <View>
             <ScrollView style={{backgroundColor:'cornflowerblue'}}>
-              <TouchableHighlight onPress={() => this.navigate('TaoExpeditionPage') }>
+              <TouchableHighlight onPress={() => Actions.taoexpage() }>
                 <Image source={require('./assets/images/tao_expedition.png')}  style={Styles.taoProducts}>
                   <Text style={Styles.productTitles}>Tao Expeditions</Text>
                 </Image>
