@@ -24,9 +24,6 @@ class LearnTagalog extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Learn Tagalog' navigator={this.props.navigator}/>
-        </View>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={Styles.paragraph}>
           <Text style={{fontWeight: 'bold'}}>Learn a few words.</Text>

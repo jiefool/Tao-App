@@ -24,9 +24,6 @@ class CaptainsDosAndDonts extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Captains Rules' navigator={this.props.navigator}/>
-        </View>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={Styles.paragraph, {fontWeight: 'bold', fontSize: 15}}>
           1. DON'T ASK THE TIME 

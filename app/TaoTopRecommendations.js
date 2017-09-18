@@ -50,10 +50,6 @@ class TaoTopRecommendations extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Top Recommendations' navigator={this.props.navigator}/>
-        </View>
-
         <View style={{alignContent: 'center', justifyContent: 'center', flex: 1}}>
           <Text style={Styles.regText}>We will populate this list soon.</Text>
         </View>

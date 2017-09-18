@@ -60,6 +60,7 @@ var Styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: 'center',
     flex: 1,
+    padding: 5
   },
   containerSecondColumn: {
     backgroundColor: "rgba(0,0,0,0)",
@@ -258,6 +259,8 @@ var Styles = StyleSheet.create({
     borderRadius: 10,
     width: 130,
     height: 100,
+    borderWidth: 10,
+    borderColor: 'rgba(0,0,0,0)',
     backgroundColor: 'rgba(0,0,0,.5)',
     alignItems: 'center',
     justifyContent: 'center',

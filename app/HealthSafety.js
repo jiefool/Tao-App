@@ -24,9 +24,6 @@ class HealthSafety extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Health and Safety' navigator={this.props.navigator}/>
-        </View>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={Styles.paragraph}>
             Being <Text style={{fontWeight: 'bold'}}>'care free'</Text> and <Text style={{fontWeight: 'bold'}}>'embracing the moment'</Text> does not mean forgetting about keeping safe. 

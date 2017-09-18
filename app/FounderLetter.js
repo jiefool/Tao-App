@@ -24,9 +24,6 @@ class FounderLetter extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Letter from the Founder' navigator={this.props.navigator}/>
-        </View>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={{fontSize: 25, fontWeight: 'bold', paddingBottom: 20}}>
             LETTER FROM EDDIE 

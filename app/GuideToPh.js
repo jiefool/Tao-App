@@ -57,9 +57,6 @@ class GuideToPh extends React.Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Guide to PH' navigator={this.props.navigator} />
-        </View>
 
         <View style={Styles.containerRow}>
           <MapView

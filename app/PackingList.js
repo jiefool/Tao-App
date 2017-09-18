@@ -24,9 +24,6 @@ class PackingList extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Packing List' navigator={this.props.navigator}/>
-        </View>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={Styles.paragraph}>
           Below is a list of essentials you will need to pack in your <Text style={{fontWeight: 'bold'}}>DRYBAG [approx.  25 – 35 Liters].</Text> 

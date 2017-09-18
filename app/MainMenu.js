@@ -72,6 +72,7 @@ const footIcon = (<FNIcon name="foot" size={60} color="yellow" />)
 const baseCamp = (<ETIcon name="basecamp" size={60} color="yellow" />)
 const silverWare  = (<MCIcon name="silverware" size={60} color="yellow" />)
 const mapIcon  = (<FNIcon name="map" size={60} color="yellow" />)
+const logoutIcon = (<MCIcon name="logout" size={60} color="yellow" />)
 
 class MainMenu extends Component {
   constructor(props){
@@ -84,8 +85,7 @@ class MainMenu extends Component {
                   first_name: '',
                   last_name: '',
                   email: '',
-                  toView: 'form',
-                  pagerView: 0,
+                  toView: 'form'
                 }
   }              
 
@@ -97,13 +97,16 @@ class MainMenu extends Component {
       Api.createLoginExplorer(this.state).then((res)=> {
         console.log(res)
         if (res.id != undefined){
-          this.setState({toView: 'tripdetails', explorer_data: res })
+          
           this.saveExplorerDataToLocal(res);
 
           Api.getExpeditionTrip(res).then((resx)=> {
-            this.setState({expeditionData: resx})
             this.saveExpeditionDataToLocal(resx)
+            this.setState({expeditionData: resx})
+            this.setState({toView: 'tripdetails', explorer_data: res })
           })
+
+
         }else{
           this.setState({toView: 'noData'})
         }
@@ -111,48 +114,46 @@ class MainMenu extends Component {
     }
   }
 
-  saveExplorerDataToLocal(explorerData){
-    try {
-      AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData));
-    } catch (error) {
-      // Error saving data
-    }
+  async saveExplorerDataToLocal(explorerData){
+    await AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData));
   }
 
-  saveExpeditionDataToLocal(expeditionData){
-    try {
-      AsyncStorage.setItem('expeditiondata', JSON.stringify(expeditionData));
-    } catch (error) {
-      // Error saving data
-    }
+  async saveExpeditionDataToLocal(expeditionData){
+    await AsyncStorage.setItem('expeditiondata', JSON.stringify(expeditionData));
   }
 
-  getLocalExplorerData(){
-    AsyncStorage.getItem("explorerdata").then((value) => {
+  async getLocalExplorerData(){
+    await AsyncStorage.getItem("explorerdata").then((value) => {
       if (value != null){
-        this.setState({"explorerdata": JSON.parse(value) });
+        this.setState({"explorer_data": JSON.parse(value) });
+        this.setState({toView: 'tripdetails'})
+      }else{
+        this.setState({toView: 'form'})
       }
     }).done();
   }
 
-   getLocalExpeditionData(){
-    AsyncStorage.getItem("expeditiondata").then((value) => {
+  async getLocalExpeditionData(){
+    await AsyncStorage.getItem("expeditiondata").then((value) => {
       if (value != null){
-        this.setState({"expeditiondata": JSON.parse(value) });
+        this.setState({"expeditionData": JSON.parse(value) });
+        this.setState({toView: 'tripdetails'})
+      }else{
+        this.setState({toView: 'form'})
       }
     }).done();
   }
+
+  async logoutUser(){
+    await AsyncStorage.removeItem("explorerdata")
+    await AsyncStorage.removeItem("expeditiondata")
+    this.setState({toView: 'form'})
+  }
+
 
   componentWillMount(){
     this.getLocalExplorerData();
     this.getLocalExpeditionData()
-    console.log(this.state.explorer_data)
-    console.log(this.state.expeditionData)
-    if (Object.keys(this.state.explorer_data).length > 0 && Object.keys(this.state.expeditionData).length > 0){
-      this.setState({toView: 'tripdetails'})
-    }else{
-      this.setState({toView: 'form'})
-    }
   }
 
   componentDidMount(){
@@ -161,7 +162,7 @@ class MainMenu extends Component {
     AsyncStorage.getItem("alreadybooked").then((value) => {
       if (value == 'true'){
         AsyncStorage.setItem("alreadybooked", 'false').then(function(){
-          viewPager.setPage(2)
+          viewPager.setPage(1)
         })
       }
     })
@@ -226,88 +227,186 @@ class MainMenu extends Component {
         break;
       case 'sending':
         return(<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <ActivityIndicator
-                  animating={this.state.animating}
-                  size="large"
-                />
-                <Text>Fetching information...</Text>
+                  <ActivityIndicator
+                    animating={this.state.animating}
+                    size="large"
+                  />
+                  <Text>Fetching information...</Text>
                 </View>)
         break;
       case 'tripdetails':
-        return ( <Image source={require('./assets/images/Tao.img5.jpg')}  style={Styles.container}>
+        return ( <Image source={require('./assets/images/Tao.img5.jpg')}  style={[Styles.container,{padding: 10}]}>
             <View style={Styles.containerRow}>
-            </View>
+                 <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => Actions.ourstory() }>
+                      <View>
+                        <MenuButton menuIcon={bookIcon} menuText="OUR STORY" />
+                      </View>
+                  </TouchableHighlight>
+                </View>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                  style={Styles.mainMenuButton}
+                  onPress={() => Actions.founderletter() }>
+                    <View>
+                      <MenuButton menuIcon={envelopIcon} menuText="LETTER FROM THE FOUNDER" />
+                    </View>
+                  </TouchableHighlight> 
+                </View>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => Actions.taooath() }>
+                      <View>
+                        <MenuButton menuIcon={handIcon} menuText="TAO OATH" />
+                    </View>
+                  </TouchableHighlight>
+                </View>
+              </View>
 
-            <View style={Styles.containerRow}>
-            </View>
+              <View style={Styles.containerRow}>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                  style={Styles.mainMenuButton}
+                  onPress={() => Actions.healthandsafety() }>
+                    <View>
+                      <MenuButton menuIcon={medicIcon} menuText="HEALTH AND SAFETY" />
+                    </View>
+                  </TouchableHighlight> 
+                </View>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => Actions.captainsdosanddonts() }>
+                      <View>
+                        <MenuButton menuIcon={crossIcon} menuText="DOs AND DON'Ts" />
+                    </View>
+                  </TouchableHighlight>
+                </View>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                  style={Styles.mainMenuButton}
+                  onPress={() => Actions.culturaldifferences() }>
+                    <View>
+                      <MenuButton menuIcon={torsoIcon} menuText="CULTURAL DIFFERENCES" />
+                    </View>
+                  </TouchableHighlight> 
+                </View>
+              </View>
+
+              <View style={Styles.containerRow}>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => Actions.learntagalog() }>
+                      <View>
+                        <MenuButton menuIcon={langIcon} menuText="LEARN TAGALOG" />
+                    </View>
+                  </TouchableHighlight>
+                </View>
+
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                  style={Styles.mainMenuButton}
+                  onPress={() => Actions.packinglist() }>
+                    <View>
+                      <MenuButton menuIcon={bundleIcon} menuText="PACKING LIST" />
+                    </View>
+                  </TouchableHighlight> 
+                </View>
+
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => Actions.taotoprecommendations() }>
+                      <View>
+                        <MenuButton menuIcon={likeIcon} menuText="TOP RECOMMENDATIONS" />
+                    </View>
+                  </TouchableHighlight>
+                </View>
+              </View>
             
-            <View style={Styles.containerRow}>
-              <View style={Styles.containerFirstColumn}>
-                <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                  onPress={() => this.navigate({name: 'tripBoat', data: this.state.expeditionData.boat})}>
-                    <View>
-                      <MenuButton menuIcon={shipIcon} menuText="SHIP" />
-                    </View>
-                </TouchableHighlight>
+              <View style={Styles.containerRow}>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => Actions.boat({data: this.state.expeditionData.boat})}>
+                      <View>
+                        <MenuButton menuIcon={shipIcon} menuText="SHIP" />
+                      </View>
+                  </TouchableHighlight>
+                </View>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                     onPress={() => Actions.crews({data: this.state.expeditionData.crews}) }>
+                      <View>
+                        <MenuButton menuIcon={anchorIcon} menuText="CREWS" />
+                      </View>
+                  </TouchableHighlight>
+                </View>
+                 <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => Actions.explorers({data: this.state.expeditionData.explorers})}>
+                      <View>
+                        <MenuButton menuIcon={footIcon} menuText="EXPLORERS" />
+                      </View>
+                  </TouchableHighlight>
+                </View>
               </View>
-              <View style={Styles.containerFirstColumn}>
-                <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                   onPress={() => Actions.taoexpage() }>
-                    <View>
-                      <MenuButton menuIcon={anchorIcon} menuText="CREWS" />
-                    </View>
-                </TouchableHighlight>
-              </View>
-               <View style={Styles.containerFirstColumn}>
-                <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                  onPress={() => this.navigate({name: 'tripExplorers', data: this.state.expeditionData.explorers})}>
-                    <View>
-                      <MenuButton menuIcon={footIcon} menuText="EXPLORERS" />
-                    </View>
-                </TouchableHighlight>
-              </View>
-            </View>
 
-            <View style={Styles.containerRow}>
-               <View style={Styles.containerFirstColumn}>
-                <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                 onPress={() => this.navigate({name: 'tripBaseCamps', data: this.state.expeditionData.basecamps})}>
-                    <View>
-                      <MenuButton menuIcon={baseCamp} menuText="BASECAMPS" />
-                    </View>
-                </TouchableHighlight>
-              </View>  
-               <View style={Styles.containerFirstColumn}>
-                <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                   onPress={() => this.navigate('guideToPh')}>
+              <View style={Styles.containerRow}>
+                 <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                   onPress={() => Actions.basecamps({data: this.state.expeditionData.basecamps})}>
                       <View>
-                        <MenuButton menuIcon={mapIcon} menuText="MAP" />
-                      </View> 
-                </TouchableHighlight>
+                        <MenuButton menuIcon={baseCamp} menuText="BASECAMPS" />
+                      </View>
+                  </TouchableHighlight>
+                </View>  
+                 <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                     onPress={() => Actions.guidetoph() }>
+                        <View>
+                          <MenuButton menuIcon={mapIcon} menuText="MAP" />
+                        </View> 
+                  </TouchableHighlight>
+                </View>
+                 <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                     onPress={() => Actions.recipes({data: this.state.expeditionData.recipes})}>
+                        <View>
+                          <MenuButton menuIcon={silverWare} menuText="RECIPES" />
+                        </View> 
+                  </TouchableHighlight>
+                </View>
               </View>
-               <View style={Styles.containerFirstColumn}>
-                <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                   onPress={() => this.navigate({name: 'tripRecipes', data: this.state.expeditionData.recipes})}>
-                      <View>
-                        <MenuButton menuIcon={silverWare} menuText="RECIPES" />
-                      </View> 
-                </TouchableHighlight>
-              </View>
-            </View>
           
               <View style={Styles.containerRow}>
                <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                    onPress={() => this.navigate({name: 'tripStories', data: this.state.expeditionData.stories})}>
+                    onPress={() => Actions.stories({data: this.state.expeditionData.stories})}>
                       <View>
                         <MenuButton menuIcon={bookIcon} menuText="STORIES" />
+                      </View>
+                  </TouchableHighlight>
+                </View>
+                <View style={Styles.containerFirstColumn}>
+                  
+                </View>
+                <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() => this.logoutUser() }>
+                      <View>
+                        <MenuButton menuIcon={logoutIcon} menuText="Logout" />
                       </View>
                   </TouchableHighlight>
                 </View>
@@ -329,7 +428,7 @@ class MainMenu extends Component {
         break;
         case 'noData':
         return(
-          <View style={[Styles.centerContent, {alignItems: 'center'}]}>
+          <View style={[Styles.centerContent, {alignItems: 'center', justifyContent: 'center'}]}>
             <Text style={[Styles.bigText, {textAlign: 'center'}]}>There was no data fetched. Trip details may have not yet updated. Please try again in a day or two.</Text>
             <View style={{width: 200, marginTop: 10}}>
               <Button title='Try Again'
@@ -358,137 +457,42 @@ class MainMenu extends Component {
                   <Text style={Styles.productTitles}>Tao Expeditions</Text>
                 </Image>
               </TouchableHighlight>
-              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+              <TouchableHighlight onPress={() => Actions.sailing() }>
                 <Image source={require('./assets/images/tao_sailing.png')}  style={Styles.taoProducts}>
                   <Text style={Styles.productTitles}>Tao Sailing Experience</Text>
                 </Image>
               </TouchableHighlight>
-              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+              <TouchableHighlight onPress={() => Actions.island() }>
                 <Image source={require('./assets/images/tao_island.png')}  style={Styles.taoProducts}>
                   <Text style={Styles.productTitles}>Tao Island</Text>
                 </Image>
               </TouchableHighlight>
-              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+              <TouchableHighlight onPress={() => Actions.trek() }>
                 <Image source={require('./assets/images/tao_trek.png')}  style={Styles.taoProducts}>
                   <Text style={Styles.productTitles}>Tao Treks</Text>
                 </Image>
               </TouchableHighlight>
-              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+              <TouchableHighlight onPress={() => Actions.gathering() }>
                 <Image source={require('./assets/images/tao_gathering.png')}  style={Styles.taoProducts}>
                   <Text style={Styles.productTitles}>Tao Gatherings</Text>
                 </Image>
               </TouchableHighlight>
-              <TouchableHighlight onPress={() => this.navigate('ourStory') }>
+              <TouchableHighlight onPress={() => Actions.foundation() }>
                 <Image source={require('./assets/images/tao_foundation.png')}  style={Styles.taoProducts}>
                   <Text style={Styles.productTitles}>Tao Kalahi Foundation</Text>
                 </Image>
               </TouchableHighlight>
             </ScrollView>
           </View>
-          
-          <View style={{backgroundColor:'cornflowerblue'}}>
-            <Image source={require('./assets/images/Tao.img2.jpg')}  style={Styles.container}>
-              <View style={Styles.containerRow}>
-              </View>
-
-              <View style={Styles.containerRow}>
-
-              </View>
-
-              <View style={Styles.containerRow}>
-                 <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.navigate('ourStory') }>
-                      <View>
-                        <MenuButton menuIcon={bookIcon} menuText="OUR STORY" />
-                      </View>
-                  </TouchableHighlight>
-                </View>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                  onPress={() => this.navigate('founderLetter') }>
-                    <View>
-                      <MenuButton menuIcon={envelopIcon} menuText="LETTER FROM THE FOUNDER" />
-                    </View>
-                  </TouchableHighlight> 
-                </View>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.navigate('taoOath') }>
-                      <View>
-                        <MenuButton menuIcon={handIcon} menuText="TAO OATH" />
-                    </View>
-                  </TouchableHighlight>
-                </View>
-              </View>
-
-              <View style={Styles.containerRow}>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                  onPress={() => this.navigate('healthSafety') }>
-                    <View>
-                      <MenuButton menuIcon={medicIcon} menuText="HEALTH AND SAFETY" />
-                    </View>
-                  </TouchableHighlight> 
-                </View>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.navigate('captainsDosAndDonts') }>
-                      <View>
-                        <MenuButton menuIcon={crossIcon} menuText="DOs AND DON'Ts" />
-                    </View>
-                  </TouchableHighlight>
-                </View>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                  onPress={() => this.navigate('culturalDifference') }>
-                    <View>
-                      <MenuButton menuIcon={torsoIcon} menuText="CULTURAL DIFFERENCES" />
-                    </View>
-                  </TouchableHighlight> 
-                </View>
-              </View>
-
-              <View style={Styles.containerRow}>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.navigate('learnTagalog') }>
-                      <View>
-                        <MenuButton menuIcon={langIcon} menuText="LEARN TAGALOG" />
-                    </View>
-                  </TouchableHighlight>
-                </View>
-                 <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                  style={Styles.mainMenuButton}
-                  onPress={() => this.navigate('packingList') }>
-                    <View>
-                      <MenuButton menuIcon={bundleIcon} menuText="PACKING LIST" />
-                    </View>
-                  </TouchableHighlight> 
-                </View>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.navigate('taoTopRecommendations') }>
-                      <View>
-                        <MenuButton menuIcon={likeIcon} menuText="TOP RECOMMENDATIONS" />
-                    </View>
-                  </TouchableHighlight>
-                </View>
-              </View>
-            </Image>
-          </View>
 
           <View>
            { this.renderView(this.state.toView) }
+          </View>
+
+          <View>
+            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1, backgroundColor: 'black'}}>
+              <Text style={{fontSize: 40, textAlign: 'center', fontFamily: 'ffad_matro-webfont', color: 'yellow'}}>Travel App coming soon!</Text>
+            </View>
           </View>
 
         </IndicatorViewPager>

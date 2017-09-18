@@ -24,9 +24,6 @@ class OurStory extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Our Story' navigator={this.props.navigator}/>
-        </View>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={{fontSize: 25, fontWeight: 'bold', paddingBottom: 20}}>
             WHAT DOES TAO MEAN? 

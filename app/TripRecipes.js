@@ -28,7 +28,7 @@ class TripRecipes extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(this.props.recipesData)
+      dataSource: ds.cloneWithRows(this.props.data)
     };
     this.navigate = this.navigate.bind(this)
   }
@@ -57,9 +57,6 @@ class TripRecipes extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Trip Recipes' navigator={this.props.navigator}/>
-        </View>
         <View style={Styles.containerRow}>
           <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
         </View>

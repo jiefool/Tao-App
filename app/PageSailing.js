@@ -7,23 +7,18 @@
 
 import React, { Component } from 'react';
 import {
-  Navigator,
-  Stylesheet,
   View,
   Text,
   Image,
-  ListView,
-  ScrollView,
   AsyncStorage,
-  TouchableOpacity,
-  Dimensions
+  TouchableOpacity
 } from 'react-native';
 
 import { Actions } from 'react-native-router-flux';
 import Communications from 'react-native-communications';
 import Styles from './assets/stylesheets/Styles';
 
-class TaoExpeditionPage extends Component {
+class PageSailing extends Component {
   gotoExpedition(navigator){
     AsyncStorage.setItem('alreadybooked', 'true').done(function(){
       Actions.reset('main');
@@ -32,11 +27,11 @@ class TaoExpeditionPage extends Component {
 
   render() {
     return (
-      <Image source={require('./assets/images/tao_expedition_2.png')} style={Styles.container}>
+      <Image source={require('./assets/images/page_sailing.png')} style={Styles.container}>
         <View style={{flex: 1, justifyContent: 'center'}}>
           <View style={{backgroundColor: 'rgba(0,0,0,.5)', padding: 20, alignItems: 'center'}}>
             <Text style={{textAlign: 'center', fontSize: 20, color: 'white',padding: 10}}>
-              Choose a way to enjoy our 5 day journey through the island kingdom of Northern Palawan. It can be an action packed expedition, a slower paced sailing experience or half island stay/ half boat adventure.
+              Experience the ultimate Tao expedition aboard the newest member of our fleet, a traditional Paraw sailboat. The Sailing Paraw Expedition is similar to a regular Open Expedition, but is set on a stunning 74-foot sailboat, the largest Paraw in the Philippines.
             </Text>
             <TouchableOpacity activeOpacity={0.5} onPress={() => Communications.web('http://booking.taophilippines.com/open-group-experience/#form') }>
               <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Apply Now!</Text>
@@ -53,4 +48,4 @@ class TaoExpeditionPage extends Component {
   }
 }
 
-export default TaoExpeditionPage
+export default PageSailing

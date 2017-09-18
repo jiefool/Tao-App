@@ -24,9 +24,6 @@ class CulturalDifference extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Cultural Differences' navigator={this.props.navigator}/>
-        </View>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={Styles.paragraph}>
           Be aware of cultural differences between traveller and islander mentality. Understanding them will help you manage your expectations, allowing you to get the very most out your time with Tao.

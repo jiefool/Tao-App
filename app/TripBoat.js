@@ -8,22 +8,19 @@ class TripBoat extends Component {
     return(
 
 
-        <View style={Styles.container}>
+      <View style={Styles.container}>
         <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Trip Boat' navigator={this.props.navigator}/>
-        </View>
-        <View style={Styles.containerPaddingSmall}>
-          <Text style={Styles.bigText}>{this.props.boatData.title}</Text>
+          <Text style={Styles.bigText}>{this.props.data.title}</Text>
         </View>
 
         <ScrollView style={Styles.containerColumn}>
-          <Image source={{uri: 'https://taotechph.com' + this.props.boatData.boat_medium }}
+          <Image source={{uri: 'https://taotechph.com' + this.props.data.boat_medium }}
                         style={Styles.showProjectIcon}
                       />
 
           <View style={Styles.textWrapper}>           
-            <Text style={Styles.bigText}>{this.props.boatData.name}</Text> 
-            <Text style={Styles.regText}>{this.props.boatData.description}</Text> 
+            <Text style={Styles.bigText}>{this.props.data.name}</Text> 
+            <Text style={Styles.regText}>{this.props.data.description}</Text> 
           </View>         
         </ScrollView>
       </View>
