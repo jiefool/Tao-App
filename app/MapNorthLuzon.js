@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { View, TouchableHighlight, Text, StyleSheet, Image, ScrollView, Button } from 'react-native';
 import Styles from './assets/stylesheets/Styles';
 
-import NavBar from './components/NavBar';
-
 class MapNorthLuzon extends Component {
   constructor(){
     super()
@@ -17,10 +15,6 @@ class MapNorthLuzon extends Component {
   render(){
     return(
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Experiences & Events' navigator={this.props.navigator}/>
-        </View>
-
         <View style={{flex: 1, flexDirection: 'row', padding: 10}}>
           <View style={{flex: 1, flexDirection: 'column', padding: 10}}>
             <Text style={Styles.smallText}>Surf</Text>
