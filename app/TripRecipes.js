@@ -21,6 +21,7 @@ import Styles from './assets/stylesheets/Styles';
 import GeneralListItem from './components/GeneralListItem';
 import Api from './utilities/Api';
 import NavBar from './components/NavBar';
+import { Actions } from 'react-native-router-flux';
 
 
 class TripRecipes extends Component {
@@ -49,7 +50,7 @@ class TripRecipes extends Component {
   _renderItem(data){
     return(
       <GeneralListItem thumb_image = {data.recipe_thumb} title = {data.name} line_text_a = {data.description}
-         onPress={()=> this.navigate({name: 'showTripRecipe', data: data}) }/>
+         onPress={()=> Actions.showtriprecipe({data: data, title: data.name}) }/>
     
     );
   }

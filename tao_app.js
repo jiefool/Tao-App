@@ -34,7 +34,11 @@ import TripExplorers from './app/TripExplorers';
 import TripRecipes from './app/TripRecipes';
 import TripStories from './app/TripStories';
 import GuideToPh from './app/GuideToPh';
+import MapNorthLuzon from './app/MapNorthLuzon';
 import TripBaseCamps from './app/TripBaseCamps';
+import ShowTripRecipe from './app/ShowTripRecipe';
+import ShowTripStory from './app/ShowTripStory';
+
 
 
 
@@ -122,6 +126,11 @@ const TaoApp = () => {
           title="Packing List"
         />
         <Scene
+          key="taotoprecommendations"
+          component={TaoTopRecommendations}
+          title="TaoTopRecommendations"
+        />
+        <Scene
           key="boat"
           component={TripBoat}
           title="Boat"
@@ -155,6 +164,21 @@ const TaoApp = () => {
           key="guidetoph"
           component={GuideToPh}
           title="Guide to PH"
+        />
+        <Scene
+          key="mapnorthluzon"
+          component={MapNorthLuzon}
+          title="North Luzon"
+        />
+        <Scene
+          key="showtriprecipe"
+          component={ShowTripRecipe}
+          title="Trip Recipe"
+        />
+        <Scene
+          key="showtripstory"
+          component={ShowTripStory}
+          title="Trip Story"
         />
       </Scene>
     </Router>

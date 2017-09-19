@@ -21,6 +21,7 @@ import Styles from './assets/stylesheets/Styles';
 import GeneralListItem from './components/GeneralListItem';
 import Api from './utilities/Api';
 import NavBar from './components/NavBar';
+import { Actions } from 'react-native-router-flux';
 
 
 class TripStories extends Component {
@@ -30,19 +31,12 @@ class TripStories extends Component {
     this.state = {
       dataSource: ds.cloneWithRows(this.props.data)
     };
-    this.navigate = this.navigate.bind(this)
   }
-
-  navigate(name){
-    this.props.navigator.push({name})
-  }
-
-  
 
   _renderItem(data){
     return(
       <GeneralListItem thumb_image = {data.story_thumb} title = {data.title} line_text_a = {data.description}
-         onPress={()=> this.navigate({name: 'showTripStory', data: data}) }/>
+         onPress={()=> Actions.showtripstory({title: data.title, data: data}) }/>
    
     );
   }
