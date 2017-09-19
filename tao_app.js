@@ -59,126 +59,201 @@ const TaoApp = () => {
           key="taoexpage"
           component={PageExpedition}
           title="Tao Expedition"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="sailing"
           component={PageSailing}
           title="Tao Sailing"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="island"
           component={PageIsland}
           title="Tao Island"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="trek"
           component={PageTrek}
           title="Tao Trek"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="gathering"
           component={PageGathering}
           title="Tao Gatherings"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="foundation"
           component={PageFoundation}
           title="Tao Foundation"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="ourstory"
           component={OurStory}
           title="Our Story"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="founderletter"
           component={FounderLetter}
           title="Letter From the Founder"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="taooath"
           component={TaoOath}
           title="Tao Oath"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="healthandsafety"
           component={HealthSafety}
           title="Health Safety"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="captainsdosanddonts"
           component={CaptainsDosAndDonts}
           title="Captain's Dos and Don'ts"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="culturaldifferences"
           component={CulturalDifference}
           title="Cultural Differences"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="learntagalog"
           component={LearnTagalog}
           title="Learn agalog"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="packinglist"
           component={PackingList}
           title="Packing List"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="taotoprecommendations"
           component={TaoTopRecommendations}
           title="TaoTopRecommendations"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="boat"
           component={TripBoat}
           title="Boat"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="crews"
           component={TripCrewList}
           title="Crews"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="explorers"
           component={TripExplorers}
           title="Explorers"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="recipes"
           component={TripRecipes}
           title="Recipes"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="stories"
           component={TripStories}
           title="Stories"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="basecamps"
           component={TripBaseCamps}
           title="Basecamps"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="guidetoph"
           component={GuideToPh}
           title="Guide to PH"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="mapnorthluzon"
           component={MapNorthLuzon}
           title="North Luzon"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="showtriprecipe"
           component={ShowTripRecipe}
           title="Trip Recipe"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="showtripstory"
           component={ShowTripStory}
           title="Trip Story"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
         />
       </Scene>
     </Router>
@@ -189,15 +264,17 @@ var styles = StyleSheet.create({
     backgroundColor:'yellow',
   },
   navBarTitle:{
-    textAlign: 'center',
     alignSelf:'center',
-    color:'black'
+    color:'black',
   },
   barButtonTextStyle:{
-    color:'black'
+    color:'black',
   },
   barButtonIconStyle:{
     tintColor:'rgb(255,255,255)'
+  },
+  rightTitle:{
+    color: 'yellow'
   },
 });
 

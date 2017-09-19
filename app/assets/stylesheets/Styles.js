@@ -27,7 +27,6 @@ var Styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignSelf: 'stretch',
-    backgroundColor: "rgba(0,0,0,0)",
   },
   containerPadding: {
     flex: 0.5,
@@ -60,7 +59,7 @@ var Styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: 'center',
     flex: 1,
-    padding: 5
+    padding: 10
   },
   containerSecondColumn: {
     backgroundColor: "rgba(0,0,0,0)",
@@ -257,10 +256,8 @@ var Styles = StyleSheet.create({
   },
     mainMenuButton: {
     borderRadius: 10,
-    width: 130,
-    height: 100,
-    borderWidth: 10,
-    borderColor: 'rgba(0,0,0,0)',
+    width: 100,
+    height: 90,
     backgroundColor: 'rgba(0,0,0,.5)',
     alignItems: 'center',
     justifyContent: 'center',

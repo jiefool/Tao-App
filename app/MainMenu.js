@@ -406,7 +406,7 @@ class MainMenu extends Component {
                     style={Styles.mainMenuButton}
                     onPress={() => this.logoutUser() }>
                       <View>
-                        <MenuButton menuIcon={logoutIcon} menuText="Logout" />
+                        <MenuButton menuIcon={logoutIcon} menuText="LOGOUT" />
                       </View>
                   </TouchableHighlight>
                 </View>
