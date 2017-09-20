@@ -73,6 +73,7 @@ const baseCamp = (<ETIcon name="basecamp" size={60} color="yellow" />)
 const silverWare  = (<MCIcon name="silverware" size={60} color="yellow" />)
 const mapIcon  = (<FNIcon name="map" size={60} color="yellow" />)
 const logoutIcon = (<MCIcon name="logout" size={60} color="yellow" />)
+const refreshIcon = (<MCIcon name="refresh" size={60} color="yellow" />)
 
 class MainMenu extends Component {
   constructor(props){
@@ -99,19 +100,22 @@ class MainMenu extends Component {
         if (res.id != undefined){
           
           this.saveExplorerDataToLocal(res);
-
-          Api.getExpeditionTrip(res).then((resx)=> {
-            this.saveExpeditionDataToLocal(resx)
-            this.setState({expeditionData: resx})
-            this.setState({toView: 'tripdetails', explorer_data: res })
-          })
-
+          getRemoteExpeditionData(res)
 
         }else{
           this.setState({toView: 'noData'})
         }
       })
     }
+  }
+
+  getRemoteExpeditionData(res){
+    this.setState({toView: 'sending'})
+    Api.getExpeditionTrip(res).then((resx)=> {
+      this.saveExpeditionDataToLocal(resx)
+      this.setState({expeditionData: resx})
+      this.setState({toView: 'tripdetails', explorer_data: res })
+    })
   }
 
   async saveExplorerDataToLocal(explorerData){
@@ -368,14 +372,14 @@ class MainMenu extends Component {
                       </View>
                   </TouchableHighlight>
                 </View>  
-                 <View style={Styles.containerFirstColumn}>
+                <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                     onPress={() => Actions.guidetoph() }>
-                        <View>
-                          <MenuButton menuIcon={mapIcon} menuText="MAP" />
-                        </View> 
-                  </TouchableHighlight>
+                    onPress={() => Actions.stories({data: this.state.expeditionData.stories})}>
+                      <View>
+                        <MenuButton menuIcon={bookIcon} menuText="STORIES" />
+                      </View>
+                </TouchableHighlight>
                 </View>
                  <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
@@ -389,18 +393,16 @@ class MainMenu extends Component {
               </View>
           
               <View style={Styles.containerRow}>
-               <View style={Styles.containerFirstColumn}>
+                <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                    onPress={() => Actions.stories({data: this.state.expeditionData.stories})}>
+                    onPress={() => this.getRemoteExpeditionData(this.state.explorer_data) }>
                       <View>
-                        <MenuButton menuIcon={bookIcon} menuText="STORIES" />
+                        <MenuButton menuIcon={refreshIcon} menuText="REFRESH DATA" />
                       </View>
                   </TouchableHighlight>
                 </View>
-                <View style={Styles.containerFirstColumn}>
-                  
-                </View>
+                <View style={Styles.containerFirstColumn}></View>
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}

@@ -154,7 +154,7 @@ const TaoApp = () => {
         <Scene
           key="learntagalog"
           component={LearnTagalog}
-          title="Learn agalog"
+          title="Learn Tagalog"
           onRight={()=> console.log()}
           rightTitle="Right"
           rightButtonTextStyle = {styles.rightTitle}

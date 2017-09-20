@@ -27,6 +27,8 @@ var Styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     alignSelf: 'stretch',
+    marginTop: 3,
+    marginBottom: 3,
   },
   containerPadding: {
     flex: 0.5,
