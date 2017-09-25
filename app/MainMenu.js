@@ -100,7 +100,8 @@ class MainMenu extends Component {
         if (res.id != undefined){
           
           this.saveExplorerDataToLocal(res);
-          getRemoteExpeditionData(res)
+          this.getRemoteExpeditionData(res)
+          this.setState({toView: 'tripdetails', explorer_data: res })
 
         }else{
           this.setState({toView: 'noData'})
