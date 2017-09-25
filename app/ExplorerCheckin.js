@@ -24,7 +24,7 @@ import {
 import Styles from './assets/stylesheets/Styles';
 import DatePicker from 'react-native-datepicker'
 import Api from './utilities/Api';
-import NavBar from './components/NavBar';
+import { Actions } from 'react-native-router-flux';
 
 class ExplorerCheckin extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class ExplorerCheckin extends Component {
   }
 
   componentWillMount(){
-    AsyncStorage.getItem("explorer_data").then((value) => {
+    AsyncStorage.getItem("explorerdata").then((value) => {
       if (value != null){
         var explorerData = JSON.parse(value)
         this.setState({ 
@@ -91,7 +91,7 @@ class ExplorerCheckin extends Component {
   sendExplorerCheckIn(){
     this.setState({toView: 'sending'})
     Api.updateExplorer(this.state).then((res) => { 
-      AsyncStorage.setItem('explorer_data', JSON.stringify(res));
+      AsyncStorage.setItem('explorerdata', JSON.stringify(res));
       this.setState({toView: 'thankyou'})
     });
     //console.log(this.state)
@@ -253,7 +253,7 @@ class ExplorerCheckin extends Component {
               </ScrollView>)
         break;
       case 'sending':
-        return(<View style={Styles.containerColumn}>
+        return(<View style={[Styles.containerColumn, {alignItems: 'center', justifyContent: 'center'}]}>
                 <View style={Styles.centerContent}>
                         <ActivityIndicator
                           animating={this.state.animating}
@@ -264,12 +264,12 @@ class ExplorerCheckin extends Component {
               </View>)
         break;
       case 'thankyou':
-        return (<View style={Styles.containerColumn}>
+        return (<View style={[Styles.containerColumn, {alignItems: 'center', justifyContent: 'center'}]}>
         <View style={Styles.centerContent}>
           <Text style={[Styles.bigText, {textAlign: 'center'}]}>You are now checked-in.</Text>
            <TouchableHighlight
             style={[Styles.menuButton, {alignItems: 'center'}]}
-            onPress={() => this.props.navigator.pop() }>
+            onPress={() => Actions.pop() }>
               <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
                 <Text style={[Styles.regText, {color: 'white'}]}>
                   Back to your trip
@@ -287,12 +287,7 @@ class ExplorerCheckin extends Component {
   render() {
     return (
       <View style={Styles.container}>
-       
-          <View style={Styles.containerPaddingSmall}>
-            <NavBar title='Explorer Checkin' navigator={this.props.navigator}/>
-          </View>
-
-          { this.renderView(this.state.toView) } 
+        { this.renderView(this.state.toView) } 
       </View>
     );
   }

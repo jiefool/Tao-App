@@ -38,9 +38,7 @@ import MapNorthLuzon from './app/MapNorthLuzon';
 import TripBaseCamps from './app/TripBaseCamps';
 import ShowTripRecipe from './app/ShowTripRecipe';
 import ShowTripStory from './app/ShowTripStory';
-
-
-
+import Checkin from './app/ExplorerCheckin';
 
 const TaoApp = () => {
   return (
@@ -251,6 +249,14 @@ const TaoApp = () => {
           key="showtripstory"
           component={ShowTripStory}
           title="Trip Story"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          rightButtonTextStyle = {styles.rightTitle}
+        />
+         <Scene
+          key="checkin"
+          component={Checkin}
+          title="CHECK-IN"
           onRight={()=> console.log()}
           rightTitle="Right"
           rightButtonTextStyle = {styles.rightTitle}

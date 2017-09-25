@@ -74,6 +74,7 @@ const silverWare  = (<MCIcon name="silverware" size={60} color="yellow" />)
 const mapIcon  = (<FNIcon name="map" size={60} color="yellow" />)
 const logoutIcon = (<MCIcon name="logout" size={60} color="yellow" />)
 const refreshIcon = (<MCIcon name="refresh" size={60} color="yellow" />)
+const loginIcon = (<MCIcon name="login" size={60} color="yellow" />)
 
 class MainMenu extends Component {
   constructor(props){
@@ -177,8 +178,9 @@ class MainMenu extends Component {
     switch(view){
       case 'form':
         return(<Image source={require('./assets/images/Tao.img5.jpg')}  style={Styles.container}>
-          <KeyboardAwareScrollView>
-          <View style={{flex: 1, justifyContent: 'center', marginTop: 30}}>
+          
+          <ScrollView style={[Styles.containerColumnx, {flex: 1, }]}>
+            <View style={{marginTop: 30, paddingLeft: 20, paddingRight: 20}}>
             <Text style={[Styles.smallTextLogin, {fontWeight: 'bold', color: 'white', textShadowColor: 'gray', textShadowOffset: {height: 1, width: 1}}]}>Login:</Text>
             <TextInput
               placeholder='Login'
@@ -226,8 +228,12 @@ class MainMenu extends Component {
                   </Text>
                 </View>
             </TouchableHighlight>
-          </View>
-          </KeyboardAwareScrollView>
+            </View>
+            <View style={{height: 350}}>
+            </View>
+
+          </ScrollView>
+  
         </Image>)
         break;
       case 'sending':
@@ -325,9 +331,9 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                    onPress={() => Actions.taotoprecommendations() }>
+                    onPress={() => Actions.checkin() }>
                       <View>
-                        <MenuButton menuIcon={likeIcon} menuText="TOP RECOMMENDATIONS" />
+                        <MenuButton menuIcon={loginIcon} menuText="CHECK-IN" />
                     </View>
                   </TouchableHighlight>
                 </View>
