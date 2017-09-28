@@ -18,13 +18,15 @@ import {
   TextInput,
   Picker,
   ActivityIndicator,
-  AsyncStorage
+  AsyncStorage,
+  Dimensions
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
 import DatePicker from 'react-native-datepicker'
 import Api from './utilities/Api';
 import { Actions } from 'react-native-router-flux';
+import SplashScreen from 'react-native-splash-screen';
 
 class ExplorerCheckin extends Component {
   constructor(props) {
@@ -83,6 +85,10 @@ class ExplorerCheckin extends Component {
     }).done();
   }
 
+  componentDidMount(){
+    SplashScreen.hide();
+  }
+
 
   navigate(name){
     this.props.navigator.push({name})
@@ -102,34 +108,34 @@ class ExplorerCheckin extends Component {
     switch(view){
       case 'form':
         return(<ScrollView style={Styles.containerColumnx}>
+                <Image source={require('./assets/images/Tao.img6.jpg')}  style={Styles.container}>
+                  <Image source={require('./assets/images/tao_logo.png')} style={{width: 200, height: 170, marginTop: 10}}/>
+                  <Text style={{textAlign: 'center', fontSize: 50, fontFamily: 'ffad_matro-webfont', color: 'white'}}>Check In</Text>
                 <View style={{padding: 10}}>
-                  <Text style={Styles.regText}>First Name:</Text>
+                  <Text style={Styles.inputLabelText}>First Name:</Text>
                   <TextInput
-                    placeholder='FIRST NAME:'
                     style={Styles.checkInput}
                     onChangeText={(first_name) => this.setState({first_name: first_name})}
                     value={this.state.first_name}
                   />
-                  <Text style={Styles.regText}>Last Name:</Text>
+                  <Text style={Styles.inputLabelText}>Last Name:</Text>
                    <TextInput
-                    placeholder='LAST NAME:'
                     style={Styles.checkInput}
                     onChangeText={(last_name) => this.setState( {last_name: last_name})}
                     value={this.state.last_name}
                   />
-                  <Text style={Styles.regText}>Middle Name:</Text>
+                  <Text style={Styles.inputLabelText}>Middle Name:</Text>
                   <TextInput
-                    placeholder='MIDDLE NAME:'
                     style={Styles.checkInput}
                     onChangeText={(middle_name) => this.setState( {middle_name: middle_name})}
                     value={this.state.middle_name}
                   />
-                  <Text style={Styles.regText}>Date of Birth:</Text>
+                  <Text style={Styles.inputLabelText}>Date of Birth:</Text>
                   <DatePicker
-                    style={{width: 300}}
+                    style={{width: Dimensions.get('window').width-20}}
                     date={this.state.birth_date}
                     mode="date"
-                    placeholder="select date"
+                    placeholder="YYYY-MM-DD"
                     format="YYYY-MM-DD"
                     minDate="1920-01-01"
                     maxDate="2016-06-01"
@@ -138,87 +144,76 @@ class ExplorerCheckin extends Component {
                     customStyles={{
                       dateIcon: {
                         position: "absolute",
-                        left: 0,
+                        right: 0,
                         top: 4,
-                        marginLeft: 80
+                        marginLeft: 10
                       },
                       dateInput: {
-                        marginLeft: 120
-
+                        marginLeft: 0
                       }
-                      // ... You can check the source to find the other keys.
                     }}
                     onDateChange={(date) => {this.setState({birth_date: date})}}
                   />
-                  <Text style={Styles.regText}>Gender:</Text>
+                  <Text style={Styles.inputLabelText}>Gender:</Text>
                   <View style= {{alignSelf: 'stretch',alignItems:'center',justifyContent: 'center'}}>
                   <Picker
-                    style={{width: 100}}
+                    style={{width: 100, width: Dimensions.get('window').width-20, backgroundColor: 'rgba(255, 255, 255, .5)'}}
                     selectedValue={this.state.gender}
                     onValueChange={(gender) => this.setState( {gender: gender})}>
                     <Picker.Item label="Male" value="male" />
                     <Picker.Item label="Female" value="female" />
                   </Picker>
                   </View>
-                  <Text style={Styles.regText}>Address:</Text>
+                  <Text style={Styles.inputLabelText}>Address:</Text>
                   <TextInput
-                    placeholder='HOME ADDRESS:'
                     style={Styles.checkInput}
                     onChangeText={(address) => this.setState({address: address})}
                     value={this.state.address}
                   />
-                  <Text style={Styles.regText}>Nationality:</Text>
+                  <Text style={Styles.inputLabelText}>Nationality:</Text>
                   <TextInput
-                    placeholder='NATIONALITY:'
                     style={Styles.checkInput}
                     onChangeText={(nationality) => this.setState( {nationality: nationality})}
                     value={this.state.nationality}
                   />
-                  <Text style={Styles.regText}>Email Address:</Text>
+                  <Text style={Styles.inputLabelText}>Email Address:</Text>
                   <TextInput
-                    placeholder='EMAIL ADDRESS:'
                     style={Styles.checkInput}
                     onChangeText={(email) => this.setState({email: email})}
                     value={this.state.email}
                   />
-                  <Text style={Styles.regText}>Mobile Number:</Text>
+                  <Text style={Styles.inputLabelText}>Mobile Number:</Text>
                   <TextInput
-                    placeholder='MOBILE NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(mobile_number) => this.setState( {mobile_number: mobile_number})}
                     value={this.state.mobile_number}
                   />
-                  <Text style={Styles.regText}>Passport Number:</Text>
+                  <Text style={Styles.inputLabelText}>Passport Number:</Text>
                   <TextInput
-                    placeholder='PASSPORT NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(passport_number) => this.setState({passport_number: passport_number})}
                     value={this.state.passport_number}
                   />
-                  <Text style={Styles.regText}>Emergey Contact Person:</Text>
+                  <Text style={Styles.inputLabelText}>Emergey Contact Person:</Text>
                   <TextInput
-                    placeholder='CONTACT PERSON IN CASE OF EMERGENCY:'
                     style={Styles.checkInput}
                     onChangeText={(name) => this.setState( {emergency_contact_person: name})}
                     value={this.state.emergency_contact_person}
                   />
-                  <Text style={Styles.regText}>Emergency Contact Person Number:</Text>
+                  <Text style={Styles.inputLabelText}>Emergency Contact Person Number:</Text>
                   <TextInput
-                    placeholder='CONTACT  NUMBER:'
                     style={Styles.checkInput}
                     onChangeText={(number) => this.setState({emergency_contact_person_number: number})}
                     value={this.state.emergency_contact_person_number}
                   />
-                  <Text style={Styles.regText}>Relevant medical condition or dietary restriction:</Text>
+                  <Text style={Styles.inputLabelText}>Relevant medical condition or dietary restriction:</Text>
                   <TextInput
-                    placeholder='RELEVANT MEDICAL CONDOTION OR DIETARY RESTRICTION:'
                     style={Styles.checkInput}
                     onChangeText={(text) => this.setState( {medical_dietary_restriction: text})}
                     value={this.state.medical_dietary_restriction}
                   />
-                  <Text style={Styles.regText}>After expedition travel plan or itinerary:</Text>
+                  <Text style={Styles.inputLabelText}>After expedition travel plan or itinerary:</Text>
                   <TextInput
-                    placeholder='AFTER EXPEDITION TRAVEL PLAN OR ITINERARY:'
                     style={Styles.checkInput}
                     onChangeText={(text) => this.setState({after_expedition_plan: text})}
                     value={this.state.after_expedition_plan}
@@ -250,6 +245,7 @@ class ExplorerCheckin extends Component {
                     <Text style={{textAlign: 'center'}}>BY PRESSING SUBMIT YOU AGREE TO THESE TERMS.</Text>
 
                 </View> 
+               </Image>
               </ScrollView>)
         break;
       case 'sending':

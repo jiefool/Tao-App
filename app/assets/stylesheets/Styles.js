@@ -309,6 +309,12 @@ var Styles = StyleSheet.create({
     shadowRadius: 5,
     shadowOpacity: 1.0,
     padding: 5
+  },
+
+  inputLabelText: {
+    fontFamily: 'ffad_matro-webfont', 
+    color: 'white', 
+    fontSize: 20
   }
   
 });

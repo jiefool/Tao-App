@@ -33,7 +33,7 @@ import {
 
 import { Actions } from 'react-native-router-flux';
 
-import SplashScreen from 'react-native-splash-screen';
+
 
 import Styles from './assets/stylesheets/Styles';
 import MenuButton from './components/MenuButton';
@@ -163,7 +163,6 @@ class MainMenu extends Component {
   }
 
   componentDidMount(){
-    SplashScreen.hide();
     viewPager = this.viewPager
     AsyncStorage.getItem("alreadybooked").then((value) => {
       if (value == 'true'){

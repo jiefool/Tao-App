@@ -51,7 +51,6 @@ const TaoApp = () => {
         <Scene key="main"
           component={MainMenu}
           title="Tao Philippines"
-          initial
         />
         <Scene
           key="taoexpage"
@@ -260,6 +259,8 @@ const TaoApp = () => {
           onRight={()=> console.log()}
           rightTitle="Right"
           rightButtonTextStyle = {styles.rightTitle}
+          initial
+          hideNavBar = "true"
         />
       </Scene>
     </Router>
