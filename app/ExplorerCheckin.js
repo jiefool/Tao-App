@@ -27,6 +27,9 @@ import DatePicker from 'react-native-datepicker'
 import Api from './utilities/Api';
 import { Actions } from 'react-native-router-flux';
 import SplashScreen from 'react-native-splash-screen';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+
+const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="yellow" />)
 
 class ExplorerCheckin extends Component {
   constructor(props) {
@@ -219,30 +222,16 @@ class ExplorerCheckin extends Component {
                     value={this.state.after_expedition_plan}
                   />
                 
-                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>
-                    AKNOWLEDGEMENT OF RISK, RESPOSIBILITY AND LIABILITY WAIVER
-                    </Text>
-                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>Assumption of Risk</Text>
-                    <Text>I understand that Tao Philippines / Tao LostBoys, Inc. is an adventure campany travelling in a very remote area of the Philippines. I understand that will be in an unfamilliar sorroundings and will be exposed to risks. I understand that i may suffer from physical injury, disease, sickness, damage or loss of my items as a result of my parcitipation in the expedition. I freely and voluntarily accept and assume all such risks, dangers and hazards</Text>
-                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>Responsibility</Text>
-                    <Text>I understand that participants are ultimately responsible for their personal safety and the consequences of their actions. I understand that the expedition leader will discuss points about safety during our briefing and I will pay attention to this points. I also confirm that I have relevant medical / travel insurance that will cover the cost of any medical / emergency action required on my behalf.</Text>
-                    <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>Liability Waiver</Text>
-                    <Text>I release Tao Philippines/ Tao LostBoys, Inc. and its employees all liability for any loss, damge, injury or expense that i may suffer as a result of my participation in this expidition. </Text>
-
-
-
-
-                     <TouchableHighlight
-                      style={[Styles.menuButton, {alignItems: 'center', marginBottom: 10, marginTop: 20}]}
+                   
+                  <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 20}}>
+                    <TouchableHighlight
+                      style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
                       onPress={() => this.sendExplorerCheckIn() }>
-                        <View style={{height: 50, width: 300, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center'}}>
-                          <Text style={[Styles.regText, {color: 'white'}]}>
-                            Submit
+                          <Text style={{color: 'white'}}>
+                            {chevronRightIcon}
                           </Text>
-                        </View>
                     </TouchableHighlight> 
-
-                    <Text style={{textAlign: 'center'}}>BY PRESSING SUBMIT YOU AGREE TO THESE TERMS.</Text>
+                  </View>
 
                 </View> 
                </Image>

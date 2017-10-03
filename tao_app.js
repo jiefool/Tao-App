@@ -259,8 +259,8 @@ const TaoApp = () => {
           onRight={()=> console.log()}
           rightTitle="Right"
           rightButtonTextStyle = {styles.rightTitle}
-          initial
           hideNavBar = "true"
+          initial
         />
       </Scene>
     </Router>
