@@ -31,7 +31,7 @@ import FAIcon from 'react-native-vector-icons/FontAwesome';
 
 const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="yellow" />)
 
-class ExplorerCheckin extends Component {
+class UpdateExplorer extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -61,80 +61,44 @@ class ExplorerCheckin extends Component {
     }
   }
 
+
+  updateExplorer(){
+    this.setState({toView: "sending"})
+    Api.updateExplorer(this.state).then((res) => {
+      AsyncStorage.setItem("explorerdata", JSON.stringify(res)).then((res) => {
+        this.setState({toView: "form"})
+      })
+    })
+  }
+
   componentWillMount(){
-    // AsyncStorage.getItem("explorerdata").then((value) => {
-    //   if (value != null){
-    //     var explorerData = JSON.parse(value)
-    //     this.setState({ 
-    //       address: explorerData.address,
-    //       after_expedition_plan: explorerData.after_expedition_plan,
-    //       book_ref: explorerData.book_ref,
-    //       birth_date: explorerData.birth_date,
-    //       email: explorerData.email,
-    //       emergency_contact_person_number: explorerData.emergency_contact_person_number,
-    //       emergency_contact_person: explorerData.emergency_contact_person,
-    //       expedition_trip_id: explorerData.expedition_trip_id,
-    //       first_name: explorerData.first_name,
-    //       gender: explorerData.gender,
-    //       id: explorerData.id,
-    //       is_checked_in: true,
-    //       last_name: explorerData.last_name,
-    //       login: explorerData.login,
-    //       medical_dietary_restriction: explorerData.medical_dietary_restriction,
-    //       middle_name: explorerData.middle_name,
-    //       mobile_number: explorerData.mobile_number,
-    //       nationality: explorerData.nationality,
-    //       passport_number: explorerData.passport_number 
-    //     });
-    //   }
-    // }).done();
     AsyncStorage.getItem("explorerdata").then((value) => {
-      if (value != ''){ 
-        var explorer_data = JSON.parse(value)
-        if (explorer_data != null){
-          console.log(explorer_data)
-          Actions.liabilitywaiver()
-        }
+      if (value != null){
+        var explorerData = JSON.parse(value)
+        this.setState({ 
+          address: explorerData.address,
+          after_expedition_plan: explorerData.after_expedition_plan,
+          book_ref: explorerData.book_ref,
+          birth_date: explorerData.birth_date,
+          email: explorerData.email,
+          emergency_contact_person_number: explorerData.emergency_contact_person_number,
+          emergency_contact_person: explorerData.emergency_contact_person,
+          expedition_trip_id: explorerData.expedition_trip_id,
+          first_name: explorerData.first_name,
+          gender: explorerData.gender,
+          id: explorerData.id,
+          is_checked_in: true,
+          last_name: explorerData.last_name,
+          login: explorerData.login,
+          medical_dietary_restriction: explorerData.medical_dietary_restriction,
+          middle_name: explorerData.middle_name,
+          mobile_number: explorerData.mobile_number,
+          nationality: explorerData.nationality,
+          passport_number: explorerData.passport_number 
+        });
       }
     })
   }
-
-  componentDidMount(){
-    SplashScreen.hide();
-    // AsyncStorage.removeItem('explorerdata')
-  }
-
-  saveExplorerData(explorerData){
-    try {
-      AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData)).then(function(){
-        Actions.main()
-      });
-
-    } catch (error) {
-      // Error saving data
-    }
-  }
-
-  tryAgain(){
-    this.setState({toView: 'form'})
-  }
-
-  createLoginExplorer(){
-    this.setState({toView: 'sending'})
-    Api.createLoginExplorer(this.state).then((res)=> {
-      if (res["id"] == null ){
-        api_error = ""
-        Object.keys(res).forEach(function(key){
-          api_error = key + " : " + res[key][0]
-        })
-        this.setState({api_error: api_error})
-        this.setState({toView: "errors"})
-      }else{
-        this.saveExplorerData(res);
-      }
-    })
-  }
-
 
   renderView(view){
     switch(view){
@@ -142,14 +106,8 @@ class ExplorerCheckin extends Component {
         return(<ScrollView style={Styles.containerColumnx}>
                 <Image source={require('./assets/images/Tao.img6.jpg')}  style={Styles.container}>
                   <Image source={require('./assets/images/tao_logo.png')} style={{width: 200, height: 170, marginTop: 10}}/>
-                  <Text style={{textAlign: 'center', fontSize: 50, fontFamily: 'ffad_matro-webfont', color: 'white'}}>Check In</Text>
+                  <Text style={{textAlign: 'center', fontSize: 50, fontFamily: 'ffad_matro-webfont', color: 'white'}}>Explorer Info</Text>
                 <View style={{padding: 10}}>
-                  <Text style={Styles.inputLabelText}>Login:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(login) => this.setState({login})}
-                    value={this.state.login}
-                  />
                   <Text style={Styles.inputLabelText}>Booking Reference #:</Text>
                   <TextInput
                     style={Styles.checkInput}
@@ -264,12 +222,12 @@ class ExplorerCheckin extends Component {
                   />
                 
                    
-                  <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 20}}>
+                  <View style={{justifyContent: 'center', alignItems: 'center', flex: 1, marginTop: 20}}>
                     <TouchableHighlight
-                      style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
-                      onPress={() => this.createLoginExplorer() }>
-                          <Text style={{color: 'white'}}>
-                            {chevronRightIcon}
+                      style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue', height: 50, width: 200}]}
+                      onPress={() => this.updateExplorer() }>
+                          <Text style={{color: 'white', fontSize: 20}}>
+                            Update Explorer
                           </Text>
                     </TouchableHighlight> 
                   </View>
@@ -285,7 +243,7 @@ class ExplorerCheckin extends Component {
                           animating={this.state.animating}
                           size="large"
                         />
-                        <Text>Fetching information...</Text>
+                        <Text>Updating information...</Text>
                 </View>
               </View>)
         break;
@@ -336,4 +294,4 @@ class ExplorerCheckin extends Component {
   }
 }
 
-export default ExplorerCheckin
+export default UpdateExplorer

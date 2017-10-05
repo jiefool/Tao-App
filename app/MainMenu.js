@@ -75,6 +75,7 @@ const mapIcon  = (<FNIcon name="map" size={60} color="yellow" />)
 const logoutIcon = (<MCIcon name="logout" size={60} color="yellow" />)
 const refreshIcon = (<MCIcon name="refresh" size={60} color="yellow" />)
 const loginIcon = (<MCIcon name="login" size={60} color="yellow" />)
+const updateIcon = (<MIcon name="update" size={60} color="yellow" />)
 
 class MainMenu extends Component {
   constructor(props){
@@ -87,7 +88,7 @@ class MainMenu extends Component {
                   first_name: '',
                   last_name: '',
                   email: '',
-                  toView: 'form'
+                  toView: 'tripdetails'
                 }
   }              
 
@@ -128,17 +129,6 @@ class MainMenu extends Component {
     await AsyncStorage.setItem('expeditiondata', JSON.stringify(expeditionData));
   }
 
-  async getLocalExplorerData(){
-    await AsyncStorage.getItem("explorerdata").then((value) => {
-      if (value != null){
-        this.setState({"explorer_data": JSON.parse(value) });
-        this.setState({toView: 'tripdetails'})
-      }else{
-        this.setState({toView: 'form'})
-      }
-    }).done();
-  }
-
   async getLocalExpeditionData(){
     await AsyncStorage.getItem("expeditiondata").then((value) => {
       if (value != null){
@@ -158,8 +148,11 @@ class MainMenu extends Component {
 
 
   componentWillMount(){
-    this.getLocalExplorerData();
-    this.getLocalExpeditionData()
+    AsyncStorage.getItem("explorerdata").then((value) => {
+      if (value != null){
+        this.setState({"explorer_data": JSON.parse(value) });
+      }
+    })
   }
 
   componentDidMount(){
@@ -330,9 +323,9 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                    onPress={() => Actions.checkin() }>
+                    onPress={() => Actions.updateexplorer() }>
                       <View>
-                        <MenuButton menuIcon={loginIcon} menuText="CHECK-IN" />
+                        <MenuButton menuIcon={updateIcon} menuText="Update Info" />
                     </View>
                   </TouchableHighlight>
                 </View>
@@ -495,12 +488,6 @@ class MainMenu extends Component {
 
           <View>
            { this.renderView(this.state.toView) }
-          </View>
-
-          <View>
-            <View style={{justifyContent: 'center', alignItems: 'center', flex: 1, backgroundColor: 'black'}}>
-              <Text style={{fontSize: 40, textAlign: 'center', fontFamily: 'ffad_matro-webfont', color: 'yellow'}}>Travel App coming soon!</Text>
-            </View>
           </View>
 
         </IndicatorViewPager>

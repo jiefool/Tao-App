@@ -19,7 +19,6 @@ import PageGathering from './app/PageGathering';
 import PageFoundation from './app/PageFoundation';
 
 import OurStory from './app/OurStory';
-import FounderLetter from './app/FounderLetter';
 import TaoOath from './app/TaoOath';
 import HealthSafety from './app/HealthSafety';
 import CaptainsDosAndDonts from './app/CaptainsDosAndDonts';
@@ -39,6 +38,9 @@ import TripBaseCamps from './app/TripBaseCamps';
 import ShowTripRecipe from './app/ShowTripRecipe';
 import ShowTripStory from './app/ShowTripStory';
 import Checkin from './app/ExplorerCheckin';
+import UpdateExplorer from './app/UpdateExplorer';
+import LiabilityWaiver from './app/LiabilityWaiver';
+import FounderLetter from './app/FounderLetter';
 
 const TaoApp = () => {
   return (
@@ -51,6 +53,7 @@ const TaoApp = () => {
         <Scene key="main"
           component={MainMenu}
           title="Tao Philippines"
+          hideNavBar = "false"
         />
         <Scene
           key="taoexpage"
@@ -252,7 +255,7 @@ const TaoApp = () => {
           rightTitle="Right"
           rightButtonTextStyle = {styles.rightTitle}
         />
-         <Scene
+        <Scene
           key="checkin"
           component={Checkin}
           title="CHECK-IN"
@@ -261,6 +264,21 @@ const TaoApp = () => {
           rightButtonTextStyle = {styles.rightTitle}
           hideNavBar = "true"
           initial
+        />
+        <Scene
+          key="liabilitywaiver"
+          component={LiabilityWaiver}
+          title="Liability Waiver"
+        />
+        <Scene
+          key="updateexplorer"
+          component={UpdateExplorer}
+          title="Update Explorer"
+        />
+        <Scene
+          key="founderletter"
+          component={FounderLetter}
+          title="Founder Letter"
         />
       </Scene>
     </Router>
