@@ -23,7 +23,6 @@ import {
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
-import DatePicker from 'react-native-datepicker'
 import Api from './utilities/Api';
 import { Actions } from 'react-native-router-flux';
 import SplashScreen from 'react-native-splash-screen';
@@ -175,29 +174,6 @@ class ExplorerCheckin extends Component {
                     value={this.state.middle_name}
                   />
                   <Text style={Styles.inputLabelText}>Date of Birth:</Text>
-                  <DatePicker
-                    style={{width: Dimensions.get('window').width-20}}
-                    date={this.state.birth_date}
-                    mode="date"
-                    placeholder="YYYY-MM-DD"
-                    format="YYYY-MM-DD"
-                    minDate="1920-01-01"
-                    maxDate="2016-06-01"
-                    confirmBtnText="Confirm"
-                    cancelBtnText="Cancel"
-                    customStyles={{
-                      dateIcon: {
-                        position: "absolute",
-                        right: 0,
-                        top: 4,
-                        marginLeft: 10
-                      },
-                      dateInput: {
-                        marginLeft: 0
-                      }
-                    }}
-                    onDateChange={(date) => {this.setState({birth_date: date})}}
-                  />
                   <Text style={Styles.inputLabelText}>Gender:</Text>
                   <View style= {{alignSelf: 'stretch',alignItems:'center',justifyContent: 'center'}}>
                   <Picker

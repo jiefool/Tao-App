@@ -26,13 +26,11 @@ import CulturalDifference from './app/CulturalDifference';
 import LearnTagalog from './app/LearnTagalog';
 import PackingList from './app/PackingList';
 import TaoTopRecommendations from './app/TaoTopRecommendations';
-
 import TripBoat from './app/TripBoat';
 import TripCrewList from './app/TripCrewList';
 import TripExplorers from './app/TripExplorers';
 import TripRecipes from './app/TripRecipes';
 import TripStories from './app/TripStories';
-import GuideToPh from './app/GuideToPh';
 import MapNorthLuzon from './app/MapNorthLuzon';
 import TripBaseCamps from './app/TripBaseCamps';
 import ShowTripRecipe from './app/ShowTripRecipe';
@@ -219,14 +217,6 @@ const TaoApp = () => {
           key="basecamps"
           component={TripBaseCamps}
           title="Basecamps"
-          onRight={()=> console.log()}
-          rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
-        />
-        <Scene
-          key="guidetoph"
-          component={GuideToPh}
-          title="Guide to PH"
           onRight={()=> console.log()}
           rightTitle="Right"
           rightButtonTextStyle = {styles.rightTitle}

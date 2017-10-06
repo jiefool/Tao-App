@@ -27,10 +27,6 @@ import {
   PagerDotIndicator
 } from 'rn-viewpager';
 
-import { 
-  KeyboardAwareScrollView 
-} from 'react-native-keyboard-aware-scroll-view'
-
 import { Actions } from 'react-native-router-flux';
 
 
