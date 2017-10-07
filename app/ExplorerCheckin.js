@@ -22,6 +22,7 @@ import {
   Dimensions
 } from 'react-native';
 
+import DatePicker from 'react-native-datepicker'
 import Styles from './assets/stylesheets/Styles';
 import Api from './utilities/Api';
 import { Actions } from 'react-native-router-flux';
@@ -100,22 +101,12 @@ class ExplorerCheckin extends Component {
 
   componentDidMount(){
     SplashScreen.hide();
-    // AsyncStorage.removeItem('explorerdata')
   }
 
   saveExplorerData(explorerData){
-    try {
-      AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData)).then(function(){
-        Actions.main()
-      });
-
-    } catch (error) {
-      // Error saving data
-    }
-  }
-
-  tryAgain(){
-    this.setState({toView: 'form'})
+    AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData)).then(function(){
+      Actions.liabilitywaiver()
+    });
   }
 
   createLoginExplorer(){
@@ -142,116 +133,142 @@ class ExplorerCheckin extends Component {
                 <Image source={require('./assets/images/Tao.img6.jpg')}  style={Styles.container}>
                   <Image source={require('./assets/images/tao_logo.png')} style={{width: 200, height: 170, marginTop: 10}}/>
                   <Text style={{textAlign: 'center', fontSize: 50, fontFamily: 'ffad_matro-webfont', color: 'white'}}>Check In</Text>
-                <View style={{padding: 10}}>
-                  <Text style={Styles.inputLabelText}>Login:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(login) => this.setState({login})}
-                    value={this.state.login}
-                  />
-                  <Text style={Styles.inputLabelText}>Booking Reference #:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(book_ref) => this.setState({book_ref})}
-                    value={this.state.book_ref}
-                  />
-                  <Text style={Styles.inputLabelText}>First Name:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(first_name) => this.setState({first_name: first_name})}
-                    value={this.state.first_name}
-                  />
-                  <Text style={Styles.inputLabelText}>Last Name:</Text>
-                   <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(last_name) => this.setState( {last_name: last_name})}
-                    value={this.state.last_name}
-                  />
-                  <Text style={Styles.inputLabelText}>Middle Name:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(middle_name) => this.setState( {middle_name: middle_name})}
-                    value={this.state.middle_name}
-                  />
-                  <Text style={Styles.inputLabelText}>Date of Birth:</Text>
-                  <Text style={Styles.inputLabelText}>Gender:</Text>
-                  <View style= {{alignSelf: 'stretch',alignItems:'center',justifyContent: 'center'}}>
-                  <Picker
-                    style={{width: 100, width: Dimensions.get('window').width-20, backgroundColor: 'rgba(255, 255, 255, .5)'}}
-                    selectedValue={this.state.gender}
-                    onValueChange={(gender) => this.setState( {gender: gender})}>
-                    <Picker.Item label="Male" value="male" />
-                    <Picker.Item label="Female" value="female" />
-                  </Picker>
-                  </View>
-                  <Text style={Styles.inputLabelText}>Address:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(address) => this.setState({address: address})}
-                    value={this.state.address}
-                  />
-                  <Text style={Styles.inputLabelText}>Nationality:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(nationality) => this.setState( {nationality: nationality})}
-                    value={this.state.nationality}
-                  />
-                  <Text style={Styles.inputLabelText}>Email Address:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(email) => this.setState({email: email})}
-                    value={this.state.email}
-                  />
-                  <Text style={Styles.inputLabelText}>Mobile Number:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(mobile_number) => this.setState( {mobile_number: mobile_number})}
-                    value={this.state.mobile_number}
-                  />
-                  <Text style={Styles.inputLabelText}>Passport Number:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(passport_number) => this.setState({passport_number: passport_number})}
-                    value={this.state.passport_number}
-                  />
-                  <Text style={Styles.inputLabelText}>Emergency Contact Person:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(name) => this.setState( {emergency_contact_person: name})}
-                    value={this.state.emergency_contact_person}
-                  />
-                  <Text style={Styles.inputLabelText}>Emergency Contact Person Number:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(number) => this.setState({emergency_contact_person_number: number})}
-                    value={this.state.emergency_contact_person_number}
-                  />
-                  <Text style={Styles.inputLabelText}>Relevant medical condition or dietary restriction:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(text) => this.setState( {medical_dietary_restriction: text})}
-                    value={this.state.medical_dietary_restriction}
-                  />
-                  <Text style={Styles.inputLabelText}>After expedition travel plan or itinerary:</Text>
-                  <TextInput
-                    style={Styles.checkInput}
-                    onChangeText={(text) => this.setState({after_expedition_plan: text})}
-                    value={this.state.after_expedition_plan}
-                  />
-                
-                   
-                  <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 20}}>
-                    <TouchableHighlight
-                      style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
-                      onPress={() => this.createLoginExplorer() }>
-                          <Text style={{color: 'white'}}>
-                            {chevronRightIcon}
-                          </Text>
-                    </TouchableHighlight> 
-                  </View>
+                  <View style={{padding: 10}}>
+                    <Text style={Styles.inputLabelText}>Login:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(login) => this.setState({login})}
+                      value={this.state.login}
+                    />
+                    <Text style={Styles.inputLabelText}>Booking Reference #:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(book_ref) => this.setState({book_ref})}
+                      value={this.state.book_ref}
+                    />
+                    <Text style={Styles.inputLabelText}>First Name:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(first_name) => this.setState({first_name: first_name})}
+                      value={this.state.first_name}
+                    />
+                    <Text style={Styles.inputLabelText}>Last Name:</Text>
+                     <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(last_name) => this.setState( {last_name: last_name})}
+                      value={this.state.last_name}
+                    />
+                    <Text style={Styles.inputLabelText}>Middle Name:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(middle_name) => this.setState( {middle_name: middle_name})}
+                      value={this.state.middle_name}
+                    />
+                    <Text style={Styles.inputLabelText}>Date of Birth:</Text>
+                    <DatePicker
+                      style={{width: Dimensions.get('window').width-20}}
+                      date={this.state.birth_date}
+                      mode="date"
+                      placeholder="YYYY-MM-DD"
+                      format="YYYY-MM-DD"
+                      minDate="1920-01-01"
+                      maxDate="2016-06-01"
+                      confirmBtnText="Confirm"
+                      cancelBtnText="Cancel"
+                      customStyles={{
+                        dateIcon: {
+                          position: "absolute",
+                          right: 0,
+                          top: 4,
+                          marginLeft: 10
+                        },
+                        dateInput: {
+                          marginLeft: 0
+                        }
+                      }}
+                      onDateChange={(date) => {this.setState({birth_date: date})}}
+                    />
 
-                </View> 
-               </Image>
+                    <Text style={Styles.inputLabelText}>Gender:</Text>
+                    <View style= {{alignSelf: 'stretch',alignItems:'center',justifyContent: 'center'}}>
+                    <Picker
+                      style={{width: 100, width: Dimensions.get('window').width-20, backgroundColor: 'rgba(255, 255, 255, .5)'}}
+                      selectedValue={this.state.gender}
+                      onValueChange={(gender) => this.setState( {gender: gender})}>
+                      <Picker.Item label="Male" value="male" />
+                      <Picker.Item label="Female" value="female" />
+                    </Picker>
+                    </View>
+                    <Text style={Styles.inputLabelText}>Address:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(address) => this.setState({address: address})}
+                      value={this.state.address}
+                    />
+                    <Text style={Styles.inputLabelText}>Nationality:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(nationality) => this.setState( {nationality: nationality})}
+                      value={this.state.nationality}
+                    />
+                    <Text style={Styles.inputLabelText}>Email Address:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(email) => this.setState({email: email})}
+                      value={this.state.email}
+                    />
+                    <Text style={Styles.inputLabelText}>Mobile Number:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(mobile_number) => this.setState( {mobile_number: mobile_number})}
+                      value={this.state.mobile_number}
+                    />
+                    <Text style={Styles.inputLabelText}>Passport Number:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(passport_number) => this.setState({passport_number: passport_number})}
+                      value={this.state.passport_number}
+                    />
+                    <Text style={Styles.inputLabelText}>Emergency Contact Person:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(name) => this.setState( {emergency_contact_person: name})}
+                      value={this.state.emergency_contact_person}
+                    />
+                    <Text style={Styles.inputLabelText}>Emergency Contact Person Number:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(number) => this.setState({emergency_contact_person_number: number})}
+                      value={this.state.emergency_contact_person_number}
+                    />
+                    <Text style={Styles.inputLabelText}>Relevant medical condition or dietary restriction:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(text) => this.setState( {medical_dietary_restriction: text})}
+                      value={this.state.medical_dietary_restriction}
+                    />
+                    <Text style={Styles.inputLabelText}>After expedition travel plan or itinerary:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(text) => this.setState({after_expedition_plan: text})}
+                      value={this.state.after_expedition_plan}
+                    />
+                  
+                     
+                    <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 20}}>
+                      <TouchableHighlight
+                        style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
+                        onPress={() => this.createLoginExplorer() }>
+                            <Text style={{color: 'white'}}>
+                              {chevronRightIcon}
+                            </Text>
+                      </TouchableHighlight> 
+                    </View>
+
+                  </View> 
+                  <View style={{height: 300, flex: 1}}>
+                  </View>
+                </Image>
               </ScrollView>)
         break;
       case 'sending':
@@ -273,7 +290,7 @@ class ExplorerCheckin extends Component {
                   <View style={{justifyContent: 'center', alignItems: 'center', flex: 1, marginTop: 20}}>
                     <TouchableHighlight
                       style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue', height: 50, width: 200}]}
-                      onPress={() => this.tryAgain() }>
+                      onPress={() => this.setState({toView: 'form'}) }>
                           <Text style={{color: 'white', fontSize: 20}}>
                             Try Again
                           </Text>

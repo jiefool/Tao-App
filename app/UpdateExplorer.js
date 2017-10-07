@@ -60,7 +60,6 @@ class UpdateExplorer extends Component {
     }
   }
 
-
   updateExplorer(){
     this.setState({toView: "sending"})
     Api.updateExplorer(this.state).then((res) => {
@@ -104,8 +103,6 @@ class UpdateExplorer extends Component {
       case 'form':
         return(<ScrollView style={Styles.containerColumnx}>
                 <Image source={require('./assets/images/Tao.img6.jpg')}  style={Styles.container}>
-                  <Image source={require('./assets/images/tao_logo.png')} style={{width: 200, height: 170, marginTop: 10}}/>
-                  <Text style={{textAlign: 'center', fontSize: 50, fontFamily: 'ffad_matro-webfont', color: 'white'}}>Explorer Info</Text>
                 <View style={{padding: 10}}>
                   <Text style={Styles.inputLabelText}>Booking Reference #:</Text>
                   <TextInput

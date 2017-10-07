@@ -37,13 +37,7 @@ var Api = {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                   },
-                  body: JSON.stringify({
-                    login: data.login ,
-                    book_ref: data.book_ref,
-                    first_name: data.first_name,
-                    last_name: data.last_name,
-                    email: data.email
-                  })
+                  body: JSON.stringify(data)
                 }).then((res) => res.json());
   },
 

@@ -7,20 +7,38 @@
 
 import React, { Component } from 'react';
 import {
-  Navigator,
   Stylesheet,
   View,
   Text,
   Image,
-  ListView,
   ScrollView,
-  TouchableHighlight
+  TouchableHighlight,
+  AsyncStorage
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
 import NavBar from './components/NavBar';
+import FAIcon from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
+const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="yellow" />)
+
+
 
 class FounderLetter extends Component {
+  proceedToMain(){
+    AsyncStorage.setItem("read_founder_letter", "true").then(() => {
+      Actions.main()
+    });
+  }
+
+  componentWillMount(){
+    AsyncStorage.getItem("read_founder_letter").then((res) => {
+      if (res == "true"){
+        Actions.main()
+      }
+    });
+  }
+
   render() {
     return (
       <View style={Styles.container}>
@@ -57,6 +75,18 @@ class FounderLetter extends Component {
           </Text>
           <Text style={{height: 40}}>
           </Text>
+
+          <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 10}}>
+            <TouchableHighlight
+              style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
+              onPress={() => this.proceedToMain() }>
+                  <Text style={{color: 'white'}}>
+                    {chevronRightIcon}
+                  </Text>
+            </TouchableHighlight> 
+          </View>
+          <View style={{flex: 1, height: 30}}>
+          </View>
         </ScrollView>
       </View>
     );

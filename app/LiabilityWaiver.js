@@ -14,7 +14,8 @@ import {
   Text,
   Image,
   ScrollView,
-  TouchableHighlight
+  TouchableHighlight,
+  AsyncStorage
 } from 'react-native';
 
 import Styles from './assets/stylesheets/Styles';
@@ -32,15 +33,16 @@ class LiabilityWaiver extends Component {
     super(props);
     this.state = { 
       checked: false,
-      proceed: ""
     }
   }
 
   acceptLiability(){
     if (this.state.checked == true){
-      Actions.main()
+      AsyncStorage.setItem('accept_liability', "true").then(() => {
+        Actions.founderletter()
+      });
     }else{
-      this.setState({proceed: "Can only proceed if above terms are accepted."})
+      alert("Please tick the checkbox if you understand the terms.")
     }
   }
 
@@ -51,6 +53,14 @@ class LiabilityWaiver extends Component {
       this.setState({checked: true})
       this.setState({proceed: ""})
     }
+  }
+
+  componentWillMount(){
+    AsyncStorage.getItem('accept_liability').then((res) => {
+      if(res == "true"){
+        Actions.founderletter()
+      }
+    });
   }
 
   render() {
@@ -73,8 +83,6 @@ class LiabilityWaiver extends Component {
             onChange={(checked) => this.checkUnchecked() }
           />
 
-          <Text>{this.state.proceed}</Text>
-
           <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 20}}>
             <TouchableHighlight
               style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
@@ -83,6 +91,8 @@ class LiabilityWaiver extends Component {
                     {chevronRightIcon}
                   </Text>
             </TouchableHighlight> 
+          </View>
+          <View style={{flex: 1, height: 30}}>
           </View>
         </ScrollView>
       </View>
