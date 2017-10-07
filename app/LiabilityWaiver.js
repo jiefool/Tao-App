@@ -26,7 +26,7 @@ import CheckBox from 'react-native-checkbox';
 
 
 const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="yellow" />)
-const anchorIcon = (<FAIcon name="anchor" size={60} color="yellow" />)
+const anchorIcon = (<FAIcon name="anchor" size={60} color="rgb(251,224,47)" />)
 
 class LiabilityWaiver extends Component {
    constructor(props) {
@@ -76,16 +76,18 @@ class LiabilityWaiver extends Component {
           <Text>I understand that participants are ultimately responsible for their personal safety and the consequences of their actions. I understand that the expedition leader will discuss points about safety during our briefing and I will pay attention to this points. I also confirm that I have relevant medical / travel insurance that will cover the cost of any medical / emergency action required on my behalf.</Text>
           <Text style={[Styles.regText, {marginTop: 10, marginBottom: 10}]}>Liability Waiver</Text>
           <Text>I release Tao Philippines/ Tao LostBoys, Inc. and its employees all liability for any loss, damge, injury or expense that i may suffer as a result of my participation in this expidition. </Text>
-
+          <View style={{height: 20}}>
+          </View>
           <CheckBox
-            label='Accept'
+            labelStyle={{fontWeight: 'bold', fontSize: 20}}
+            label='I accept the terms.'
             checked={this.state.checked}
             onChange={(checked) => this.checkUnchecked() }
           />
 
           <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 20}}>
             <TouchableHighlight
-              style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
+              style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: '#085582', height: 50, width: 50}]}
               onPress={() => this.acceptLiability() }>
                   <Text style={{color: 'white'}}>
                     {chevronRightIcon}

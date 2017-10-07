@@ -133,8 +133,8 @@ var Styles = StyleSheet.create({
     textAlign: 'justify',
   },
   checkInput: {
-    backgroundColor: 'rgba(255, 255, 255, .5)',
-    color: 'blue',
+    color: 'white',
+    fontSize: 20,
     paddingHorizontal: 5,
     textAlign: 'center',
     marginTop: 10,

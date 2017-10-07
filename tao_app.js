@@ -39,14 +39,15 @@ import Checkin from './app/ExplorerCheckin';
 import UpdateExplorer from './app/UpdateExplorer';
 import LiabilityWaiver from './app/LiabilityWaiver';
 import FounderLetter from './app/FounderLetter';
+import Login from './app/NewExplorerForm';
 
 const TaoApp = () => {
   return (
-    <Router 
-      navigationBarStyle={styles.navBar} 
-      headerTitleStyle={styles.navBarTitle} 
-      barButtonTextStyle={styles.barButtonTextStyle} 
-      barButtonIconStyle={styles.barButtonIconStyle}>
+    <Router navigationBarStyle={styles.navBar} 
+            titleStyle={styles.navBarTitle} 
+            navBarButtonColor='rgb(251,224,47)' 
+            leftButtonTextStyle={{}} 
+            rightButtonTextStyle={{color:'#085582'}}>
       <Scene key="root">
         <Scene key="main"
           component={MainMenu}
@@ -59,7 +60,6 @@ const TaoApp = () => {
           title="Tao Expedition"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="sailing"
@@ -67,7 +67,6 @@ const TaoApp = () => {
           title="Tao Sailing"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="island"
@@ -75,7 +74,6 @@ const TaoApp = () => {
           title="Tao Island"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="trek"
@@ -83,7 +81,6 @@ const TaoApp = () => {
           title="Tao Trek"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="gathering"
@@ -91,7 +88,6 @@ const TaoApp = () => {
           title="Tao Gatherings"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="foundation"
@@ -99,7 +95,6 @@ const TaoApp = () => {
           title="Tao Foundation"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="ourstory"
@@ -107,7 +102,6 @@ const TaoApp = () => {
           title="Our Story"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="founderletter"
@@ -115,7 +109,6 @@ const TaoApp = () => {
           title="Letter From the Founder"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="taooath"
@@ -123,7 +116,6 @@ const TaoApp = () => {
           title="Tao Oath"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="healthandsafety"
@@ -131,7 +123,6 @@ const TaoApp = () => {
           title="Health Safety"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="captainsdosanddonts"
@@ -139,7 +130,6 @@ const TaoApp = () => {
           title="Captain's Dos and Don'ts"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="culturaldifferences"
@@ -147,7 +137,6 @@ const TaoApp = () => {
           title="Cultural Differences"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="learntagalog"
@@ -155,7 +144,6 @@ const TaoApp = () => {
           title="Learn Tagalog"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="packinglist"
@@ -163,7 +151,6 @@ const TaoApp = () => {
           title="Packing List"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="taotoprecommendations"
@@ -171,7 +158,6 @@ const TaoApp = () => {
           title="TaoTopRecommendations"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="boat"
@@ -179,7 +165,6 @@ const TaoApp = () => {
           title="Boat"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="crews"
@@ -187,7 +172,6 @@ const TaoApp = () => {
           title="Crews"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="explorers"
@@ -195,7 +179,6 @@ const TaoApp = () => {
           title="Explorers"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="recipes"
@@ -203,7 +186,6 @@ const TaoApp = () => {
           title="Recipes"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="stories"
@@ -211,7 +193,6 @@ const TaoApp = () => {
           title="Stories"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="basecamps"
@@ -219,7 +200,6 @@ const TaoApp = () => {
           title="Basecamps"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="mapnorthluzon"
@@ -227,7 +207,6 @@ const TaoApp = () => {
           title="North Luzon"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="showtriprecipe"
@@ -235,7 +214,6 @@ const TaoApp = () => {
           title="Trip Recipe"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="showtripstory"
@@ -243,7 +221,6 @@ const TaoApp = () => {
           title="Trip Story"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
         />
         <Scene
           key="checkin"
@@ -251,7 +228,6 @@ const TaoApp = () => {
           title="CHECK-IN"
           onRight={()=> console.log()}
           rightTitle="Right"
-          rightButtonTextStyle = {styles.rightTitle}
           hideNavBar = "true"
           initial
         />
@@ -259,16 +235,29 @@ const TaoApp = () => {
           key="liabilitywaiver"
           component={LiabilityWaiver}
           title="Liability Waiver"
+          onRight={()=> console.log()}
+          rightTitle="Right"
         />
         <Scene
           key="updateexplorer"
           component={UpdateExplorer}
           title="Update Explorer"
+          onRight={()=> console.log()}
+          rightTitle="Right"
         />
         <Scene
           key="founderletter"
           component={FounderLetter}
           title="Founder Letter"
+          onRight={()=> console.log()}
+          rightTitle="Right"
+        />
+        <Scene
+          key="login"
+          component={Login}
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          title="Login"
         />
       </Scene>
     </Router>
@@ -276,21 +265,13 @@ const TaoApp = () => {
 }
 var styles = StyleSheet.create({
   navBar: {
-    backgroundColor:'yellow',
+    backgroundColor:'#085582',
   },
   navBarTitle:{
     alignSelf:'center',
-    color:'black',
-  },
-  barButtonTextStyle:{
-    color:'black',
-  },
-  barButtonIconStyle:{
-    tintColor:'rgb(255,255,255)'
-  },
-  rightTitle:{
-    color: 'yellow'
-  },
+    color:'rgb(251,224,47)',
+    fontFamily: 'ffad_matro-webfont'
+  }
 });
 
 export default TaoApp;

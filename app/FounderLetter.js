@@ -20,7 +20,7 @@ import Styles from './assets/stylesheets/Styles';
 import NavBar from './components/NavBar';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
-const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="yellow" />)
+const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="rgb(251,224,47)" />)
 
 
 
@@ -78,7 +78,7 @@ class FounderLetter extends Component {
 
           <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 10}}>
             <TouchableHighlight
-              style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green', height: 50, width: 50}]}
+              style={[Styles.menuButton, {alignItems: 'center', justifyContent: 'center', backgroundColor: '#085582', height: 50, width: 50}]}
               onPress={() => this.proceedToMain() }>
                   <Text style={{color: 'white'}}>
                     {chevronRightIcon}
