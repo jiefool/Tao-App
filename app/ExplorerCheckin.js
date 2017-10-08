@@ -57,7 +57,7 @@ class ExplorerCheckin extends Component {
       mobile_number: '',
       nationality: '',
       passport_number: '',
-      toView: 'form',
+      toView: 'sending',
       api_error: '',
       radio_props: [{label: 'Male', value: "male" }, {label: 'Female', value: "female" }]
     }
@@ -325,15 +325,13 @@ class ExplorerCheckin extends Component {
               </ScrollView>)
         break;
       case 'sending':
-        return(<View style={[Styles.containerColumn, {alignItems: 'center', justifyContent: 'center'}]}>
-                <View style={{flex: 1, backgroundColor: '#085582', justifyContent: 'center'}}>
-                        <ActivityIndicator
-                          animating={this.state.animating}
-                          size="large"
-                          color="'rgb(251,224,47)'"
-                        />
-                        <Text style={{color: 'rgb(251,224,47)'}}>Sending information...</Text>
-                </View>
+        return(<View style={{alignItems: 'center', justifyContent: 'center', flex: 1}}>
+                <ActivityIndicator
+                  animating={this.state.animating}
+                  size="large"
+                  color="'rgb(251,224,47)'"
+                />
+                <Text style={{color: 'rgb(251,224,47)'}}>Sending information...</Text>
               </View>)
         break;
       case 'errors':
@@ -376,7 +374,7 @@ class ExplorerCheckin extends Component {
 
   render() {
     return (
-      <View style={Styles.container}>
+      <View style={[Styles.container,{backgroundColor: '#085582'}]}>
         { this.renderView(this.state.toView) } 
       </View>
     );

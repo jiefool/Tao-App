@@ -112,6 +112,7 @@ class NewExplorerForm extends Component {
                 </View>
             </TouchableHighlight> 
 
+            <View style={{height: 350}}/>
 
            
          
