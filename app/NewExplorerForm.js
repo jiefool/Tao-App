@@ -46,8 +46,8 @@ class NewExplorerForm extends Component {
     }else{
       this.setState({toView: 'sending'})
       Api.createLoginExplorer(this.state).then((res)=> {
-          this.setState({toView: 'thankyou', explorer_data: res })
-          this.saveExplorerData(res);
+        console.log(res)
+        this.saveExplorerData(res);
       })
     }
   }
@@ -63,14 +63,6 @@ class NewExplorerForm extends Component {
     switch(view){
       case 'form':
         return(<ScrollView style={{flex: 1, padding: 10, backgroundColor: "#61c0bf"}}>
-          
-            <Text style={Styles.inputLabelText}>Login:</Text>
-            <TextInput
-              style={Styles.checkInput}
-              onChangeText={(login) => this.setState({login})}
-              value={this.state.login}
-              underlineColorAndroid = {'white'}
-            />
             <Text style={Styles.inputLabelText}>Booking Reference #:</Text>
             <TextInput
               style={Styles.checkInput}

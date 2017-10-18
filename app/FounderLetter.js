@@ -25,6 +25,7 @@ const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="rgb(251,
 
 
 class FounderLetter extends Component {
+
   proceedToMain(){
     AsyncStorage.setItem("read_founder_letter", "true").then(() => {
       Actions.main()
@@ -34,7 +35,11 @@ class FounderLetter extends Component {
   componentWillMount(){
     AsyncStorage.getItem("read_founder_letter").then((res) => {
       if (res == "true"){
-        Actions.main()
+        if (this.props.fromMenu == "true"){
+         
+        }else{
+          Actions.main()
+        }
       }
     });
   }

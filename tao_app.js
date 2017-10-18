@@ -40,6 +40,9 @@ import UpdateExplorer from './app/UpdateExplorer';
 import LiabilityWaiver from './app/LiabilityWaiver';
 import FounderLetter from './app/FounderLetter';
 import Login from './app/NewExplorerForm';
+import OtherTaoExperience from './app/OtherTaoExperience';
+import TaoTenTips from './app/TaoTenTips';
+import TaoProjects from './app/TaoProjects';
 
 const TaoApp = () => {
   return (
@@ -259,6 +262,28 @@ const TaoApp = () => {
           rightTitle="Right"
           title="Login"
         />
+        <Scene
+          key="othertaoexperience"
+          component={OtherTaoExperience}
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          title="Tao Experiences"
+        />
+        <Scene
+          key="taotentips"
+          component={TaoTenTips}
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          title="10 Tips"
+        />
+        <Scene
+          key="taoprojects"
+          component={TaoProjects}
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          title="Project Stories"
+        />
+        
       </Scene>
     </Router>
   );

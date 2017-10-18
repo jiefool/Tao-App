@@ -25,22 +25,23 @@ class TaoTenTips extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Tao Ten Tips' navigator={this.props.navigator}/>
-        </View>
-
         <ScrollView style={Styles.containerColumn}>
           <View style={Styles.containerRow}>
             <View style={Styles.textWrapper}>
-              <Text style={Styles.headerText}>10 USEFUL TIPS TO GET THE MOST OUT OF YOUR EXPEDITION</Text>
+                <Text style={Styles.headerText}>
+                10 USEFUL TIPS TO GET THE MOST OUT OF YOUR EXPEDITION
+                </Text>
  
-                <Text style={Styles.descriptionText}> 
+                <Text style={Styles.paragraph}> 
                 Be aware of cultural differences, know your part and leave first world 
-                baggage behind.{'\n'}
+                baggage behind.
                 </Text>
-                <Text style={Styles.headerText}>1. ISLAND TIME {'\n'} 
+
+                <Text style={Styles.headerText}>
+                1. ISLAND TIME {'\n'} 
                 </Text>
-                <Text style={Styles.descriptionText}>
+                
+                <Text style={Styles.paragraph}>
                 It's better not to be aware of time and to leave the planning with us.{'\n'}{'\n'}
                 Island time will definitely anooy any western mindset of needing to know what's ahead.
                 Remember that the Filipino day is only divided by breakfast, lunch,and dinner. 'When do we leave?' - After breakfast. 
@@ -53,7 +54,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 2. VILLAGE TOUR? WHERE ARE THE LOCALS? I WANT TRIBE PEOPLE {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 Tao does not do village tours!{'\n'}{'\n'}
                 If you are waiting for a cultural thing to happen in front you then you are on the wrong trip. We do not 
                 showcase the village liffe. We do not go into people's home taking pictures. We do not encourage individuals to
@@ -73,7 +74,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 3. DIGITAL DETOX! {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 'Overly documented, under experienced'{'\n'}
                 Make sure you don't spend half of your time taking photos/videos and the other half finding where to charge your batteries as
                 you might miss the best part of the trip. Sunset is better experienced through your senses, not through your camera screen.
@@ -85,7 +86,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 4. GET TO KNOW THE TOILET {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 There are no plumbing in the islands which means there can't be a holding tank for flushing, which means you have to use
                 bucket to flush, which means you cannot have toilet seats as it get constantly wet.{'\n'} {'\n'}
                 The toilet bowl is clean, so you can seat on it (dont squat), flush the toilet every time you
@@ -96,7 +97,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 5. 'LOOK LIKE A LOBSTER!' {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 This means get out of the sun!{'\n'}{'\n'}
                 The big health issue we often deal with our travelers is dehydration, sun stroke and sun burns, We know the importance of 
                 getting a tan before getting back to your country but this might ruin your trip. From experience, the issue with travelers
@@ -108,7 +109,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 6. LEAVING NO TRACE {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 Yes the locals have no concept of plastic waste. The village is concerned in plastic wrappers. There are broken glasses on the
                 reefs and there are some beaches full of driffted plastic from China, Taiwan and Veitnam. But it doesn't mean we can
                 add on to the problem{'\n'}{'\n'}
@@ -122,7 +123,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 7. PLEASE BE GUIDE YOUR GUIDE! {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 Our guides,born and raised here, have never left the Philippines. They are less familiar with statistical details but they can
                 tell you about the way of life and cultures of the island. You can learn a lot from them but they can learn a lot more from
                 you. There might be  a language barrier but this does not lessen the experience.{'\n'}{'\n'}
@@ -134,7 +135,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 8. SOCIABLE! SOCIABLE! SOCIABLE! {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 This is a sociable trip on a sociable boat with sociable people{'\n'}{'\n'}
                 We are not a booze cruise party-boat but we are also not a meditation/yoga retreat boat. We encourage people to do what
                 they want on their trip as long as they respect other people who want to do other things. PEOPLE BUY ENOUGH ALCOHOL 
@@ -144,7 +145,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 9. 50/50 {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 No matter how we prepare for a trip and how much we give our best, it's not enough to make it a great expedition without an
                 effort from our travelers. we call an expedition because we are exploring islands together. We do not know how much
                 time is left before the area is totally developed and open to a mass tourism, so this is the time to really enjoy the rawness of
@@ -160,7 +161,7 @@ class TaoTenTips extends Component {
                 <Text style={Styles.headerText}>
                 10. LEARN A FEW WORDS {'\n'}
                 </Text>
-                <Text style={Styles.descriptionText}>
+                <Text style={Styles.paragraph}>
                 (all A pronounce Ah!, all I pronounce Ee! U pronounce in Uber! NG pronounced in soNG, O in Opera){'\n'}{'\n'}
                 • TAO - people, human, person {'\n'}• KUMUSTA - How are you? {'\n'}• SALAMAT - Thank you! {'\n'}• KAIN NA - let's eat{'\n'}• 
                 PAALAM - Goodbye {'\n'}• TAGAY - Cheers' Drink up, shot {'\n'}• MAGANDA - Beautiful {'\n'}• ANO YAN? - What is that? {'\n'}• TUBIG - water {'\n'}• 

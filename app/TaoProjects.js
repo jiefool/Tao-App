@@ -56,9 +56,6 @@ class TaoProjects extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.containerPaddingSmall}>
-          <NavBar title='Tao Projects' navigator={this.props.navigator} />
-        </View>
         <View style={Styles.containerRow}>
           <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
         </View>

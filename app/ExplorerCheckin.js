@@ -29,6 +29,7 @@ import Api from './utilities/Api';
 import { Actions } from 'react-native-router-flux';
 import SplashScreen from 'react-native-splash-screen';
 import FAIcon from 'react-native-vector-icons/FontAwesome';
+import {TextInputMask} from 'react-native-masked-text';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 
 const chevronRightIcon = (<FAIcon name="chevron-right" size={40} color="white" />)
@@ -36,7 +37,6 @@ class ExplorerCheckin extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      login: '',
       book_ref: '',
       address: '',
       after_expedition_plan: '',
@@ -57,7 +57,7 @@ class ExplorerCheckin extends Component {
       mobile_number: '',
       nationality: '',
       passport_number: '',
-      toView: 'sending',
+      toView: 'form',
       api_error: '',
       radio_props: [{label: 'Male', value: "male" }, {label: 'Female', value: "female" }]
     }
@@ -140,14 +140,6 @@ class ExplorerCheckin extends Component {
                     </Text>
                   </TouchableOpacity>
                   <View style={{padding: 10}}>
-                    <Text style={Styles.inputLabelText}>Login:</Text>
-                    <TextInput
-                      style={Styles.checkInput}
-                      onChangeText={(login) => this.setState({login})}
-                      value={this.state.login}
-                      tintColor={"white"}
-                      underlineColorAndroid = {'white'}
-                    />
                     <Text style={Styles.inputLabelText}>Booking Reference #:</Text>
                     <TextInput
                       style={Styles.checkInput}
@@ -177,36 +169,20 @@ class ExplorerCheckin extends Component {
                       underlineColorAndroid = {'white'}
                     />
                     <Text style={Styles.inputLabelText}>Date of Birth:</Text>
-                    <DatePicker
-                      style={{width: Dimensions.get('window').width-20, height: 55}}
-                      date={this.state.birth_date}
-                      mode="date"
-                      format="YYYY-MM-DD"
-                      minDate="1920-01-01"
-                      confirmBtnText="Confirm"
-                      cancelBtnText="Cancel"
-                      customStyles={{
-                        dateIcon: {
-                          position: "absolute",
-                          right: 0,
-                          top: 4,
-                          marginLeft: 10
-                        },
-                        dateInput: {
-                          marginLeft: 0,
-                          borderLeftWidth: 0,
-                          borderRightWidth: 0,
-                          borderBottomWidth: 1,
-                          borderBottomColor: 'white',
-                          height: 50
-                        },
-                        dateText: {
-                          color: 'white',
-                          fontSize: 20
-                        }
+                    <TextInputMask
+                      style={Styles.checkInput}
+                      placeholder="YYYY-MM-DD"
+                      type={'datetime'}
+                      options={{
+                        format: 'YYYY-MM-DD'
                       }}
-                      onDateChange={(date) => {this.setState({birth_date: date})}}
-                    />
+
+                      // don't forget: the value and state!
+                      onChangeText={(birth_date) => this.setState({ birth_date })}
+                      value={this.state.birth_date}
+                      underlineColorAndroid = {'white'}
+                      />
+                    
 
                     <Text style={Styles.inputLabelText}>Gender:</Text>
                     <View style= {{alignSelf: 'stretch',alignItems:'center',justifyContent: 'center'}}>

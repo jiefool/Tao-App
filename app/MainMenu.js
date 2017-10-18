@@ -26,7 +26,7 @@ import {
   PagerTitleIndicator, 
   PagerDotIndicator
 } from 'rn-viewpager';
-
+import Communications from 'react-native-communications';
 import { Actions } from 'react-native-router-flux';
 
 
@@ -68,11 +68,19 @@ const footIcon = (<FNIcon name="foot" size={60} color="yellow" />)
 const baseCamp = (<ETIcon name="basecamp" size={60} color="yellow" />)
 const silverWare  = (<MCIcon name="silverware" size={60} color="yellow" />)
 const mapIcon  = (<FNIcon name="map" size={60} color="yellow" />)
-const logoutIcon = (<MCIcon name="logout" size={60} color="yellow" />)
+const logoutIcon = (<MCIcon name="logout" size={40} color="gray" />)
 const refreshIcon = (<MCIcon name="refresh" size={60} color="yellow" />)
 const loginIcon = (<MCIcon name="login" size={60} color="yellow" />)
 const updateIcon = (<MIcon name="update" size={60} color="yellow" />)
 const burnFire = (<IonIcon name="ios-bonfire" size={60} color="yellow" />)
+const welcomeFlag = (<ETIcon name="flag" size={60} color="yellow" />)
+const listUl = (<FAIcon name="list-ul" size={60} color="yellow" />)
+const infoCircle = (<ETIcon name="info-with-circle" size={60} color="yellow" />)
+const questionCircle = (<FAIcon name="question-circle" size={60} color="yellow" />)
+const speechBubble = (<IonIcon name="ios-chatbubbles" size={60} color="yellow" />)
+const projectIcon = (<FAIcon name="handshake-o" size={60} color="yellow" />)
+const facebook = (<ETIcon name="facebook" size={40} color="white" />)
+const instagram = (<ETIcon name="instagram" size={40} color="white" />)
 
 class MainMenu extends Component {
   constructor(props){
@@ -260,9 +268,19 @@ class MainMenu extends Component {
                 </View>)
         break;
       case 'tripdetails':
-        return ( <Image source={require('./assets/images/Tao.img5.jpg')}  style={[Styles.container,{padding: 10}]}>
+        return ( <View style={{flex: 1}}>
+        <Image source={require('./assets/images/Tao.img5.jpg')}  style={[Styles.container,{padding: 10}]}>
             <View style={Styles.containerRow}>
                  <View style={Styles.containerFirstColumn}>
+                  <TouchableHighlight
+                    style={Styles.mainMenuButton}
+                    onPress={() =>  Actions.founderletter({fromMenu: "true"}) }>
+                      <View>
+                        <MenuButton menuIcon={welcomeFlag} menuText="WELCOME" />
+                      </View>
+                  </TouchableHighlight>
+                </View>
+                <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
                     onPress={() => Actions.ourstory() }>
@@ -272,14 +290,11 @@ class MainMenu extends Component {
                   </TouchableHighlight>
                 </View>
                 <View style={Styles.containerFirstColumn}>
-                  
-                </View>
-                <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                    onPress={() => Actions.taooath() }>
+                    onPress={()=> Actions.taotentips() }>
                       <View>
-                        <MenuButton menuIcon={handIcon} menuText="TAO OATH" />
+                        <MenuButton menuIcon={listUl} menuText="10 TIPS" />
                     </View>
                   </TouchableHighlight>
                 </View>
@@ -289,11 +304,11 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                   style={Styles.mainMenuButton}
-                  onPress={() => Actions.healthandsafety() }>
+                  onPress={() => Actions.packinglist() }>
                     <View>
-                      <MenuButton menuIcon={medicIcon} menuText="HEALTH AND SAFETY" />
+                      <MenuButton menuIcon={bundleIcon} menuText="PACKING LIST" />
                     </View>
-                  </TouchableHighlight> 
+                  </TouchableHighlight>
                 </View>
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
@@ -307,21 +322,31 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                   style={Styles.mainMenuButton}
-                  onPress={() => Actions.culturaldifferences() }>
+                  onPress={() => Actions.healthandsafety() }>
                     <View>
-                      <MenuButton menuIcon={torsoIcon} menuText="CULTURAL DIFFERENCES" />
+                      <MenuButton menuIcon={medicIcon} menuText="HEALTH AND SAFETY" />
                     </View>
-                  </TouchableHighlight> 
+                  </TouchableHighlight>
                 </View>
               </View>
 
               <View style={Styles.containerRow}>
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => Actions.learntagalog() }>
-                      <View>
-                        <MenuButton menuIcon={langIcon} menuText="LEARN TAGALOG" />
+                  style={Styles.mainMenuButton}
+                  onPress={() => console.log("travel info") }>
+                    <View>
+                      <MenuButton menuIcon={infoCircle} menuText="TRAVEL INFO" />
+                    </View>
+                  </TouchableHighlight>
+                </View>
+
+                <View style={Styles.containerFirstColumn}>
+                 <TouchableHighlight
+                  style={Styles.mainMenuButton}
+                  onPress={() => Actions.taotoprecommendations() }>
+                    <View>
+                      <MenuButton menuIcon={thumbsUp} menuText="TOP RECOMMENDATIONS" />
                     </View>
                   </TouchableHighlight>
                 </View>
@@ -329,19 +354,9 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                   style={Styles.mainMenuButton}
-                  onPress={() => Actions.packinglist() }>
+                  onPress={() => console.log("faqs") }>
                     <View>
-                      <MenuButton menuIcon={bundleIcon} menuText="PACKING LIST" />
-                    </View>
-                  </TouchableHighlight> 
-                </View>
-
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => Actions.updateexplorer() }>
-                      <View>
-                        <MenuButton menuIcon={updateIcon} menuText="UPDATE INFO" />
+                      <MenuButton menuIcon={questionCircle} menuText="FAQs" />
                     </View>
                   </TouchableHighlight>
                 </View>
@@ -351,84 +366,69 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                    onPress={() => this.showDetails("boat", this.state.expeditionData.boat) }>
+                    onPress={() => Actions.learntagalog() }>
                       <View>
-                        <MenuButton menuIcon={shipIcon} menuText="SHIP" />
-                      </View>
+                        <MenuButton menuIcon={speechBubble} menuText="LEARN TAGALOG" />
+                    </View>
                   </TouchableHighlight>
+                  
                 </View>
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                     onPress={() => this.showDetails("crews", this.state.expeditionData.crews) }>
+                     onPress={() => Actions.taoprojects() }>
                       <View>
-                        <MenuButton menuIcon={anchorIcon} menuText="CREWS" />
+                        <MenuButton menuIcon={projectIcon} menuText="PROJECTS STORIES" />
                       </View>
                   </TouchableHighlight>
                 </View>
                  <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                     style={Styles.mainMenuButton}
-                    onPress={() => this.showDetails("explorers", this.state.expeditionData.explorers) }>
+                    onPress={() => Actions.othertaoexperience() }>
                       <View>
-                        <MenuButton menuIcon={footIcon} menuText="EXPLORERS" />
-                      </View>
-                  </TouchableHighlight>
-                </View>
-              </View>
-
-              <View style={Styles.containerRow}>
-                 <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                   onPress={() => this.showDetails("basecamps", this.state.expeditionData.basecamps) }>
-                      <View>
-                        <MenuButton menuIcon={baseCamp} menuText="BASECAMPS" />
-                      </View>
-                  </TouchableHighlight>
-                </View>  
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.showDetails("stories", this.state.expeditionData.stories) }>
-                      <View>
-                        <MenuButton menuIcon={burnFire} menuText="STORIES" />
-                      </View>
-                </TouchableHighlight>
-                </View>
-                 <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                     onPress={() => this.showDetails("recipes", this.state.expeditionData.recipes) }>
-                        <View>
-                          <MenuButton menuIcon={silverWare} menuText="RECIPES" />
-                        </View> 
-                  </TouchableHighlight>
-                </View>
-              </View>
-          
-              <View style={Styles.containerRow}>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.refreshExpeditionData() }>
-                      <View>
-                        <MenuButton menuIcon={refreshIcon} menuText="REFRESH DATA" />
-                      </View>
-                  </TouchableHighlight>
-                </View>
-                <View style={Styles.containerFirstColumn}></View>
-                <View style={Styles.containerFirstColumn}>
-                  <TouchableHighlight
-                    style={Styles.mainMenuButton}
-                    onPress={() => this.logoutUser() }>
-                      <View>
-                        <MenuButton menuIcon={logoutIcon} menuText="LOGOUT" />
+                        <MenuButton menuIcon={footIcon} menuText="OTHER TAO EXPERIENCE" />
                       </View>
                   </TouchableHighlight>
                 </View>
               </View>
             </Image>
+           <View style={{height: 120, backgroundColor: '#085582', flexDirection: 'row', justifyContent: 'center'}}>
+              <View style={{width: 200, height: 120, alignItems: 'center'}}>
+                <Text style={{textAlign: 'center', fontSize: 20, fontFamily: 'ffad_matro-webfont', color: 'white', padding: 5}}>Follow Us</Text>
+                <View style={{flex: 1, flexDirection: 'row'}}>
+                  <View style={{height: 60,  width: 60, margin: 10}}>
+                    <TouchableHighlight
+                    style={{}}
+                    onPress={() =>  Communications.web('https://www.facebook.com/Tao-Philippines-74026363044') }>
+                      <View>
+                        <MenuButton menuIcon={facebook} menuText="Facebook" />
+                      </View>
+                    </TouchableHighlight>
+                  </View>
+                  <View style={{height: 60,  width: 60, margin: 10}}>
+                    <TouchableHighlight
+                    style={{}}
+                    onPress={() => Communications.web('https://www.instagram.com/taophilippines') }>
+                      <View>
+                        <MenuButton menuIcon={instagram} menuText="Instagram" />
+                      </View>
+                    </TouchableHighlight>
+                  </View>
+                </View>
+              </View>
+              <View style={{height: 100,  width: 1, backgroundColor: 'white', margin: 10}}/>
+              <View style={{height: 100,  width: 60, margin: 10, justifyContent: 'center'}}>
+                  <TouchableHighlight
+                    style={{}}
+                    onPress={() => this.logoutUser() }>
+                      <View>
+                        <MenuButton menuIcon={logoutIcon} menuText="LOGOUT" />
+                      </View>
+                  </TouchableHighlight>
+              </View>
+            </View>
+          </View>
         )
         break;
         case 'fieldError':
