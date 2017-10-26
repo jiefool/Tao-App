@@ -34,7 +34,7 @@ class PageExpedition extends Component {
               Choose a way to enjoy our 5 day journey through the island kingdom of Northern Palawan. It can be an action packed expedition, a slower paced sailing experience or half island stay/ half boat adventure.
             </Text>
             <TouchableOpacity activeOpacity={0.5} onPress={() => Communications.web('http://booking.taophilippines.com/open-group-experience/#form') }>
-              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Apply Now!</Text>
+              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Read More</Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => this.gotoExpedition() }>
               <Text style={{color: 'yellow', marginTop: 10}}>

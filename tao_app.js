@@ -112,6 +112,7 @@ const TaoApp = () => {
           title="Letter From the Founder"
           onRight={()=> console.log()}
           rightTitle="Right"
+          hideNavBar = "true"
         />
         <Scene
           key="taooath"
@@ -245,13 +246,6 @@ const TaoApp = () => {
           key="updateexplorer"
           component={UpdateExplorer}
           title="Update Explorer"
-          onRight={()=> console.log()}
-          rightTitle="Right"
-        />
-        <Scene
-          key="founderletter"
-          component={FounderLetter}
-          title="Founder Letter"
           onRight={()=> console.log()}
           rightTitle="Right"
         />

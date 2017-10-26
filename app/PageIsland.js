@@ -28,7 +28,7 @@ class PageIsland extends Component {
               Camp Ngey! Ngey! is our crusoe-style deserted island camp, paradise for those who understand the luxury of simplicity and disconnection.
             </Text>
             <TouchableOpacity activeOpacity={0.5} onPress={() => Communications.web('https://booking.taophilippines.com/camp-ngeyngey') }>
-              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Apply Now!</Text>
+              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Read More</Text>
             </TouchableOpacity>
           </View>
         </View>

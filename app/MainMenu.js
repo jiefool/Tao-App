@@ -387,7 +387,7 @@ class MainMenu extends Component {
                     style={Styles.mainMenuButton}
                     onPress={() => Actions.othertaoexperience() }>
                       <View>
-                        <MenuButton menuIcon={footIcon} menuText="OTHER TAO EXPERIENCE" />
+                        <MenuButton menuIcon={footIcon} menuText="TAO EXPERIENCES" />
                       </View>
                   </TouchableHighlight>
                 </View>

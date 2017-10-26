@@ -34,7 +34,7 @@ class PageTrek extends Component {
               The mountain people maintained their culture for thousands of years. Tao gives an insight of communities working skillfully with the rivers and the mountain to sustain their lifeline: Rice.
             </Text>
             <TouchableOpacity activeOpacity={0.5} onPress={() => Communications.web('https://booking.taophilippines.com/tao-north/') }>
-              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Apply Now!</Text>
+              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Read More</Text>
             </TouchableOpacity>
           </View>
         </View>

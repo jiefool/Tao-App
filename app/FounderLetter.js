@@ -49,14 +49,13 @@ class FounderLetter extends Component {
       <View style={Styles.container}>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={{fontSize: 25, fontWeight: 'bold', paddingBottom: 20}}>
-            LETTER FROM EDDIE 
+            Welcome! 
           </Text>
 
           <Text style={Styles.paragraph, {fontSize: 20, fontWeight: 'bold', paddingBottom: 20}}>
             Welcome to Palawan! 
           </Text>
           <Text style={Styles.paragraph}>
-            We have put together this journal for you to make the most of your expedition. 
             Be aware of cultural differences, know your part and leave first world baggages behind.
           </Text>
           <Text style={Styles.paragraph}>  
@@ -73,10 +72,7 @@ class FounderLetter extends Component {
             We do not know how much time is left before the area is totally developed and open to mass tourism, so this is the time to jump in and really enjoy the rawness of the untouched islands.
           </Text>
           <Text style={Styles.paragraph, {fontWeight: 'bold'}}>
-            EDDIE 
-          </Text>
-          <Text style={Styles.paragraph}>
-            Tao Founder 
+            Tao Family 
           </Text>
           <Text style={{height: 40}}>
           </Text>

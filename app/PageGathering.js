@@ -28,7 +28,7 @@ class PageGathering extends Component {
               We host and collaborate with unique events and festivals in our island venues. We also extend the island vibes wandering into the city with food events, conferences and warehouse parties.
             </Text>
             <TouchableOpacity activeOpacity={0.5} onPress={() => Communications.web('https://booking.taophilippines.com/tao-gathering/') }>
-              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Apply Now!</Text>
+              <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white', backgroundColor: 'blue', padding: 10}}>Read More</Text>
             </TouchableOpacity>
           </View>
         </View>

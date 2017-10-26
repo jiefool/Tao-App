@@ -41,7 +41,7 @@ class NewExplorerForm extends Component {
   }
 
   createLoginExplorer(){
-    if(this.state.login == '' || this.state.book_ref== '' || this.state.email == ''){
+    if(this.state.book_ref== '' || this.state.email == ''){
       this.setState({toView: 'fieldError'})
     }else{
       this.setState({toView: 'sending'})

@@ -268,20 +268,34 @@ class ExplorerCheckin extends Component {
                       value={this.state.emergency_contact_person_number}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>Relevant medical condition or dietary restriction:</Text>
+                    <Text style={Styles.inputLabelText}>Relevant medical condition or allergies:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(text) => this.setState( {medical_dietary_restriction: text})}
                       value={this.state.medical_dietary_restriction}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>After expedition travel plan or itinerary:</Text>
+                    <Text style={Styles.inputLabelText}>Scheduled after expedition travel arrangements:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(text) => this.setState({after_expedition_plan: text})}
                       value={this.state.after_expedition_plan}
                       underlineColorAndroid = {'white'}
                     />
+
+                    <TextInputMask
+                      style={Styles.checkInput}
+                      placeholder="MM/DD HH:MM"
+                      type={'datetime'}
+                      options={{
+                        format: 'MM/DD HH:MM'
+                      }}
+
+                     
+                      onChangeText={(birth_date) => this.setState({ after_expedition_plan })}
+                      value={this.state.after_expedition_plan}
+                      underlineColorAndroid = {'white'}
+                      />
                   
                      
                     <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: 20}}>
