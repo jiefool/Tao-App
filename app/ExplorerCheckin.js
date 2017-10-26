@@ -221,6 +221,7 @@ class ExplorerCheckin extends Component {
                     </View>
                     <Text style={Styles.inputLabelText}>Address:</Text>
                     <TextInput
+                      placeholder="Country, City"
                       style={Styles.checkInput}
                       onChangeText={(address) => this.setState({address: address})}
                       value={this.state.address}
@@ -238,13 +239,6 @@ class ExplorerCheckin extends Component {
                       style={Styles.checkInput}
                       onChangeText={(email) => this.setState({email: email})}
                       value={this.state.email}
-                      underlineColorAndroid = {'white'}
-                    />
-                    <Text style={Styles.inputLabelText}>Mobile Number:</Text>
-                    <TextInput
-                      style={Styles.checkInput}
-                      onChangeText={(mobile_number) => this.setState( {mobile_number: mobile_number})}
-                      value={this.state.mobile_number}
                       underlineColorAndroid = {'white'}
                     />
                     <Text style={Styles.inputLabelText}>Passport Number:</Text>
@@ -276,13 +270,6 @@ class ExplorerCheckin extends Component {
                       underlineColorAndroid = {'white'}
                     />
                     <Text style={Styles.inputLabelText}>Scheduled after expedition travel arrangements:</Text>
-                    <TextInput
-                      style={Styles.checkInput}
-                      onChangeText={(text) => this.setState({after_expedition_plan: text})}
-                      value={this.state.after_expedition_plan}
-                      underlineColorAndroid = {'white'}
-                    />
-
                     <TextInputMask
                       style={Styles.checkInput}
                       placeholder="MM/DD HH:MM"
