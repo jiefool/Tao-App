@@ -159,7 +159,7 @@ const TaoApp = () => {
         <Scene
           key="taotoprecommendations"
           component={TaoTopRecommendations}
-          title="TaoTopRecommendations"
+          title="Top Recommendations"
           onRight={()=> console.log()}
           rightTitle="Right"
         />
