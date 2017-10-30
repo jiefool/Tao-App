@@ -334,7 +334,7 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                   style={Styles.mainMenuButton}
-                  onPress={() => console.log("travel info") }>
+                  onPress={() => Actions.travelinfo() }>
                     <View>
                       <MenuButton menuIcon={infoCircle} menuText="TRAVEL INFO" />
                     </View>
@@ -354,7 +354,7 @@ class MainMenu extends Component {
                 <View style={Styles.containerFirstColumn}>
                   <TouchableHighlight
                   style={Styles.mainMenuButton}
-                  onPress={() => console.log("faqs") }>
+                  onPress={() => Actions.faqs() }>
                     <View>
                       <MenuButton menuIcon={questionCircle} menuText="FAQs" />
                     </View>

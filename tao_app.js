@@ -43,6 +43,8 @@ import Login from './app/NewExplorerForm';
 import OtherTaoExperience from './app/OtherTaoExperience';
 import TaoTenTips from './app/TaoTenTips';
 import TaoProjects from './app/TaoProjects';
+import Faqs from './app/Faqs';
+import TravelInfo from './app/TravelInfo';
 
 const TaoApp = () => {
   return (
@@ -240,6 +242,7 @@ const TaoApp = () => {
           component={LiabilityWaiver}
           title="Liability Waiver"
           onRight={()=> console.log()}
+          onLeft={()=> Action.reset()}
           rightTitle="Right"
         />
         <Scene
@@ -275,7 +278,23 @@ const TaoApp = () => {
           component={TaoProjects}
           onRight={()=> console.log()}
           rightTitle="Right"
-          title="Project Stories"
+          title="Project & Stories"
+        />
+
+        <Scene
+          key="faqs"
+          component={Faqs}
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          title="FAQs"
+        />
+
+        <Scene
+          key="travelinfo"
+          component={TravelInfo}
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          title="Travel Info"
         />
         
       </Scene>
