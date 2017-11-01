@@ -23,251 +23,68 @@ import Styles from './assets/stylesheets/Styles';
 import ProjectItem from './components/ProjectItem';
 import Api from './utilities/Api';
 import NavBar from './components/NavBar';
+import customData from './assets/data/project_and_stories.json'
+import { Actions } from 'react-native-router-flux';
 
 
 class TaoProjects extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-  //   this.state = {
-  //     dataSource: ds.cloneWithRows([''])
-  //   };
-  //   this.navigate = this.navigate.bind(this)
-  // }
+  constructor(props) {
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows(customData.ps_array)
+    };
+  }
 
-  // navigate(name){
-  //   this.props.navigator.push({name})
-  // }
+  _require_image(image){
+    switch(image){
+      case 'lost_boys.jpg':
+        return require('./assets/images/lost_boys.jpg')
+        break
+      case 'campngeyngey.jpg':
+        return require('./assets/images/campngeyngey.jpg')
+        break
+      case 'tao_foundation.png':
+        return require('./assets/images/tao_foundation.png')
+        break
+      case 'Tao.img10.jpg':
+        return require('./assets/images/Tao.img10.jpg')
+        break
+      case 'Tao.img5.jpg':
+        return require('./assets/images/Tao.img5.jpg')
+        break
+      case 'tao_sailing.png':
+        return require('./assets/images/tao_sailing.png')
+        break
+      case 'tao_farming.jpg':
+        return require('./assets/images/tao_farming.jpg')
+        break
+      case 'women_livelihood.jpg':
+        return require('./assets/images/women_livelihood.jpg')
+        break
+    }
+  }
 
-  // componentWillMount(){
-  //   const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-  //   Api.getTaoProjects().then((res) =>{
-  //     this.setState({
-  //       dataSource: ds.cloneWithRows(res)
-  //     });
-  //   });
-  // }
-
-  // _renderItem(data){
-  //   return(
-  //    <ProjectItem projectData = {data} 
-  //       onPress={()=> this.navigate({name: 'showTaoProject', data: data}) }/>
-  //   );
-  // }
+  _renderItem(data){
+    return(
+      <TouchableHighlight onPress={()=> Actions.toprecommendationdetails({data: data, title: data.name}) }>
+        <View style={{flexDirection: "row", marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+          <Image source={this._require_image(data.image)} style={{height: 150, width: width/2}}/>
+          <View style={{width: width/2, alignItems: 'center', backgroundColor: '#085582', height: 150, justifyContent: 'center', padding: 10}}>
+            <Text style={{alignItems: 'center', fontSize: 20, color: 'white', textAlign: 'center', fontWeight: 'bold', fontFamily: 'ffad_matro-webfont'}}>{data.name}</Text>
+          </View>
+        </View>
+      </TouchableHighlight>
+    );
+  }
 
   render() {
     return (
-      // <View style={Styles.container}>
-      //   <View style={Styles.containerRow}>
-      //     <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
-      //   </View>
-      // </View>
       <ScrollView>
-        <Text style={{padding: 10, fontSize: 18}}>
-          This journey is not for everyone. , You are here because our values are aligned- we are likeminded.
-          However 'like- minded does not mean that we all do and like the same things. We are likeminded because we are open to new experiences, to all cultures, all age groups and all backgrounds.{"\n"}{"\n"}
-
-          You are about to spend the next 5 days living in close quarters with your shipmates. Each group will be made up of a cast of characters- the extroverts, the introverts, the jokers, the princess, the know it alls and the slow to catch on. Everyone plays an important role on the journey. Whatever unique charctar you bring to your tribe, the right mindset is key.{"\n"}{"\n"}
-
-          Your expedition group is your tribe, they will accompany you along the way. You can access the full potential of your journey by getting to know them and finding our the stories in their lives. Take some time for your own personal journey too.{"\n"}{"\n"}
-
-          We know that our definition of luxury and paradise is different from the norm. We also think that this is what makes our expeditions so real.{"\n"}{"\n"}
-
-          We don't care about making exclusive trips. We care about making sure that those who join us are willing to give themselves over to the magic of Tao for the time that they share with us.{"\n"}{"\n"}
-
-          Be positive, be friendly, be curious, ask questions and try new things. Don't forget to bring this mindset. Think like a filipino and find out why we are known as the happiest people on earth.{"\n"}{"\n"}
-        </Text>
-        <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-        <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-          TAO LOST BOYS
-        </Text>
-        <Image source={require('./assets/images/lost_boys.jpg')} style={{height: 250, width: width}}/>
-
-        <Text style={{padding: 10, fontSize: 18}}>
-          Many years ago, a journalist writing about our expeditions called us the 'Lost Boys;" we didn't want to grow up, and we wanted to explore and share our Never-Never Land. The name stuck, and has over time taken on another meaning.{"\n"}{"\n"}
-
-          For Palawan islanders this is not Never-Never Land. Families have traditionally relied upon fishing for their survival, but the sea is giving less and less to each generation. These are the new lost boys - the young men left without a livelihood and few opportunities. However, and as you will discover, these Lost Boys are the perfect guides for your expeditions. Their skills are born of the islands; they are strong swimmers and divers, and expert in piloting kayaks. They understand and respect the dangers of island life, but also recognise its natural beauty and freedom. Their island wisdom is at the heart of Tao Expeditions.{"\n"}{"\n"}
-
-          The entrance exam for Tao crew is to successfully climb up and down two coconut trees. A simple test which reveals so much. Your crew-members will have had responsibilities to their families from a young age; foraging for food and firewood, cooking, caring for siblings, and of course fishing. Tao harnesses these abilities, and provides training to keep alive traditional skills in a new industry.{"\n"}{"\n"}
-
-          All of our crew start out at Tao Farm, our base camp, where they learn about our kind of hospitality. They meet explorers, develop their language and communication skills, and become accustomed to the hard work and commitment needed to progress. Culturally, this can be a difficult process. Palawan islanders can be set in their ways, unwilling to move away from fishing and adapt to new careers. In our experience it is the younger islanders who are more likely to embrace the opportunities we offer. Often our crew- members have not excelled in school, but have thrived in the Tao environment which encourages their natural resourcefulness. The desire for most of our Lost Boys is to join an Expedition crew, finally realising their tradition of working at sea. Several Lost Boys have gone from ascending coconut trees to leading expeditions on their own boats.{"\n"}{"\n"}
-
-          Your crew are the best guides to take you out into this region. Despite the language barrier, there is much you can learn from them. Using their inherent island skills, the things they learnt growing up in the islands they will show you a different style of hospitality.{"\n"}{"\n"}
-          </Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-          <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            TAO KALAHI FOUNDATION AND THE ISLAND COMMUNITIES
-          </Text>
-          <Image source={require('./assets/images/tao_foundation.png')} style={{height: 250, width: width}}/>
-
-          <Text style={{padding: 10, fontSize: 18}}>
-          10 years in the beautiful remote islands of Palawan and we have come to see changes. In the beginning, it was a small tourism business enterprise; working with the island families as partners.{"\n"}{"\n"}
-
-          Tao is now the culmination of 10 years of growth, innovative thinking, and a collection of unique experiences; learning from mistakes and adapting indigenous knowledge. A decade of new discoveries and building the capacity for development along the way.{"\n"}{"\n"}
-
-          Tao works like an extended family in a sustainable micro-economy across a 200km stretch of islands. Creating jobs and providing opportunities: women's group, food production, water security, schools, and scholarships - offering alternate means of livelihood and access to education among families challenged by isolation and the collapse of the fishing industry. We work with what is already here; utilizing abundant resources and harnessing existing skills to come up with sustainable solutions.{"\n"}{"\n"}
-
-          Now, we have come a long way to share what we have achieved; to offer a business model that really works within our communities. We go beyond more than just talks and theories on sustainability and development— these have become our reality, born out of necessity.{"\n"}{"\n"}
-
-          Collectively we have formed Tao Kalahi Foundation— inspired by what our business has already achieved, geared towards inclusive growth. Solely funded by the Tao tourism business, the Foundation is an open space for both sharing and learning. Our goal now is to create a stronger impact not just within island communities but looking outwards, reaching out to other communities in the Philippines, welcoming collaboration towards sustainable development.{"\n"}{"\n"}
-          </Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-
-          <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            TUKA
-          </Text>
-          <Image source={require('./assets/images/Tao.img10.jpg')} style={{height: 250, width: width}}/>
-
-          <Text style={{padding: 10, fontSize: 18}}>
-          Bamboo is the most amazing building material in the world. It grows so fast, sustainably harvested, light weight and flexible. Its natures gift that keeps on giving.{"\n"}{"\n"}
-
-          We use an endemic verity called 'Bayog'. its ideal for constructing shelters because unlike most bamboo it has a relatively small hollow core and thick outer wall, making it very strong but still flexable.{"\n"}{"\n"}
-
-          There is an abundance of Bayog in Palawan, planted widely and used by fishermen for the outriggers on their boats. The bamboo is tied to the hull of the boat using nylon- thick grade fishing line. This construction method can withstand the huge forces of rough seas.{"\n"}{"\n"}
-
-          The Yolanda Typhoon in November 2013 affected many of our communities, destroying many homes and base camps. This is when we started looking into designs that make our buildings more resiliant, using available materials and ancient traditional knowledge. The one who taught us how to build with bamboo is Gener, the mastermind behind the Tao Paraw Sailing Boat. He is a native of Palawan and has a deep understanding of the natural world and what works in this environment. He saw the construction method used by the fishermen and decided to develop designs for buildings remembering the bamboo harvesting techniques and salt water preservation methods of his grandfather.{"\n"}{"\n"}
-
-          The 'Bird Beak' or 'Tuka' hut design was the result and is now the signature shape of most of our bamboo buildings. Each hut is entirely handmade, beautifully constructed to promote airflow as well as shelter from the sun and rain. Unlike other more typical native huts [bahay kubo] the tuka hut does not require wood which comes from the virgin forests of Palawan. instead the Tuka structure is made from bayog, bent under tension in criss cross triangle pattern, pinned in place with bamboo pegs and tied with nylon. Its an incredibly strong structure, quick to make by teams of bamboo 'Tuka weavers' - fishermen with the knowledge of a life at sea in a bamboo and nylon boat. The Tuka can be scaled from a small sleeping hut to a medium sized family home to large dome structures capable of housing several families, schools and community centres.{"\n"}{"\n"}
-
-          The design represents the resilience, strength and adaptability of the Filipino people. The combination of strength and stability and the use of local resourses that created a design that protects and shelters us in more challenging weather, adapting to future climatic changes preparing for the future of climate change and adaptability.{"\n"}{"\n"}
-          </Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-          <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            PARAW
-          </Text>
-          <Image source={require('./assets/images/tao_sailing.png')} style={{height: 250, width: width}}/>
-
-          <Text style={{padding: 10, fontSize: 18}}>
-          The People of the philippines have been moving around the islands for thousands of years using the Paraw, a native sailing boat. The shape of the bangka comes from the paraw. With so many shallow reefs amongst the islands, a typical deep keel is impractical. So ancient South pacific islanders developed shallow keeled boats with protruding outriggers to offer stability from the force of the wind on the sails.{"\n"}{"\n"}
-
-          Over the years as motor engines became more popular due to their efficiency, the traditional art of sailing and the construction of the Paraw was almost lost.{"\n"}{"\n"}
-
-          Tao is a living community that thrives and grows through interaction and collaboration with other likeminded tribes and individuals. The mastermind behind this collaboration is Gener Paduga, a Native to Palawan and a sailing enthusiast with a deep understanding of the natural world. The Paraw project was not a supposed to be a museum reconstruction piece. Instead it combines modern rigging, double engine and traditional design to create a beautifully unique vessel.{"\n"}{"\n"}
-
-          The Tao Paraw project was started in 2012 with the aim of constructing a 72ft sailing bangka- the largest of its kind in the Philippines. Its a relic of Filipino culture and heritage using almost extinct knowledge.{"\n"}{"\n"}
-
-          The oldest carpenter on the project was a 91 year old master boat builder 'Mindoro'. He remembers building these boats with his father to deliver tonnes of rice to Manila in the 1950's.{"\n"}{"\n"}
-
-          The Paraw now hosts explorers on the expedition route between El Nido and Coron. Lucky travellers experience the expedition at a different pace. The Paraw is crewed by 10 Tao Lost Boys. Each have been trained to sail by Gener through the the Paraw sailing school, which introduces local youth to their ancestors ancient world of sailing.{"\n"}{"\n"}
-
-          One day those who will be able to move will be those who have the knowledge to harness the power of the wind. Its a project of the future learning from the past.{"\n"}{"\n"}
-          </Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-          <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            TAO FARM AN EXPERIMENT IN FOOD SECURITY
-          </Text>
-          <Image source={require('./assets/images/tao_farming.jpg')} style={{height: 250, width: width}}/>
-
-          <Text style={{padding: 10, fontSize: 18}}>
-          Known as the last frontier of South East Asia, Palawan had a very small population until the 1970s. The province sat far out west and was known only for malaria and deadly tropical diseases. It remained relatively untouched until fishermen and their families from the rest of the Visayas started to migrate here for the abundant fishing. Over the years humans have taken more than their fair share of the ocean’s bounty and, at present, overfishing has led to a huge reduction in fish stocks and the sea no longer produces enough to support the industry that is the lifeline of towns, villages and families in the region.{"\n"}{"\n"}
-
-          In response to this problem the fishing communities are turning to the land and the forests to feed their families. However, the skills and knowledge needed to tend the land are totally different from making a living out at sea. During the late summer months, April and May, we can see huge swathes of mountain hillside going up in smoke, clearing land in preparation for planting. This method allows for only one harvest, but renders the soil sterile for the following 5 years. It is an incredibly wasteful use of the forest, to burn it for low grade fertilizer for one crop. The damage is catastrophic and long lasting, degrading the land, soil and water systems.{"\n"}{"\n"}
-
-          We started to look into ways in which farmers work with nature as opposed to the destructive slash and burn technique. In June 2011 Tao broke ground on the Organic Farm Project in order to research ways in which islanders could sustainably produce our own food. The Farm is now part of the Tao Kalahi Foundation, using local traditional knowledge combined with new research and techniques, we are experimenting and exploring ways in which we can produce our own food, reducing the reliance on the catch from the sea.{"\n"}{"\n"}
-
-          The Farm is designed on Permaculture ethics and principles. Permaculture is a philosophy of working with rather than against nature; so we must work to understand how natural systems operate and relate to each other. Then we can work with these natural systems to design a farm that supplies all our human needs without destroying the environment, depleting water systems and degrading the soil. This means that we can live here in this beautiful place for an indefinite period of time, with all our food, herbal medicine and building material needs satisfied. Permaculture allows us as humans to become a positive element in the natural environment and not the most destructive, as we too commonly are.{"\n"}{"\n"}
-          </Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-          <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            WOMENS LIVELIHOOD
-          </Text>
-          <Image source={require('./assets/images/women_livelihood.jpg')} style={{height: 250, width: width}}/>
-
-           <Text style={{padding: 10, fontSize: 18}}>
-          At some point during your Expedition, in the middle of some remote islands, you will meet some local women who offer massage to Tao guests. Laid out on beds on the beach, with the sound of the waves, under the stars they offer traditional massage with homemade Coconut Oil. These women are our neighbours in the island base camps and are part of the Tao Kalahi Foundation women's groups.{"\n"}{"\n"}
-
-          The Foundation offers training workshops to women who are interested in learning and developing skills to offer services and products that we need to host our guests on the expedition.{"\n"}{"\n"}
-
-          The massage project was a slow starter and needed some careful negotiation, light persuasion and lots of practice. But once the women honed their skills and started to earn a steady income, our guests were happy from the unexpected treat and the Tao Experience became richer and more connected to the local communities, it was clear that this was a win win situation for everyone.{"\n"}{"\n"}
-
-          For the women its a great opportunity to earn income from part time and 'drop in' work that fits around their lives as a mother running an island household. This is usually the first time they have ever undergone paid work before, they buy new clothes for their kids, school supplies and lunch money and soon you can see that the whole family is benefiting from engaging with Tao.{"\n"}{"\n"}
-
-          Word spread and more women showed interest in getting involved. The Tao Foundation started to research into ways that they could made additional products from the Virgin Coconut Oil used for the massage. Today they produce organic coconut oil Soap and Shampoo which are available for you to buy through the Foundation Shop.{"\n"}{"\n"}
-
-          Today there are over 80 local women involved in various projects including massage therapists, a sewing workshops that makes all our bedding for the expeditions, Virgin Coconut Oli producers, Daycare teachers teachers, and community organisers that work together with tao to host and look after you in the remote islands.{"\n"}{"\n"}
-          </Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-          <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            OUR FOCUS IS ON THE NEXT GENERATION
-          </Text>
-
-           <Text style={{padding: 10, fontSize: 18}}>
-          Many of our projects focus on education for the children and youth of the islands. Over the years we have come to realise that the adults are stuck in their ways. A fisherman's mentality is that the sea will always provide. No planning [or stressing!] about the future. This means that islanders attitude to education is not a priority. But unfortunately the sea can't always provide anymore and with a growing population, education is more important than ever.{"\n"}{"\n"}
-
-          We have always preferred to work with the young ones because they are malleable and open to learn new things. In the early days of tao some of our crew started working with us in base camps from as young as 14 years old. today we have our own training and education system for the crew out on the boats, but we also run community based learning centres in the islands we visit.{"\n"}{"\n"}
-
-          The 9 daycare centres operated by the tao Foundation are Kindergartens where young islands can go to learn to read and write before they are sent to the larger government run schools which are usually in the larger villages a boat ride away on other islands. This early access to education is essential for families challenged by isolation and the collapse of the fishing industry.{"\n"}{"\n"}
-
-          There are also many hardworking young islanders without the means to take their education onto the next level after graduating from school. The Tao Foundation offer scholarships to talented individuals to study on a range of subjects from Agiriculture to Business management. Over the years we have sent many kids [majority are girls] through higher education and to our amazement and joy most of them come back to tao to work in our growing community.{"\n"}{"\n"}
-
-          An example of this is Jimmy our in-house marine Biologist who was one of our guides for the early days. He applied for a scholarship on the foundation and went away to study for 4 years. Afterwards he came back and pioneered the Tao organic Permaculture Farm research project.</Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-         <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            THE FUTURE
-          </Text>
-
-          <Text style={{padding: 10, fontSize: 18}}>
-          The Philippines and especially Palawan are on the verge of a huge tourism boom. This is a good thing if everybody benefits. We believe that tourism should be a 2 way thing, benefiting the traveller and host alike.{"\n"}{"\n"}
-
-          looking forward to the future, the Tao Kalahi Foundation will continue to nurture and maintain relationships with the islanders which allows us to operate in this remote region without unnecessary development and outside investment, utilising what is already here - a sunning natural environment and a growing population of hardworking, welcoming, friendly people.{"\n"}{"\n"}
-
-          Through education, training, research and implementing examples, The Tao Kalahi Foundation aims to be the voice and leading example of ways in which every Filipino can benefit and share in the opportunities that tourism brings, and to wisely make the most of the boom to invest for a secure future whatever that may bring [with or without tourism].{"\n"}{"\n"}
-
-          To be fully self reliant is not to rely only purely on tourism but to build resilient self sustaining communities encompassing food production, green architecture and building techniques, traditional medicine, manufacture of goods and eduction of people for a ecologically sound and economically viable human settlements for a future world.{"\n"}{"\n"}
-          </Text>
-          <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
-
-
-          <Text style={{fontWeight: 'bold', fontSize: 30, padding: 10}}>
-            CAMP NGEY! NGEY! - TAO ISLAND
-          </Text>
-          <Image source={require('./assets/images/campngeyngey.jpg')} style={{height: 250, width: width}}/>
-
-          <Text style={{padding: 10, fontSize: 18}}>
-          The NEW project from Tao Philippines.{"\n"}{"\n"}
-
-          The Lostboys have taken over the abandoned resort of Manguengey in Busuanga. A remote island in Palawan.{"\n"}{"\n"}
-
-          Camp Ngey! Ngey! is our crusoe-style deserted island camp, paradise for those who understand the luxury of simplicity and disconnection.{"\n"}{"\n"}
-
-          The camp retains the remains of the old resort, reclaiming the typhoon-wrecked building parts and old furnitures; a mix of playful architecture and sociable spaces. Adding Tao's signature individual bamboo Tuka huts for the sleeping.{"\n"}{"\n"}
-
-          The island camp experience allows for spaces to retreat and find peace and solitude, and when you are ready there are sociable places to connect and share time with other likeminded adventurers.{"\n"}{"\n"}
-
-          Explore the island: The camp is on the main beach with jungle trails to access further 3 wild beaches, Encompassed by its crystal blue waters, preserved reefs teaming with life, windswept cliffs and hidden caves.{"\n"}{"\n"}
-
-          No room service, no menus, no wifi. You will arrive as strangers, you will eat together, swim together, laugh together, drink together, get to know each other offline, face to face, become part of the magic of Tao and see what happens!{"\n"}{"\n"}
-
-          Welcome to Camp Ngey Ngey: a Neverland for escapees searching for a break from the noise of the modern world.{"\n"}{"\n"}
-
-          <Text style={{fontWeight: 'bold'}}>How is this experience different to the Tao Expedition?</Text>{"\n"}
-          Camp Ngey Negy has a more relaxed chilled out vibe, staying in one place. How you spend your days is up to you. A stay on the island is a great place to get in the mood before your expedition or to decompress afterwards.{"\n"}{"\n"}
-
-
-          <Text style={{fontWeight: 'bold'}}>How does the trip work?</Text>{"\n"}
-          join a group of like minded adventurers on a 3day 2 night island camp experience, On the first day Departing from Coron town, hop onboard our safari boat to journey to the camp en route visiting beaches and reefs, arriving in the island early afternoon.{"\n"}{"\n"}
-
-          Spending 2 nights and a full day exploring the island of Manguengey. Leaving the camp on the 3rd day afternoon to journey back to Coron.{"\n"}{"\n"}
-
-          For more information ask your expedition leader or enquire in the Tao office before or after your expedition.
-
-        </Text>
-        <View style={{height: 100}} />
+        <Text style={{padding: 10, fontSize: 20}}>{customData.content}</Text>
+        <View style={Styles.containerRow}>
+          <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
+        </View>
       </ScrollView>
     );
   }

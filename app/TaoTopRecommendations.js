@@ -21,9 +21,9 @@ import {
 
 
 const { width, height } = Dimensions.get('window');
-import Communications from 'react-native-communications';
 import Styles from './assets/stylesheets/Styles';
 import customData from './assets/data/top_recommendations.json';
+import { Actions } from 'react-native-router-flux';
 
 class TaoTopRecommendations extends Component {
   constructor(props) {
@@ -64,18 +64,19 @@ class TaoTopRecommendations extends Component {
         return require('./assets/images/elnido.jpg')
         break
     }
-    
   }
 
 
   _renderItem(data){
     return(
-      <View style={{flexDirection: "row", marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
-        <Image source={this._require_image(data.image)} style={{height: 150, width: width/2}}/>
-        <View style={{width: width/2, alignItems: 'center', backgroundColor: '#085582', height: 150, justifyContent: 'center', padding: 10}}>
-          <Text style={{alignItems: 'center', fontSize: 20, color: 'white', textAlign: 'center', fontWeight: 'bold', fontFamily: 'ffad_matro-webfont'}}>{data.name}</Text>
+      <TouchableHighlight onPress={()=> Actions.toprecommendationdetails({data: data, title: data.name}) }>
+        <View style={{flexDirection: "row", marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
+          <Image source={this._require_image(data.image)} style={{height: 150, width: width/2}}/>
+          <View style={{width: width/2, alignItems: 'center', backgroundColor: '#085582', height: 150, justifyContent: 'center', padding: 10}}>
+            <Text style={{alignItems: 'center', fontSize: 20, color: 'white', textAlign: 'center', fontWeight: 'bold', fontFamily: 'ffad_matro-webfont'}}>{data.name}</Text>
+          </View>
         </View>
-      </View>
+      </TouchableHighlight>
     );
   }
 

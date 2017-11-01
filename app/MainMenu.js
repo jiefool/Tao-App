@@ -378,7 +378,7 @@ class MainMenu extends Component {
                     style={Styles.mainMenuButton}
                      onPress={() => Actions.taoprojects() }>
                       <View>
-                        <MenuButton menuIcon={projectIcon} menuText="PROJECTS STORIES" />
+                        <MenuButton menuIcon={projectIcon} menuText="PROJECTS & STORIES" />
                       </View>
                   </TouchableHighlight>
                 </View>

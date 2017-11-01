@@ -45,6 +45,7 @@ import TaoTenTips from './app/TaoTenTips';
 import TaoProjects from './app/TaoProjects';
 import Faqs from './app/Faqs';
 import TravelInfo from './app/TravelInfo';
+import TopRecommendationDetails from './app/TopRecommendationDetails';
 
 const TaoApp = () => {
   return (
@@ -295,6 +296,14 @@ const TaoApp = () => {
           onRight={()=> console.log()}
           rightTitle="Right"
           title="Travel Info"
+        />
+
+        <Scene
+          key="toprecommendationdetails"
+          component={TopRecommendationDetails}
+          onRight={()=> console.log()}
+          rightTitle="Right"
+          title="Details"
         />
         
       </Scene>
