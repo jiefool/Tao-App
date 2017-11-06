@@ -32,7 +32,7 @@ class TaoProjects extends Component {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(customData.ps_array)
+      dataSource: ds.cloneWithRows(customData)
     };
   }
 
@@ -81,7 +81,6 @@ class TaoProjects extends Component {
   render() {
     return (
       <ScrollView>
-        <Text style={{padding: 10, fontSize: 20}}>{customData.content}</Text>
         <View style={Styles.containerRow}>
           <ListView dataSource={this.state.dataSource} renderRow={this._renderItem.bind(this)} /> 
         </View>

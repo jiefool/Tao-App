@@ -67,16 +67,18 @@ class TopRecommendationDetails extends Component {
         links = [] 
         for(let x=0;x<this.props.data.sub_contents[i].links.length;x++){
           links.push(
-            <TouchableOpacity key={x} activeOpacity={0.5} onPress={() => Communications.web(this.props.data.sub_contents[i].links[x]) }>
-              <Text style={{paddingLeft: 20, fontSize: 15, color: 'blue'}}>{this.props.data.sub_contents[i].links[x]}</Text>
+            <TouchableOpacity key={x} activeOpacity={0.5} onPress={() => Communications.web(this.props.data.sub_contents[i].links[x].link) }>
+              <Text style={{paddingLeft: 20, fontSize: 15, color: 'blue'}}>{this.props.data.sub_contents[i].links[x].title}</Text>
             </TouchableOpacity>
           )
         }
         subContents.push(
           <View key={i}>
-            <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 30}}>
-              { this.props.data.sub_contents[i].name }
-            </Text>
+            <TouchableOpacity key={i} activeOpacity={0.5} onPress={() => Communications.web(this.props.data.sub_contents[i].link) }>
+              <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 30}}>
+                { this.props.data.sub_contents[i].name }
+              </Text>
+            </TouchableOpacity>
             <Text style={{padding: 10, fontSize: 18}}>
               { this.props.data.sub_contents[i].content }
             </Text>
