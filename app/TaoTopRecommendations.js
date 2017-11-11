@@ -39,29 +39,14 @@ class TaoTopRecommendations extends Component {
       case 'manila.jpg':
         return require('./assets/images/manila.jpg')
         break
-      case 'zhostel.jpg':
-        return require('./assets/images/zhostel.jpg')
-        break
-      case 'black_market.png':
-        return require('./assets/images/black_market.png')
-        break
-      case 'museum.jpg':
-        return require('./assets/images/museum.jpg')
-        break
-      case 'food.png':
-        return require('./assets/images/food.png')
-        break
-      case 'intramuros.jpg':
-        return require('./assets/images/intramuros.jpg')
-        break
-      case 'manila_traffic.jpg':
-        return require('./assets/images/manila_traffic.jpg')
-        break
       case 'puerto_princesa.jpg':
         return require('./assets/images/puerto_princesa.jpg')
         break
       case 'elnido.jpg':
         return require('./assets/images/elnido.jpg')
+        break
+      case 'coron.jpg':
+        return require('./assets/images/coron.jpg')
         break
     }
   }
