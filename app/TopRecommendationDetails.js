@@ -3,7 +3,7 @@ import { View, TouchableHighlight, Text, StyleSheet, Image, ScrollView, Dimensio
 import Styles from './assets/stylesheets/Styles';
 import Communications from 'react-native-communications';
 const { width, height } = Dimensions.get('window');
-
+import Hyperlink from 'react-native-hyperlink'
 
 
 class TopRecommendationDetails extends Component {
@@ -60,7 +60,28 @@ class TopRecommendationDetails extends Component {
     }
   }
 
+
+  urlAndTextReplace(url){
+    switch(url){
+      case "https://zhostel.com":
+        return 'Z hostel'
+        break
+      case "https://www.facebook.com/AlamatFilipinoPub":
+        return 'Alamat'
+        break
+    }
+    // url === '' ?  : url
+    // url === 'https://www.facebook.com/finderskeepersMNL' ? 'Finders Keepers MNL' : url
+    // url === 'https://www.facebook.com/blackmarketmnl' ? 'Black Market MNL' : url
+    // url === 'https://www.facebook.com/2020bar' ? '2020 Bar' : url
+    // url === 'https://www.facebook.com/obarphilippines' ? 'Obar Philippines' : url
+    // url === 'https://www.facebook.com/TIMEinManila' ? 'Time in Manila' : url
+  }
+
   render(){
+    
+
+
     subContents = []
     if (this.props.data.sub_contents != undefined){ 
       for(let i=0;i<this.props.data.sub_contents.length;i++){
@@ -75,14 +96,16 @@ class TopRecommendationDetails extends Component {
         subContents.push(
           <View key={i}>
             <TouchableOpacity key={i} activeOpacity={0.5} onPress={() => Communications.web(this.props.data.sub_contents[i].link) }>
-              <Text style={{textAlign: 'center', fontWeight: 'bold', fontSize: 30}}>
-                { this.props.data.sub_contents[i].name }
-              </Text>
             </TouchableOpacity>
-            <Text style={{padding: 10, fontSize: 18}}>
-              { this.props.data.sub_contents[i].content }
-            </Text>
-            { links }
+            <Hyperlink
+              linkStyle={ { color: '#2980b9', fontSize: 20 } }
+              linkText={ url =>  this.urlAndTextReplace(url)}
+              onPress = { url =>  Communications.web(url) }
+            >
+              <Text style={{padding: 10, fontSize: 18}}>
+                { this.props.data.sub_contents[i].content }
+              </Text>
+            </Hyperlink>
             <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
           </View>
 

@@ -2,145 +2,103 @@
   {
     "image": "manila.jpg",
     "name": "Manila",
-    "content": "Manila is alive. You feel the energy in the streets, the density of people, the culture of smiles. Despite the negative, the hospitable filipino is present in almost everyone. Remember this and you will have a different perspective on this otherwise dark city.",
-    "links":[],
-    "sub_contents": [
+    "content": "Manila is alive. You feel the energy in the streets, the density of people, the culture of smiles. Despite the negative, the hospitable filipino is present in almost everyone. Remember this and you will have a different perspective on this otherwise dark city.\n\n\n\nThe Poblacion area in Makati, once the red light district is a lively area where innovative ideas sprout. To stay in the middle of it go to https://zhostel.com. There's a variety of drinking and dining options around the hostel and across the big avenue. We like https://www.facebook.com/AlamatFilipinoPub for its craft beer, cocktails and tasty \"Polutan\" (filipino for food to go with drinks).\n\n\n\nLa Fuerza Compound in Chino Roces Ave hosts galleries, cocktail bars and clubs. Go to https://www.facebook.com/finderskeepersMNL first and then either https://www.facebook.com/blackmarketmnl for younger crowds, hiphop and RnB or XX:XX (twenty twenty) for a Berlin inspired space with electronic music. Or visit https://www.facebook.com/obarphilippines after 1am. This 12 year old institution has amazing drag shows, they make their own costumes and every night is different. For after-hours go to https://www.facebook.com/TIMEinManila, back in Poblacion, usually opens till 8am.\n\n\n\nThere are two established museums in Makati, http://www.ayalamuseum.org and https://yuchengcomuseum.org. The http://www.silverlensgalleries.com shows contemporary filipino artists. If you are around on the weekend don’t miss the markets in https://www.facebook.com/SalcedoCommunityMarket and https://www.facebook.com/legazpisundaymarket - farmer's market with food stalls and crafts. For cheap wholesale go to https://www.greenhills.com.ph. The https://www.philippineartisantrade.com in Salcedo curated a group of Filipino startups worth checking out.\n\n\n\nIf well Manila isn't famous for its street food as other asian cities, it hosts some great local and world restaurants. Our picks are https://www.facebook.com/warungindoo, unpretentious Indonesian place for lunch. https://www.facebook.com/handsomecome offers modern malay fusion and http://www.peoplespalacethai.com serves refined thai food.\n\nFor filipino comfort food visit a https://www.buddys.com.ph branch or get delivery. We also love the flavors and decoration of https://www.facebook.com/cafe.juanita.ph in Passig and for an especial fine dining experience you can visit https://www.facebook.com/toyoeatery. If you are craving for sweets and good coffee visit a https://www.facebook.com/TildeCafe.\n\n\n\nOld Manila and Intramuros for spanish colonial flair - take a https://www.bambike.com/ecotours tour to explore the walled city. visit Rizal Park for http://www.nationalmuseum.gov.ph.\n\nIn Quiapo there’s a famous https://www.facebook.com/savessbasilica. The foundation in charge of restoration holds 3 monthly talks on saturday mornings, visit their Facebook for schedules. San Sebastian Street and Quiapo market are further attractions close by.\n\n\n\nRush hour traffic in the city can cause hours on delays. Keep this in mind when moving around specially to catch flights. To commute between Manila and Makati you can use the MRT/LRT systems - tip, if you dont take a bag, you can avoid long security check queues.\n\nThe Pasig river ferry is a great alternative but service can be unreliable, always research online for newest schedules. It is worth visiting the Guadaloupe stop to check, because if its not working the MRT station is 5min walk from there. Grab and Uber are great for moving around Makati and to/from the airport. Also langka app (motorcycles) for solo travellers.",
+    "links": [
       {
-        "image": "zhostel.jpg",
-        "name": "Z Hostel",
-        "link": "https://zhostel.com",
-        "content": "The Poblacion area in Makati, once the red light district is a lively area where innovative ideas sprout. To stay in the middle of it go to Z hostel. There's a variety of drinking and dining options around the hostel and across the big avenue. We like Alamat for its craft beer, cocktails and tasty \"Polutan\" (filipino for food to go with drinks).",
-        "links":[
-          {
-            "title": "Alamat Filipino Pub",
-            "link": "https://www.facebook.com/AlamatFilipinoPub"
-          }
-        ]
+        "url": "https://zhostel.com",
+        "text": "Z Hostel",
       },
       {
-        "image": "black_market.png",
-        "name": "La Fuerza",
-        "link": "",
-        "content": "La Fuerza Compound in Chino Roces Ave hosts galleries, cocktail bars and clubs. Go to finders keepers first and then either black market for younger crowds, hiphop and RnB or XX:XX (twenty twenty) for a Berlin inspired space with electronic music. Or visit Obar after 1am. This 12 year old institution has amazing drag shows, they make their own costumes and every night is different. For after-hours go to Time Club, back in Poblacion, usually opens till 8am.",
-        "links":[
-                  {
-                    "title": "Finders Keepers MNL",
-                    "link:": "https://www.facebook.com/finderskeepersMNL"
-                  },
-                  { "title": "Black Market MNL",
-                    "link": "https://www.facebook.com/blackmarketmnl"
-                  },
-                  {
-                    "title": "2020 Bar",
-                    "link": "https://www.facebook.com/2020bar"
-                  },
-                  {
-                    "title": "Obar Philippines",
-                    "link": "https://www.facebook.com/obarphilippines"
-                  },
-                  {
-                    "title": "Time in Manila",
-                    "link": "https://www.facebook.com/TIMEinManila"
-                  }
-                ]
+        "url": "https://www.facebook.com/AlamatFilipinoPub",
+        "text": "Alamat",
       },
       {
-        "image": "museum.jpg",
-        "name": "Museums",
-        "link": "",
-        "content": "There are two established museums in Makati, Ayala and Yuchengco. The Silverlens Gallery shows contemporary filipino artists. If you are around on the weekend don’t miss the markets in Salcedo (saturday) and Legazpi (sundays) villages - farmer's market with food stalls and crafts. For cheap wholesale go to greenhills. The Philippine Artisan Trade in Salcedo curated a group of Filipino startups worth checking out.",
-        "links":[
-                  {
-                    "title": "Ayala Museum",
-                    "link": "http://www.ayalamuseum.org/"
-                  },
-                  {
-                    "title": "Yuchengco Musuem",
-                    "link": "https://yuchengcomuseum.org"
-                  },
-                  {
-                    "title": "Silverlens Galleries",
-                    "link": "http://www.silverlensgalleries.com"
-                  },
-                  {
-                    "title": "Legazpi Sunday Market",
-                    "link": "https://www.facebook.com/legazpisundaymarket"
-                  },
-                  {
-                    "title": "Salcedo Community Market",
-                    "link": "https://www.facebook.com/SalcedoCommunityMarket"
-                  },
-                  {
-                    "title": "Greenhills",
-                    "link": "https://www.greenhills.com.ph"
-                  },
-                  {
-                    "title": "Philippine Artisan Trade",
-                    "link": "https://www.philippineartisantrade.com"
-                  }
-                ]
-                
-              
+        "url": "https://www.facebook.com/finderskeepersMNL",
+        "text": "Finder Keepers",
       },
       {
-        "image": "food.png",
-        "name": "Foods",
-        "content": "If well Manila isn't famous for its street food as other asian cities, it hosts some great local and world restaurants. Our picks are warung indo homey, unpretentious Indonesian place for lunch. Hey Handsome offers modern malay fusion and People's Palace serves refined thai food.\n\nFor filipino comfort food visit a Buddy’s branch or get delivery. We also love the flavors and decoration of Cafe Juanita in Passig and for an especial fine dining experience you can visit Toyo. If you are craving for sweets and good coffee visit a tilde",
-        "links":[
-                  {
-                    "title": "Warung Indoo",
-                    "link": "https://www.facebook.com/warungindoo"
-                  },
-                  {
-                    "title": "Handsome Come",
-                    "link": "https://www.facebook.com/handsomecome"
-                  },
-                  {
-                    "title": "People's Palace Thai",
-                    "link": "http://www.peoplespalacethai.com"
-                  },
-                  {
-                    "title": "Buddys",
-                    "link": "https://www.buddys.com.ph"
-                  },
-                  {
-                    "title": "Cafe Juanita",
-                    "link": "https://www.facebook.com/cafe.juanita.ph"
-                  },
-                  {
-                    "title": "Toyo Eatery",
-                    "link": "https://www.facebook.com/toyoeatery"
-                  },
-                  {
-                    "title": "Tilde Cafe",
-                    "link": "https://www.facebook.com/TildeCafe"
-                  }
-                ]
+        "url": " https://www.facebook.com/2020bar",
+        "text": "XX:XX (twenty twenty)",
       },
       {
-        "image": "intramuros.jpg",
-        "name": "Tours",
-        "content": "Old Manila and Intramuros for spanish colonial flair - take a bambike tour to explore the walled city. visit Rizal Park for national history monuments and museums.\n\nIn Quiapo there’s a famous Iron Basilica. The foundation in charge of restoration holds 3 monthly talks on saturday mornings, visit their Facebook for schedules. San Sebastian Street and Quiapo market are further attractions close by.",
-        "links":[
-                  {
-                    "title": "Bambike Tours",
-                    "link": "https://www.bambike.com/ecotours"
-                  },
-                  {
-                    "title": "National Museum",
-                    "link": "http://www.nationalmuseum.gov.ph"
-                  },
-                  {
-                    "title": "San Sebastian Basilica",
-                    "link": "https://www.facebook.com/savessbasilica"
-                  }
-                ]
+        "url": "https://www.facebook.com/blackmarketmnl",
+        "text": "Black Market",
       },
       {
-        "image": "manila_traffic.jpg",
-        "name": "Traffic in Manila",
-        "content": "Rush hour traffic in the city can cause hours on delays. Keep this in mind when moving around specially to catch flights. To commute between Manila and Makati you can use the MRT/LRT systems - tip, if you dont take a bag, you can avoid long security check queues.\n\nThe Pasig river ferry is a great alternative but service can be unreliable, always research online for newest schedules. It is worth visiting the Guadaloupe stop to check, because if its not working the MRT station is 5min walk from there. Grab and Uber are great for moving around Makati and to/from the airport. Also langka app (motorcycles) for solo travellers.",
-        "links":[]
+        "url": "https://www.facebook.com/obarphilippines",
+        "text": "Obar",
+      },
+      {
+        "url": "https://www.facebook.com/TIMEinManila",
+        "text": "Time Bar",
+      },
+      {
+        "url": "http://www.ayalamuseum.org",
+        "text": "Ayala",
+      },
+      {
+        "url": "https://yuchengcomuseum.org",
+        "text": "Yuchengco",
+      },
+      {
+        "url": "http://www.silverlensgalleries.com",
+        "text": "Silverlens Gallery",
+      },
+      {
+        "url": "https://www.facebook.com/legazpisundaymarket",
+        "text": "Legazpi (sundays) villages",
+      },
+      {
+        "url": "Salcedo (saturday)",
+        "text": "https://www.facebook.com/SalcedoCommunityMarket",
+      },
+      {
+        "url": "https://www.greenhills.com.ph",
+        "text": "Greenhills",
+      },
+      {
+        "url": "Philippine Artisan Trade",
+        "text": "https://www.philippineartisantrade.com",
+      },
+      {
+        "url": "https://www.facebook.com/warungindoo",
+        "text": "Warung Indo Homey",
+      },
+      {
+        "url": "https://www.facebook.com/handsomecome",
+        "text": "Hey Handsome",
+      },
+      {
+        "url": "http://www.peoplespalacethai.com",
+        "text": "People's Palace",
+      },
+      {
+        "url": "https://www.buddys.com.ph",
+        "text": "Buddy’s",
+      },
+      {
+        "url": "https://www.facebook.com/cafe.juanita.ph",
+        "text": "Cafe Juanita",
+      },
+      {
+        "url": "https://www.facebook.com/toyoeatery",
+        "text": "Toyo",
+      },
+      {
+        "url": "https://www.facebook.com/TildeCafe",
+        "text": "Tilde",
+      },
+      {
+        "url": "https://www.bambike.com/ecotours",
+        "text": "Bambike",
+      },
+      {
+        "url": "http://www.nationalmuseum.gov.ph",
+        "text": "national history monuments and museums",
+      },
+      {
+        "url": "Iron Basilica",
+        "text": "https://www.facebook.com/savessbasilica",
       }
     ]
   },
