@@ -297,7 +297,7 @@ var Styles = StyleSheet.create({
   },
 
   productTitles: {
-    fontFamily: 'ffad_matro-webfont', 
+    fontFamily: 'Ffad Matro', 
     fontSize: 25, 
     color: 'white',
     shadowColor: 'black',
@@ -312,7 +312,7 @@ var Styles = StyleSheet.create({
   },
 
   inputLabelText: {
-    fontFamily: 'ffad_matro-webfont', 
+    fontFamily: 'Ffad Matro', 
     color: 'white', 
     fontSize: 20
   }
