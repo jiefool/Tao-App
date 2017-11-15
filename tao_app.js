@@ -317,7 +317,7 @@ var styles = StyleSheet.create({
   navBarTitle:{
     alignSelf:'center',
     color:'rgb(251,224,47)',
-    fontFamily: 'ffad_matro-webfont'
+    fontFamily: 'Ffad Matro'
   }
 });
 

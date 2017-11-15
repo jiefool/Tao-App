@@ -58,7 +58,7 @@ class TaoTopRecommendations extends Component {
         <View style={{flexDirection: "row", marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
           <Image source={this._require_image(data.image)} style={{height: 150, width: width/2}}/>
           <View style={{width: width/2, alignItems: 'center', backgroundColor: '#085582', height: 150, justifyContent: 'center', padding: 10}}>
-            <Text style={{alignItems: 'center', fontSize: 20, color: 'white', textAlign: 'center', fontWeight: 'bold', fontFamily: 'ffad_matro-webfont'}}>{data.name}</Text>
+            <Text style={{alignItems: 'center', fontSize: 20, color: 'white', textAlign: 'center', fontWeight: 'bold', fontFamily: 'Ffad Matro'}}>{data.name}</Text>
           </View>
         </View>
       </TouchableHighlight>

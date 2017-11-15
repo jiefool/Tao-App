@@ -279,7 +279,7 @@ class ExplorerCheckin extends Component {
                       }}
 
                      
-                      onChangeText={(birth_date) => this.setState({ after_expedition_plan })}
+                      onChangeText={(after_expedition_plan) => this.setState({ after_expedition_plan })}
                       value={this.state.after_expedition_plan}
                       underlineColorAndroid = {'white'}
                       />

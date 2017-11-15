@@ -138,7 +138,9 @@ var Styles = StyleSheet.create({
     paddingHorizontal: 5,
     textAlign: 'center',
     marginTop: 10,
-    marginBottom: 10
+    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderColor: "white"
   },
   projectItem: {
     flex: 1,

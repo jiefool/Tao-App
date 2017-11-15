@@ -395,7 +395,7 @@ class MainMenu extends Component {
             </Image>
            <View style={{height: 120, backgroundColor: '#085582', flexDirection: 'row', justifyContent: 'center'}}>
               <View style={{width: 200, height: 120, alignItems: 'center'}}>
-                <Text style={{textAlign: 'center', fontSize: 20, fontFamily: 'ffad_matro-webfont', color: 'white', padding: 5}}>Follow Us</Text>
+                <Text style={{textAlign: 'center', fontSize: 20, fontFamily: 'Ffad Matro', color: 'white', padding: 5}}>Follow Us</Text>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                   <View style={{height: 60,  width: 60, margin: 10}}>
                     <TouchableHighlight
