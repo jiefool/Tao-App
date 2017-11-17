@@ -97,104 +97,105 @@ class MainMenu extends Component {
                 }
   }      
 
-  showDetails(action, data){
-    if (data != null){
-      this.actionSwitch(action, data)
-    }else{
-      alert("No " + action + " data. Expedtion may not be updated yet. Please check later.")
-    }
-  }
+  // showDetails(action, data){
+  //   if (data != null){
+  //     this.actionSwitch(action, data)
+  //   }else{
+  //     alert("No " + action + " data. Expedtion may not be updated yet. Please check later.")
+  //   }
+  // }
 
-  actionSwitch(action, data){
-    switch(action) {
-      case "boat":
-        Actions.boat({data: data})
-        break;
-      case "crews":
-        Actions.crews({data: data})
-        break;
-      case "explorers":
-        Actions.explorers({data: data})
-        break;
-      case "basecamps":
-        Actions.basecamps({data: data})
-        break;
-      case "stories":
-        Actions.stories({data: data})
-        break;
-      case "recipes":
-        Actions.recipes({data: data})
-        break;
-      case "updateexplorer":
-        Actions.updateexplorer({data: data})
-        break;
-      default:
+  // actionSwitch(action, data){
+  //   switch(action) {
+  //     case "boat":
+  //       Actions.boat({data: data})
+  //       break;
+  //     case "crews":
+  //       Actions.crews({data: data})
+  //       break;
+  //     case "explorers":
+  //       Actions.explorers({data: data})
+  //       break;
+  //     case "basecamps":
+  //       Actions.basecamps({data: data})
+  //       break;
+  //     case "stories":
+  //       Actions.stories({data: data})
+  //       break;
+  //     case "recipes":
+  //       Actions.recipes({data: data})
+  //       break;
+  //     case "updateexplorer":
+  //       Actions.updateexplorer({data: data})
+  //       break;
+  //     default:
           
-    }
-  }
+  //   }
+  // }
 
-  getRemoteExpeditionData(res){
-    this.setState({toView: 'sending'})
-    Api.getExpeditionTrip(res).then((resx)=> {
-      this.saveExpeditionDataToLocal(resx)
-      this.setState({expeditionData: resx})
-      this.setState({toView: 'tripdetails'})
-    })
-  }
+  // getRemoteExpeditionData(res){
+  //   this.setState({toView: 'sending'})
+  //   Api.getExpeditionTrip(res).then((resx)=> {
+  //     this.saveExpeditionDataToLocal(resx)
+  //     this.setState({expeditionData: resx})
+  //     this.setState({toView: 'tripdetails'})
+  //   })
+  // }
 
-  async saveExplorerDataToLocal(explorerData){
-    await AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData));
-  }
+  // async saveExplorerDataToLocal(explorerData){
+  //   await AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData));
+  // }
 
-  async saveExpeditionDataToLocal(expeditionData){
-    await AsyncStorage.setItem('expeditiondata', JSON.stringify(expeditionData));
-  }
+  // async saveExpeditionDataToLocal(expeditionData){
+  //   await AsyncStorage.setItem('expeditiondata', JSON.stringify(expeditionData));
+  // }
 
   async logoutUser(){
-    await AsyncStorage.removeItem("explorerdata")
-    await AsyncStorage.removeItem("expeditiondata")
+    // await AsyncStorage.removeItem("explorerdata")
+    // await AsyncStorage.removeItem("expeditiondata")
     await AsyncStorage.removeItem("accept_liability")
+    await AsyncStorage.removeItem("is_checked_in")
     await AsyncStorage.removeItem("read_founder_letter")
     Actions.reset("checkin");
   }
 
-  refreshExpeditionData(){
-    AsyncStorage.getItem("explorerdata").then((value) => {
-      if (value != null){
-        this.setState({"explorer_data": JSON.parse(value) });
-        this.getRemoteExpeditionData(this.state.explorer_data)
-      }
-    })
-  }
+  // refreshExpeditionData(){
+  //   AsyncStorage.getItem("explorerdata").then((value) => {
+  //     if (value != null){
+  //       this.setState({"explorer_data": JSON.parse(value) });
+  //       this.getRemoteExpeditionData(this.state.explorer_data)
+  //     }
+  //   })
+  // }
 
-  componentWillMount(){
-    AsyncStorage.getItem("explorerdata").then((value) => {
-      console.log(value)
-      if (value != null){
-        this.setState({"explorer_data": JSON.parse(value) });
+  // componentWillMount(){
+  //   AsyncStorage.getItem("explorerdata").then((value) => {
+  //     console.log(value)
+  //     if (value != null){
+  //       this.setState({"explorer_data": JSON.parse(value) });
 
-        AsyncStorage.getItem("expeditiondata").then((value) => {
-          if (value != null){
-            this.setState({"expeditionData": JSON.parse(value) });
-          }else{
-            this.getRemoteExpeditionData(this.state.explorer_data)
-          }
-        })
+  //       AsyncStorage.getItem("expeditiondata").then((value) => {
+  //         if (value != null){
+  //           this.setState({"expeditionData": JSON.parse(value) });
+  //         }else{
+  //           this.getRemoteExpeditionData(this.state.explorer_data)
+  //         }
+  //       })
 
-      }
-    })
-  }
+  //     }
+  //   })
+  // }
 
-  componentDidMount(){
-    viewPager = this.viewPager
-    AsyncStorage.getItem("alreadybooked").then((value) => {
-      if (value == 'true'){
-        AsyncStorage.setItem("alreadybooked", 'false').then(function(){
-          viewPager.setPage(1)
-        })
-      }
-    })
-  }
+  // componentDidMount(){
+  //   viewPager = this.viewPager
+  //   AsyncStorage.getItem("alreadybooked").then((value) => {
+  //     if (value == 'true'){
+  //       AsyncStorage.setItem("alreadybooked", 'false').then(function(){
+  //         viewPager.setPage(1)
+  //       })
+  //     }
+  //   })
+  // }
 
   renderView(view){
     switch(view){

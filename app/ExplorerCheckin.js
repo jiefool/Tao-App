@@ -51,7 +51,6 @@ class ExplorerCheckin extends Component {
       id: '',
       is_checked_in: true,
       last_name: '',
-      login: '',
       medical_dietary_restriction: '',
       middle_name: '',
       mobile_number: '',
@@ -90,8 +89,20 @@ class ExplorerCheckin extends Component {
     //     });
     //   }
     // }).done();
-    AsyncStorage.getItem("explorerdata").then((value) => {
-      if (value != ''){ 
+
+    // AsyncStorage.getItem("explorerdata").then((value) => {
+    //   if (value != ''){ 
+    //     var explorer_data = JSON.parse(value)
+    //     if (explorer_data != null){
+    //       console.log(explorer_data)
+    //       Actions.liabilitywaiver()
+    //     }
+    //   }
+    // })
+
+
+    AsyncStorage.getItem("is_checked_in").then((value) => {
+      if (value == "true"){ 
         var explorer_data = JSON.parse(value)
         if (explorer_data != null){
           console.log(explorer_data)
@@ -105,26 +116,38 @@ class ExplorerCheckin extends Component {
     SplashScreen.hide();
   }
 
-  saveExplorerData(explorerData){
-    AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData)).then(function(){
+  // saveExplorerData(explorerData){
+  //   AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData)).then(function(){
+  //     Actions.liabilitywaiver()
+  //   });
+  // }
+
+  setCheckedIn(value){
+    AsyncStorage.setItem('is_checked_in', value).then(function(){
       Actions.liabilitywaiver()
     });
   }
 
   createLoginExplorer(){
-    this.setState({toView: 'sending'})
-    Api.createLoginExplorer(this.state).then((res)=> {
-      if (res["id"] == null ){
-        api_error = ""
-        Object.keys(res).forEach(function(key){
-          api_error = key + " : " + res[key][0]
-        })
-        this.setState({api_error: api_error})
-        this.setState({toView: "errors"})
-      }else{
-        this.saveExplorerData(res);
-      }
-    })
+    console.log("jiefool")
+    console.log(this.state.book_ref)
+    if(this.state.first_name != "" && this.state.last_name != "" && this.state.book_ref != "" && this.state.email != "" && this.state.mobile_number != "" && this.state.passport_number != "" &&  this.state.nationality != ""){
+      this.setState({toView: 'sending'})
+      Api.createLoginExplorer(this.state).then((res)=> {
+        if (res["id"] == null ){
+          api_error = ""
+          Object.keys(res).forEach(function(key){
+            api_error = key + " : " + res[key][0]
+          })
+          this.setState({api_error: api_error})
+          this.setState({toView: "errors"})
+        }else{
+          this.setCheckedIn("true")
+        }
+      })
+    }else{
+      alert('Fields with * are required. Please fill those up first.')
+    }
   }
 
   renderView(view){
@@ -140,21 +163,21 @@ class ExplorerCheckin extends Component {
                     </Text>
                   </TouchableOpacity>
                   <View style={{padding: 10}}>
-                    <Text style={Styles.inputLabelText}>Booking Reference #:</Text>
+                    <Text style={Styles.inputLabelText}>*Booking Reference #:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(book_ref) => this.setState({book_ref})}
                       value={this.state.book_ref}
                        underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>First Name:</Text>
+                    <Text style={Styles.inputLabelText}>*First Name:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(first_name) => this.setState({first_name: first_name})}
                       value={this.state.first_name}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>Last Name:</Text>
+                    <Text style={Styles.inputLabelText}>*Last Name:</Text>
                      <TextInput
                       style={Styles.checkInput}
                       onChangeText={(last_name) => this.setState( {last_name: last_name})}
@@ -227,21 +250,28 @@ class ExplorerCheckin extends Component {
                       value={this.state.address}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>Nationality:</Text>
+                    <Text style={Styles.inputLabelText}>*Nationality:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(nationality) => this.setState( {nationality: nationality})}
                       value={this.state.nationality}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>Email Address:</Text>
+                    <Text style={Styles.inputLabelText}>*Mobile Number:</Text>
+                    <TextInput
+                      style={Styles.checkInput}
+                      onChangeText={(mobile_number) => this.setState({mobile_number: mobile_number})}
+                      value={this.state.mobile_number}
+                      underlineColorAndroid = {'white'}
+                    />
+                    <Text style={Styles.inputLabelText}>*Email Address:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(email) => this.setState({email: email})}
                       value={this.state.email}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>Passport Number:</Text>
+                    <Text style={Styles.inputLabelText}>*Passport Number:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(passport_number) => this.setState({passport_number: passport_number})}
@@ -279,7 +309,7 @@ class ExplorerCheckin extends Component {
                       }}
 
                      
-                      onChangeText={(birth_date) => this.setState({ after_expedition_plan })}
+                      onChangeText={(after_expedition_plan) => this.setState({ after_expedition_plan })}
                       value={this.state.after_expedition_plan}
                       underlineColorAndroid = {'white'}
                       />

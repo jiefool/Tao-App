@@ -21,6 +21,30 @@ class TopRecommendationDetails extends Component {
       case 'coron.jpg':
         return require('./assets/images/coron.jpg')
         break
+      case 'lost_boys.jpg':
+        return require('./assets/images/lost_boys.jpg')
+        break
+      case 'campngeyngey.jpg':
+        return require('./assets/images/campngeyngey.jpg')
+        break
+      case 'tao_foundation.png':
+        return require('./assets/images/tao_foundation.png')
+        break
+      case 'Tao.img10.jpg':
+        return require('./assets/images/Tao.img10.jpg')
+        break
+      case 'Tao.img5.jpg':
+        return require('./assets/images/Tao.img5.jpg')
+        break
+      case 'tao_sailing.png':
+        return require('./assets/images/tao_sailing.png')
+        break
+      case 'tao_farming.jpg':
+        return require('./assets/images/tao_farming.jpg')
+        break
+      case 'women_livelihood.jpg':
+        return require('./assets/images/women_livelihood.jpg')
+        break
     }
   }
 
