@@ -93,7 +93,7 @@ class MainMenu extends Component {
                   first_name: '',
                   last_name: '',
                   email: '',
-                  toView: 'tripdetails'
+                  toView: 'sending'
                 }
   }      
 

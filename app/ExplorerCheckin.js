@@ -37,7 +37,6 @@ class ExplorerCheckin extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      book_ref: '',
       address: '',
       after_expedition_plan: '',
       book_ref: '',
@@ -111,20 +110,33 @@ class ExplorerCheckin extends Component {
     });
   }
 
+  inputCheck(){
+    console.log(this.state.book_ref)
+    if (this.state.book_ref == '' && this.state.email == '' && this.state.first_name == '' ){
+      return false
+    }else{
+      return true
+    }
+  }
+
   createLoginExplorer(){
-    this.setState({toView: 'sending'})
-    Api.createLoginExplorer(this.state).then((res)=> {
-      if (res["id"] == null ){
-        api_error = ""
-        Object.keys(res).forEach(function(key){
-          api_error = key + " : " + res[key][0]
-        })
-        this.setState({api_error: api_error})
-        this.setState({toView: "errors"})
-      }else{
-        this.saveExplorerData(res);
-      }
-    })
+    if (this.inputCheck){
+      this.setState({toView: 'sending'})
+      Api.createLoginExplorer(this.state).then((res)=> {
+        if (res["id"] == null ){
+          api_error = ""
+          Object.keys(res).forEach(function(key){
+            api_error = key + " : " + res[key][0]
+          })
+          this.setState({api_error: api_error})
+          this.setState({toView: "errors"})
+        }else{
+          this.saveExplorerData(res);
+        }
+      })
+    }else{
+      alert('Booking reference, Email & First name  is required.')
+    }
   }
 
   renderView(view){
