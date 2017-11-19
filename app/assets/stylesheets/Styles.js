@@ -4,13 +4,15 @@ import {
 } from 'react-native';
 
 
+const { width, height } = Dimensions.get('window');
+
 var Styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white",
-    width: null,
+    width: width,
     height: null,
   },
   containerColumn: {
@@ -289,7 +291,7 @@ var Styles = StyleSheet.create({
 
 
   menuButtonWrapper: {justifyContent: 'center', alignItems: 'center'},
-  menuButtonText: {color: "white", fontSize: 12, fontWeight: 'bold', textAlign: 'center'},
+  menuButtonText: {color: "white", fontSize: 10, fontWeight: 'bold', textAlign: 'center'},
 
   taoProducts: {
     width: Dimensions.get('window').width, 

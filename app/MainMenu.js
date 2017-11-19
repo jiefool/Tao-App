@@ -44,7 +44,6 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import FNIcon from 'react-native-vector-icons/Foundation';
 import ORIcons from 'react-native-vector-icons/Octicons';
 
-
 const boatIcon = (<MIcon name="directions-boat" size={60} color="yellow" />)
 const humanIcon = (<MCIcon name="human-child" size={60} color="yellow" />)
 const mapSignIcon = (<FAIcon name="map-signs" size={60} color="yellow" />)
@@ -85,118 +84,19 @@ const instagram = (<ETIcon name="instagram" size={40} color="white" />)
 class MainMenu extends Component {
   constructor(props){
     super(props)
-    this.state = {
-                  explorer_data: {},
-                  expeditionData: {},
-                  login: '', 
-                  book_ref: '',
-                  first_name: '',
-                  last_name: '',
-                  email: '',
-                  toView: 'sending'
-                }
+    this.state = { 
+      toView: 'tripdetails'
+    }
   }      
 
-  showDetails(action, data){
-    if (data != null){
-      this.actionSwitch(action, data)
-    }else{
-      alert("No " + action + " data. Expedtion may not be updated yet. Please check later.")
-    }
-  }
-
-  actionSwitch(action, data){
-    switch(action) {
-      case "boat":
-        Actions.boat({data: data})
-        break;
-      case "crews":
-        Actions.crews({data: data})
-        break;
-      case "explorers":
-        Actions.explorers({data: data})
-        break;
-      case "basecamps":
-        Actions.basecamps({data: data})
-        break;
-      case "stories":
-        Actions.stories({data: data})
-        break;
-      case "recipes":
-        Actions.recipes({data: data})
-        break;
-      case "updateexplorer":
-        Actions.updateexplorer({data: data})
-        break;
-      default:
-          
-    }
-  }
-
-  getRemoteExpeditionData(res){
-    this.setState({toView: 'sending'})
-    Api.getExpeditionTrip(res).then((resx)=> {
-      this.saveExpeditionDataToLocal(resx)
-      this.setState({expeditionData: resx})
-      this.setState({toView: 'tripdetails'})
-    })
-  }
-
-  async saveExplorerDataToLocal(explorerData){
-    await AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData));
-  }
-
-  async saveExpeditionDataToLocal(expeditionData){
-    await AsyncStorage.setItem('expeditiondata', JSON.stringify(expeditionData));
-  }
-
   async logoutUser(){
-    await AsyncStorage.removeItem("explorerdata")
-    await AsyncStorage.removeItem("expeditiondata")
     await AsyncStorage.removeItem("accept_liability")
+    await AsyncStorage.removeItem("is_checked_in")
     await AsyncStorage.removeItem("read_founder_letter")
     Actions.reset("checkin");
   }
 
-  refreshExpeditionData(){
-    AsyncStorage.getItem("explorerdata").then((value) => {
-      if (value != null){
-        this.setState({"explorer_data": JSON.parse(value) });
-        this.getRemoteExpeditionData(this.state.explorer_data)
-      }
-    })
-  }
-
-  componentWillMount(){
-    AsyncStorage.getItem("explorerdata").then((value) => {
-      console.log(value)
-      if (value != null){
-        this.setState({"explorer_data": JSON.parse(value) });
-
-        AsyncStorage.getItem("expeditiondata").then((value) => {
-          if (value != null){
-            this.setState({"expeditionData": JSON.parse(value) });
-          }else{
-            this.getRemoteExpeditionData(this.state.explorer_data)
-          }
-        })
-
-      }
-    })
-  }
-
-  componentDidMount(){
-    viewPager = this.viewPager
-    AsyncStorage.getItem("alreadybooked").then((value) => {
-      if (value == 'true'){
-        AsyncStorage.setItem("alreadybooked", 'false').then(function(){
-          viewPager.setPage(1)
-        })
-      }
-    })
-  }
-
-  renderView(view){
+   renderView(view){
     switch(view){
       case 'form':
         return(<Image source={require('./assets/images/Tao.img5.jpg')}  style={Styles.container}>
@@ -460,19 +360,8 @@ class MainMenu extends Component {
 
   render() {
     return ( 
-      <View style={{flex: 1}}>
-
-        <IndicatorViewPager
-            style={{flex: 1}}
-            ref={viewPager => { this.viewPager = viewPager; }} >
-
-         
-
-          <View>
-           { this.renderView(this.state.toView) }
-          </View>
-
-        </IndicatorViewPager>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+         { this.renderView(this.state.toView) }
       </View>
     );
   }
