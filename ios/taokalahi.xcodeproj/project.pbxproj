@@ -483,6 +483,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2A36714F1FC2EF9B00E876A1 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				ADAAC8DA6D414DCEA42A21B6 /* libSplashScreen.a */,
+				6136D82B8A1B414FB6D8A161 /* libRNVectorIcons.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +567,7 @@
 				00E356EF1AD99517003FC87E /* taokalahiTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				77D909FCA7564D70ABE1FFF6 /* Resources */,
+				2A36714F1FC2EF9B00E876A1 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -1154,7 +1164,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1192,7 +1202,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
