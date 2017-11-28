@@ -63,44 +63,6 @@ class ExplorerCheckin extends Component {
   }
 
   componentWillMount(){
-    // AsyncStorage.getItem("explorerdata").then((value) => {
-    //   if (value != null){
-    //     var explorerData = JSON.parse(value)
-    //     this.setState({ 
-    //       address: explorerData.address,
-    //       after_expedition_plan: explorerData.after_expedition_plan,
-    //       book_ref: explorerData.book_ref,
-    //       birth_date: explorerData.birth_date,
-    //       email: explorerData.email,
-    //       emergency_contact_person_number: explorerData.emergency_contact_person_number,
-    //       emergency_contact_person: explorerData.emergency_contact_person,
-    //       expedition_trip_id: explorerData.expedition_trip_id,
-    //       first_name: explorerData.first_name,
-    //       gender: explorerData.gender,
-    //       id: explorerData.id,
-    //       is_checked_in: true,
-    //       last_name: explorerData.last_name,
-    //       login: explorerData.login,
-    //       medical_dietary_restriction: explorerData.medical_dietary_restriction,
-    //       middle_name: explorerData.middle_name,
-    //       mobile_number: explorerData.mobile_number,
-    //       nationality: explorerData.nationality,
-    //       passport_number: explorerData.passport_number 
-    //     });
-    //   }
-    // }).done();
-
-    // AsyncStorage.getItem("explorerdata").then((value) => {
-    //   if (value != ''){ 
-    //     var explorer_data = JSON.parse(value)
-    //     if (explorer_data != null){
-    //       console.log(explorer_data)
-    //       Actions.liabilitywaiver()
-    //     }
-    //   }
-    // })
-
-
     AsyncStorage.getItem("is_checked_in").then((value) => {
       if (value == "true"){ 
         var explorer_data = JSON.parse(value)
@@ -131,7 +93,7 @@ class ExplorerCheckin extends Component {
   createLoginExplorer(){
     console.log("jiefool")
     console.log(this.state.book_ref)
-    if(this.state.first_name != "" && this.state.last_name != "" && this.state.book_ref != "" && this.state.email != "" && this.state.mobile_number != "" && this.state.passport_number != "" &&  this.state.nationality != ""){
+    if(this.state.first_name != "" && this.state.last_name != "" && this.state.book_ref != "" && this.state.email != "" && this.state.mobile_number != ""){
       this.setState({toView: 'sending'})
       Api.createLoginExplorer(this.state).then((res)=> {
         if (res["id"] == null ){
@@ -250,7 +212,7 @@ class ExplorerCheckin extends Component {
                       value={this.state.address}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>*Nationality:</Text>
+                    <Text style={Styles.inputLabelText}>Nationality:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(nationality) => this.setState( {nationality: nationality})}
@@ -271,7 +233,7 @@ class ExplorerCheckin extends Component {
                       value={this.state.email}
                       underlineColorAndroid = {'white'}
                     />
-                    <Text style={Styles.inputLabelText}>*Passport Number:</Text>
+                    <Text style={Styles.inputLabelText}>Passport Number:</Text>
                     <TextInput
                       style={Styles.checkInput}
                       onChangeText={(passport_number) => this.setState({passport_number: passport_number})}
