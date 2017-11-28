@@ -78,12 +78,6 @@ class ExplorerCheckin extends Component {
     SplashScreen.hide();
   }
 
-  // saveExplorerData(explorerData){
-  //   AsyncStorage.setItem('explorerdata', JSON.stringify(explorerData)).then(function(){
-  //     Actions.liabilitywaiver()
-  //   });
-  // }
-
   setCheckedIn(value){
     AsyncStorage.setItem('is_checked_in', value).then(function(){
       Actions.liabilitywaiver()
