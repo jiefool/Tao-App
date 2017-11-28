@@ -83,8 +83,7 @@ class ExplorerCheckin extends Component {
     });
   }
 
-  inputCheck(){
-    console.log(this.state.book_ref)
+  createLoginExplorer(){
     if(this.state.first_name != "" && this.state.last_name != "" && this.state.book_ref != "" && this.state.email != "" && this.state.mobile_number != ""){
       this.setState({toView: 'sending'})
       Api.createLoginExplorer(this.state).then((res)=> {
