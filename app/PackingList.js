@@ -28,48 +28,161 @@ class PackingList extends Component {
           <Text style={Styles.paragraph}>
           Below is a list of essentials you will need to pack in your <Text style={{fontWeight: 'bold'}}>DRYBAG [approx.  25 – 35 Liters].</Text> 
           </Text>
+
           <Text style={Styles.paragraph}>
-          You have access to this bag during the day and take it down to the base-camps at night. The rest of your stuff will be packed out of the way in the boat and can be accessed every now and again to replenish your day pack. 
+            1. Your <Text style={{fontWeight: 'bold'}}>MAIN LUGGAGE </Text>- this will be kept safely onboard, locked in the cabin, the captain has the key. You can access this luggage twice a day, once in the morning and then again in the afternoon before going down to the basecamp. Everything you don’t need, leave it here, DO NOT TAKE VALUABLES DOWN ONTO THE ISLANDS. Leave your watch, wallet, passport, jewelry, expensive sunglasses inside your luggage onboard. 
           </Text>
+
           <Text style={Styles.paragraph}>
-          To make things simple we recommend that you pack these two bags the night before you depart to ensure a swift departure. In your waterproof day pack you will need:
+            2. Your <Text style={{fontWeight: 'bold'}}>DRYBAG</Text> - You don’t need much stuff for your expedition. Below is a list of essentials that you will need to pack in DRYBAG [aprox 25-35 Liters] You have access to this bag during the day and and take it down to the basecamps at night.
           </Text>
-          <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Sun hat or cap, sunscreen, and sun glasses.
-          </Text>
-        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Sarong (for boys and girls...All around use - day towel, sun protection, beach loungers)
+
+          <Text style={Styles.paragraph}>
+          Check that you have everything on the Packing list. Essential items are available in our shops at the briefing the night before departure. 
           </Text>
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • A refillable water bottle (it’s important to keep hydrated)
-          </Text>
+          • DRYBAG 
+        </Text>
+        <Text>
+          aprox 25-35 Liters- available in the Tao shop.
+        </Text>
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • A small towel, shower gel, tooth brush. [WE DO NOT PROVIDE TOWELS]
-          </Text>
+            • SUN PROTECTION  
+        </Text>
+        <Text>
+          hat or cap, sunscreen and sun glasses
+        </Text>
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Flashlight or Head torch (to find your way around in the dark)
-          </Text>
+          • SARONG 
+        </Text>
+        <Text>
+          for boys and girls, can be used as a day towel, sun protection, beach loungers - available in the Tao Shop
+        </Text>
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Change of clothes, shorts and t shirts/vests for the day.
-          </Text>
+          • WATER BOTTLE  
+        </Text>
+        <Text>
+          Can refill onboard- its important to keep hydrated
+        </Text>
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Swimwear during the days because you will be in and out of the water.
-          </Text>
+          • DAY CLOTHES 
+        </Text>
+        <Text>
+          shorts and t shirts/ vest for the days 
+        </Text>
+
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • A rash guard for sun protection and guard against jellyfish stings [optional- but very advisable]
-          </Text>
+          • SWIMWEAR 
+        </Text>
+        <Text>
+          for during the day because you will be in and out of the water
+        </Text>
+
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • In the evening you can shower and put on some very light weight trousers and a long sleeve top or shirt to minimize insect bites.
-          </Text>
+          • EVENING CLOTHES 
+        </Text>
+        <Text>
+          you can shower and put on some very light weight trousers and long sleeve top or shirt to minimize insect bites.
+        </Text>
+
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Insect Repellent.
-          </Text>
+          • TOWEL 
+        </Text>
+        <Text>
+          We do not provide towels
+        </Text>
+
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Sandals or reef shoes.
-          </Text>
+          • WASHKIT 
+        </Text>
+        <Text>
+          Shampoo, tooth brush, toothpaste
+        </Text>
+
         <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
-            • Camera, a good book, ipod.
+          • INSECT REPELLANT 
+        </Text>
+        <Text>
+          We recommend KWAN LOONG - the best ever- available in the Tao shop
+        </Text>
+
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+          • FLASHLIGHT or HEAD TORCH 
+        </Text>
+        <Text>
+          to find your way around in the dark - available in the Tao Shop
+        </Text>
+
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+          • SANDLES or FLIP FLOPS  
+        </Text>
+        <Text>
+          Light trainers or sneakers are recommended for trekking, but leave them in your luggage
+        </Text>
+
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+          • RASH GUARD 
+        </Text>
+        <Text>
+          optional but recommended for sun protection and guard against jellyfish stings - available in the Tao Shop
+        </Text>
+
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+          • REEFSHOES 
+        </Text>
+        <Text>
+          optional - available in the Tao Shop
+        </Text>
+
+
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+          • FINS 
+        </Text>
+        <Text>
+          optional - available in the Tao Shop
+        </Text> 
+        
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+          • CAMERA 
+        </Text>
+        <Text>
+          be careful with salt water damage, can bring small drybag 3-5 Liters for electronics
+        </Text>
+
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+          • HEADPHONES FOR MUSIC 
+        </Text>
+        <Text>
+          no speakers allowed
+        </Text>
+
+
+        <Text style={Styles.paragraph, {fontWeight: 'bold', marginTop: 5}}>
+            • A GOOD BOOK or JOURNAL 
           </Text>
+       
+        <Text style={{fontWeight: 'bold', marginTop: 20}}>CASHLESS SYSTEM</Text>
+        <Text style={Styles.paragraph}>
+          Don't take your wallet down from the boat. Leave it safely inside your luggage onboard. We have a cashless system in Tao that you can use to pay for drinks from the onboard bar, massage and items from the Tao community shop. {'\n'}{'\n'}
+          Get a cashless wristband from check in desk before departure. Store some money on the wristband by loading credit.{'\n'}{'\n'}
+          We recommend minimum 3000 pesos initial load. You can refund any unused credit in the office at the end of your trip. You can load onboard through the purser.
+        </Text>
+
+        <Text style={{fontWeight: 'bold', marginTop: 20}}>MASSAGE PROJECT</Text>
+        <Text style={Styles.paragraph}>
+          In selected remote base camps, you can enjoy a massage on the beach. Local women formed a cooperative to provide this service and earn additional income.{'\n'}{'\n'}
+          The first massage is included in the price of the trip. You will be given a coupon bracelet by the crew. You can avail your massage from any therapist. {'\n'}{'\n'}
+          At the end of the massage simply give the bracelet to the therapist. She can redeem the bracelet for cash at any of our offices. Additional massages can be purchased for 300 pesos through the cashless system from the crew or Tao shops in the islands. 
+        </Text>
+        
           <Text style={{height: 40}}></Text>
         </ScrollView>
       </View>
