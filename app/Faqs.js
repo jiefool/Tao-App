@@ -41,7 +41,7 @@ class Faqs extends Component {
       <TouchableHighlight onPress={()=> Actions.toprecommendationdetails({data: data, title: data.name}) }>
         <View style={{flexDirection: "row", marginTop: 1, marginBottom: 1, alignItems: 'center'}}>
           <View style={{width: width, alignItems: 'center', backgroundColor: '#085582', height: 75, justifyContent: 'center', padding: 10}}>
-            <Text style={{alignItems: 'center', fontSize: 20, color: 'white', textAlign: 'center', fontWeight: 'bold', fontFamily: 'ffad_matro-webfont'}}>{data.name}</Text>
+            <Text style={{alignItems: 'center', fontSize: 20, color: 'white', textAlign: 'center', fontWeight: 'bold', fontFamily: 'Ffad Matro'}}>{data.name}</Text>
           </View>
         </View>
       </TouchableHighlight>

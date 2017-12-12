@@ -4,13 +4,15 @@ import {
 } from 'react-native';
 
 
+const { width, height } = Dimensions.get('window');
+
 var Styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white",
-    width: null,
+    width: width,
     height: null,
   },
   containerColumn: {
@@ -138,7 +140,9 @@ var Styles = StyleSheet.create({
     paddingHorizontal: 5,
     textAlign: 'center',
     marginTop: 10,
-    marginBottom: 10
+    marginBottom: 10,
+    borderBottomWidth: 1,
+    borderColor: "white"
   },
   projectItem: {
     flex: 1,
@@ -287,7 +291,7 @@ var Styles = StyleSheet.create({
 
 
   menuButtonWrapper: {justifyContent: 'center', alignItems: 'center'},
-  menuButtonText: {color: "white", fontSize: 12, fontWeight: 'bold', textAlign: 'center'},
+  menuButtonText: {color: "white", fontSize: 10, fontWeight: 'bold', textAlign: 'center'},
 
   taoProducts: {
     width: Dimensions.get('window').width, 
@@ -297,7 +301,7 @@ var Styles = StyleSheet.create({
   },
 
   productTitles: {
-    fontFamily: 'ffad_matro-webfont', 
+    fontFamily: 'Ffad Matro', 
     fontSize: 25, 
     color: 'white',
     shadowColor: 'black',
@@ -312,7 +316,7 @@ var Styles = StyleSheet.create({
   },
 
   inputLabelText: {
-    fontFamily: 'ffad_matro-webfont', 
+    fontFamily: 'Ffad Matro', 
     color: 'white', 
     fontSize: 20
   }

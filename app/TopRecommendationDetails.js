@@ -61,8 +61,6 @@ class TopRecommendationDetails extends Component {
     
     parsed_content = ""
     if (this.props.data.content != undefined){ 
-      
-
       parsed_content =
         <View>
           <Hyperlink
@@ -78,15 +76,18 @@ class TopRecommendationDetails extends Component {
 
           <View style={{height: 1, marginTop: 30, marginBottom: 30, backgroundColor: 'gray'}}/>
         </View>
+    }
 
-      
+    image_data = <Image/>
+    if (this.props.data.image != '' && this.props.data.image != undefined){
+      image_data = <Image source={this._require_image(this.props.data.image)} style={{height: 250, width: width}}/>
     }
   
 
     return(
       <ScrollView>
-        <Image source={this._require_image(this.props.data.image)} style={{height: 250, width: width}}/>
-       
+        {image_data}
+
         {parsed_content}
        
         <View style={{height: 100}} />

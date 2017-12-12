@@ -37,7 +37,6 @@ class ExplorerCheckin extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      book_ref: '',
       address: '',
       after_expedition_plan: '',
       book_ref: '',
@@ -85,8 +84,6 @@ class ExplorerCheckin extends Component {
   }
 
   createLoginExplorer(){
-    console.log("jiefool")
-    console.log(this.state.book_ref)
     if(this.state.first_name != "" && this.state.last_name != "" && this.state.book_ref != "" && this.state.email != "" && this.state.mobile_number != ""){
       this.setState({toView: 'sending'})
       Api.createLoginExplorer(this.state).then((res)=> {
@@ -112,7 +109,7 @@ class ExplorerCheckin extends Component {
         return(<ScrollView style={Styles.containerColumnx}>
                 <View style={[Styles.container, {backgroundColor: "#085582"}]}>
                   <Image source={require('./assets/images/tao_logo.png')} style={{width: 200, height: 170, marginTop: 10}}/>
-                  <Text style={{textAlign: 'center', fontSize: 50, fontFamily: 'ffad_matro-webfont', color: 'rgb(251,224,47)'}}>Check In</Text>
+                  <Text style={{textAlign: 'center', fontSize: 50, fontFamily: 'Ffad Matro', color: 'rgb(251,224,47)'}}>Check In</Text>
                   <TouchableOpacity onPress={() => Actions.login() } style={{padding: 10, borderWidth: 1, borderColor: 'rgb(251,224,47)' }}>
                     <Text style={{color: 'rgb(251,224,47)'}}>
                       Already Checked-In?
