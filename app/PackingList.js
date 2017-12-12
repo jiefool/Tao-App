@@ -26,7 +26,7 @@ class PackingList extends Component {
       <View style={Styles.container}>
         <ScrollView style={Styles.containerColumn,{padding: 20}}>
           <Text style={Styles.paragraph}>
-          Below is a list of essentials you will need to pack in your <Text style={{fontWeight: 'bold'}}>DRYBAG [approx.  25 – 35 Liters].</Text> 
+            To make things simple we recommend that you pack two bags the night before departure; 
           </Text>
 
           <Text style={Styles.paragraph}>
