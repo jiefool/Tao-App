@@ -133,28 +133,29 @@
 			remoteGlobalIDString = ADD01A681E09402E00F6D226;
 			remoteInfo = "RCTBlob-tvOS";
 		};
-		2A97F7AF1FDEAE8000FF6447 /* PBXContainerItemProxy */ = {
+
+		2A97F7761FDEADFA00FF6447 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 139D7ECE1E25DB7D00323FB7;
 			remoteInfo = "third-party";
 		};
-		2A97F7B11FDEAE8000FF6447 /* PBXContainerItemProxy */ = {
+		2A97F7781FDEADFA00FF6447 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3D383D3C1EBD27B6005632C8;
 			remoteInfo = "third-party-tvOS";
 		};
-		2A97F7B31FDEAE8000FF6447 /* PBXContainerItemProxy */ = {
+		2A97F77A1FDEADFA00FF6447 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 139D7E881E25C6D100323FB7;
 			remoteInfo = "double-conversion";
 		};
-		2A97F7B51FDEAE8000FF6447 /* PBXContainerItemProxy */ = {
+		2A97F77C1FDEADFA00FF6447 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 			proxyType = 2;
@@ -467,10 +468,17 @@
 				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
 				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
 				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
+<<<<<<< HEAD
 				2A97F7B01FDEAE8000FF6447 /* libthird-party.a */,
 				2A97F7B21FDEAE8000FF6447 /* libthird-party.a */,
 				2A97F7B41FDEAE8000FF6447 /* libdouble-conversion.a */,
 				2A97F7B61FDEAE8000FF6447 /* libdouble-conversion.a */,
+=======
+				2A97F7771FDEADFA00FF6447 /* libthird-party.a */,
+				2A97F7791FDEADFA00FF6447 /* libthird-party.a */,
+				2A97F77B1FDEADFA00FF6447 /* libdouble-conversion.a */,
+				2A97F77D1FDEADFA00FF6447 /* libdouble-conversion.a */,
+>>>>>>> master
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -499,7 +507,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		2A97F78F1FDEAE7F00FF6447 /* Recovered References */ = {
+=======
+		2A97F7561FDEADF800FF6447 /* Recovered References */ = {
+>>>>>>> master
 			isa = PBXGroup;
 			children = (
 				ADAAC8DA6D414DCEA42A21B6 /* libSplashScreen.a */,
@@ -583,7 +595,11 @@
 				00E356EF1AD99517003FC87E /* taokalahiTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				77D909FCA7564D70ABE1FFF6 /* Resources */,
+<<<<<<< HEAD
 				2A97F78F1FDEAE7F00FF6447 /* Recovered References */,
+=======
+				2A97F7561FDEADF800FF6447 /* Recovered References */,
+>>>>>>> master
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
