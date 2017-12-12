@@ -141,8 +141,8 @@ var Styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 10,
     marginBottom: 10,
-    borderBottomWidth: 1,
-    borderColor: "white"
+    // borderBottomWidth: 1,
+    // borderColor: "white"
   },
   projectItem: {
     flex: 1,
@@ -316,7 +316,7 @@ var Styles = StyleSheet.create({
   },
 
   inputLabelText: {
-    fontFamily: 'Ffad Matro', 
+    fontFamily: 'ffad_matro-webfont', 
     color: 'white', 
     fontSize: 20
   }
